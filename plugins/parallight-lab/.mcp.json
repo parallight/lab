@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "parallight-lab": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bundle/server.js"]
+    }
+  }
+}
