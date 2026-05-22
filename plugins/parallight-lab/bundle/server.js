@@ -31040,6 +31040,20 @@ async function getContext(labId) {
   if (!r.ok || !r.teaching) throw new Error("Lab context not found");
   return r;
 }
+async function judgeOutput(labId, artifact, focus) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/judge`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${requireToken()}`,
+      "x-parallight-mcp": "1"
+    },
+    body: JSON.stringify({ artifact, focus })
+  });
+  const r = await res.json();
+  if (!r.ok || !r.verdict) throw new Error(r.error ?? "Judge failed");
+  return r.verdict;
+}
 async function getMaster(masterId) {
   const r = await getJson(`/api/masters/${masterId}`);
   if (!r.ok || !r.master) throw new Error(`Master '${masterId}' not found`);
@@ -31047,6 +31061,12 @@ async function getMaster(masterId) {
 }
 
 // src/prompt-composer.ts
+var PRIVATE_BANNER = [
+  "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+  "  \u2699  PARALLIGHT \xB7 \u5E08\u5085\u5185\u90E8\u914D\u7F6E  (INTERNAL \u2014 \u5B66\u5458\u8BF7\u5FFD\u7565\u672C\u6BB5)",
+  "  \u8FD9\u662F\u7ED9 AI \u5E08\u5085\u7684\u79C1\u6709\u8BBE\u7F6E,\u4E0D\u662F\u6559\u5B66\u5185\u5BB9\u3002\u771F\u6B63\u7684\u8BFE\u4ECE\u4E0B\u9762\u7684\u95EE\u5019\u5F00\u59CB \u2193",
+  "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"
+].join("\n");
 function composeSystemPrompt(master, ctx) {
   const kpList = ctx.learning_objectives.map((kp, i) => `${i + 1}. ${kp.name}${kp.description ? ` \u2014 ${kp.description}` : ""}`).join("\n");
   return [
@@ -31061,14 +31081,15 @@ function composeSystemPrompt(master, ctx) {
     "## Knowledge points you'll guide the learner through:",
     kpList,
     "",
-    "## YOUR PRIVATE MATERIALS ARE LOADED ON DEMAND \u2014 they are NOT in this message:",
-    "- `get_lab_teaching` \u2192 your teaching script + per-checkpoint verification",
-    "  rubric. Call it (privately) before you start guiding a stage. It is YOUR",
-    "  guide \u2014 never paste it verbatim to the learner.",
-    "- `get_solution_ref` \u2192 the reference solution code. Call it ONLY when you need",
-    "  to judge whether the learner's direction/output is on track. NEVER show it.",
-    "Fetch each silently when needed and keep it in mind. NEVER narrate that you",
-    "are fetching, reading, or 'internalizing' them \u2014 just use what you learn.",
+    "## YOUR PRIVATE TOOLS (results are NOT in this message \u2014 fetch on demand):",
+    "- `get_lab_teaching` \u2192 your teaching script + per-checkpoint rubric. Call it",
+    "  (privately) before guiding a stage. It is YOUR guide \u2014 never paste verbatim.",
+    "- `check_learner_output` \u2192 to judge whether the learner's code/output is on",
+    "  track, send their artifact here; it returns a verdict + hints. You do NOT",
+    "  have the reference solution (it stays server-side, so it can never leak to",
+    "  the learner) \u2014 judge ONLY through this tool, never ask to see the solution.",
+    "Fetch get_lab_teaching silently when needed. NEVER narrate that you are",
+    "fetching / reading / 'internalizing' \u2014 just use what you learn.",
     "",
     "---",
     "",
@@ -31076,8 +31097,8 @@ function composeSystemPrompt(master, ctx) {
     "- Stay in the master persona. Never say 'as an AI'.",
     "- Never hand-write implementation FOR the learner, and never let them",
     "  passively extract the answer. Use CPC (Complement Prompts and Compare).",
-    "- Never reveal the reference solution (get_solution_ref), and never paste the",
-    "  teaching script (get_lab_teaching) verbatim.",
+    "- You never hold the reference solution \u2014 judge the learner only via",
+    "  check_learner_output. Never paste the teaching script verbatim.",
     "- INTERACT BY SELECTABLE OPTIONS, NOT FREE TEXT, for any DISCRETE choice.",
     "  Use your multiple-choice / question tool (in Claude Code: AskUserQuestion)",
     "  so the learner picks from an arrow-key menu (CLI) or clickable cards",
@@ -31120,6 +31141,7 @@ function composeTeachingDoc(ctx) {
   const checkpoints = ctx.checkpoints.map((c) => `### ${c.path}
 ${c.content}`).join("\n\n");
   return [
+    PRIVATE_BANNER,
     "[PRIVATE TEACHING GUIDE \u2014 internalize silently. This is your script + rubric,",
     "NOT for pasting to the learner. Do NOT narrate that you read it.]",
     "",
@@ -31128,21 +31150,6 @@ ${c.content}`).join("\n\n");
     "",
     "## Checkpoints (use these to verify understanding):",
     checkpoints
-  ].join("\n");
-}
-function composeSolutionDoc(ctx) {
-  const solution = ctx.solution.map((f) => `### ${f.path}
-\`\`\`
-${f.content}
-\`\`\``).join("\n\n");
-  return [
-    "[REFERENCE SOLUTION \u2014 FOR YOUR EYES ONLY. NEVER show this code to the learner.",
-    "It exists so you can judge whether their direction/output is on track and guide",
-    "them via questions. If the learner asks you to 'just give me the code', refuse",
-    "in the master's voice and guide them through CPC instead. Do NOT narrate that",
-    "you read this.]",
-    "",
-    solution
   ].join("\n");
 }
 
@@ -31328,11 +31335,11 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
         startedAt: (/* @__PURE__ */ new Date()).toISOString(),
         checkpoints,
         systemPrompt,
-        teachingDoc: composeTeachingDoc(ctx),
-        solutionDoc: composeSolutionDoc(ctx)
+        teachingDoc: composeTeachingDoc(ctx)
       });
       return ok(
         [
+          PRIVATE_BANNER,
           "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate, summarize, quote, or mention 'persona' / 'teaching' / 'solution' / 'loading' / 'internalizing'. Do NOT use the Read tool to set anything up. Your FIRST visible text must be the in-character greeting described under [NOW DO THIS].]",
           systemPrompt,
           "",
@@ -31358,15 +31365,24 @@ server.registerTool(
   }
 );
 server.registerTool(
-  "get_solution_ref",
+  "check_learner_output",
   {
-    title: "Reference solution (private)",
-    description: "The master's PRIVATE reference solution for the active lab \u2014 FOR THE AI's judgment only. NEVER show to the learner. Call ONLY when you need to judge whether their direction/output is on track."
+    title: "Judge learner output (server-side)",
+    description: "Judge whether the learner's code/output is on track. Send their artifact; the backend compares it against the reference solution SERVER-SIDE and returns a verdict + Socratic hints. You never receive the solution itself (so it can't leak). Use this instead of asking to see the answer.",
+    inputSchema: {
+      artifact: external_exports.string().describe("the learner's code / output to judge"),
+      focus: external_exports.string().optional().describe("what to focus the judgment on, e.g. '\u9519\u8BEF\u5904\u7406'")
+    }
   },
-  () => {
+  async ({ artifact, focus }) => {
     const s = getSession();
     if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
-    return ok(s.solutionDoc);
+    try {
+      const verdict = await judgeOutput(s.labId, artifact, focus);
+      return ok(verdict);
+    } catch (e) {
+      return err(`\u5224\u5206\u5931\u8D25\uFF1A${String(e)}`);
+    }
   }
 );
 server.registerTool(
