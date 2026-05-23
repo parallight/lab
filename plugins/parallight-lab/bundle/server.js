@@ -31232,8 +31232,9 @@ function fileTree(paths) {
   for (const p of [...paths].sort()) {
     let node = root;
     for (const part of p.split("/")) {
-      node[part] = node[part] ?? {};
-      node = node[part];
+      const next = node[part] ?? {};
+      node[part] = next;
+      node = next;
     }
   }
   const lines = [];
@@ -31242,7 +31243,8 @@ function fileTree(paths) {
     keys.forEach((k, i) => {
       const last = i === keys.length - 1;
       lines.push(prefix + (last ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ") + k);
-      walk(node[k], prefix + (last ? "    " : "\u2502   "));
+      const child = node[k];
+      if (child) walk(child, prefix + (last ? "    " : "\u2502   "));
     });
   };
   walk(root, "");
