@@ -6886,8 +6886,8 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync2, writeFileSync as writeFileSync2 } from "node:fs";
-import { join as join2, dirname } from "node:path";
+import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3 } from "node:fs";
+import { join as join3, dirname } from "node:path";
 
 // ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
 var util;
@@ -31214,6 +31214,61 @@ function percentComplete() {
   return Math.round(done / current.checkpoints.length * 100);
 }
 
+// src/session-store.ts
+import { mkdirSync as mkdirSync2, writeFileSync as writeFileSync2, readFileSync as readFileSync2, readdirSync, rmSync as rmSync2 } from "node:fs";
+import { join as join2 } from "node:path";
+import { homedir as homedir2 } from "node:os";
+var SESSIONS_DIR = join2(homedir2(), ".parallight", "sessions");
+function fileFor(labId) {
+  return join2(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
+}
+function saveSession(s, cwd) {
+  try {
+    mkdirSync2(SESSIONS_DIR, { recursive: true });
+    const p = {
+      labId: s.labId,
+      title: s.title,
+      masterId: s.masterId,
+      masterVersion: s.masterVersion,
+      startedAt: s.startedAt,
+      lastActiveAt: (/* @__PURE__ */ new Date()).toISOString(),
+      cwd,
+      checkpoints: s.checkpoints
+    };
+    writeFileSync2(fileFor(s.labId), JSON.stringify(p, null, 2));
+  } catch {
+  }
+}
+function loadByLab(labId) {
+  try {
+    return JSON.parse(readFileSync2(fileFor(labId), "utf8"));
+  } catch {
+    return null;
+  }
+}
+function loadMostRecent() {
+  try {
+    const out = [];
+    for (const f of readdirSync(SESSIONS_DIR)) {
+      if (!f.endsWith(".json")) continue;
+      try {
+        out.push(JSON.parse(readFileSync2(join2(SESSIONS_DIR, f), "utf8")));
+      } catch {
+      }
+    }
+    out.sort((a, b) => a.lastActiveAt < b.lastActiveAt ? 1 : -1);
+    return out[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+function removeSession(labId) {
+  try {
+    rmSync2(fileFor(labId), { force: true });
+  } catch {
+  }
+}
+
 // src/index.ts
 var SERVER_NAME = "parallight-lab";
 var PLACEHOLDER_PORTRAIT = [
@@ -31363,18 +31418,18 @@ server.registerTool(
     }
     try {
       const starter = await getStarter(lab_id);
-      const labDir = join2(process.cwd(), lab_id);
+      const labDir = join3(process.cwd(), lab_id);
       for (const f of starter.files) {
-        const dest = join2(labDir, f.path);
-        mkdirSync2(dirname(dest), { recursive: true });
-        writeFileSync2(dest, f.content);
+        const dest = join3(labDir, f.path);
+        mkdirSync3(dirname(dest), { recursive: true });
+        writeFileSync3(dest, f.content);
       }
       for (const a of starter.assets ?? []) {
-        const dest = join2(labDir, a.path);
-        mkdirSync2(dirname(dest), { recursive: true });
+        const dest = join3(labDir, a.path);
+        mkdirSync3(dirname(dest), { recursive: true });
         const res = await fetch(a.url);
         if (!res.ok) return err(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
-        writeFileSync2(dest, Buffer.from(await res.arrayBuffer()));
+        writeFileSync3(dest, Buffer.from(await res.arrayBuffer()));
       }
       const example = starter.files.find((f) => f.path === ".env.example")?.content ?? "";
       let envContent = example.replace(/^PARALLIGHT_API_KEY=.*$/m, `PARALLIGHT_API_KEY=${token}`);
@@ -31392,7 +31447,7 @@ PARALLIGHT_API_KEY=${token}
 PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
 `;
       }
-      writeFileSync2(join2(labDir, ".env"), envContent);
+      writeFileSync3(join3(labDir, ".env"), envContent);
       const writtenTree = fileTree([
         ...starter.files.map((f) => f.path),
         ...(starter.assets ?? []).map((a) => a.path),
@@ -31416,6 +31471,8 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
         systemPrompt,
         teachingDoc: composeTeachingDoc(ctx)
       });
+      const s = getSession();
+      if (s) saveSession(s, process.cwd());
       return ok(
         [
           PRIVATE_BANNER,
@@ -31433,6 +31490,56 @@ Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an 
       );
     } catch (e) {
       return err(`\u542F\u52A8 lab \u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "resume_lab",
+  {
+    title: "Resume a lab session",
+    description: "Re-hydrate a previously-started lab session in THIS window (re-inject the master persona + lab context). Use when a new cc/VSCode window lost the session. Does NOT rewrite starter files (they're already on disk). With no lab_id, resumes the most recently active session.",
+    inputSchema: { lab_id: external_exports.string().optional() }
+  },
+  async ({ lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const persisted = lab_id ? loadByLab(lab_id) : loadMostRecent();
+    if (!persisted) {
+      return err("\u6CA1\u6709\u53EF\u6062\u590D\u7684 lab session\u3002\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
+    }
+    try {
+      const ctx = await getContext(persisted.labId);
+      const master = await getMaster(ctx.master);
+      const systemPrompt = composeSystemPrompt(master, ctx);
+      const checkpoints = persisted.checkpoints?.length ? persisted.checkpoints : ctx.learning_objectives.map((kp) => ({ kp_id: kp.id, name: kp.name, state: "untouched" }));
+      setSession({
+        labId: ctx.lab_id,
+        title: ctx.title,
+        masterId: master.master_id,
+        masterVersion: master.version,
+        startedAt: persisted.startedAt,
+        checkpoints,
+        systemPrompt,
+        teachingDoc: composeTeachingDoc(ctx)
+      });
+      const s = getSession();
+      if (s) saveSession(s, process.cwd());
+      const pct = percentComplete();
+      return ok(
+        [
+          PRIVATE_BANNER,
+          "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate/quote/mention 'persona' / 'teaching' / 'solution' / 'loading' / 'internalizing'. Your FIRST visible text must be the in-character greeting under [NOW DO THIS].]",
+          systemPrompt,
+          "",
+          "[NOW DO THIS]",
+          `Greet the learner as ${master.display_name} \u2014 briefly, in-character \u2014 as RESUMING lab ${ctx.lab_id} (NOT a fresh start). The lab files are already in ./${persisted.labId}/ (don't rewrite them; LLM access is still configured in .env). Acknowledge you're picking up where they left off and ask what they want to continue with. If they want their earlier CHAT history back, tell them that's cc's own \`claude --resume\` / \`--continue\` (separate from this). Before guiding the next stage, silently call get_lab_teaching (don't narrate it). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 ${pct}% complete]`
+        ].join("\n")
+      );
+    } catch (e) {
+      return err(`\u6062\u590D\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -31510,6 +31617,7 @@ server.registerTool(
     const s = getSession();
     if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     const title = s.title;
+    removeSession(s.labId);
     clearSession();
     return ok(
       `[SYSTEM: the lab session has ended. Drop the master persona and lab operating instructions. Return to being a normal assistant.]
