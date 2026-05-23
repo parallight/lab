@@ -31059,6 +31059,50 @@ async function getMaster(masterId) {
   if (!r.ok || !r.master) throw new Error(`Master '${masterId}' not found`);
   return r.master;
 }
+function mcpHeaders() {
+  return {
+    "content-type": "application/json",
+    authorization: `Bearer ${requireToken()}`,
+    "x-parallight-mcp": "1"
+  };
+}
+async function submitReview(labId, payload) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/review`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ payload })
+  });
+  const r = await res.json();
+  if (!r.ok || !r.id) throw new Error(r.error ?? "submit review failed");
+  return r.id;
+}
+async function sendMessage(body) {
+  const res = await fetch(`${BACKEND_URL}/api/messages`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ body })
+  });
+  const r = await res.json();
+  if (!r.ok || !r.id) throw new Error(r.error ?? "send message failed");
+  return r.id;
+}
+async function getInbox(markSeen) {
+  const res = await fetch(`${BACKEND_URL}/api/inbox?mark_seen=${markSeen ? "1" : "0"}`, {
+    headers: { authorization: `Bearer ${requireToken()}`, "x-parallight-mcp": "1" }
+  });
+  const r = await res.json();
+  if (!r.ok || !r.items) throw new Error(r.error ?? "inbox fetch failed");
+  return r.items;
+}
+async function postReviewReply(reviewId, body) {
+  const res = await fetch(`${BACKEND_URL}/api/reviews/${reviewId}/reply`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ body })
+  });
+  const r = await res.json();
+  if (!r.ok) throw new Error(r.error ?? "reply failed");
+}
 
 // src/prompt-composer.ts
 var PRIVATE_BANNER = [
@@ -31183,6 +31227,27 @@ var PLACEHOLDER_PORTRAIT = [
 var server = new McpServer({ name: SERVER_NAME, version: PARALLIGHT_VERSION });
 var ok = (text) => ({ content: [{ type: "text", text }] });
 var err = (text) => ({ content: [{ type: "text", text: `\u26A0\uFE0F ${text}` }] });
+function fileTree(paths) {
+  const root = {};
+  for (const p of [...paths].sort()) {
+    let node = root;
+    for (const part of p.split("/")) {
+      node[part] = node[part] ?? {};
+      node = node[part];
+    }
+  }
+  const lines = [];
+  const walk = (node, prefix) => {
+    const keys = Object.keys(node).sort();
+    keys.forEach((k, i) => {
+      const last = i === keys.length - 1;
+      lines.push(prefix + (last ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ") + k);
+      walk(node[k], prefix + (last ? "    " : "\u2502   "));
+    });
+  };
+  walk(root, "");
+  return lines.join("\n");
+}
 server.registerTool(
   "test_echo",
   {
@@ -31319,6 +31384,7 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
 `;
       }
       writeFileSync2(join2(labDir, ".env"), envContent);
+      const writtenTree = fileTree([...starter.files.map((f) => f.path), ".env"]);
       const ctx = await getContext(lab_id);
       const master = await getMaster(ctx.master);
       const systemPrompt = composeSystemPrompt(master, ctx);
@@ -31344,7 +31410,12 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
           systemPrompt,
           "",
           "[NOW DO THIS]",
-          `Greet the learner as ${master.display_name} \u2014 briefly and scannable (bullets, not a wall). Files are in ./${lab_id}/ and their LLM access is pre-configured (no API key setup). Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u628A\u73AF\u5883\u68C0\u67E5 + \u4E24\u4E2A baseline \u8DD1\u4E00\u4E0B\u7ED9\u4F60\u770B\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run them via Bash (cd ./${lab_id}; python preflight.py; then baseline_no_tool.py and baseline_langchain.py) and surface each result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block \u2014 especially baseline_no_tool's hallucinated temperature and baseline_langchain's black-box answer. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
+          `Greet the learner as ${master.display_name} \u2014 briefly and scannable (bullets, not a wall). The lab files were just written to ./${lab_id}/ (LLM access pre-configured \u2014 no API key setup). As part of your greeting, SHOW the learner this exact file tree so they can see what's now in the lab (frame it warmly, e.g. '\u6211\u5DF2\u7ECF\u628A\u8FD9\u8282\u8BFE\u7684\u6587\u4EF6\u653E\u597D\u4E86:'):
+\`\`\`
+${lab_id}/
+${writtenTree}
+\`\`\`
+Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u5148\u628A\u73AF\u5883\u68C0\u67E5\u8DD1\u4E00\u4E0B\u3001\u7136\u540E\u5F00\u59CB\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run the environment check via Bash (cd ./${lab_id}; python preflight.py) and surface the result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block. Then begin the lab's opening EXACTLY as your teaching script directs \u2014 each lab opens differently, so do NOT assume any particular starter scripts exist; let the teaching script decide the first concrete step. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
         ].join("\n")
       );
     } catch (e) {
@@ -31432,6 +31503,91 @@ server.registerTool(
 
 \u5DF2\u9000\u51FA lab\u300C${title}\u300D\u3002\u4E0B\u6B21\u7528 /lab-start \u7EE7\u7EED\u3002`
     );
+  }
+);
+server.registerTool(
+  "submit_review",
+  {
+    title: "Submit lab review",
+    description: "Submit the learner's review of the current lab to the human master Marvin. Pass the learner's reflection answers and a snapshot of their code; checkpoints are taken from the active session automatically.",
+    inputSchema: {
+      reflections: external_exports.string().describe("the learner's reflection Q&A, formatted as text"),
+      code_snapshot: external_exports.string().describe("snapshot of the learner's working code (truncated)")
+    }
+  },
+  async ({ reflections, code_snapshot }) => {
+    const s = getSession();
+    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start \u5F00\u59CB\u4E00\u4E2A\u518D\u63D0\u4EA4 review\u3002");
+    const payload = {
+      reflections,
+      checkpoints: s.checkpoints.map((c) => ({ path: c.name, state: c.state })),
+      code_snapshot
+    };
+    try {
+      const id = await submitReview(s.labId, payload);
+      return ok(`\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u5E08\u5085\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`);
+    } catch (e) {
+      return err(`\u63D0\u4EA4\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "send_message",
+  {
+    title: "Send private message to Marvin",
+    description: "Send a PRIVATE message to the human master Marvin. Only Marvin reads it. He typically replies within 1-2 days. Confirm with the learner before sending.",
+    inputSchema: { body: external_exports.string().describe("the learner's private message") }
+  },
+  async ({ body }) => {
+    try {
+      const id = await sendMessage(body);
+      return ok(`\u{1F4E8} \u5DF2\u53D1\u9001\u7ED9\u771F\u4EBA Marvin\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u53EA\u6709\u4ED6\u672C\u4EBA\u4F1A\u8BFB\uFF0C\u901A\u5E38 1-2 \u5929\u56DE\u3002\u7528 /lab-read \u770B\u56DE\u590D\u3002`);
+    } catch (e) {
+      return err(`\u53D1\u9001\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "get_inbox",
+  {
+    title: "Get unread replies from Marvin",
+    description: "Fetch the learner's unread items from Marvin (graded reviews + message replies). Set mark_seen=true when actually showing them to the learner (/lab read); use mark_seen=false to peek for a notification (e.g. on the /lab home screen).",
+    inputSchema: { mark_seen: external_exports.boolean().describe("true to mark items as read") }
+  },
+  async ({ mark_seen }) => {
+    try {
+      const items = await getInbox(mark_seen);
+      if (items.length === 0) return ok("\uFF08\u76EE\u524D\u6CA1\u6709\u6765\u81EA\u5E08\u5085\u7684\u65B0\u56DE\u590D\u3002\uFF09");
+      const lines = items.map(
+        (it) => it.kind === "review" ? `\u{1F4DD} review (id: ${it.id})
+Lab ${it.lab_id ?? "?"} \u6279\u6539:
+${it.marvin_text}
+\uFF08\u8981\u56DE\u590D\u5E08\u5085\u5C31\u7528 /lab-reply ${it.id}\uFF09` : `\u{1F4AC} \u79C1\u4FE1\u56DE\u590D (id: ${it.id}):
+${it.marvin_text}`
+      );
+      return ok(lines.join("\n\n"));
+    } catch (e) {
+      return err(`\u62C9\u53D6\u4FE1\u7BB1\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "post_review_reply",
+  {
+    title: "Reply to Marvin's grading",
+    description: "Send the learner's reply to a graded review back to Marvin.",
+    inputSchema: {
+      review_id: external_exports.string().describe("the full review id shown by get_inbox (the value after 'id:' on a \u{1F4DD} review line)"),
+      body: external_exports.string().describe("the learner's reply")
+    }
+  },
+  async ({ review_id, body }) => {
+    try {
+      await postReviewReply(review_id, body);
+      return ok("\u2705 \u5DF2\u628A\u4F60\u7684\u56DE\u590D\u53D1\u7ED9\u5E08\u5085\u3002");
+    } catch (e) {
+      return err(`\u56DE\u590D\u5931\u8D25\uFF1A${String(e)}`);
+    }
   }
 );
 async function main() {
