@@ -1,7 +1,7 @@
 {
   "name": "parallight-lab",
   "description": "Parallight Lab — agent-oriented learning plugin (Claude Code). /lab-login, /lab, /lab-start, and a resident master craftsman who guides you to direct agents (not hand-write code).",
-  "version": "0.1.1-phase1",
+  "version": "0.1.2-phase1",
   "author": {
     "name": "Marvin Gao",
     "email": "marvin.gao.cs@gmail.com"

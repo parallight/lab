@@ -31369,6 +31369,13 @@ server.registerTool(
         mkdirSync2(dirname(dest), { recursive: true });
         writeFileSync2(dest, f.content);
       }
+      for (const a of starter.assets ?? []) {
+        const dest = join2(labDir, a.path);
+        mkdirSync2(dirname(dest), { recursive: true });
+        const res = await fetch(a.url);
+        if (!res.ok) return err(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
+        writeFileSync2(dest, Buffer.from(await res.arrayBuffer()));
+      }
       const example = starter.files.find((f) => f.path === ".env.example")?.content ?? "";
       let envContent = example.replace(/^PARALLIGHT_API_KEY=.*$/m, `PARALLIGHT_API_KEY=${token}`);
       if (!/^PARALLIGHT_API_KEY=/m.test(envContent)) {
@@ -31386,7 +31393,11 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
 `;
       }
       writeFileSync2(join2(labDir, ".env"), envContent);
-      const writtenTree = fileTree([...starter.files.map((f) => f.path), ".env"]);
+      const writtenTree = fileTree([
+        ...starter.files.map((f) => f.path),
+        ...(starter.assets ?? []).map((a) => a.path),
+        ".env"
+      ]);
       const ctx = await getContext(lab_id);
       const master = await getMaster(ctx.master);
       const systemPrompt = composeSystemPrompt(master, ctx);
