@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "parallight-cc",
-  "description": "Parallight Lab — agent-oriented learning plugin marketplace for Claude Code.",
+  "description": "Parallight Lab plugin marketplace (Claude Code). Phase 0 hello-world.",
   "owner": {
     "name": "Marvin Gao",
     "email": "marvin.gao.cs@gmail.com"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "parallight-lab",
-      "description": "Learn to build AI agents by directing them. A resident master craftsman (Marvin) guides you through hands-on labs inside Claude Code — you command the agent, understand the design, and verify the result. Zero API keys: the LLM runs through Parallight's backend.",
+      "description": "Parallight Lab — agent-oriented learning plugin. Phase 0 hello-world. Provides /test slash command and a `test_echo` MCP tool used to verify cross-platform plumbing.",
       "category": "development",
       "source": "./plugins/parallight-lab"
     }

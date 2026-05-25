@@ -31514,7 +31514,11 @@ server.registerTool(
       const ctx = await getContext(persisted.labId);
       const master = await getMaster(ctx.master);
       const systemPrompt = composeSystemPrompt(master, ctx);
-      const checkpoints = persisted.checkpoints?.length ? persisted.checkpoints : ctx.learning_objectives.map((kp) => ({ kp_id: kp.id, name: kp.name, state: "untouched" }));
+      const checkpoints = persisted.checkpoints?.length ? persisted.checkpoints : ctx.learning_objectives.map((kp) => ({
+        kp_id: kp.id,
+        name: kp.name,
+        state: "untouched"
+      }));
       setSession({
         labId: ctx.lab_id,
         title: ctx.title,
@@ -31646,7 +31650,9 @@ server.registerTool(
     };
     try {
       const id = await submitReview(s.labId, payload);
-      return ok(`\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u5E08\u5085\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`);
+      return ok(
+        `\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u5E08\u5085\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`
+      );
     } catch (e) {
       return err(`\u63D0\u4EA4\u5931\u8D25\uFF1A${String(e)}`);
     }
@@ -31662,7 +31668,9 @@ server.registerTool(
   async ({ body }) => {
     try {
       const id = await sendMessage(body);
-      return ok(`\u{1F4E8} \u5DF2\u53D1\u9001\u7ED9\u771F\u4EBA Marvin\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u53EA\u6709\u4ED6\u672C\u4EBA\u4F1A\u8BFB\uFF0C\u901A\u5E38 1-2 \u5929\u56DE\u3002\u7528 /lab-read \u770B\u56DE\u590D\u3002`);
+      return ok(
+        `\u{1F4E8} \u5DF2\u53D1\u9001\u7ED9\u771F\u4EBA Marvin\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u53EA\u6709\u4ED6\u672C\u4EBA\u4F1A\u8BFB\uFF0C\u901A\u5E38 1-2 \u5929\u56DE\u3002\u7528 /lab-read \u770B\u56DE\u590D\u3002`
+      );
     } catch (e) {
       return err(`\u53D1\u9001\u5931\u8D25\uFF1A${String(e)}`);
     }
@@ -31698,7 +31706,9 @@ server.registerTool(
     title: "Reply to Marvin's grading",
     description: "Send the learner's reply to a graded review back to Marvin.",
     inputSchema: {
-      review_id: external_exports.string().describe("the full review id shown by get_inbox (the value after 'id:' on a \u{1F4DD} review line)"),
+      review_id: external_exports.string().describe(
+        "the full review id shown by get_inbox (the value after 'id:' on a \u{1F4DD} review line)"
+      ),
       body: external_exports.string().describe("the learner's reply")
     }
   },
