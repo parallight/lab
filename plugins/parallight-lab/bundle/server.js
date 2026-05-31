@@ -6887,6 +6887,7 @@ var require_dist = __commonJS({
 
 // src/index.ts
 import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3 } from "node:fs";
+import { homedir as homedir3 } from "node:os";
 import { join as join3, dirname } from "node:path";
 
 // ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
@@ -30963,6 +30964,28 @@ var AUTH_DIR = join(homedir(), ".parallight");
 var AUTH_FILE = join(AUTH_DIR, "auth.json");
 var LLM_PROXY_URL = `${BACKEND_URL}/api/llm`;
 
+// src/compare-persona.ts
+var COMPARE_MENTOR_PERSONA = `\u4F60\u73B0\u5728\u662F Parallight \u7684\u300CAI \u5B9E\u9A8C\u5BFC\u5E08\u300D\uFF0C\u5E26\u5B66\u5458\u5728\u4E00\u4E2A agent \u5143\u5668\u4EF6\u5B9E\u9A8C\u53F0\u4E0A\u505A\u5BF9\u7167\u5B9E\u9A8C\u3002
+
+\u53EF\u8C03\u7684\u300C\u5143\u5668\u4EF6\u300D\uFF08v1 \u56DB\u8F74\uFF09\uFF1A
+- \u6A21\u578B\uFF08model_id\uFF0C\u4ECE compare_list_components \u7684 models \u91CC\u9009\uFF09
+- prompt\uFF08system / user \u6307\u4EE4\uFF09
+- context\uFF08\u5582\u7ED9\u6A21\u578B\u7684\u53C2\u8003\u8D44\u6599\uFF09
+- skills\uFF08\u4ECE compare_list_components \u7684 skills \u76EE\u5F55\u91CC\u52FE\uFF0C\u6309 id\uFF09
+
+\u4F60\u7684\u804C\u8D23\uFF08\u53EA\u505A\u8FD9\u4E09\u4EF6\uFF09\uFF1A
+1. \u51FA\u65B9\u6848\uFF1A\u542C\u6E05\u5B66\u5458\u76EE\u6807\u540E\uFF0C\u63D0 2\u20133 \u5957\u8D77\u6B65\u65B9\u6848\uFF08variants\uFF09\u3002\u9ED8\u8BA4\u300C\u63A7\u53D8\u91CF\u300D\u2014\u2014\u53EA\u8BA9\u4E00\u6839\u8F74\u53D8\u5316\u3001\u5176\u4F59\u6052\u5B9A\uFF0C\u8FD9\u6837\u7ED3\u679C\u80FD\u5F52\u56E0\u3002\u8C03 compare_set_variants \u628A\u65B9\u6848\u5199\u8FDB\u5B9E\u9A8C\u3002
+2. \u51FA\u53D8\u4F53\uFF1A\u5B66\u5458\u8981\u65F6\uFF0C\u5728\u73B0\u6709\u65B9\u6848\u4E0A\u6D3E\u751F\u65B0 variant\uFF08\u4EBA\u7ED9\u60F3\u6CD5\u6216\u4F60\u7ED9\uFF09\u3002\u4E00\u6B21\u5C3D\u91CF\u53EA\u52A8\u4E00\u4E24\u6839\u8F74\uFF1B\u82E5\u4E00\u6B21\u52A8\u591A\u6839\uFF0C\u63D0\u9192\u5B66\u5458\u300C\u591A\u4E2A\u53D8\u91CF\u5728\u52A8\uFF0C\u5F52\u56E0\u4F1A\u53D8\u96BE\u300D\u3002
+3. \u8BFB\u7ED3\u679C\uFF1A\u5B66\u5458\u8981\u65F6\u8C03 compare_results \u8BFB\u56DE\u8FD9\u6B21 run\uFF0C\u5BA2\u89C2\u8F6C\u8FF0\u300C\u8C01\u5FEB/\u8C01\u7701/\u8C01\u957F\u3001\u8F93\u51FA\u6709\u4EC0\u4E48\u5DEE\u522B\u300D\u3002
+
+\u4F60\u7EDD\u4E0D\u505A\u7684\u4E8B\uFF1A
+- \u4E0D\u81EA\u52A8\u66FF\u5B66\u5458\u5224\u5B9A\u300C\u54EA\u4E2A\u6700\u597D\u300D\u2014\u2014\u5224\u5B9A\u4EA4\u7ED9\u5B66\u5458\u7684\u773C\u775B\u548C \u{1F44D}\u3002\u5B66\u5458\u95EE\u4F60\u770B\u6CD5\u53EF\u4EE5\u7ED9\u89C2\u5BDF\uFF0C\u4F46\u8981\u8BF4\u6E05\u8FD9\u662F\u4F60\u7684\u89C2\u5BDF\u3001\u6700\u7EC8\u4ED6\u6765\u5B9A\u3002
+- \u4E0D\u624B\u6572\u6A21\u578B id \u8BA9\u5B66\u5458\u80CC\u2014\u2014\u6A21\u578B\u4ECE compare_list_components \u9009\uFF0C\u6216\u5728\u7F51\u9875\u9762\u677F\u4E0B\u62C9\u91CC\u9009\u3002
+
+\u53D8\u4F53\u914D\u7F6E\u5F62\u72B6\uFF08\u5199\u7ED9 compare_set_variants \u7684 variants\uFF09\uFF1A
+{ id: "A"|"B"|..., label: \u7B80\u77ED\u540D, model_id, system, context?, skills?: string[], user_prompt? }
+\u540C\u4E00\u6B21\u5BF9\u6BD4\u91CC id \u552F\u4E00\u3002`;
+
 // src/auth.ts
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 function saveAuth(data) {
@@ -31103,12 +31126,124 @@ async function postReviewReply(reviewId, body) {
   const r = await res.json();
   if (!r.ok) throw new Error(r.error ?? "reply failed");
 }
+async function openSession(labId, masterId, masterVersion) {
+  const res = await fetch(`${BACKEND_URL}/api/sessions`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ lab_id: labId, master_id: masterId, master_version: masterVersion })
+  });
+  const r = await res.json();
+  return r.ok ? r.session_id : void 0;
+}
+async function exitSession(sessionId) {
+  await fetch(`${BACKEND_URL}/api/sessions/${sessionId}/exit`, {
+    method: "POST",
+    headers: mcpHeaders()
+  });
+}
+async function getAnalysisConsent() {
+  const res = await fetch(`${BACKEND_URL}/api/analysis/consent`, {
+    headers: { authorization: `Bearer ${requireToken()}`, "x-parallight-mcp": "1" }
+  });
+  const r = await res.json();
+  return Boolean(r.ok && r.consented);
+}
+async function grantAnalysisConsent() {
+  const res = await fetch(`${BACKEND_URL}/api/analysis/consent`, {
+    method: "POST",
+    headers: mcpHeaders()
+  });
+  const r = await res.json();
+  if (!r.ok) throw new Error(r.error ?? "grant consent failed");
+}
+async function getAnalysisReport(labId, checkpoints) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/analysis`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ checkpoints: checkpoints ?? [] })
+  });
+  if (res.status === 402) return { needsConsent: true };
+  const r = await res.json();
+  if (!r.ok || !r.html) throw new Error(r.error ?? "analysis failed");
+  return { needsConsent: false, html: r.html, headline: r.headline };
+}
+async function issueDashboardLink(labId, tab) {
+  const r = await fetch(`${BACKEND_URL}/api/dashboard/issue-link`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${requireToken()}`,
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({ lab_id: labId, tab })
+  }).then((res) => res.json());
+  if (!r.ok || !r.url) throw new Error(r.error ?? "issue-link failed");
+  return r.url;
+}
+async function compareCreateExperiment(labId, goal, variants) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/experiments`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ goal, variants: variants ?? [] })
+  });
+  const r = await res.json();
+  if (!r.ok || typeof r.id !== "number") throw new Error(r.error ?? "create experiment failed");
+  return r.id;
+}
+async function compareSetVariants(labId, experimentId, variants) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/experiments/${experimentId}`, {
+    method: "PATCH",
+    headers: mcpHeaders(),
+    body: JSON.stringify({ variants })
+  });
+  const r = await res.json();
+  if (!r.ok) throw new Error(r.error ?? "set variants failed");
+}
+async function compareResults(labId, runId) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/runs/${runId}/results`, {
+    headers: { authorization: `Bearer ${requireToken()}`, "x-parallight-mcp": "1" }
+  });
+  const r = await res.json();
+  if (!r.ok) throw new Error(r.error ?? "results fetch failed");
+  return r;
+}
+async function compareListComponents(labId) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/components`, {
+    headers: { authorization: `Bearer ${requireToken()}`, "x-parallight-mcp": "1" }
+  });
+  const r = await res.json();
+  if (!r.ok || !r.models || !r.skills) throw new Error("components fetch failed");
+  return { models: r.models, skills: r.skills };
+}
+
+// src/browser.ts
+import { spawn } from "node:child_process";
+import { isAbsolute } from "node:path";
+function openInBrowser(filePath) {
+  try {
+    if (!isAbsolute(filePath) || filePath.startsWith("-")) return;
+    let cmd;
+    let args;
+    if (process.platform === "win32") {
+      cmd = "cmd";
+      args = ["/c", "start", "", filePath];
+    } else if (process.platform === "darwin") {
+      cmd = "open";
+      args = ["--", filePath];
+    } else {
+      cmd = "xdg-open";
+      args = [filePath];
+    }
+    const child = spawn(cmd, args, { stdio: "ignore", detached: true });
+    child.unref();
+  } catch {
+  }
+}
 
 // src/prompt-composer.ts
 var PRIVATE_BANNER = [
   "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
-  "  \u2699  PARALLIGHT \xB7 \u5E08\u5085\u5185\u90E8\u914D\u7F6E  (INTERNAL \u2014 \u5B66\u5458\u8BF7\u5FFD\u7565\u672C\u6BB5)",
-  "  \u8FD9\u662F\u7ED9 AI \u5E08\u5085\u7684\u79C1\u6709\u8BBE\u7F6E,\u4E0D\u662F\u6559\u5B66\u5185\u5BB9\u3002\u771F\u6B63\u7684\u8BFE\u4ECE\u4E0B\u9762\u7684\u95EE\u5019\u5F00\u59CB \u2193",
+  "  \u2699  PARALLIGHT \xB7 Mentor\u5185\u90E8\u914D\u7F6E  (INTERNAL \u2014 \u5B66\u5458\u8BF7\u5FFD\u7565\u672C\u6BB5)",
+  "  \u8FD9\u662F\u7ED9 AI Mentor\u7684\u79C1\u6709\u8BBE\u7F6E,\u4E0D\u662F\u6559\u5B66\u5185\u5BB9\u3002\u771F\u6B63\u7684\u8BFE\u4ECE\u4E0B\u9762\u7684\u95EE\u5019\u5F00\u59CB \u2193",
   "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"
 ].join("\n");
 function composeSystemPrompt(master, ctx) {
@@ -31233,7 +31368,8 @@ function saveSession(s, cwd) {
       startedAt: s.startedAt,
       lastActiveAt: (/* @__PURE__ */ new Date()).toISOString(),
       cwd,
-      checkpoints: s.checkpoints
+      checkpoints: s.checkpoints,
+      serverSessionId: s.serverSessionId
     };
     writeFileSync2(fileFor(s.labId), JSON.stringify(p, null, 2));
   } catch {
@@ -31471,8 +31607,22 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
         systemPrompt,
         teachingDoc: composeTeachingDoc(ctx)
       });
+      let serverSessionId;
+      try {
+        serverSessionId = await openSession(ctx.lab_id, master.master_id, master.version);
+      } catch {
+      }
       const s = getSession();
-      if (s) saveSession(s, process.cwd());
+      if (s) {
+        s.serverSessionId = serverSessionId;
+        setSession(s);
+        saveSession(s, process.cwd());
+      }
+      let consented = true;
+      try {
+        consented = await getAnalysisConsent();
+      } catch {
+      }
       return ok(
         [
           PRIVATE_BANNER,
@@ -31485,7 +31635,7 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
 ${lab_id}/
 ${writtenTree}
 \`\`\`
-Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u5148\u628A\u73AF\u5883\u68C0\u67E5\u8DD1\u4E00\u4E0B\u3001\u7136\u540E\u5F00\u59CB\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run the environment check via Bash (cd ./${lab_id}; python preflight.py) and surface the result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block. Then begin the lab's opening EXACTLY as your teaching script directs \u2014 each lab opens differently, so do NOT assume any particular starter scripts exist; let the teaching script decide the first concrete step. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
+Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u5148\u628A\u73AF\u5883\u68C0\u67E5\u8DD1\u4E00\u4E0B\u3001\u7136\u540E\u5F00\u59CB\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run the environment check via Bash (cd ./${lab_id}; python preflight.py) and surface the result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block. Then begin the lab's opening EXACTLY as your teaching script directs \u2014 each lab opens differently, so do NOT assume any particular starter scripts exist; let the teaching script decide the first concrete step. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). ` + (consented ? "" : " \u5728\u4F60\u7ED9\u51FA\u5F00\u573A\u540E\u3001\u5F15\u5BFC\u7B2C\u4E00\u6B65\u4E4B\u524D,\u81EA\u7136\u5730\u5F81\u6C42\u4E00\u6B21\u5206\u6790\u540C\u610F:\u7528\u4E00\u53E5\u8BDD\u544A\u8BC9\u5B66\u5458\u300C\u4F60\u8FD9\u6B21\u7684 lab \u4F1A\u8BDD\u6570\u636E\u4F1A\u88AB\u8BB0\u5F55,\u7528\u6765\u751F\u6210 /lab analysis \u62A5\u544A\u3001\u4E5F\u4F9B Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929\u300D,\u5E76\u7ED9\u9009\u9879 [\u53EF\u4EE5] [\u5148\u4E0D\u8981]\u3002\u82E5\u5B66\u5458\u9009 [\u53EF\u4EE5],\u9759\u9ED8\u8C03\u7528 grant_analysis_consent \u5DE5\u5177\u3002") + `End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
         ].join("\n")
       );
     } catch (e) {
@@ -31529,8 +31679,17 @@ server.registerTool(
         systemPrompt,
         teachingDoc: composeTeachingDoc(ctx)
       });
+      let serverSessionId;
+      try {
+        serverSessionId = await openSession(ctx.lab_id, master.master_id, master.version);
+      } catch {
+      }
       const s = getSession();
-      if (s) saveSession(s, process.cwd());
+      if (s) {
+        s.serverSessionId = serverSessionId;
+        setSession(s);
+        saveSession(s, process.cwd());
+      }
       const pct = percentComplete();
       return ok(
         [
@@ -31611,16 +31770,22 @@ server.registerTool(
 
 ${kp}
 
-\uFF08\u8FD9\u662F\u53EA\u8BFB\u6E05\u5355\u3002\u8FDB\u5EA6\u968F\u4F60\u548C\u5E08\u5085\u7684\u5BF9\u8BDD\u63A8\u8FDB\u3002\uFF09`);
+\uFF08\u8FD9\u662F\u53EA\u8BFB\u6E05\u5355\u3002\u8FDB\u5EA6\u968F\u4F60\u548CMentor\u7684\u5BF9\u8BDD\u63A8\u8FDB\u3002\uFF09`);
   }
 );
 server.registerTool(
   "exit_lab",
   { title: "Exit lab", description: "Exit the current lab and clear the injected persona." },
-  () => {
+  async () => {
     const s = getSession();
     if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     const title = s.title;
+    if (s.serverSessionId) {
+      try {
+        await exitSession(s.serverSessionId);
+      } catch {
+      }
+    }
     removeSession(s.labId);
     clearSession();
     return ok(
@@ -31651,7 +31816,7 @@ server.registerTool(
     try {
       const id = await submitReview(s.labId, payload);
       return ok(
-        `\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u5E08\u5085\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`
+        `\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002Mentor\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`
       );
     } catch (e) {
       return err(`\u63D0\u4EA4\u5931\u8D25\uFF1A${String(e)}`);
@@ -31686,12 +31851,12 @@ server.registerTool(
   async ({ mark_seen }) => {
     try {
       const items = await getInbox(mark_seen);
-      if (items.length === 0) return ok("\uFF08\u76EE\u524D\u6CA1\u6709\u6765\u81EA\u5E08\u5085\u7684\u65B0\u56DE\u590D\u3002\uFF09");
+      if (items.length === 0) return ok("\uFF08\u76EE\u524D\u6CA1\u6709\u6765\u81EAMentor\u7684\u65B0\u56DE\u590D\u3002\uFF09");
       const lines = items.map(
         (it) => it.kind === "review" ? `\u{1F4DD} review (id: ${it.id})
 Lab ${it.lab_id ?? "?"} \u6279\u6539:
 ${it.marvin_text}
-\uFF08\u8981\u56DE\u590D\u5E08\u5085\u5C31\u7528 /lab-reply ${it.id}\uFF09` : `\u{1F4AC} \u79C1\u4FE1\u56DE\u590D (id: ${it.id}):
+\uFF08\u8981\u56DE\u590DMentor\u5C31\u7528 /lab-reply ${it.id}\uFF09` : `\u{1F4AC} \u79C1\u4FE1\u56DE\u590D (id: ${it.id}):
 ${it.marvin_text}`
       );
       return ok(lines.join("\n\n"));
@@ -31715,9 +31880,289 @@ server.registerTool(
   async ({ review_id, body }) => {
     try {
       await postReviewReply(review_id, body);
-      return ok("\u2705 \u5DF2\u628A\u4F60\u7684\u56DE\u590D\u53D1\u7ED9\u5E08\u5085\u3002");
+      return ok("\u2705 \u5DF2\u628A\u4F60\u7684\u56DE\u590D\u53D1\u7ED9Mentor\u3002");
     } catch (e) {
       return err(`\u56DE\u590D\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "open_lab_analysis",
+  {
+    title: "\u6253\u5F00\u4F1A\u8BDD\u5206\u6790\u62A5\u544A",
+    description: "\u751F\u6210\u5E76\u5728\u6D4F\u89C8\u5668\u6253\u5F00\u5F53\u524D(\u6216\u6307\u5B9A)lab \u7684\u4F1A\u8BDD\u5206\u6790\u62A5\u544A \u2014\u2014 \u628A\u8FD9\u6B21\u548C AI \u7684\u534F\u4F5C\u62C6\u5F00\u7ED9\u5B66\u5458\u770B(turn/token/\u5DE5\u5177\u8C03\u7528/Mentor\u89C2\u5BDF)\u3002\u65E0 lab_id \u65F6\u7528\u5F53\u524D/\u6700\u8FD1\u7684 lab\u3002",
+    inputSchema: { lab_id: external_exports.string().optional() }
+  },
+  async ({ lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
+    let report;
+    try {
+      const cur = getSession();
+      const checkpoints = cur?.labId === labId ? cur.checkpoints : void 0;
+      report = await getAnalysisReport(labId, checkpoints);
+    } catch (e) {
+      return err(`\u751F\u6210\u5206\u6790\u5931\u8D25\uFF1A${String(e)}`);
+    }
+    if (report.needsConsent) {
+      return ok(
+        "\u8981\u770B\u4F1A\u8BDD\u5206\u6790,\u9700\u8981\u5148\u540C\u610F\u8BB0\u5F55\u4F60\u7684 lab \u4F1A\u8BDD\u6570\u636E(\u7528\u4E8E\u751F\u6210\u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929)\u3002\u540C\u610F\u5C31\u7528 /lab-analysis \u65F6\u56DE\u7B54\u300C\u53EF\u4EE5\u300D,\u6216\u76F4\u63A5\u8BF4\u300C\u6211\u540C\u610F\u5206\u6790\u300D\u3002"
+      );
+    }
+    const dir = join3(homedir3(), ".parallight", "analysis");
+    const file2 = join3(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
+    try {
+      mkdirSync3(dir, { recursive: true });
+      writeFileSync3(file2, report.html ?? "");
+    } catch (e) {
+      return err(`\u5199\u62A5\u544A\u6587\u4EF6\u5931\u8D25\uFF1A${String(e)}`);
+    }
+    openInBrowser(file2);
+    return ok(
+      `\u{1F4CA} \u5206\u6790\u62A5\u544A\u5DF2\u751F\u6210\u5E76\u5C1D\u8BD5\u6253\u5F00:
+file://${file2}
+
+${report.headline ?? ""}
+
+(\u6CA1\u81EA\u52A8\u5F39\u51FA\u7684\u8BDD,\u590D\u5236\u4E0A\u9762 file:// \u94FE\u63A5\u5230\u6D4F\u89C8\u5668\u6253\u5F00\u3002)`
+    );
+  }
+);
+server.registerTool(
+  "open_lab_dashboard",
+  {
+    title: "\u6253\u5F00 Lab Dashboard(Analysis + Compare)",
+    description: "\u5728\u6D4F\u89C8\u5668\u6253\u5F00\u5F53\u524D(\u6216\u6307\u5B9A)lab \u7684 Dashboard:\u{1F4CA} Analysis(\u770B agent \u5728\u505A\u5565)+ \u{1F9EA} Compare(\u5BF9\u6BD4\u4E0D\u540C\u6A21\u578B/prompt)\u3002\u65E0 lab_id \u65F6\u7528\u5F53\u524D/\u6700\u8FD1\u7684 lab\u3002tab \u9ED8\u8BA4 'analysis',\u4F20 'compare' \u76F4\u63A5\u5230 Compare Tab\u3002",
+    inputSchema: {
+      lab_id: external_exports.string().optional(),
+      tab: external_exports.enum(["analysis", "compare"]).optional()
+    }
+  },
+  async ({ lab_id, tab }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB,\u6216\u8005\u4F20 lab_id \u53C2\u6570\u3002");
+    let url2;
+    try {
+      url2 = await issueDashboardLink(labId, tab ?? "analysis");
+    } catch (e) {
+      return err(`\u751F\u6210 Dashboard \u94FE\u63A5\u5931\u8D25:${String(e)}`);
+    }
+    openInBrowser(url2);
+    return ok(
+      `\u{1F4CA} Dashboard \u5DF2\u5728\u6D4F\u89C8\u5668\u6253\u5F00:
+${url2}
+
+(\u6CA1\u81EA\u52A8\u5F39\u51FA\u7684\u8BDD,\u590D\u5236\u4E0A\u9762\u94FE\u63A5\u5230\u6D4F\u89C8\u5668\u3002\u94FE\u63A5 5 min \u5185\u4E00\u6B21\u6709\u6548,\u767B\u5F55\u540E\u4F1A\u53D1 7 \u5929 cookie\u3002)`
+    );
+  }
+);
+server.registerTool(
+  "compare_start",
+  {
+    title: "\u5F00\u4E00\u4E2A\u5BF9\u6BD4\u5B9E\u9A8C\uFF08\u5B9E\u9A8C\u53F0\uFF09",
+    description: "\u5B66\u5458\u8BF4\u51FA\u4E00\u4E2A\u76EE\u6807/\u4EFB\u52A1\u65F6\u8C03\u7528\uFF1A\u5EFA\u4E00\u4E2A Compare \u5B9E\u9A8C\u3001\u5728\u6D4F\u89C8\u5668\u6253\u5F00\u5B9E\u9A8C\u53F0\u9762\u677F\uFF0C\u5E76\u8FD4\u56DE\u300C\u5B9E\u9A8C\u5BFC\u5E08\u300D\u64CD\u4F5C\u6307\u5F15\u3002\u4E4B\u540E\u4F60\u6309\u5BFC\u5E08\u6307\u5F15\u63D0\u65B9\u6848\u3001\u7528 compare_set_variants \u5199\u5165\u3001\u7528 compare_run \u8DD1\u3002\u65E0 lab_id \u7528\u5F53\u524D/\u6700\u8FD1 lab\u3002",
+    inputSchema: { goal: external_exports.string(), lab_id: external_exports.string().optional() }
+  },
+  async ({ goal, lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\uFF0C\u6216\u4F20 lab_id\u3002");
+    let experimentId;
+    try {
+      experimentId = await compareCreateExperiment(labId, goal);
+    } catch (e) {
+      return err(`\u5EFA\u5B9E\u9A8C\u5931\u8D25\uFF1A${String(e)}`);
+    }
+    let url2 = "";
+    try {
+      url2 = await issueDashboardLink(labId, "compare");
+      openInBrowser(url2);
+    } catch {
+    }
+    return ok(
+      `\u{1F9EA} \u5B9E\u9A8C\u5DF2\u5EFA\uFF08experiment_id=${experimentId}\uFF09\u3002\u9762\u677F\uFF1A${url2 || "(\u6253\u5F00\u5931\u8D25\uFF0C\u53EF\u8BA9\u5B66\u5458\u624B\u52A8 /lab-compare)"}
+
+` + COMPARE_MENTOR_PERSONA + `
+
+\u5F53\u524D lab_id=${labId}\uFF0Cexperiment_id=${experimentId}\u3002\u5148\u8C03 compare_list_components \u770B\u8D27\u67B6\uFF0C\u518D\u63D0 2\u20133 \u5957\u8D77\u6B65\u65B9\u6848\u3002`
+    );
+  }
+);
+server.registerTool(
+  "compare_list_components",
+  {
+    title: "\u5217\u5B9E\u9A8C\u53F0\u300C\u6750\u6599\u300D\uFF08\u6A21\u578B\u5E93 + skills\uFF09",
+    description: "\u8FD4\u56DE\u53EF\u7528\u6A21\u578B\uFF08\u542B\u5355\u4EF7\uFF09\u4E0E skills \u76EE\u5F55\u3002\u63D0\u65B9\u6848/\u53D8\u4F53\u524D\u5148\u770B\u8D27\u67B6\u3002\u65E0 lab_id \u7528\u5F53\u524D/\u6700\u8FD1 lab\u3002",
+    inputSchema: { lab_id: external_exports.string().optional() }
+  },
+  async ({ lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    try {
+      const c = await compareListComponents(labId);
+      return ok(JSON.stringify(c, null, 2));
+    } catch (e) {
+      return err(`\u53D6\u6750\u6599\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "compare_set_variants",
+  {
+    title: "\u5199\u5165/\u66F4\u65B0\u5BF9\u6BD4\u65B9\u6848\uFF08variants\uFF09",
+    description: "\u628A\u4F60\u63D0\u597D\u7684\u65B9\u6848\u5199\u8FDB\u5B9E\u9A8C\u3002variants \u662F\u6570\u7EC4\uFF0C\u6BCF\u9879 { id, label, model_id, system, context?, skills?, user_prompt? }\uFF0C\u6700\u591A 5 \u4E2A\uFF0Cid \u552F\u4E00\u3002",
+    inputSchema: {
+      experiment_id: external_exports.number().int(),
+      variants: external_exports.array(
+        external_exports.object({
+          id: external_exports.string(),
+          label: external_exports.string(),
+          model_id: external_exports.string(),
+          system: external_exports.string(),
+          context: external_exports.string().optional(),
+          skills: external_exports.array(external_exports.string()).optional(),
+          user_prompt: external_exports.string().optional()
+        })
+      ).min(1).max(5),
+      lab_id: external_exports.string().optional()
+    }
+  },
+  async ({ experiment_id, variants, lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    try {
+      await compareSetVariants(labId, experiment_id, variants);
+    } catch (e) {
+      return err(`\u5199\u5165\u65B9\u6848\u5931\u8D25\uFF1A${String(e)}`);
+    }
+    return ok(
+      `\u2705 \u5DF2\u5199\u5165 ${variants.length} \u4E2A variant\uFF08${variants.map((v) => v.id).join("/")}\uFF09\u3002\u9762\u677F\u4F1A\u5237\u65B0\u3002\u63A5\u4E0B\u6765\u7528 compare_run \u8DD1\u3002`
+    );
+  }
+);
+server.registerTool(
+  "compare_run",
+  {
+    title: "\u8DD1\u5BF9\u6BD4",
+    description: "\u7528\u7ED9\u5B9A\u7684 shared user prompt \u8DD1\u8FD9\u6B21\u5BF9\u6BD4\uFF08\u5E76\u884C\u6D41\u5F0F\uFF0C\u7ED3\u679C\u5728\u7F51\u9875\u9762\u677F live\uFF09\u3002repeat_n>1 = \u540C\u914D\u7F6E\u591A\u8DD1\u51E0\u6B21\u770B\u7A33\u5B9A\u6027\uFF08\u9ED8\u8BA4 1\uFF09\u3002variants \u76F4\u63A5\u4F20\u4F60\u6700\u65B0\u7684\u65B9\u6848\uFF08\u4E0E set_variants \u540C\u5F62\u72B6\uFF09\u3002",
+    inputSchema: {
+      experiment_id: external_exports.number().int(),
+      shared_user_prompt: external_exports.string(),
+      repeat_n: external_exports.number().int().min(1).max(10).optional(),
+      variants: external_exports.array(
+        external_exports.object({
+          id: external_exports.string(),
+          label: external_exports.string(),
+          model_id: external_exports.string(),
+          system: external_exports.string(),
+          context: external_exports.string().optional(),
+          skills: external_exports.array(external_exports.string()).optional(),
+          user_prompt: external_exports.string().optional()
+        })
+      ).min(1).max(5),
+      lab_id: external_exports.string().optional()
+    }
+  },
+  async ({ experiment_id, shared_user_prompt, repeat_n, variants, lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/run`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${requireToken()}`,
+          "x-parallight-mcp": "1"
+        },
+        body: JSON.stringify({
+          experiment_user_id: experiment_id,
+          shared_user_prompt,
+          repeat_n: repeat_n ?? 1,
+          variants
+        })
+      });
+      if (!res.ok && res.status >= 400) {
+        const t = await res.text();
+        return err(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF08${res.status}\uFF09\uFF1A${t.slice(0, 200)}`);
+      }
+    } catch (e) {
+      return err(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF1A${String(e)}`);
+    }
+    return ok(
+      `\u25B6\uFE0E \u5DF2\u53D1\u8D77\u5BF9\u6BD4\uFF08${variants.length} variant \xD7 repeat ${repeat_n ?? 1}\uFF09\u3002\u8BA9\u5B66\u5458\u770B\u7F51\u9875\u9762\u677F\u7684 live \u7ED3\u679C\u3002\u8DD1\u5B8C\u4ED6\u8981\u7684\u8BDD\uFF0C\u4F60\u7528 compare_results \u8BFB\u56DE\u3002`
+    );
+  }
+);
+server.registerTool(
+  "compare_results",
+  {
+    title: "\u8BFB\u56DE\u4E00\u6B21\u5BF9\u6BD4\u7ED3\u679C",
+    description: "\u5B66\u5458\u8981\u4F60\u70B9\u8BC4/\u7ED9\u4E0B\u4E00\u6B65\u65F6\u8C03\u7528\uFF1A\u8BFB\u56DE\u67D0\u6B21 run \u7684\u7ED3\u6784\u5316\u7ED3\u679C\uFF08\u5404 variant \u7684\u8F93\u51FA/\u65F6\u5EF6/token/\u6210\u672C\uFF09\u3002\u53EA\u5BA2\u89C2\u8F6C\u8FF0\uFF0C\u4E0D\u66FF\u5B66\u5458\u5224\u5B9A\u3002",
+    inputSchema: { run_id: external_exports.number().int(), lab_id: external_exports.string().optional() }
+  },
+  async ({ run_id, lab_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+    }
+    const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
+    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    try {
+      const r = await compareResults(labId, run_id);
+      return ok(JSON.stringify(r, null, 2));
+    } catch (e) {
+      return err(`\u8BFB\u7ED3\u679C\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "grant_analysis_consent",
+  {
+    title: "\u540C\u610F\u8BB0\u5F55\u4F1A\u8BDD\u7528\u4E8E\u5206\u6790",
+    description: "\u8BB0\u5F55\u5B66\u5458\u540C\u610F:\u5176 lab \u4F1A\u8BDD\u6570\u636E\u53EF\u7528\u4E8E /lab analysis \u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301\u3002\u5728\u5B66\u5458\u660E\u786E\u8868\u793A\u540C\u610F\u540E\u8C03\u7528\u3002",
+    inputSchema: {}
+  },
+  async () => {
+    try {
+      requireToken();
+    } catch {
+      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    try {
+      await grantAnalysisConsent();
+      return ok("\u597D\u7684,\u5DF2\u8BB0\u4E0B\u4F60\u7684\u540C\u610F\u3002\u4EE5\u540E\u968F\u65F6\u7528 /lab-analysis \u770B\u4F60\u7684\u4F1A\u8BDD\u5206\u6790\u3002");
+    } catch (e) {
+      return err(`\u8BB0\u5F55\u540C\u610F\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
