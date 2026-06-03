@@ -6886,7 +6886,7 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3 } from "node:fs";
+import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3, existsSync as existsSync2 } from "node:fs";
 import { homedir as homedir3 } from "node:os";
 import { join as join3, dirname } from "node:path";
 
@@ -31214,6 +31214,22 @@ async function compareListComponents(labId) {
   if (!r.ok || !r.models || !r.skills) throw new Error("components fetch failed");
   return { models: r.models, skills: r.skills };
 }
+async function getResumeBriefing(labId) {
+  try {
+    const r = await getJson(`/api/labs/${labId}/resume-briefing`, { "x-parallight-mcp": "1" });
+    return r.ok && r.recap ? r.recap : null;
+  } catch {
+    return null;
+  }
+}
+async function getMostRecentSession() {
+  try {
+    const r = await getJson(`/api/sessions/most-recent`, { "x-parallight-mcp": "1" });
+    return r.ok ? r.lab_id ?? null : null;
+  } catch {
+    return null;
+  }
+}
 
 // src/browser.ts
 import { spawn } from "node:child_process";
@@ -31330,6 +31346,44 @@ ${c.content}`).join("\n\n");
     "## Checkpoints (use these to verify understanding):",
     checkpoints
   ].join("\n");
+}
+
+// src/recap-render.ts
+function recapToCheckpoints(recap) {
+  if (!recap || recap.kind !== "full") return null;
+  return recap.kbStates.map((k) => ({
+    kp_id: k.id,
+    name: k.name,
+    state: k.state === "mastered" ? "completed" : k.state === "in_progress" ? "in_progress" : "untouched"
+  }));
+}
+function recapBriefForMentor(recap) {
+  if (!recap) {
+    return "\uFF08\u8FD9\u6B21\u6CA1\u62FF\u5230\u8FDB\u5EA6\u6570\u636E;\u6309\u201C\u6B22\u8FCE\u56DE\u6765\u3001\u95EE\u8981\u7EE7\u7EED\u4EC0\u4E48\u201D\u7684\u65B9\u5F0F\u5F00\u573A\u5373\u53EF\u3002\uFF09";
+  }
+  if (recap.kind === "degraded") {
+    if (recap.reason === "no_consent") {
+      return [
+        "\uFF08\u5B66\u5458\u672A\u5F00\u542F\u4F1A\u8BDD\u5206\u6790,\u6240\u4EE5\u6211\u6CA1\u6709\u53EF\u7528\u7684\u8FDB\u5EA6\u8BB0\u5F55\u3002\uFF09",
+        "\u6309\u201C\u6B22\u8FCE\u56DE\u6765\u201D\u5F00\u573A;\u5E76\u81EA\u7136\u5730\u63D0\u4E00\u53E5:\u5F00\u542F /lab analysis \u540E,\u6211\u4E0B\u6B21\u5C31\u80FD\u7CBE\u786E\u63A5\u4E0A\u4F60\u7684\u8FDB\u5EA6\u3002"
+      ].join("\n");
+    }
+    return "\uFF08\u6682\u65E0\u8DB3\u591F\u8FDB\u5EA6\u6570\u636E;\u6309\u201C\u6B22\u8FCE\u56DE\u6765\u3001\u95EE\u8981\u7EE7\u7EED\u4EC0\u4E48\u201D\u5F00\u573A\u5373\u53EF\u3002\uFF09";
+  }
+  const mastered = recap.kbStates.filter((k) => k.state === "mastered").map((k) => k.name);
+  const inProg = recap.kbStates.filter((k) => k.state === "in_progress").map((k) => k.name);
+  const next = recap.nextStepKbId ? recap.kbStates.find((k) => k.id === recap.nextStepKbId)?.name : void 0;
+  return [
+    "\uFF08\u4EE5\u4E0B\u662F\u4ECE\u5B66\u5458\u5386\u53F2\u4F1A\u8BDD\u91CD\u5EFA\u7684\u8FDB\u5EA6,\u7528\u4F60\u7684\u4EBA\u683C\u3001\u6E29\u548C\u5730\u8BB2\u7ED9\u5B66\u5458\u542C,\u53E3\u543B\u7559\u4F59\u5730\u2014\u2014",
+    "\u6BD4\u5982\u201C\u770B\u8D77\u6765\u4F60\u5DF2\u7ECF\u2026\u201D;\u4E0D\u8981\u9010\u6761\u673A\u68B0\u6717\u8BFB\u3002\uFF09",
+    `- \u4E0A\u6B21\u5728\u505A:${recap.lastActivity || "(\u672A\u77E5)"}`,
+    recap.filesTouched.length ? `- \u52A8\u8FC7\u7684\u6587\u4EF6:${recap.filesTouched.join(", ")}` : "",
+    mastered.length ? `- \u5DF2\u638C\u63E1:${mastered.join(" \xB7 ")}` : "",
+    inProg.length ? `- \u8FDB\u884C\u4E2D:${inProg.join(" \xB7 ")}` : "",
+    next ? `- \u4E0B\u4E00\u4E2A:${next}\uFF08\u5EFA\u8BAE:${recap.nextHint || "\u7EE7\u7EED\u63A8\u8FDB"}\uFF09` : "",
+    `- \u8FDB\u5EA6:${recap.pct}%`,
+    "\u4ECE\u201C\u4E0B\u4E00\u4E2A\u201D\u90A3\u4E2A\u70B9\u81EA\u7136\u7EED\u4E0A,\u95EE\u5B66\u5458\u8981\u4E0D\u8981\u4ECE\u90A3\u91CC\u7EE7\u7EED\u3002"
+  ].filter(Boolean).join("\n");
 }
 
 // src/session.ts
@@ -31543,9 +31597,9 @@ server.registerTool(
   {
     title: "Start a lab",
     description: "Start a lab: write starter files to the working directory, inject the LLM proxy config, load the master persona + lab context, and adopt them for the session.",
-    inputSchema: { lab_id: external_exports.string() }
+    inputSchema: { lab_id: external_exports.string(), force: external_exports.boolean().optional() }
   },
-  async ({ lab_id }) => {
+  async ({ lab_id, force }) => {
     let token;
     try {
       token = requireToken();
@@ -31553,6 +31607,14 @@ server.registerTool(
       return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
+      const existingDir = join3(process.cwd(), lab_id);
+      if (existsSync2(existingDir) && !force) {
+        return err(
+          `\u68C0\u6D4B\u5230 ./${lab_id}/ \u5DF2\u5B58\u5728\u2014\u2014\u4F60\u4E4B\u524D\u5F00\u8FC7\u8FD9\u4E2A lab\u3002
+\xB7 \u60F3\u63A5\u7740\u4E0A\u6B21\u8FDB\u5EA6:\u7528 /lab-resume
+\xB7 \u786E\u5B9E\u8981\u91CD\u7F6E\u6210\u521D\u59CB\u6587\u4EF6(\u4F1A\u8986\u76D6\u4F60\u5BF9 starter \u6587\u4EF6\u7684\u4FEE\u6539):\u518D\u6B21 /lab-start \u5E76\u5E26 force=true`
+        );
+      }
       const starter = await getStarter(lab_id);
       const labDir = join3(process.cwd(), lab_id);
       for (const f of starter.files) {
@@ -31657,24 +31719,26 @@ server.registerTool(
       return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const persisted = lab_id ? loadByLab(lab_id) : loadMostRecent();
-    if (!persisted) {
+    let labId = persisted?.labId ?? lab_id ?? null;
+    if (!labId) {
+      labId = await getMostRecentSession();
+    }
+    if (!labId) {
       return err("\u6CA1\u6709\u53EF\u6062\u590D\u7684 lab session\u3002\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
     }
     try {
-      const ctx = await getContext(persisted.labId);
+      const ctx = await getContext(labId);
       const master = await getMaster(ctx.master);
       const systemPrompt = composeSystemPrompt(master, ctx);
-      const checkpoints = persisted.checkpoints?.length ? persisted.checkpoints : ctx.learning_objectives.map((kp) => ({
-        kp_id: kp.id,
-        name: kp.name,
-        state: "untouched"
-      }));
+      const recap = await getResumeBriefing(labId);
+      const fromRecap = recapToCheckpoints(recap);
+      const checkpoints = fromRecap ?? (persisted?.checkpoints?.length ? persisted.checkpoints : ctx.learning_objectives.map((kp) => ({ kp_id: kp.id, name: kp.name, state: "untouched" })));
       setSession({
         labId: ctx.lab_id,
         title: ctx.title,
         masterId: master.master_id,
         masterVersion: master.version,
-        startedAt: persisted.startedAt,
+        startedAt: persisted?.startedAt ?? (/* @__PURE__ */ new Date()).toISOString(),
         checkpoints,
         systemPrompt,
         teachingDoc: composeTeachingDoc(ctx)
@@ -31690,15 +31754,18 @@ server.registerTool(
         setSession(s);
         saveSession(s, process.cwd());
       }
-      const pct = percentComplete();
+      const pct = recap && recap.kind === "full" ? recap.pct : percentComplete();
       return ok(
         [
           PRIVATE_BANNER,
-          "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate/quote/mention 'persona' / 'teaching' / 'solution' / 'loading' / 'internalizing'. Your FIRST visible text must be the in-character greeting under [NOW DO THIS].]",
+          "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate/quote/mention 'persona' / 'teaching' / 'recap data' / 'loading'. Your FIRST visible text must be the in-character greeting under [NOW DO THIS].]",
           systemPrompt,
           "",
+          "[PROGRESS RECAP \u2014 internalize, then render in-character]",
+          recapBriefForMentor(recap),
+          "",
           "[NOW DO THIS]",
-          `Greet the learner as ${master.display_name} \u2014 briefly, in-character \u2014 as RESUMING lab ${ctx.lab_id} (NOT a fresh start). The lab files are already in ./${persisted.labId}/ (don't rewrite them; LLM access is still configured in .env). Acknowledge you're picking up where they left off and ask what they want to continue with. If they want their earlier CHAT history back, tell them that's cc's own \`claude --resume\` / \`--continue\` (separate from this). Before guiding the next stage, silently call get_lab_teaching (don't narrate it). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 ${pct}% complete]`
+          `Greet the learner as ${master.display_name} \u2014 briefly, in-character \u2014 as RESUMING lab ${ctx.lab_id} (NOT a fresh start). Render the PROGRESS RECAP above warmly and in your own voice, then continue from where they left off. The lab files are already in ./${labId}/ (don't rewrite them; LLM access is still configured in .env). If they want their earlier verbatim CHAT back, mention that's cc's own \`claude --resume\` / \`--continue\`. Before guiding the next stage, silently call get_lab_teaching (don't narrate it). End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 ${pct}% complete]`
         ].join("\n")
       );
     } catch (e) {
