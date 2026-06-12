@@ -2980,7 +2980,7 @@ var require_compile = __commonJS({
       const schOrFunc = root.refs[ref];
       if (schOrFunc)
         return schOrFunc;
-      let _sch = resolve.call(this, root, ref);
+      let _sch = resolve2.call(this, root, ref);
       if (_sch === void 0) {
         const schema = (_a3 = root.localRefs) === null || _a3 === void 0 ? void 0 : _a3[ref];
         const { schemaId } = this.opts;
@@ -3007,7 +3007,7 @@ var require_compile = __commonJS({
     function sameSchemaEnv(s1, s2) {
       return s1.schema === s2.schema && s1.root === s2.root && s1.baseId === s2.baseId;
     }
-    function resolve(root, ref) {
+    function resolve2(root, ref) {
       let sch;
       while (typeof (sch = this.refs[ref]) == "string")
         ref = sch;
@@ -3638,55 +3638,55 @@ var require_fast_uri = __commonJS({
       }
       return uri;
     }
-    function resolve(baseURI, relativeURI, options) {
+    function resolve2(baseURI, relativeURI, options) {
       const schemelessOptions = options ? Object.assign({ scheme: "null" }, options) : { scheme: "null" };
       const resolved = resolveComponent(parse3(baseURI, schemelessOptions), parse3(relativeURI, schemelessOptions), schemelessOptions, true);
       schemelessOptions.skipEscape = true;
       return serialize(resolved, schemelessOptions);
     }
-    function resolveComponent(base, relative, options, skipNormalization) {
+    function resolveComponent(base, relative2, options, skipNormalization) {
       const target = {};
       if (!skipNormalization) {
         base = parse3(serialize(base, options), options);
-        relative = parse3(serialize(relative, options), options);
+        relative2 = parse3(serialize(relative2, options), options);
       }
       options = options || {};
-      if (!options.tolerant && relative.scheme) {
-        target.scheme = relative.scheme;
-        target.userinfo = relative.userinfo;
-        target.host = relative.host;
-        target.port = relative.port;
-        target.path = removeDotSegments(relative.path || "");
-        target.query = relative.query;
+      if (!options.tolerant && relative2.scheme) {
+        target.scheme = relative2.scheme;
+        target.userinfo = relative2.userinfo;
+        target.host = relative2.host;
+        target.port = relative2.port;
+        target.path = removeDotSegments(relative2.path || "");
+        target.query = relative2.query;
       } else {
-        if (relative.userinfo !== void 0 || relative.host !== void 0 || relative.port !== void 0) {
-          target.userinfo = relative.userinfo;
-          target.host = relative.host;
-          target.port = relative.port;
-          target.path = removeDotSegments(relative.path || "");
-          target.query = relative.query;
+        if (relative2.userinfo !== void 0 || relative2.host !== void 0 || relative2.port !== void 0) {
+          target.userinfo = relative2.userinfo;
+          target.host = relative2.host;
+          target.port = relative2.port;
+          target.path = removeDotSegments(relative2.path || "");
+          target.query = relative2.query;
         } else {
-          if (!relative.path) {
+          if (!relative2.path) {
             target.path = base.path;
-            if (relative.query !== void 0) {
-              target.query = relative.query;
+            if (relative2.query !== void 0) {
+              target.query = relative2.query;
             } else {
               target.query = base.query;
             }
           } else {
-            if (relative.path[0] === "/") {
-              target.path = removeDotSegments(relative.path);
+            if (relative2.path[0] === "/") {
+              target.path = removeDotSegments(relative2.path);
             } else {
               if ((base.userinfo !== void 0 || base.host !== void 0 || base.port !== void 0) && !base.path) {
-                target.path = "/" + relative.path;
+                target.path = "/" + relative2.path;
               } else if (!base.path) {
-                target.path = relative.path;
+                target.path = relative2.path;
               } else {
-                target.path = base.path.slice(0, base.path.lastIndexOf("/") + 1) + relative.path;
+                target.path = base.path.slice(0, base.path.lastIndexOf("/") + 1) + relative2.path;
               }
               target.path = removeDotSegments(target.path);
             }
-            target.query = relative.query;
+            target.query = relative2.query;
           }
           target.userinfo = base.userinfo;
           target.host = base.host;
@@ -3694,7 +3694,7 @@ var require_fast_uri = __commonJS({
         }
         target.scheme = base.scheme;
       }
-      target.fragment = relative.fragment;
+      target.fragment = relative2.fragment;
       return target;
     }
     function equal(uriA, uriB, options) {
@@ -3896,7 +3896,7 @@ var require_fast_uri = __commonJS({
     var fastUri = {
       SCHEMES,
       normalize,
-      resolve,
+      resolve: resolve2,
       resolveComponent,
       equal,
       serialize,
@@ -6886,9 +6886,9 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3, existsSync as existsSync2 } from "node:fs";
-import { homedir as homedir3 } from "node:os";
-import { join as join3, dirname } from "node:path";
+import { mkdirSync as mkdirSync4, writeFileSync as writeFileSync4, existsSync as existsSync3 } from "node:fs";
+import { homedir as homedir4 } from "node:os";
+import { join as join4, dirname } from "node:path";
 
 // ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
 var util;
@@ -28832,7 +28832,7 @@ var Protocol = class {
           return;
         }
         const pollInterval = task2.pollInterval ?? this._options?.defaultTaskPollInterval ?? 1e3;
-        await new Promise((resolve) => setTimeout(resolve, pollInterval));
+        await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
         options?.signal?.throwIfAborted();
       }
     } catch (error51) {
@@ -28849,7 +28849,7 @@ var Protocol = class {
    */
   request(request, resultSchema, options) {
     const { relatedRequestId, resumptionToken, onresumptiontoken, task, relatedTask } = options ?? {};
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve2, reject) => {
       const earlyReject = (error51) => {
         reject(error51);
       };
@@ -28927,7 +28927,7 @@ var Protocol = class {
           if (!parseResult.success) {
             reject(parseResult.error);
           } else {
-            resolve(parseResult.data);
+            resolve2(parseResult.data);
           }
         } catch (error51) {
           reject(error51);
@@ -29188,12 +29188,12 @@ var Protocol = class {
       }
     } catch {
     }
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve2, reject) => {
       if (signal.aborted) {
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
         return;
       }
-      const timeoutId = setTimeout(resolve, interval);
+      const timeoutId = setTimeout(resolve2, interval);
       signal.addEventListener("abort", () => {
         clearTimeout(timeoutId);
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
@@ -30293,7 +30293,7 @@ var McpServer = class {
     let task = createTaskResult.task;
     const pollInterval = task.pollInterval ?? 5e3;
     while (task.status !== "completed" && task.status !== "failed" && task.status !== "cancelled") {
-      await new Promise((resolve) => setTimeout(resolve, pollInterval));
+      await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
       const updatedTask = await extra.taskStore.getTask(taskId);
       if (!updatedTask) {
         throw new McpError(ErrorCode.InternalError, `Task ${taskId} not found during polling`);
@@ -30942,12 +30942,12 @@ var StdioServerTransport = class {
     this.onclose?.();
   }
   send(message) {
-    return new Promise((resolve) => {
+    return new Promise((resolve2) => {
       const json2 = serializeMessage(message);
       if (this._stdout.write(json2)) {
-        resolve();
+        resolve2();
       } else {
-        this._stdout.once("drain", resolve);
+        this._stdout.once("drain", resolve2);
       }
     });
   }
@@ -31031,6 +31031,37 @@ async function getJson(path, extraHeaders = {}) {
     headers: { authorization: `Bearer ${requireToken()}`, ...extraHeaders }
   });
   return res.json();
+}
+async function getBlob(path, extraHeaders = {}) {
+  const res = await fetch(`${BACKEND_URL}${path}`, {
+    headers: {
+      authorization: `Bearer ${requireToken()}`,
+      "x-parallight-mcp": "1",
+      ...extraHeaders
+    }
+  });
+  const body = Buffer.from(await res.arrayBuffer());
+  return { status: res.status, body, headers: res.headers };
+}
+async function postBlob(path, body, extraHeaders = {}) {
+  const res = await fetch(`${BACKEND_URL}${path}`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${requireToken()}`,
+      "x-parallight-mcp": "1",
+      "content-type": "application/octet-stream",
+      ...extraHeaders
+    },
+    // Node's fetch accepts a Uint8Array body; a Buffer IS a Uint8Array.
+    body: new Uint8Array(body)
+  });
+  let json2;
+  try {
+    json2 = await res.json();
+  } catch {
+    json2 = null;
+  }
+  return { status: res.status, json: json2 };
 }
 async function requestOtp(email3) {
   const r = await postJson("/api/auth/request-otp", { email: email3 });
@@ -31126,11 +31157,41 @@ async function postReviewReply(reviewId, body) {
   const r = await res.json();
   if (!r.ok) throw new Error(r.error ?? "reply failed");
 }
-async function openSession(labId, masterId, masterVersion) {
+async function getRealExperiment(labId) {
+  try {
+    const j = await getJson(
+      `/api/experiments/active?lab_id=${encodeURIComponent(labId)}`,
+      { "x-parallight-mcp": "1" }
+    );
+    return {
+      enabled: !!j.enabled,
+      experimentId: j.experiment_id ?? "",
+      ratio: typeof j.ratio === "number" ? j.ratio : 0.5
+    };
+  } catch {
+    return { enabled: false, experimentId: "", ratio: 0.5 };
+  }
+}
+async function getContextPack(labId) {
+  try {
+    const j = await getJson(`/api/labs/${encodeURIComponent(labId)}/context-pack`, {
+      "x-parallight-mcp": "1"
+    });
+    return typeof j.context_pack === "string" ? j.context_pack : "";
+  } catch {
+    return "";
+  }
+}
+async function openSession(labId, masterId, masterVersion, variant = "control") {
   const res = await fetch(`${BACKEND_URL}/api/sessions`, {
     method: "POST",
     headers: mcpHeaders(),
-    body: JSON.stringify({ lab_id: labId, master_id: masterId, master_version: masterVersion })
+    body: JSON.stringify({
+      lab_id: labId,
+      master_id: masterId,
+      master_version: masterVersion,
+      variant
+    })
   });
   const r = await res.json();
   return r.ok ? r.session_id : void 0;
@@ -31255,6 +31316,515 @@ function openInBrowser(filePath) {
   }
 }
 
+// src/lib/local-git.ts
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import {
+  mkdirSync as mkdirSync2,
+  writeFileSync as writeFileSync2,
+  readFileSync as readFileSync2,
+  existsSync as existsSync2,
+  rmSync as rmSync2
+} from "node:fs";
+import { mkdtempSync } from "node:fs";
+import { homedir as homedir2, tmpdir } from "node:os";
+import { join as join2, resolve, relative, isAbsolute as isAbsolute2 } from "node:path";
+var execFileAsync = promisify(execFile);
+var MAX_BUFFER = 64 * 1024 * 1024;
+var DEFAULT_DEPS = { getBlob, postBlob };
+var NoSandboxError = class extends Error {
+  constructor() {
+    super("no cloud sandbox");
+    this.name = "NoSandboxError";
+  }
+};
+var UnpaidError = class extends Error {
+  constructor() {
+    super("not paid");
+    this.name = "UnpaidError";
+  }
+};
+var LockedError = class extends Error {
+  constructor() {
+    super("sync locked");
+    this.name = "LockedError";
+  }
+};
+var SyncError = class extends Error {
+  constructor(msg) {
+    super(msg);
+    this.name = "SyncError";
+  }
+};
+function resolveLabDir(cwd, labId) {
+  if (isAbsolute2(labId)) {
+    throw new SyncError(`\u975E\u6CD5 lab id\uFF08\u7EDD\u5BF9\u8DEF\u5F84\uFF09\uFF1A${labId}`);
+  }
+  const labDir = resolve(cwd, labId);
+  const rel = relative(cwd, labDir);
+  if (rel === "" || rel.startsWith("..") || isAbsolute2(rel)) {
+    throw new SyncError(`\u975E\u6CD5 lab id\uFF08\u8D8A\u51FA\u5DE5\u4F5C\u76EE\u5F55\uFF09\uFF1A${labId}`);
+  }
+  return labDir;
+}
+async function git(args, cwd) {
+  try {
+    const { stdout, stderr } = await execFileAsync("git", args, {
+      cwd,
+      maxBuffer: MAX_BUFFER,
+      encoding: "utf8"
+    });
+    return { code: 0, stdout: stdout.trim(), stderr: stderr.trim() };
+  } catch (e) {
+    const err2 = e;
+    return {
+      code: typeof err2.code === "number" ? err2.code : 1,
+      stdout: (err2.stdout ?? "").toString().trim(),
+      stderr: (err2.stderr ?? "").toString().trim()
+    };
+  }
+}
+async function gitOk(args, cwd) {
+  const r = await git(args, cwd);
+  if (r.code !== 0) {
+    throw new SyncError(`git ${args.slice(0, 2).join(" ")} \u5931\u8D25\uFF1A${r.stderr || r.stdout}`);
+  }
+  return r.stdout;
+}
+function syncStateDir(opts) {
+  return opts.syncDir ?? join2(homedir2(), ".parallight");
+}
+function syncStateFile(opts) {
+  return join2(syncStateDir(opts), `sync-${sanitizeId(opts.labId)}.json`);
+}
+function sanitizeId(labId) {
+  return labId.replace(/[^a-zA-Z0-9_-]/g, "_");
+}
+function readSyncState(opts) {
+  const f = syncStateFile(opts);
+  if (!existsSync2(f)) return {};
+  try {
+    return JSON.parse(readFileSync2(f, "utf8"));
+  } catch {
+    return {};
+  }
+}
+function writeSyncState(opts, st) {
+  const dir = syncStateDir(opts);
+  mkdirSync2(dir, { recursive: true });
+  writeFileSync2(
+    syncStateFile(opts),
+    JSON.stringify({ ...st, updatedAt: (/* @__PURE__ */ new Date()).toISOString() }, null, 2)
+  );
+}
+async function ensureLocalRepo(labDir) {
+  mkdirSync2(labDir, { recursive: true });
+  const isRepo = await git(["rev-parse", "--git-dir"], labDir);
+  if (isRepo.code !== 0) {
+    await gitOk(["-c", "init.defaultBranch=main", "init", "-q"], labDir);
+  }
+  const email3 = await git(["config", "user.email"], labDir);
+  if (email3.code !== 0 || !email3.stdout) {
+    await git(["config", "user.email", "lab@parallight.ai"], labDir);
+  }
+  const name = await git(["config", "user.name"], labDir);
+  if (name.code !== 0 || !name.stdout) {
+    await git(["config", "user.name", "Parallight Lab"], labDir);
+  }
+  await git(["symbolic-ref", "HEAD", "refs/heads/main"], labDir);
+}
+async function isDirty2(labDir) {
+  const r = await git(["status", "--porcelain"], labDir);
+  return r.stdout.length > 0;
+}
+async function hasCommit(labDir) {
+  const r = await git(["rev-parse", "--verify", "-q", "HEAD"], labDir);
+  return r.code === 0;
+}
+async function autoCommit(labDir, msg) {
+  await gitOk(["add", "-A"], labDir);
+  await git(["-c", "core.editor=true", "commit", "-q", "-m", msg], labDir);
+}
+function freshTmpBundle() {
+  const dir = mkdtempSync(join2(tmpdir(), "pl-bundle-"));
+  return join2(dir, "x.bundle");
+}
+async function computePlan(labDir, local, cloud) {
+  const base = await gitOk(["merge-base", local, cloud], labDir);
+  const localChanges = await nameStatus(labDir, base, local);
+  const cloudChanges = await nameStatus(labDir, base, cloud);
+  const realConflicts = await mergeTreeConflicts(labDir, local, cloud);
+  const plan = [];
+  for (const [path, c] of cloudChanges) {
+    const l = localChanges.get(path);
+    const change = c === "D" ? "deleted" : c === "A" ? "added" : "modified";
+    const side = l ? "both" : "cloud";
+    const conflict = realConflicts.has(path);
+    const isDelete = c === "D";
+    const confirm = conflict || isDelete;
+    plan.push({ path, change, side, conflict, confirm });
+  }
+  plan.sort((a, b) => a.path.localeCompare(b.path));
+  return plan;
+}
+async function mergeTreeConflicts(labDir, local, cloud) {
+  const r = await git(
+    ["merge-tree", "--write-tree", "-z", "--name-only", local, cloud],
+    labDir
+  );
+  if (r.code === 0) return /* @__PURE__ */ new Set();
+  if (r.code === 1 && r.stdout) {
+    const fields = r.stdout.split("\0");
+    const conflicts = /* @__PURE__ */ new Set();
+    for (let i = 1; i < fields.length; i++) {
+      const f = fields[i];
+      if (f === "" || f === void 0) break;
+      conflicts.add(f);
+    }
+    if (conflicts.size > 0) return conflicts;
+  }
+  return await coarseConflicts(labDir, local, cloud);
+}
+async function coarseConflicts(labDir, local, cloud) {
+  const base = await gitOk(["merge-base", local, cloud], labDir);
+  const localChanges = await nameStatus(labDir, base, local);
+  const cloudChanges = await nameStatus(labDir, base, cloud);
+  const out = /* @__PURE__ */ new Set();
+  for (const [path, c] of cloudChanges) {
+    const l = localChanges.get(path);
+    if (!l) continue;
+    if (l === "D" && c === "D") continue;
+    if (l === "D" || c === "D") {
+      out.add(path);
+      continue;
+    }
+    if (!await sameBlob(labDir, path, local, cloud)) out.add(path);
+  }
+  return out;
+}
+async function nameStatus(labDir, ref1, ref2) {
+  const r = await git(["diff", "--name-status", "-z", ref1, ref2], labDir);
+  const map2 = /* @__PURE__ */ new Map();
+  if (!r.stdout) return map2;
+  const parts = r.stdout.split("\0").filter((s) => s.length > 0);
+  let i = 0;
+  while (i < parts.length) {
+    const status = parts[i] ?? "";
+    const letter = status[0] ?? "";
+    if (letter === "R" || letter === "C") {
+      const newPath = parts[i + 2];
+      if (newPath) map2.set(newPath, "M");
+      const oldPath = parts[i + 1];
+      if (oldPath) map2.set(oldPath, "D");
+      i += 3;
+    } else {
+      const path = parts[i + 1];
+      if (path) map2.set(path, letter);
+      i += 2;
+    }
+  }
+  return map2;
+}
+async function sameBlob(labDir, path, refA, refB) {
+  const a = await git(["rev-parse", `${refA}:${path}`], labDir);
+  const b = await git(["rev-parse", `${refB}:${path}`], labDir);
+  if (a.code !== 0 || b.code !== 0) return false;
+  return a.stdout === b.stdout;
+}
+function mapHttpError(status) {
+  if (status === 402) throw new UnpaidError();
+  if (status === 404) throw new NoSandboxError();
+  if (status === 409) throw new LockedError();
+  if (status === 401) throw new SyncError("\u767B\u5F55\u5931\u6548\uFF0C\u8BF7\u7528 /lab-login \u91CD\u65B0\u767B\u5F55\u3002");
+  throw new SyncError(`\u4E91\u7AEF\u8FD4\u56DE HTTP ${status}`);
+}
+async function labPull(opts, deps = DEFAULT_DEPS) {
+  const cwd = opts.cwd ?? process.cwd();
+  const labDir = resolveLabDir(cwd, opts.labId);
+  await ensureLocalRepo(labDir);
+  if (await isDirty2(labDir)) {
+    await autoCommit(labDir, "local autosave");
+  }
+  const state = readSyncState(opts);
+  const base = state.lastCloudSha;
+  const qs = base ? `?base=${encodeURIComponent(base)}` : "";
+  const res = await deps.getBlob(`/api/lab-sync/pull${qs}`);
+  if (res.status === 204) {
+    const tip = res.headers.get("x-cloud-tip");
+    if (tip) writeSyncState(opts, { lastCloudSha: tip });
+    return {
+      upToDate: true,
+      plan: [],
+      pulledCommits: 0,
+      cloudTip: tip,
+      summary: "\u4E91\u7AEF\u6CA1\u6709\u65B0\u6539\u52A8\uFF0C\u672C\u5730\u5DF2\u662F\u6700\u65B0\u3002"
+    };
+  }
+  if (res.status !== 200) mapHttpError(res.status);
+  const cloudTip = res.headers.get("x-cloud-tip");
+  const isFull = res.headers.get("x-full") === "1";
+  if (!cloudTip) throw new SyncError("\u4E91\u7AEF\u54CD\u5E94\u7F3A\u5C11 x-cloud-tip");
+  const bundlePath = freshTmpBundle();
+  try {
+    writeFileSync2(bundlePath, res.body);
+    const verify = await git(["bundle", "verify", bundlePath], labDir);
+    if (verify.code !== 0) {
+      throw new SyncError(`\u4E91\u7AEF bundle \u6821\u9A8C\u5931\u8D25\uFF1A${verify.stderr || verify.stdout}`);
+    }
+    const localHadCommit = await hasCommit(labDir);
+    if (isFull) {
+      await gitOk(
+        ["fetch", "-q", bundlePath, "refs/heads/*:refs/remotes/cloud/*"],
+        labDir
+      );
+    } else {
+      await gitOk(
+        ["fetch", "-q", bundlePath, "refs/heads/main:refs/remotes/cloud/main"],
+        labDir
+      );
+    }
+    if (!localHadCommit) {
+      await gitOk(["checkout", "-q", "-B", "main", "cloud/main"], labDir);
+      writeSyncState(opts, { lastCloudSha: cloudTip });
+      const n = await countCommits(labDir, base, cloudTip);
+      return {
+        applied: true,
+        plan: [],
+        pulledCommits: n,
+        cloudTip,
+        summary: `\u9996\u6B21\u540C\u6B65\uFF1A\u5DF2\u4ECE\u4E91\u7AEF\u62C9\u53D6\u5E76\u5EFA\u7ACB\u672C\u5730\u4ED3\u5E93\uFF08${n} \u4E2A\u63D0\u4EA4\uFF09\u3002`
+      };
+    }
+    const localTip = await gitOk(["rev-parse", "HEAD"], labDir);
+    const mergeBase = await git(["merge-base", "HEAD", "cloud/main"], labDir);
+    if (mergeBase.code !== 0) {
+      throw new SyncError("\u627E\u4E0D\u5230\u672C\u5730\u4E0E\u4E91\u7AEF\u7684\u5171\u540C\u7956\u5148\uFF08\u5386\u53F2\u4E0D\u76F8\u5173\uFF09\u3002");
+    }
+    const baseSha = mergeBase.stdout;
+    const cloudIsAncestor = await git(
+      ["merge-base", "--is-ancestor", "cloud/main", "HEAD"],
+      labDir
+    );
+    if (cloudIsAncestor.code === 0) {
+      writeSyncState(opts, { lastCloudSha: cloudTip });
+      return {
+        upToDate: true,
+        plan: [],
+        pulledCommits: 0,
+        cloudTip,
+        summary: "\u4E91\u7AEF\u6539\u52A8\u5DF2\u7ECF\u5305\u542B\u5728\u672C\u5730\uFF0C\u65E0\u9700\u5408\u5E76\u3002"
+      };
+    }
+    const pulledCommits = await countCommits(labDir, baseSha, cloudTip);
+    const plan = await computePlan(labDir, localTip, cloudTip);
+    const blockers = plan.filter((p) => p.confirm);
+    const shouldApply = opts.apply === true || blockers.length === 0;
+    if (!shouldApply) {
+      return {
+        needsConfirm: true,
+        plan,
+        pulledCommits,
+        cloudTip,
+        summary: buildPlanSummary(pulledCommits, plan, false)
+      };
+    }
+    const tag = `lab-backup/${timestamp()}`;
+    await git(["tag", tag], labDir);
+    const merge2 = await git(["merge", "--no-edit", "cloud/main"], labDir);
+    const mergedTip = await gitOk(["rev-parse", "HEAD"], labDir);
+    const merged = await git(
+      ["merge-base", "--is-ancestor", cloudTip, mergedTip],
+      labDir
+    );
+    const fullyMerged = merge2.code === 0 && merged.code === 0;
+    if (fullyMerged) {
+      writeSyncState(opts, { lastCloudSha: cloudTip });
+    }
+    const conflictedNow = (await git(["diff", "--name-only", "--diff-filter=U"], labDir)).stdout.split("\n").filter(Boolean);
+    return {
+      applied: fullyMerged,
+      needsConfirm: !fullyMerged,
+      plan,
+      pulledCommits,
+      cloudTip,
+      summary: fullyMerged ? buildPlanSummary(pulledCommits, plan, true) : `\u5DF2\u5F00\u59CB\u5408\u5E76\uFF0C\u4F46\u6709 ${conflictedNow.length} \u4E2A\u6587\u4EF6\u5B58\u5728\u51B2\u7A81\u9700\u8981\u4F60\u89E3\u51B3\uFF1A` + conflictedNow.map((f) => `
+  - ${f}`).join("") + `
+\u89E3\u51B3\u540E\u6211\u4F1A\u5E2E\u4F60\u63D0\u4EA4\u5408\u5E76\u3002\u5907\u4EFD\u6807\u7B7E\uFF1A${tag}`
+    };
+  } finally {
+    rmSync2(bundlePath, { force: true });
+  }
+}
+async function labPush(opts, deps = DEFAULT_DEPS, retriesLeft = 1) {
+  const cwd = opts.cwd ?? process.cwd();
+  const labDir = resolveLabDir(cwd, opts.labId);
+  await ensureLocalRepo(labDir);
+  if (await isDirty2(labDir)) {
+    await autoCommit(labDir, "local autosave");
+  }
+  const pull = await labPull(opts, deps);
+  if (pull.needsConfirm) {
+    return {
+      ok: false,
+      reason: "conflict",
+      cloudTip: pull.cloudTip,
+      summary: "\u63A8\u9001\u524D\u9700\u8981\u5148\u5408\u5E76\u4E91\u7AEF\u6539\u52A8\uFF0C\u4F46\u6709\u51B2\u7A81/\u5220\u9664\u9700\u8981\u4F60\u786E\u8BA4\u3002\u8BF7\u5148\u7528 /lab-pull \u89E3\u51B3\uFF0C\u518D /lab-push\u3002"
+    };
+  }
+  const state = readSyncState(opts);
+  const cloudTip = state.lastCloudSha;
+  if (!cloudTip) {
+    throw new SyncError("\u7F3A\u5C11\u4E91\u7AEF\u57FA\u7EBF\uFF08\u5148 /lab-pull \u4E00\u6B21\uFF09\u3002");
+  }
+  const range = await git(["rev-list", `${cloudTip}..main`], labDir);
+  if (!range.stdout) {
+    return {
+      ok: true,
+      nothingToPush: true,
+      cloudTip,
+      summary: "\u672C\u5730\u6CA1\u6709\u4E91\u7AEF\u7F3A\u5C11\u7684\u63D0\u4EA4\uFF0C\u65E0\u9700\u63A8\u9001\u3002"
+    };
+  }
+  const bundlePath = freshTmpBundle();
+  try {
+    await gitOk(["bundle", "create", bundlePath, `${cloudTip}..main`], labDir);
+    const bytes = readFileSync2(bundlePath);
+    const res = await deps.postBlob("/api/lab-sync/push", bytes, {
+      "x-expected-cloud": cloudTip
+    });
+    if (res.status === 200) {
+      const j = res.json;
+      if (j?.cloudTip) writeSyncState(opts, { lastCloudSha: j.cloudTip });
+      const n = range.stdout.split("\n").filter(Boolean).length;
+      return {
+        ok: true,
+        cloudTip: j?.cloudTip ?? cloudTip,
+        summary: `\u5DF2\u63A8\u9001 ${n} \u4E2A\u63D0\u4EA4\u5230\u4E91\u7AEF\u3002`
+      };
+    }
+    if (res.status === 409) {
+      const j = res.json;
+      if (retriesLeft > 0) {
+        return await labPush(opts, deps, retriesLeft - 1);
+      }
+      return {
+        ok: false,
+        reason: "non_ff",
+        cloudTip: j?.cloudTip ?? null,
+        summary: "\u4E91\u7AEF\u53C8\u6709\u65B0\u6539\u52A8\u4E86\u3002\u8BF7\u91CD\u8DD1 /lab-push\uFF08\u4F1A\u5148\u5408\u5E76\u4E91\u7AEF\u518D\u63A8\u9001\uFF09\u3002"
+      };
+    }
+    if (res.status === 413) {
+      return { ok: false, summary: "\u6539\u52A8\u592A\u5927\uFF0C\u8D85\u8FC7\u5355\u6B21\u63A8\u9001\u4E0A\u9650\uFF0850MB\uFF09\u3002" };
+    }
+    if (res.status === 402) throw new UnpaidError();
+    if (res.status === 404) throw new NoSandboxError();
+    if (res.status === 401) throw new SyncError("\u767B\u5F55\u5931\u6548\uFF0C\u8BF7\u7528 /lab-login \u91CD\u65B0\u767B\u5F55\u3002");
+    throw new SyncError(`\u63A8\u9001\u5931\u8D25\uFF1AHTTP ${res.status}`);
+  } finally {
+    rmSync2(bundlePath, { force: true });
+  }
+}
+async function labRollback(opts) {
+  const cwd = opts.cwd ?? process.cwd();
+  const labDir = resolveLabDir(cwd, opts.labId);
+  await ensureLocalRepo(labDir);
+  const tags = await listBackupTags(labDir);
+  const commits = await listRecentCommits(labDir);
+  if (!opts.ref) {
+    return {
+      tags,
+      commits,
+      summary: buildRollbackList(tags, commits)
+    };
+  }
+  const known = tags.some((t) => t.name === opts.ref) || (await git(["rev-parse", "--verify", "-q", `${opts.ref}^{commit}`], labDir)).code === 0;
+  if (!known) {
+    throw new SyncError(`\u672A\u77E5\u7684\u56DE\u6EDA\u76EE\u6807\uFF1A${opts.ref}`);
+  }
+  const safetyTag = `lab-backup/pre-rollback-${timestamp()}`;
+  await git(["tag", safetyTag], labDir);
+  if (await isDirty2(labDir)) {
+    const stashed = await git(["stash", "push", "-u", "-m", `pre-rollback ${timestamp()}`], labDir);
+    if (stashed.code !== 0) {
+      throw new SyncError(
+        `\u56DE\u6EDA\u5DF2\u4E2D\u6B62\uFF1A\u65E0\u6CD5\u6682\u5B58\u5F53\u524D\u672A\u63D0\u4EA4\u7684\u6539\u52A8\uFF08git stash \u5931\u8D25\uFF09\uFF0C\u672A\u6267\u884C reset \u4EE5\u514D\u4E22\u5931\u3002
+${stashed.stderr || stashed.stdout}`
+      );
+    }
+  }
+  await gitOk(["reset", "--hard", opts.ref], labDir);
+  return {
+    reset: true,
+    ref: opts.ref,
+    tags,
+    commits,
+    summary: `\u5DF2\u56DE\u6EDA\u5230 ${opts.ref}\u3002\u56DE\u6EDA\u524D\u7684\u72B6\u6001\u5DF2\u5B58\u4E3A\u6807\u7B7E ${safetyTag}\uFF08\u82E5\u8981\u64A4\u9500\u56DE\u6EDA\uFF1Agit reset --hard ${safetyTag}\uFF09\u3002`
+  };
+}
+function timestamp() {
+  return (/* @__PURE__ */ new Date()).toISOString().replace(/[:.]/g, "-");
+}
+async function countCommits(labDir, base, tip) {
+  const range = base ? `${base}..${tip}` : tip;
+  const r = await git(["rev-list", "--count", range], labDir);
+  const n = Number(r.stdout);
+  return Number.isFinite(n) ? n : 0;
+}
+async function listBackupTags(labDir) {
+  const r = await git(
+    ["tag", "--list", "lab-backup/*", "--sort=-creatordate", "--format=%(refname:short)	%(subject)"],
+    labDir
+  );
+  if (!r.stdout) return [];
+  return r.stdout.split("\n").filter(Boolean).map((line) => {
+    const [name, ...rest] = line.split("	");
+    return { name: name ?? "", subject: rest.join("	") };
+  });
+}
+async function listRecentCommits(labDir) {
+  if (!await hasCommit(labDir)) return [];
+  const r = await git(["log", "-n", "15", "--pretty=%H	%s"], labDir);
+  if (!r.stdout) return [];
+  return r.stdout.split("\n").filter(Boolean).map((line) => {
+    const [sha, ...rest] = line.split("	");
+    return { sha: sha ?? "", subject: rest.join("	") };
+  });
+}
+function buildPlanSummary(pulled, plan, applied) {
+  const autoCount = plan.filter((p) => !p.confirm).length;
+  const blockers = plan.filter((p) => p.confirm);
+  const lines = [];
+  if (applied) {
+    lines.push(`\u62C9\u53D6\u4E86 ${pulled} \u4E2A\u4E91\u7AEF\u63D0\u4EA4\uFF0C\u5DF2\u81EA\u52A8\u5408\u5E76 ${plan.length} \u4E2A\u6587\u4EF6\u3002`);
+  } else {
+    lines.push(
+      `\u62C9\u53D6\u4E86 ${pulled} \u4E2A\u4E91\u7AEF\u63D0\u4EA4\uFF1A${autoCount} \u4E2A\u6587\u4EF6\u53EF\u81EA\u52A8\u5408\u5E76\uFF0C${blockers.length} \u4E2A\u9700\u8981\u4F60\u786E\u8BA4\u3002`
+    );
+  }
+  if (blockers.length > 0) {
+    lines.push("\u9700\u8981\u786E\u8BA4\uFF1A");
+    for (const b of blockers) {
+      const why = b.change === "deleted" ? "\u4E91\u7AEF\u5220\u9664\uFF08\u4F60\u672C\u5730\u53EF\u80FD\u8FD8\u5728\u7528\uFF09" : "\u53CC\u65B9\u90FD\u6539\u4E86\u540C\u4E00\u5904\uFF08\u51B2\u7A81\uFF09";
+      lines.push(`  - ${b.path} \u2014 ${why}`);
+    }
+  }
+  return lines.join("\n");
+}
+function buildRollbackList(tags, commits) {
+  const lines = ["\u53EF\u4EE5\u56DE\u6EDA\u5230\u4E0B\u9762\u4EFB\u610F\u4E00\u4E2A\uFF08\u7528 ref \u53C2\u6570\u6307\u5B9A\uFF09\uFF1A"];
+  if (tags.length) {
+    lines.push("\u5907\u4EFD\u6807\u7B7E\uFF1A");
+    for (const t of tags) lines.push(`  - ${t.name}${t.subject ? `  (${t.subject})` : ""}`);
+  }
+  if (commits.length) {
+    lines.push("\u6700\u8FD1\u63D0\u4EA4\uFF1A");
+    for (const c of commits.slice(0, 8))
+      lines.push(`  - ${c.sha.slice(0, 8)}  ${c.subject}`);
+  }
+  return lines.join("\n");
+}
+
 // src/prompt-composer.ts
 var PRIVATE_BANNER = [
   "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
@@ -31262,9 +31832,9 @@ var PRIVATE_BANNER = [
   "  \u8FD9\u662F\u7ED9 AI Mentor\u7684\u79C1\u6709\u8BBE\u7F6E,\u4E0D\u662F\u6559\u5B66\u5185\u5BB9\u3002\u771F\u6B63\u7684\u8BFE\u4ECE\u4E0B\u9762\u7684\u95EE\u5019\u5F00\u59CB \u2193",
   "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550"
 ].join("\n");
-function composeSystemPrompt(master, ctx) {
+function composeSystemPrompt(master, ctx, variant, contextPack) {
   const kpList = ctx.learning_objectives.map((kp, i) => `${i + 1}. ${kp.name}${kp.description ? ` \u2014 ${kp.description}` : ""}`).join("\n");
-  return [
+  const lines = [
     "# YOU ARE THE MASTER. ADOPT THIS PERSONA FOR THE ENTIRE SESSION.",
     "",
     master.persona_prompt,
@@ -31330,7 +31900,19 @@ function composeSystemPrompt(master, ctx) {
     "  '\u8981\u4E0D\u8981\u6211\u8DD1\u8FD9\u4E2A\u5B9E\u9A8C\u7ED9\u4F60\u770B\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run it",
     "  (Bash) and surface the observation per the \u{1F52C} rule. The learner observes and",
     "  directs; the agent executes \u2014 that is the day-1 skill this course teaches."
-  ].join("\n");
+  ];
+  if (variant === "pack" && contextPack && contextPack.trim()) {
+    lines.push(
+      "",
+      "---",
+      "",
+      "# GOLDEN-PATH CONTEXT PACK (low-cost variant)",
+      "> \u4EE5\u4E0B\u662F\u672C lab \u7684\u9AD8\u901F\u5730\u56FE,\u7528\u6765\u51CF\u5C11\u63A2\u7D22\u5F2F\u8DEF\u3002\u5B83\u7ED9\u5730\u56FE\u3001\u4E0D\u66FF\u5B66\u5458\u5224\u65AD;\u6982\u5FF5\u9898\u4ECD\u8BA9\u5B66\u5458\u81EA\u5DF1\u7B54\u3002",
+      "",
+      contextPack.trim()
+    );
+  }
+  return lines.join("\n");
 }
 function composeTeachingDoc(ctx) {
   const checkpoints = ctx.checkpoints.map((c) => `### ${c.path}
@@ -31346,6 +31928,18 @@ ${c.content}`).join("\n\n");
     "## Checkpoints (use these to verify understanding):",
     checkpoints
   ].join("\n");
+}
+
+// src/variant.ts
+import { createHash } from "node:crypto";
+function calculateVariant(learnerId, labId, experimentId, opts) {
+  if (!opts.enabled) return "control";
+  const ratio = opts.ratio ?? 0.5;
+  if (ratio <= 0) return "control";
+  if (ratio >= 1) return "pack";
+  const h = createHash("sha256").update(`${learnerId}:${labId}:${experimentId}`).digest();
+  const frac = h.readUInt32BE(0) / 4294967295;
+  return frac < ratio ? "pack" : "control";
 }
 
 // src/recap-render.ts
@@ -31404,16 +31998,16 @@ function percentComplete() {
 }
 
 // src/session-store.ts
-import { mkdirSync as mkdirSync2, writeFileSync as writeFileSync2, readFileSync as readFileSync2, readdirSync, rmSync as rmSync2 } from "node:fs";
-import { join as join2 } from "node:path";
-import { homedir as homedir2 } from "node:os";
-var SESSIONS_DIR = join2(homedir2(), ".parallight", "sessions");
+import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3, readFileSync as readFileSync3, readdirSync, rmSync as rmSync3 } from "node:fs";
+import { join as join3 } from "node:path";
+import { homedir as homedir3 } from "node:os";
+var SESSIONS_DIR = join3(homedir3(), ".parallight", "sessions");
 function fileFor(labId) {
-  return join2(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
+  return join3(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
 }
 function saveSession(s, cwd) {
   try {
-    mkdirSync2(SESSIONS_DIR, { recursive: true });
+    mkdirSync3(SESSIONS_DIR, { recursive: true });
     const p = {
       labId: s.labId,
       title: s.title,
@@ -31425,13 +32019,13 @@ function saveSession(s, cwd) {
       checkpoints: s.checkpoints,
       serverSessionId: s.serverSessionId
     };
-    writeFileSync2(fileFor(s.labId), JSON.stringify(p, null, 2));
+    writeFileSync3(fileFor(s.labId), JSON.stringify(p, null, 2));
   } catch {
   }
 }
 function loadByLab(labId) {
   try {
-    return JSON.parse(readFileSync2(fileFor(labId), "utf8"));
+    return JSON.parse(readFileSync3(fileFor(labId), "utf8"));
   } catch {
     return null;
   }
@@ -31442,7 +32036,7 @@ function loadMostRecent() {
     for (const f of readdirSync(SESSIONS_DIR)) {
       if (!f.endsWith(".json")) continue;
       try {
-        out.push(JSON.parse(readFileSync2(join2(SESSIONS_DIR, f), "utf8")));
+        out.push(JSON.parse(readFileSync3(join3(SESSIONS_DIR, f), "utf8")));
       } catch {
       }
     }
@@ -31454,7 +32048,7 @@ function loadMostRecent() {
 }
 function removeSession(labId) {
   try {
-    rmSync2(fileFor(labId), { force: true });
+    rmSync3(fileFor(labId), { force: true });
   } catch {
   }
 }
@@ -31607,8 +32201,8 @@ server.registerTool(
       return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
-      const existingDir = join3(process.cwd(), lab_id);
-      if (existsSync2(existingDir) && !force) {
+      const existingDir = join4(process.cwd(), lab_id);
+      if (existsSync3(existingDir) && !force) {
         return err(
           `\u68C0\u6D4B\u5230 ./${lab_id}/ \u5DF2\u5B58\u5728\u2014\u2014\u4F60\u4E4B\u524D\u5F00\u8FC7\u8FD9\u4E2A lab\u3002
 \xB7 \u60F3\u63A5\u7740\u4E0A\u6B21\u8FDB\u5EA6:\u7528 /lab-resume
@@ -31616,18 +32210,18 @@ server.registerTool(
         );
       }
       const starter = await getStarter(lab_id);
-      const labDir = join3(process.cwd(), lab_id);
+      const labDir = join4(process.cwd(), lab_id);
       for (const f of starter.files) {
-        const dest = join3(labDir, f.path);
-        mkdirSync3(dirname(dest), { recursive: true });
-        writeFileSync3(dest, f.content);
+        const dest = join4(labDir, f.path);
+        mkdirSync4(dirname(dest), { recursive: true });
+        writeFileSync4(dest, f.content);
       }
       for (const a of starter.assets ?? []) {
-        const dest = join3(labDir, a.path);
-        mkdirSync3(dirname(dest), { recursive: true });
+        const dest = join4(labDir, a.path);
+        mkdirSync4(dirname(dest), { recursive: true });
         const res = await fetch(a.url);
         if (!res.ok) return err(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
-        writeFileSync3(dest, Buffer.from(await res.arrayBuffer()));
+        writeFileSync4(dest, Buffer.from(await res.arrayBuffer()));
       }
       const example = starter.files.find((f) => f.path === ".env.example")?.content ?? "";
       let envContent = example.replace(/^PARALLIGHT_API_KEY=.*$/m, `PARALLIGHT_API_KEY=${token}`);
@@ -31645,7 +32239,7 @@ PARALLIGHT_API_KEY=${token}
 PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
 `;
       }
-      writeFileSync3(join3(labDir, ".env"), envContent);
+      writeFileSync4(join4(labDir, ".env"), envContent);
       const writtenTree = fileTree([
         ...starter.files.map((f) => f.path),
         ...(starter.assets ?? []).map((a) => a.path),
@@ -31653,7 +32247,14 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
       ]);
       const ctx = await getContext(lab_id);
       const master = await getMaster(ctx.master);
-      const systemPrompt = composeSystemPrompt(master, ctx);
+      const learnerId = loadAuth()?.email || token;
+      const exp = await getRealExperiment(ctx.lab_id);
+      const variant = calculateVariant(learnerId, ctx.lab_id, exp.experimentId || "lowcost-v1", {
+        enabled: exp.enabled,
+        ratio: exp.ratio
+      });
+      const contextPack = variant === "pack" ? await getContextPack(ctx.lab_id) : "";
+      const systemPrompt = composeSystemPrompt(master, ctx, variant, contextPack);
       const checkpoints = ctx.learning_objectives.map((kp) => ({
         kp_id: kp.id,
         name: kp.name,
@@ -31671,7 +32272,7 @@ PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
       });
       let serverSessionId;
       try {
-        serverSessionId = await openSession(ctx.lab_id, master.master_id, master.version);
+        serverSessionId = await openSession(ctx.lab_id, master.master_id, master.version, variant);
       } catch {
       }
       const s = getSession();
@@ -31981,11 +32582,11 @@ server.registerTool(
         "\u8981\u770B\u4F1A\u8BDD\u5206\u6790,\u9700\u8981\u5148\u540C\u610F\u8BB0\u5F55\u4F60\u7684 lab \u4F1A\u8BDD\u6570\u636E(\u7528\u4E8E\u751F\u6210\u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929)\u3002\u540C\u610F\u5C31\u7528 /lab-analysis \u65F6\u56DE\u7B54\u300C\u53EF\u4EE5\u300D,\u6216\u76F4\u63A5\u8BF4\u300C\u6211\u540C\u610F\u5206\u6790\u300D\u3002"
       );
     }
-    const dir = join3(homedir3(), ".parallight", "analysis");
-    const file2 = join3(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
+    const dir = join4(homedir4(), ".parallight", "analysis");
+    const file2 = join4(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
     try {
-      mkdirSync3(dir, { recursive: true });
-      writeFileSync3(file2, report.html ?? "");
+      mkdirSync4(dir, { recursive: true });
+      writeFileSync4(file2, report.html ?? "");
     } catch (e) {
       return err(`\u5199\u62A5\u544A\u6587\u4EF6\u5931\u8D25\uFF1A${String(e)}`);
     }
@@ -32230,6 +32831,97 @@ server.registerTool(
       return ok("\u597D\u7684,\u5DF2\u8BB0\u4E0B\u4F60\u7684\u540C\u610F\u3002\u4EE5\u540E\u968F\u65F6\u7528 /lab-analysis \u770B\u4F60\u7684\u4F1A\u8BDD\u5206\u6790\u3002");
     } catch (e) {
       return err(`\u8BB0\u5F55\u540C\u610F\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+function syncErrorText(e) {
+  if (e instanceof NoSandboxError)
+    return "\u4F60\u8FD8\u6CA1\u6709\u4E91\u7AEF lab \u73AF\u5883\u3002\u5148\u53BB\u7F51\u9875\u5F00\u4E00\u6B21\u5728\u7EBF lab\uFF0C\u7136\u540E\u518D\u540C\u6B65\u3002";
+  if (e instanceof UnpaidError) return "\u540C\u6B65\u662F\u4ED8\u8D39\u529F\u80FD\u3002\u5347\u7EA7\u540E\u5373\u53EF\u5728\u672C\u5730\u548C\u4E91\u7AEF\u4E4B\u95F4\u540C\u6B65\u4F60\u7684 lab\u3002";
+  if (e instanceof LockedError) return "\u53E6\u4E00\u4E2A\u540C\u6B65\u6B63\u5728\u8FDB\u884C\uFF08\u53EF\u80FD\u662F\u4F60\u53E6\u4E00\u4E2A\u7A97\u53E3\uFF09\u3002\u7A0D\u7B49\u51E0\u79D2\u518D\u8BD5\u3002";
+  return String(e instanceof Error ? e.message : e);
+}
+function renderBlockers(plan) {
+  return plan.filter((p) => p.confirm).map((p) => {
+    const why = p.change === "deleted" ? "\u4E91\u7AEF\u5220\u9664\u4E86\u5B83\uFF08\u4F60\u672C\u5730\u53EF\u80FD\u8FD8\u5728\u7528\uFF09\u2192 \u9700\u8981\u4F60\u786E\u8BA4\u662F\u5426\u5220\u9664" : "\u4F60\u548C\u4E91\u7AEF\u90FD\u6539\u4E86\u8FD9\u91CC \u2192 \u51B2\u7A81\uFF0C\u9700\u8981\u4F60\u51B3\u5B9A\u600E\u4E48\u5408";
+    return `  - ${p.path} \u2014 ${why}`;
+  }).join("\n");
+}
+server.registerTool(
+  "lab_pull",
+  {
+    title: "\u62C9\u53D6\u4E91\u7AEF lab \u6539\u52A8\uFF08cloud \u2192 local\uFF09",
+    description: "\u628A\u4F60\u5728\u7EBF lab(\u4E91\u7AEF\u6C99\u7BB1 ~/parallight)\u91CC\u7684\u6539\u52A8\u540C\u6B65\u5230\u672C\u5730\u5F53\u524D lab \u76EE\u5F55\u3002\u5E72\u51C0\u7684\u6539\u52A8\u4F1A\u81EA\u52A8 3-way \u5408\u5E76\uFF1B\u53EA\u6709\u771F\u6B63\u7684\u51B2\u7A81\u6216\u300C\u4E91\u7AEF\u5220\u9664\u300D\u624D\u4F1A\u505C\u4E0B\u6765\u8BA9\u4F60\u786E\u8BA4\u3002\u786E\u8BA4\u540E\u7528 apply=true \u518D\u6B21\u8C03\u7528\u6765\u5B8C\u6210\u5408\u5E76\u3002\u9700\u8981\u5148\u5F00\u59CB/\u6062\u590D\u4E00\u4E2A lab\u3002",
+    inputSchema: { apply: external_exports.boolean().optional() }
+  },
+  async ({ apply }) => {
+    const s = getSession();
+    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    try {
+      const r = await labPull({ labId: s.labId, apply });
+      if (r.upToDate) return ok(`\u2705 ${r.summary}`);
+      if (r.needsConfirm) {
+        return ok(
+          [
+            `\u{1F53B} ${r.summary}`,
+            "",
+            renderBlockers(r.plan),
+            "",
+            "[NOW DO THIS] \u628A\u4E0A\u9762\u6BCF\u4E00\u5904\u7528\u4EBA\u8BDD\u8BB2\u7ED9\u5B66\u5458\uFF08\u4E91\u7AEF\u6539\u4E86\u4EC0\u4E48 / \u4F60\u6539\u4E86\u4EC0\u4E48 / \u4E3A\u4EC0\u4E48\u51B2\u7A81\u6216\u4E3A\u4EC0\u4E48\u4E0D\u80FD\u76F4\u63A5\u5220\uFF09\uFF0C\u9010\u4E2A\u786E\u8BA4\u3002\u5B66\u5458\u90FD\u786E\u8BA4\u8981\u5E94\u7528\u540E,\u8C03\u7528 lab_pull(apply=true) \u5B8C\u6210\u5408\u5E76\uFF08\u5408\u5E76\u524D\u4F1A\u81EA\u52A8\u6253\u4E00\u4E2A lab-backup \u5907\u4EFD\u6807\u7B7E\uFF0C\u968F\u65F6\u80FD /lab-rollback\uFF09\u3002\u82E5\u6709\u5185\u5BB9\u51B2\u7A81\uFF0Capply \u540E\u5DE5\u4F5C\u533A\u91CC\u4F1A\u6709 <<<<<<< \u51B2\u7A81\u6807\u8BB0\uFF0C\u7531\u4F60\u6309\u5B66\u5458\u610F\u613F\u6539\u597D\u518D\u63D0\u4EA4\u3002"
+          ].join("\n")
+        );
+      }
+      return ok(`\u2705 ${r.summary}
+
+\uFF08\u5DF2\u81EA\u52A8\u6253\u5907\u4EFD\u6807\u7B7E\uFF0C\u82E5\u60F3\u56DE\u9000\u7528 /lab-rollback\u3002\uFF09`);
+    } catch (e) {
+      return err(syncErrorText(e));
+    }
+  }
+);
+server.registerTool(
+  "lab_push",
+  {
+    title: "\u63A8\u9001\u672C\u5730 lab \u6539\u52A8\uFF08local \u2192 cloud\uFF09",
+    description: "\u628A\u672C\u5730\u5F53\u524D lab \u76EE\u5F55\u7684\u6539\u52A8\u63A8\u5230\u4F60\u7684\u4E91\u7AEF\u6C99\u7BB1(~/parallight)\u3002\u4F1A\u5148\u81EA\u52A8\u63D0\u4EA4\u672A\u4FDD\u5B58\u7684\u6539\u52A8\u3001\u5E76\u5148\u62C9\u53D6\u5408\u5E76\u4E91\u7AEF(\u5408\u5E76\u53EA\u5728\u672C\u5730\u53D1\u751F\uFF1B\u82E5\u6709\u51B2\u7A81\u4F1A\u505C\u4E0B\u8BA9\u4F60\u5148\u89E3\u51B3)\uFF0C\u518D\u628A\u4E91\u7AEF\u7F3A\u7684\u63D0\u4EA4\u63A8\u4E0A\u53BB\u3002\u9700\u8981\u5148\u5F00\u59CB/\u6062\u590D\u4E00\u4E2A lab\u3002",
+    inputSchema: {}
+  },
+  async () => {
+    const s = getSession();
+    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    try {
+      const r = await labPush({ labId: s.labId });
+      if (!r.ok) return err(r.summary);
+      return ok(`\u2705 ${r.summary}`);
+    } catch (e) {
+      return err(syncErrorText(e));
+    }
+  }
+);
+server.registerTool(
+  "lab_rollback",
+  {
+    title: "\u56DE\u6EDA\u672C\u5730 lab \u5230\u4E4B\u524D\u7684\u7248\u672C",
+    description: "\u628A\u672C\u5730\u5F53\u524D lab \u76EE\u5F55\u56DE\u5230\u67D0\u4E2A\u4E4B\u524D\u7684\u7248\u672C\uFF08\u540C\u6B65\u524D\u81EA\u52A8\u6253\u7684 lab-backup \u5907\u4EFD\u6807\u7B7E\uFF0C\u6216\u67D0\u4E2A\u63D0\u4EA4\uFF09\u3002\u4E0D\u4F20 ref \u2192 \u5217\u51FA\u53EF\u9009\u7684\u5907\u4EFD\u70B9 + \u6700\u8FD1\u63D0\u4EA4\uFF0C\u8BA9\u5B66\u5458\u6311\u3002\u4F20 ref \u2192 \u56DE\u6EDA\u5230\u5B83\uFF08\u56DE\u6EDA\u524D\u4F1A\u5148 stash + \u6253\u6807\u7B7E\u4FDD\u5B58\u5F53\u524D\u72B6\u6001\uFF0C\u7EDD\u4E0D\u4E22\u4E1C\u897F\uFF09\u3002\u9700\u8981\u5148\u5F00\u59CB/\u6062\u590D\u4E00\u4E2A lab\u3002",
+    inputSchema: { ref: external_exports.string().optional() }
+  },
+  async ({ ref }) => {
+    const s = getSession();
+    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    try {
+      const r = await labRollback({ labId: s.labId, ref });
+      if (!r.reset) {
+        if (r.tags.length === 0 && r.commits.length === 0)
+          return ok("\u8FD8\u6CA1\u6709\u53EF\u56DE\u6EDA\u7684\u7248\u672C\uFF08\u540C\u6B65\u8FC7\u81F3\u5C11\u4E00\u6B21\u540E\u4F1A\u6709\u5907\u4EFD\u70B9\uFF09\u3002");
+        return ok(
+          `${r.summary}
+
+[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u5907\u4EFD\u70B9/\u63D0\u4EA4\u5217\u7ED9\u5B66\u5458\uFF0C\u8BA9\u4ED6\u6311\u4E00\u4E2A\uFF0C\u7136\u540E\u7528 lab_rollback(ref="...") \u56DE\u6EDA\u3002`
+        );
+      }
+      return ok(`\u2705 ${r.summary}`);
+    } catch (e) {
+      return err(syncErrorText(e));
     }
   }
 );

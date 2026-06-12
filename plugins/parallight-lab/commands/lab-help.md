@@ -19,6 +19,9 @@ description: 列出所有 lab 命令
 - /lab-review — 提交一次 lab review 给真人 Marvin 批改
 - /lab-read — 查看真人 Marvin 的批改和私信回复
 - /lab-private-message — 给真人 Marvin 发一条私信（只有他本人会读）
+- /lab-pull — 从云端在线 lab 同步到本地(cloud → local)
+- /lab-push — 把本地改动同步到云端在线 lab(local → cloud)
+- /lab-rollback — 回滚 lab 到之前某个同步前的状态
 - /lab-reply — 回复Mentor对某次 review 的批改
 - /lab-logout — 退出 Parallight Lab 登录，清除本地凭证
 - /lab-exit — 退出当前 lab，清除注入的Mentor人格
