@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.0.0-phase0";
+var PARALLIGHT_VERSION = "0.1.10-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -31083,6 +31083,19 @@ async function verifyOtp(email3, code) {
 async function listLabs() {
   const r = await getJson("/api/labs");
   return r.labs ?? [];
+}
+async function getLatestVersion() {
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 2e3);
+    const res = await fetch(`${BACKEND_URL}/api/health`, { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    const json2 = await res.json();
+    return typeof json2.version === "string" ? json2.version : null;
+  } catch {
+    return null;
+  }
 }
 async function getStarter(labId) {
   const r = await getJson(`/api/labs/${labId}/starter`);
@@ -31290,6 +31303,34 @@ async function getMostRecentSession() {
   } catch {
     return null;
   }
+}
+
+// src/update-nudge.ts
+var VERSION_RE = /^(\d+)\.(\d+)\.(\d+)(?:-[a-zA-Z0-9]+)?$/;
+function parseVersion(v) {
+  const m = VERSION_RE.exec(v.trim());
+  if (!m) return null;
+  return [Number(m[1]), Number(m[2]), Number(m[3])];
+}
+function isOutdated(installed, latest) {
+  const a = parseVersion(installed);
+  const b = parseVersion(latest);
+  if (!a || !b) return false;
+  if (b[0] !== a[0]) return b[0] > a[0];
+  if (b[1] !== a[1]) return b[1] > a[1];
+  return b[2] > a[2];
+}
+function updateBanner(latest) {
+  return [
+    `> \u{1F514} **\u63D2\u4EF6\u6709\u65B0\u7248\u53EF\u7528(${latest})\u3002** \u4F60\u88C5\u7684\u662F\u65E7\u7248,\u53EF\u80FD\u7F3A\u65B0\u547D\u4EE4\u6216\u4FEE\u590D(\u6BD4\u5982 \`/hotspot\`)\u3002`,
+    `> \u66F4\u65B0\u65B9\u6CD5:\u8FD0\u884C \`/plugin marketplace update parallight-cc\`,\u518D \`/reload-plugins\`(\u6216\u91CD\u542F Claude Code)\u3002`
+  ].join("\n");
+}
+function maybeUpdateBanner(installed, latest) {
+  if (!latest) return null;
+  const trimmed = latest.trim();
+  if (!VERSION_RE.test(trimmed)) return null;
+  return isOutdated(installed, trimmed) ? updateBanner(trimmed) : null;
 }
 
 // src/browser.ts
@@ -32219,13 +32260,15 @@ server.registerTool(
 
 ## \u53EF\u7528 Lab` : "## \u53EF\u7528 Lab";
       const optionMap = labs.map((l) => `${l.order} \u2192 start_lab(lab_id="${l.lab_id}")`).join("; ");
+      const banner = maybeUpdateBanner(PARALLIGHT_VERSION, await getLatestVersion());
       return ok(
         [
+          ...banner ? [banner, ""] : [],
           header,
           "",
           table,
           "",
-          `[NOW DO THIS] Show the table above to the learner VERBATIM (it is the scannable catalog \u2014 do not collapse it into the option cards). Then DO NOT ask them to type a lab id. Present the labs as SELECTABLE OPTIONS via AskUserQuestion \u2014 one option per row, the option label = a SHORT lab name (not the full title), so they pick by arrow keys (CLI) / cards (VSCode). On their pick, call start_lab with that row's lab_id. Row\u2192id map: ${optionMap}.`
+          (banner ? "[NOW DO THIS] FIRST show the \u{1F514} update notice at the very top to the learner VERBATIM. THEN show the table below. " : "[NOW DO THIS] Show the table above to the learner VERBATIM ") + `(it is the scannable catalog \u2014 do not collapse it into the option cards). Then DO NOT ask them to type a lab id. Present the labs as SELECTABLE OPTIONS via AskUserQuestion \u2014 one option per row, the option label = a SHORT lab name (not the full title), so they pick by arrow keys (CLI) / cards (VSCode). On their pick, call start_lab with that row's lab_id. Row\u2192id map: ${optionMap}.`
         ].join("\n")
       );
     } catch (e) {
