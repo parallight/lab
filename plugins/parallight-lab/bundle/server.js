@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.10-phase1";
+var PARALLIGHT_VERSION = "0.1.11-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -31365,7 +31365,7 @@ function isValidSlug(slug) {
   return SLUG_RE.test(slug) && !slug.includes("..");
 }
 async function fetchHotspots() {
-  const res = await fetch(`${AGENT_API_BASE}/cards?has_try_it=1`);
+  const res = await fetch(`${AGENT_API_BASE}/cards?has_try_it=1&include_unverified=1`);
   if (!res.ok) throw new Error(`cards fetch failed: HTTP ${res.status}`);
   const j = await res.json();
   return (j.cards ?? []).filter((c) => c.slug && c.try_it && c.try_it.steps.length > 0);
@@ -31373,10 +31373,13 @@ async function fetchHotspots() {
 function hotspotMarkdown(c) {
   const steps = c.try_it.steps.map((s, i) => `${i + 1}. ${s}`).join("\n");
   const sources = c.source_urls.filter((s) => /^https?:\/\//i.test(s.url ?? "")).map((s) => `- ${s.label || "\u6765\u6E90"}: ${s.url}`).join("\n");
+  const unverified = !c.verified_at;
   return [
     `# ${c.title_zh ?? c.slug}`,
     c.title_en ? `*${c.title_en}*` : null,
     "",
+    unverified ? "> \u{1F195} **\u65B0\u5185\u5BB9 \xB7 \u7ED3\u679C\u672A\u77E5** \u2014\u2014 \u8FD9\u5F20\u5361\u8FD8\u6CA1\u7ECF\u8FC7\u6C99\u7BB1\u9A8C\u8BC1,\u6B65\u9AA4\u53EF\u80FD\u8DD1\u901A\u4E5F\u53EF\u80FD\u8DD1\u4E0D\u901A,\u81EA\u884C\u5224\u65AD\u540E\u518D\u6267\u884C\u3002" : null,
+    unverified ? "" : null,
     c.subtitle_zh ?? "",
     "",
     c.body_md_zh ?? "",
@@ -31392,14 +31395,15 @@ function hotspotMarkdown(c) {
 ## \u6765\u6E90
 ${sources}` : "",
     "",
-    `> \u6765\u81EA Parallight \u5C1D\u9C9C\u53F0(${c.verified_at ? "\u5DF2\u6C99\u7BB1\u9A8C\u8BC1 \u2705" : "\u672A\u9A8C\u8BC1"}) \xB7 slug: ${c.slug}`
+    `> \u6765\u81EA Parallight \u5C1D\u9C9C\u53F0(${c.verified_at ? "\u5DF2\u6C99\u7BB1\u9A8C\u8BC1 \u2705" : "\u{1F195} \u65B0\u5185\u5BB9,\u672A\u9A8C\u8BC1\xB7\u7ED3\u679C\u672A\u77E5"}) \xB7 slug: ${c.slug}`
   ].filter((l) => l !== null).join("\n");
 }
 function formatHotspotList(cards) {
+  const status = (c) => c.verified_at ? "\u2705 \u5DF2\u9A8C\u8BC1" : "\u{1F195} \u65B0\u5185\u5BB9\xB7\u7ED3\u679C\u672A\u77E5";
   const rows = cards.map(
-    (c, i) => `| ${i + 1} | ${c.title_zh ?? c.slug} | ${c.kind ?? "\u2014"} | ${c.verified_at ? "\u2705" : "\u2014"} | ${(c.published_at ?? "").slice(0, 10)} |`
+    (c, i) => `| ${i + 1} | ${c.title_zh ?? c.slug} | ${c.kind ?? "\u2014"} | ${status(c)} | ${(c.published_at ?? "").slice(0, 10)} |`
   );
-  const table = ["| # | \u70ED\u70B9 | \u7C7B\u578B | \u5DF2\u9A8C\u8BC1 | \u53D1\u5E03 |", "|:--|:----|:----|:------|:----|", ...rows].join("\n");
+  const table = ["| # | \u70ED\u70B9 | \u7C7B\u578B | \u72B6\u6001 | \u53D1\u5E03 |", "|:--|:----|:----|:----|:----|", ...rows].join("\n");
   const optionMap = cards.map((c, i) => `${i + 1} \u2192 try_hotspot(slug="${c.slug}")`).join("; ");
   return { table, optionMap };
 }
