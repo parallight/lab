@@ -25,5 +25,6 @@ description: 列出所有 lab 命令
 - /lab-reply — 回复Mentor对某次 review 的批改
 - /lab-logout — 退出 Parallight Lab 登录，清除本地凭证
 - /lab-exit — 退出当前 lab，清除注入的Mentor人格
+- /hotspot — 尝鲜台热点 — 列出可动手试的 AI 热点卡,选一张在本机跑
 
 学员问某条具体怎么用,就简短解释那一条。

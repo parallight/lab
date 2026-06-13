@@ -31316,6 +31316,53 @@ function openInBrowser(filePath) {
   }
 }
 
+// src/hotspots.ts
+var LAB_SITE_URL = process.env.PARALLIGHT_LAB_SITE_URL ?? "https://www.parallight.ai/lab";
+var AGENT_API_BASE = `${LAB_SITE_URL}/api/agent/v1`;
+var SLUG_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,120}$/;
+function isValidSlug(slug) {
+  return SLUG_RE.test(slug) && !slug.includes("..");
+}
+async function fetchHotspots() {
+  const res = await fetch(`${AGENT_API_BASE}/cards?has_try_it=1`);
+  if (!res.ok) throw new Error(`cards fetch failed: HTTP ${res.status}`);
+  const j = await res.json();
+  return (j.cards ?? []).filter((c) => c.slug && c.try_it && c.try_it.steps.length > 0);
+}
+function hotspotMarkdown(c) {
+  const steps = c.try_it.steps.map((s, i) => `${i + 1}. ${s}`).join("\n");
+  const sources = c.source_urls.filter((s) => /^https?:\/\//i.test(s.url ?? "")).map((s) => `- ${s.label || "\u6765\u6E90"}: ${s.url}`).join("\n");
+  return [
+    `# ${c.title_zh ?? c.slug}`,
+    c.title_en ? `*${c.title_en}*` : null,
+    "",
+    c.subtitle_zh ?? "",
+    "",
+    c.body_md_zh ?? "",
+    "",
+    "## \u52A8\u624B\u6B65\u9AA4",
+    steps,
+    "",
+    "## \u9A8C\u6536\u671F\u671B(expect)",
+    "```json",
+    JSON.stringify(c.try_it.expect, null, 2),
+    "```",
+    sources ? `
+## \u6765\u6E90
+${sources}` : "",
+    "",
+    `> \u6765\u81EA Parallight \u5C1D\u9C9C\u53F0(${c.verified_at ? "\u5DF2\u6C99\u7BB1\u9A8C\u8BC1 \u2705" : "\u672A\u9A8C\u8BC1"}) \xB7 slug: ${c.slug}`
+  ].filter((l) => l !== null).join("\n");
+}
+function formatHotspotList(cards) {
+  const rows = cards.map(
+    (c, i) => `| ${i + 1} | ${c.title_zh ?? c.slug} | ${c.kind ?? "\u2014"} | ${c.verified_at ? "\u2705" : "\u2014"} | ${(c.published_at ?? "").slice(0, 10)} |`
+  );
+  const table = ["| # | \u70ED\u70B9 | \u7C7B\u578B | \u5DF2\u9A8C\u8BC1 | \u53D1\u5E03 |", "|:--|:----|:----|:------|:----|", ...rows].join("\n");
+  const optionMap = cards.map((c, i) => `${i + 1} \u2192 try_hotspot(slug="${c.slug}")`).join("; ");
+  return { table, optionMap };
+}
+
 // src/lib/local-git.ts
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
@@ -32831,6 +32878,98 @@ server.registerTool(
       return ok("\u597D\u7684,\u5DF2\u8BB0\u4E0B\u4F60\u7684\u540C\u610F\u3002\u4EE5\u540E\u968F\u65F6\u7528 /lab-analysis \u770B\u4F60\u7684\u4F1A\u8BDD\u5206\u6790\u3002");
     } catch (e) {
       return err(`\u8BB0\u5F55\u540C\u610F\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "list_hotspots",
+  {
+    title: "List taste hotspots",
+    description: "\u5217\u51FA\u5C1D\u9C9C\u53F0\u53EF\u52A8\u624B\u8BD5\u7684\u70ED\u70B9\u5361(\u65E0\u9700\u767B\u5F55)\u3002"
+  },
+  async () => {
+    try {
+      const cards = await fetchHotspots();
+      if (cards.length === 0) return ok("\u5C1D\u9C9C\u53F0\u6682\u65F6\u6CA1\u6709\u53EF\u52A8\u624B\u8BD5\u7684\u70ED\u70B9\u5361\u3002");
+      const { table, optionMap } = formatHotspotList(cards);
+      return ok(
+        [
+          "## \u{1F525} \u5C1D\u9C9C\u53F0\u70ED\u70B9(\u53EF\u672C\u673A\u52A8\u624B\u8BD5)",
+          "",
+          table,
+          "",
+          `[NOW DO THIS] Show the table VERBATIM. Then present the hotspots as SELECTABLE OPTIONS via AskUserQuestion(short labels) plus a final option \u300C\u5148\u770B\u770B\u300D \u2014 do NOT make the learner type a slug. On pick, call try_hotspot with that row's slug. Row\u2192slug map: ${optionMap}. If they pick \u300C\u5148\u770B\u770B\u300D, stop here.`
+        ].join("\n")
+      );
+    } catch (e) {
+      return err(`\u83B7\u53D6\u70ED\u70B9\u5217\u8868\u5931\u8D25:${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "try_hotspot",
+  {
+    title: "Try a hotspot locally",
+    description: "\u628A\u9009\u4E2D\u7684\u5C1D\u9C9C\u5361\u5199\u5230\u672C\u5730 fresh/<slug>.md,\u5F15\u5BFC\u5B66\u5458\u5728\u672C\u673A\u9010\u6B65\u6267\u884C\u3002",
+    inputSchema: { slug: external_exports.string() }
+  },
+  async ({ slug }) => {
+    if (!isValidSlug(slug)) return err("\u975E\u6CD5 slug\u3002");
+    try {
+      const cards = await fetchHotspots();
+      const card = cards.find((c) => c.slug === slug);
+      if (!card) return err(`\u6CA1\u627E\u5230\u70ED\u70B9\u5361 ${slug}(\u53EF\u80FD\u5DF2\u4E0B\u7EBF),\u7528 list_hotspots \u91CD\u65B0\u770B\u5217\u8868\u3002`);
+      mkdirSync4(join4(process.cwd(), "fresh"), { recursive: true });
+      const file2 = join4(process.cwd(), "fresh", `${slug}.md`);
+      writeFileSync4(file2, hotspotMarkdown(card), "utf8");
+      let synced = false;
+      try {
+        const token = requireToken();
+        const res = await fetch(`${AGENT_API_BASE}/me/labs`, {
+          method: "POST",
+          headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+          body: JSON.stringify({ action: "save", card_slug: slug })
+        });
+        synced = res.ok;
+      } catch {
+      }
+      return ok(
+        [
+          `\u5DF2\u5199\u5165 ${file2}`,
+          "",
+          "[NOW DO THIS] 1) Show the learner the file path and a one-line summary of what this hotspot demonstrates. 2) Walk through the steps in fresh/" + slug + `.md ONE BY ONE: before each step, explain in one sentence what it does, then run it with the learner's confirmation \u2014 never batch-execute all steps unattended. 3) After the last step, check the result against the expect block and tell the learner pass/fail. 4) On pass, call complete_hotspot(slug="` + slug + '") to sync progress' + (synced ? "" : "(\u82E5\u672A\u767B\u5F55,\u63D0\u4E00\u53E5 /lab-login \u540E\u53EF\u540C\u6B65\u8FDB\u5EA6,\u4E0D\u5F3A\u63A8)") + "."
+        ].join("\n")
+      );
+    } catch (e) {
+      return err(`try_hotspot \u5931\u8D25:${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "complete_hotspot",
+  {
+    title: "Mark hotspot completed",
+    description: "\u5B66\u5458\u8DD1\u5B8C\u70ED\u70B9\u5361\u6B65\u9AA4\u5E76\u901A\u8FC7\u9A8C\u6536\u540E,\u540C\u6B65\u300C\u5DF2\u5B8C\u6210\u300D\u5230\u6211\u7684\u5B9E\u9A8C\u53F0\u3002",
+    inputSchema: { slug: external_exports.string() }
+  },
+  async ({ slug }) => {
+    if (!isValidSlug(slug)) return err("\u975E\u6CD5 slug\u3002");
+    let token;
+    try {
+      token = requireToken();
+    } catch {
+      return ok("\u672C\u5730\u5B8C\u6210 \u2705(\u672A\u767B\u5F55,\u6CA1\u6709\u4E91\u7AEF\u540C\u6B65;/lab-login \u540E\u518D\u8DD1 complete_hotspot \u53EF\u8865\u8BB0)\u3002");
+    }
+    try {
+      const res = await fetch(`${AGENT_API_BASE}/me/labs`, {
+        method: "POST",
+        headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+        body: JSON.stringify({ action: "complete", card_slug: slug })
+      });
+      if (!res.ok) return err(`\u540C\u6B65\u5931\u8D25(HTTP ${res.status});\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
+      return ok(`\u5B8C\u6210 \u2705 \u5DF2\u540C\u6B65\u5230\u300C\u6211\u7684\u5B9E\u9A8C\u53F0\u300D(lab.parallight.ai/home \u53EF\u89C1)\u3002`);
+    } catch (e) {
+      return err(`\u540C\u6B65\u5931\u8D25:${String(e)};\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
     }
   }
 );
