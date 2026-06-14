@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.11-phase1";
+var PARALLIGHT_VERSION = "0.1.12-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30963,6 +30963,7 @@ var BACKEND_URL = process.env.PARALLIGHT_BACKEND_URL ?? "https://lab-agent.paral
 var AUTH_DIR = join(homedir(), ".parallight");
 var AUTH_FILE = join(AUTH_DIR, "auth.json");
 var LLM_PROXY_URL = `${BACKEND_URL}/api/llm`;
+var SANDBOX_PROXY_URL = `${BACKEND_URL}/api/sandbox/v1`;
 
 // src/compare-persona.ts
 var COMPARE_MENTOR_PERSONA = `\u4F60\u73B0\u5728\u662F Parallight \u7684\u300CAI \u5B9E\u9A8C\u5BFC\u5E08\u300D\uFF0C\u5E26\u5B66\u5458\u5728\u4E00\u4E2A agent \u5143\u5668\u4EF6\u5B9E\u9A8C\u53F0\u4E0A\u505A\u5BF9\u7167\u5B9E\u9A8C\u3002
@@ -32158,6 +32159,16 @@ var PLACEHOLDER_PORTRAIT = [
 var server = new McpServer({ name: SERVER_NAME, version: PARALLIGHT_VERSION });
 var ok = (text) => ({ content: [{ type: "text", text }] });
 var err = (text) => ({ content: [{ type: "text", text: `\u26A0\uFE0F ${text}` }] });
+function quoteSubmission(label, text) {
+  const trimmed = text?.trim();
+  if (!trimmed) return "";
+  const clipped = trimmed.length > 800 ? `${trimmed.slice(0, 800)} \u2026(\u7565)` : trimmed;
+  const quoted = clipped.split("\n").map((l) => `> ${l}`).join("\n");
+  return `\u3010${label}\u3011
+${quoted}
+
+`;
+}
 function fileTree(paths) {
   const root = {};
   for (const p of [...paths].sort()) {
@@ -32331,6 +32342,21 @@ PARALLIGHT_API_KEY=${token}
       if (!/^PARALLIGHT_BASE_URL=/m.test(envContent)) {
         envContent += `
 PARALLIGHT_BASE_URL=${LLM_PROXY_URL}
+`;
+      }
+      envContent = envContent.replace(/^PARALLIGHT_TOKEN=.*$/m, `PARALLIGHT_TOKEN=${token}`);
+      if (!/^PARALLIGHT_TOKEN=/m.test(envContent)) {
+        envContent += `
+PARALLIGHT_TOKEN=${token}
+`;
+      }
+      envContent = envContent.replace(
+        /^PARALLIGHT_SANDBOX_URL=.*$/m,
+        `PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}`
+      );
+      if (!/^PARALLIGHT_SANDBOX_URL=/m.test(envContent)) {
+        envContent += `
+PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
 `;
       }
       writeFileSync4(join4(labDir, ".env"), envContent);
@@ -32617,8 +32643,12 @@ server.registerTool(
       const lines = items.map(
         (it) => it.kind === "review" ? `\u{1F4DD} review (id: ${it.id})
 Lab ${it.lab_id ?? "?"} \u6279\u6539:
+
+${quoteSubmission("\u4F60\u5F53\u521D\u63D0\u4EA4\u7684", it.my_submission)}\u3010Mentor \u56DE\u590D\u3011
 ${it.marvin_text}
 \uFF08\u8981\u56DE\u590DMentor\u5C31\u7528 /lab-reply ${it.id}\uFF09` : `\u{1F4AC} \u79C1\u4FE1\u56DE\u590D (id: ${it.id}):
+
+${quoteSubmission("\u4F60\u5F53\u521D\u53D1\u7684", it.my_submission)}\u3010Mentor \u56DE\u590D\u3011
 ${it.marvin_text}`
       );
       return ok(lines.join("\n\n"));
