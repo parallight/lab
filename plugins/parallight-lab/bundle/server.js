@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.15-phase1";
+var PARALLIGHT_VERSION = "0.1.16-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30975,7 +30975,8 @@ var MODEL_CATALOG = [
     providerKey: "anthropic",
     tier: "live",
     models: [
-      { slug: "claude-opus-4-5", name: "Claude Opus 4.5", input: 5, output: 25, note: "\u6700\u5F3A\u63A8\u7406 / \u957F\u4EFB\u52A1" },
+      { slug: "claude-opus-4-8", name: "Claude Opus 4.8", input: 5, output: 25, note: "\u6700\u65B0\u65D7\u8230 \xB7 \u6700\u5F3A\u63A8\u7406 \xB7 1M \u4E0A\u4E0B\u6587" },
+      { slug: "claude-opus-4-5", name: "Claude Opus 4.5", input: 5, output: 25, note: "\u4E0A\u4E00\u4EE3\u65D7\u8230" },
       { slug: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", input: 3, output: 15, note: "\u9ED8\u8BA4 \xB7 \u5747\u8861" },
       { slug: "claude-haiku-4-5", name: "Claude Haiku 4.5", input: 1, output: 5, note: "\u6700\u5FEB / \u4FBF\u5B9C" }
     ]
@@ -31073,8 +31074,8 @@ var price = (n) => n > 0 ? `$${n}` : "\u2014";
 function renderCatalog(currentModel, opts) {
   const { groups, note } = visibleGroups(opts);
   const lines = [];
-  lines.push("## \u53EF\u7528\u6A21\u578B / \u4EF7\u683C(\u6BCF 100 \u4E07 token,input / output)\n");
-  lines.push("> \u5207\u6362:\u4ECE\u4E0B\u9762\u9009\u4E00\u4E2A,\u6211\u5E2E\u4F60\u5199\u8FDB\u8BBE\u7F6E(**\u9700\u91CD\u542F claude \u751F\u6548**)\u3002\u5B9E\u4ED8 \u2248 \u4F30\u4EF7 \xD7 1.25\u3002\n");
+  lines.push("## \u53EF\u7528\u6A21\u578B / \u4EF7\u683C(input / output)\n");
+  lines.push("> \u5207\u6362:\u4ECE\u4E0B\u9762\u9009\u4E00\u4E2A,\u6211\u5E2E\u4F60\u5199\u8FDB\u8BBE\u7F6E(**\u9700\u91CD\u542F claude \u751F\u6548**)\u3002\n");
   for (const g of groups) {
     const badge = g.tier === "live" ? "\u2705 \u53EF\u5207" : "\u{1F50C} \u9700\u4EE3\u7406";
     lines.push(`
