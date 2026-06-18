@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.16-phase1";
+var PARALLIGHT_VERSION = "0.1.17-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
