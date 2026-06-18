@@ -15,6 +15,7 @@ description: 列出所有 lab 命令
 - /lab-status — Mentor总结当前 lab 的进度
 - /lab-analysis — 生成并打开本次 lab 的会话分析报告(把 agent 在做什么拆给你看)
 - /lab-compare — 打开本次 lab 的 Compare 面板(同一个任务,横向对比不同模型 / prompt 的跑法)
+- /more-model — 列出所有可用模型(Claude / GLM / Kimi / DeepSeek / Qwen / MiniMax)+ 价格,选一个切换
 - /lab-kb — 显示当前 lab 的知识点清单（只读）
 - /lab-review — 提交一次 lab review 给真人 Marvin 批改
 - /lab-read — 查看真人 Marvin 的批改和私信回复

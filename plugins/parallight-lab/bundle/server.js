@@ -6886,9 +6886,9 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync4, writeFileSync as writeFileSync4, existsSync as existsSync3 } from "node:fs";
-import { homedir as homedir4 } from "node:os";
-import { join as join4, dirname } from "node:path";
+import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync5, existsSync as existsSync4 } from "node:fs";
+import { homedir as homedir5 } from "node:os";
+import { join as join5, dirname as dirname2 } from "node:path";
 
 // ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
 var util;
@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.12-phase1";
+var PARALLIGHT_VERSION = "0.1.13-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30964,6 +30964,119 @@ var AUTH_DIR = join(homedir(), ".parallight");
 var AUTH_FILE = join(AUTH_DIR, "auth.json");
 var LLM_PROXY_URL = `${BACKEND_URL}/api/llm`;
 var SANDBOX_PROXY_URL = `${BACKEND_URL}/api/sandbox/v1`;
+
+// src/models-catalog.ts
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { homedir as homedir2 } from "node:os";
+import { join as join2, dirname } from "node:path";
+var MODEL_CATALOG = [
+  {
+    provider: "Claude (Anthropic)",
+    tier: "live",
+    models: [
+      { slug: "claude-opus-4-5", name: "Claude Opus 4.5", input: 5, output: 25, note: "\u6700\u5F3A\u63A8\u7406 / \u957F\u4EFB\u52A1" },
+      { slug: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", input: 3, output: 15, note: "\u9ED8\u8BA4 \xB7 \u5747\u8861" },
+      { slug: "claude-haiku-4-5", name: "Claude Haiku 4.5", input: 1, output: 5, note: "\u6700\u5FEB / \u4FBF\u5B9C" }
+    ]
+  },
+  {
+    provider: "GLM (Z.ai / \u667A\u8C31)",
+    tier: "live",
+    models: [
+      { slug: "glm-5.2", name: "GLM-5.2", input: 1.4, output: 4.4, note: "\u6700\u65B0\u65D7\u8230(\u9700 Coding Plan, \u5F53\u524D\u5BB9\u91CF\u7D27\u5F20)" },
+      { slug: "glm-5", name: "GLM-5", input: 1, output: 3.2 },
+      { slug: "glm-4.7", name: "GLM-4.7", input: 0.6, output: 2.2, note: "\u4FBF\u5B9C lane" }
+    ]
+  },
+  {
+    provider: "Kimi (Moonshot / \u6708\u4E4B\u6697\u9762)",
+    tier: "live",
+    models: [
+      { slug: "kimi-k2.7-code", name: "Kimi K2.7 Code", input: 0.95, output: 4, note: "\u7F16\u7801\u65D7\u8230" },
+      { slug: "kimi-k2.6", name: "Kimi K2.6", input: 0.95, output: 4 }
+    ]
+  },
+  {
+    provider: "DeepSeek (\u6DF1\u5EA6\u6C42\u7D22)",
+    tier: "live",
+    models: [
+      { slug: "deepseek-v4-pro", name: "DeepSeek V4 Pro", input: 0.435, output: 0.87, note: "\u5168\u7403\u4EF7 \xB7 \u65E0\u7F13\u5B58\u6298\u6263" },
+      { slug: "deepseek-v4-flash", name: "DeepSeek V4 Flash", input: 0.14, output: 0.28, note: "\u4FBF\u5B9C / \u5FEB" }
+    ]
+  },
+  {
+    provider: "Qwen (\u963F\u91CC\u901A\u4E49)",
+    tier: "live",
+    models: [
+      { slug: "qwen3-max", name: "Qwen3 Max", input: 1.2, output: 6, note: "\u6309\u8F93\u5165\u91CF\u5206\u6863\u8BA1\u4EF7" },
+      { slug: "qwen3-coder", name: "Qwen3 Coder", input: 1, output: 5, note: "\u6309\u8F93\u5165\u91CF\u5206\u6863(\u6B64\u4E3A\u57FA\u7840\u6863)" }
+    ]
+  },
+  {
+    provider: "MiniMax",
+    tier: "live",
+    models: [
+      { slug: "MiniMax-M2", name: "MiniMax M2", input: 0.3, output: 1.2, note: "thinking \u5F3A\u5236\u5F00 / \u65E0\u56FE\u50CF" },
+      { slug: "MiniMax-M2.5", name: "MiniMax M2.5", input: 0.3, output: 1.2 }
+    ]
+  },
+  {
+    provider: "\u9700\u4EE3\u7406(OpenAI \u683C\u5F0F \xB7 \u6682\u4E0D\u53EF\u5207)",
+    tier: "proxy",
+    models: [
+      { slug: "gpt-5.x", name: "OpenAI GPT-5.x", input: 0, output: 0, note: "\u9700 LiteLLM \u4EE3\u7406" },
+      { slug: "gemini-3", name: "Google Gemini 3", input: 0, output: 0, note: "\u9700 LiteLLM \u4EE3\u7406" },
+      { slug: "grok-4", name: "xAI Grok 4", input: 0, output: 0, note: "\u9700 LiteLLM \u4EE3\u7406" }
+    ]
+  }
+];
+function switchableSlugs() {
+  const s = /* @__PURE__ */ new Set();
+  for (const g of MODEL_CATALOG) if (g.tier === "live") for (const m of g.models) s.add(m.slug);
+  return s;
+}
+var price = (n) => n > 0 ? `$${n}` : "\u2014";
+function renderCatalog(currentModel) {
+  const lines = [];
+  lines.push("## \u53EF\u7528\u6A21\u578B / \u4EF7\u683C(\u6BCF 100 \u4E07 token,input / output)\n");
+  lines.push("> \u5207\u6362\uFF1A\u9009\u4E00\u4E2A\uFF0C\u6211\u5E2E\u4F60\u5199\u8FDB\u8BBE\u7F6E\uFF1B\u6216\u81EA\u5DF1\u8FD0\u884C `/model <slug>`\u3002\u5B9E\u4ED8 \u2248 \u4F30\u4EF7 \xD7 1.25\u3002\n");
+  for (const g of MODEL_CATALOG) {
+    const badge = g.tier === "live" ? "\u2705 \u53EF\u5207" : "\u{1F50C} \u9700\u4EE3\u7406";
+    lines.push(`
+### ${g.provider} \u2014 ${badge}`);
+    lines.push("| \u6A21\u578B | slug | input | output | \u5907\u6CE8 |");
+    lines.push("|---|---|---|---|---|");
+    for (const m of g.models) {
+      const cur = currentModel && m.slug === currentModel ? " \u2B05\uFE0F\u5F53\u524D" : "";
+      lines.push(`| ${m.name}${cur} | \`${m.slug}\` | ${price(m.input)} | ${price(m.output)} | ${m.note ?? ""} |`);
+    }
+  }
+  lines.push(
+    "\n\u6CE8\uFF1A\u7B2C\u4E09\u65B9\u6A21\u578B\u5B9E\u9645\u53EF\u7528\u53D6\u51B3\u4E8E\u540E\u53F0\u662F\u5426\u5DF2\u914D\u8BE5\u5382\u5546 key;\u2705 \u5217\u5728\u7F51\u5173\u5DF2\u63A5\u5165,\u914D\u597D key \u5373\u751F\u6548\u3002`\u9700\u4EE3\u7406` \u7684\u9700 LiteLLM \u8F6C\u4E00\u5C42,\u6682\u4E0D\u53EF\u76F4\u63A5\u5207\u3002"
+  );
+  return lines.join("\n");
+}
+function setAgentModel(slug) {
+  if (!switchableSlugs().has(slug)) {
+    return { ok: false, msg: `\u300C${slug}\u300D\u4E0D\u5728\u53EF\u5207\u6362\u6E05\u5355\u91CC(\u6216\u5C5E\u4E8E\u300C\u9700\u4EE3\u7406\u300D\u5C42)\u3002\u8BF7\u4ECE \u2705 \u5217\u91CC\u9009\u3002` };
+  }
+  const path = join2(homedir2(), ".claude", "settings.json");
+  let settings = {};
+  try {
+    if (existsSync(path)) settings = JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    settings = {};
+  }
+  const env = settings.env && typeof settings.env === "object" ? settings.env : {};
+  env.ANTHROPIC_MODEL = slug;
+  settings.env = env;
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, JSON.stringify(settings, null, 2) + "\n");
+  return {
+    ok: true,
+    msg: `\u5DF2\u628A\u9ED8\u8BA4\u6A21\u578B\u8BBE\u4E3A ${slug}(\u5199\u5165 ~/.claude/settings.json)\u3002\u4E0B\u6B21\u5BF9\u8BDD\u5373\u7528\u5B83;\u60F3\u73B0\u5728\u7ACB\u523B\u5207,\u8FD0\u884C /model ${slug}\u3002`
+  };
+}
 
 // src/compare-persona.ts
 var COMPARE_MENTOR_PERSONA = `\u4F60\u73B0\u5728\u662F Parallight \u7684\u300CAI \u5B9E\u9A8C\u5BFC\u5E08\u300D\uFF0C\u5E26\u5B66\u5458\u5728\u4E00\u4E2A agent \u5143\u5668\u4EF6\u5B9E\u9A8C\u53F0\u4E0A\u505A\u5BF9\u7167\u5B9E\u9A8C\u3002
@@ -30988,10 +31101,10 @@ var COMPARE_MENTOR_PERSONA = `\u4F60\u73B0\u5728\u662F Parallight \u7684\u300CAI
 \u540C\u4E00\u6B21\u5BF9\u6BD4\u91CC id \u552F\u4E00\u3002`;
 
 // src/auth.ts
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
+import { readFileSync as readFileSync2, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2, existsSync as existsSync2, rmSync } from "node:fs";
 function saveAuth(data) {
-  mkdirSync(AUTH_DIR, { recursive: true, mode: 448 });
-  writeFileSync(
+  mkdirSync2(AUTH_DIR, { recursive: true, mode: 448 });
+  writeFileSync2(
     AUTH_FILE,
     JSON.stringify({ ...data, saved_at: (/* @__PURE__ */ new Date()).toISOString() }, null, 2),
     {
@@ -31000,15 +31113,15 @@ function saveAuth(data) {
   );
 }
 function loadAuth() {
-  if (!existsSync(AUTH_FILE)) return null;
+  if (!existsSync2(AUTH_FILE)) return null;
   try {
-    return JSON.parse(readFileSync(AUTH_FILE, "utf8"));
+    return JSON.parse(readFileSync2(AUTH_FILE, "utf8"));
   } catch {
     return null;
   }
 }
 function clearAuth() {
-  if (existsSync(AUTH_FILE)) rmSync(AUTH_FILE);
+  if (existsSync2(AUTH_FILE)) rmSync(AUTH_FILE);
 }
 function requireToken() {
   const auth = loadAuth();
@@ -31413,15 +31526,15 @@ function formatHotspotList(cards) {
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import {
-  mkdirSync as mkdirSync2,
-  writeFileSync as writeFileSync2,
-  readFileSync as readFileSync2,
-  existsSync as existsSync2,
+  mkdirSync as mkdirSync3,
+  writeFileSync as writeFileSync3,
+  readFileSync as readFileSync3,
+  existsSync as existsSync3,
   rmSync as rmSync2
 } from "node:fs";
 import { mkdtempSync } from "node:fs";
-import { homedir as homedir2, tmpdir } from "node:os";
-import { join as join2, resolve, relative, isAbsolute as isAbsolute2 } from "node:path";
+import { homedir as homedir3, tmpdir } from "node:os";
+import { join as join3, resolve, relative, isAbsolute as isAbsolute2 } from "node:path";
 var execFileAsync = promisify(execFile);
 var MAX_BUFFER = 64 * 1024 * 1024;
 var DEFAULT_DEPS = { getBlob, postBlob };
@@ -31485,33 +31598,33 @@ async function gitOk(args, cwd) {
   return r.stdout;
 }
 function syncStateDir(opts) {
-  return opts.syncDir ?? join2(homedir2(), ".parallight");
+  return opts.syncDir ?? join3(homedir3(), ".parallight");
 }
 function syncStateFile(opts) {
-  return join2(syncStateDir(opts), `sync-${sanitizeId(opts.labId)}.json`);
+  return join3(syncStateDir(opts), `sync-${sanitizeId(opts.labId)}.json`);
 }
 function sanitizeId(labId) {
   return labId.replace(/[^a-zA-Z0-9_-]/g, "_");
 }
 function readSyncState(opts) {
   const f = syncStateFile(opts);
-  if (!existsSync2(f)) return {};
+  if (!existsSync3(f)) return {};
   try {
-    return JSON.parse(readFileSync2(f, "utf8"));
+    return JSON.parse(readFileSync3(f, "utf8"));
   } catch {
     return {};
   }
 }
 function writeSyncState(opts, st) {
   const dir = syncStateDir(opts);
-  mkdirSync2(dir, { recursive: true });
-  writeFileSync2(
+  mkdirSync3(dir, { recursive: true });
+  writeFileSync3(
     syncStateFile(opts),
     JSON.stringify({ ...st, updatedAt: (/* @__PURE__ */ new Date()).toISOString() }, null, 2)
   );
 }
 async function ensureLocalRepo(labDir) {
-  mkdirSync2(labDir, { recursive: true });
+  mkdirSync3(labDir, { recursive: true });
   const isRepo = await git(["rev-parse", "--git-dir"], labDir);
   if (isRepo.code !== 0) {
     await gitOk(["-c", "init.defaultBranch=main", "init", "-q"], labDir);
@@ -31539,8 +31652,8 @@ async function autoCommit(labDir, msg) {
   await git(["-c", "core.editor=true", "commit", "-q", "-m", msg], labDir);
 }
 function freshTmpBundle() {
-  const dir = mkdtempSync(join2(tmpdir(), "pl-bundle-"));
-  return join2(dir, "x.bundle");
+  const dir = mkdtempSync(join3(tmpdir(), "pl-bundle-"));
+  return join3(dir, "x.bundle");
 }
 async function computePlan(labDir, local, cloud) {
   const base = await gitOk(["merge-base", local, cloud], labDir);
@@ -31659,7 +31772,7 @@ async function labPull(opts, deps = DEFAULT_DEPS) {
   if (!cloudTip) throw new SyncError("\u4E91\u7AEF\u54CD\u5E94\u7F3A\u5C11 x-cloud-tip");
   const bundlePath = freshTmpBundle();
   try {
-    writeFileSync2(bundlePath, res.body);
+    writeFileSync3(bundlePath, res.body);
     const verify = await git(["bundle", "verify", bundlePath], labDir);
     if (verify.code !== 0) {
       throw new SyncError(`\u4E91\u7AEF bundle \u6821\u9A8C\u5931\u8D25\uFF1A${verify.stderr || verify.stdout}`);
@@ -31781,7 +31894,7 @@ async function labPush(opts, deps = DEFAULT_DEPS, retriesLeft = 1) {
   const bundlePath = freshTmpBundle();
   try {
     await gitOk(["bundle", "create", bundlePath, `${cloudTip}..main`], labDir);
-    const bytes = readFileSync2(bundlePath);
+    const bytes = readFileSync3(bundlePath);
     const res = await deps.postBlob("/api/lab-sync/push", bytes, {
       "x-expected-cloud": cloudTip
     });
@@ -32091,16 +32204,16 @@ function percentComplete() {
 }
 
 // src/session-store.ts
-import { mkdirSync as mkdirSync3, writeFileSync as writeFileSync3, readFileSync as readFileSync3, readdirSync, rmSync as rmSync3 } from "node:fs";
-import { join as join3 } from "node:path";
-import { homedir as homedir3 } from "node:os";
-var SESSIONS_DIR = join3(homedir3(), ".parallight", "sessions");
+import { mkdirSync as mkdirSync4, writeFileSync as writeFileSync4, readFileSync as readFileSync4, readdirSync, rmSync as rmSync3 } from "node:fs";
+import { join as join4 } from "node:path";
+import { homedir as homedir4 } from "node:os";
+var SESSIONS_DIR = join4(homedir4(), ".parallight", "sessions");
 function fileFor(labId) {
-  return join3(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
+  return join4(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
 }
 function saveSession(s, cwd) {
   try {
-    mkdirSync3(SESSIONS_DIR, { recursive: true });
+    mkdirSync4(SESSIONS_DIR, { recursive: true });
     const p = {
       labId: s.labId,
       title: s.title,
@@ -32112,13 +32225,13 @@ function saveSession(s, cwd) {
       checkpoints: s.checkpoints,
       serverSessionId: s.serverSessionId
     };
-    writeFileSync3(fileFor(s.labId), JSON.stringify(p, null, 2));
+    writeFileSync4(fileFor(s.labId), JSON.stringify(p, null, 2));
   } catch {
   }
 }
 function loadByLab(labId) {
   try {
-    return JSON.parse(readFileSync3(fileFor(labId), "utf8"));
+    return JSON.parse(readFileSync4(fileFor(labId), "utf8"));
   } catch {
     return null;
   }
@@ -32129,7 +32242,7 @@ function loadMostRecent() {
     for (const f of readdirSync(SESSIONS_DIR)) {
       if (!f.endsWith(".json")) continue;
       try {
-        out.push(JSON.parse(readFileSync3(join3(SESSIONS_DIR, f), "utf8")));
+        out.push(JSON.parse(readFileSync4(join4(SESSIONS_DIR, f), "utf8")));
       } catch {
       }
     }
@@ -32306,8 +32419,8 @@ server.registerTool(
       return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
-      const existingDir = join4(process.cwd(), lab_id);
-      if (existsSync3(existingDir) && !force) {
+      const existingDir = join5(process.cwd(), lab_id);
+      if (existsSync4(existingDir) && !force) {
         return err(
           `\u68C0\u6D4B\u5230 ./${lab_id}/ \u5DF2\u5B58\u5728\u2014\u2014\u4F60\u4E4B\u524D\u5F00\u8FC7\u8FD9\u4E2A lab\u3002
 \xB7 \u60F3\u63A5\u7740\u4E0A\u6B21\u8FDB\u5EA6:\u7528 /lab-resume
@@ -32315,18 +32428,18 @@ server.registerTool(
         );
       }
       const starter = await getStarter(lab_id);
-      const labDir = join4(process.cwd(), lab_id);
+      const labDir = join5(process.cwd(), lab_id);
       for (const f of starter.files) {
-        const dest = join4(labDir, f.path);
-        mkdirSync4(dirname(dest), { recursive: true });
-        writeFileSync4(dest, f.content);
+        const dest = join5(labDir, f.path);
+        mkdirSync5(dirname2(dest), { recursive: true });
+        writeFileSync5(dest, f.content);
       }
       for (const a of starter.assets ?? []) {
-        const dest = join4(labDir, a.path);
-        mkdirSync4(dirname(dest), { recursive: true });
+        const dest = join5(labDir, a.path);
+        mkdirSync5(dirname2(dest), { recursive: true });
         const res = await fetch(a.url);
         if (!res.ok) return err(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
-        writeFileSync4(dest, Buffer.from(await res.arrayBuffer()));
+        writeFileSync5(dest, Buffer.from(await res.arrayBuffer()));
       }
       const example = starter.files.find((f) => f.path === ".env.example")?.content ?? "";
       let envContent = example.replace(/^PARALLIGHT_API_KEY=.*$/m, `PARALLIGHT_API_KEY=${token}`);
@@ -32359,7 +32472,7 @@ PARALLIGHT_TOKEN=${token}
 PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
 `;
       }
-      writeFileSync4(join4(labDir, ".env"), envContent);
+      writeFileSync5(join5(labDir, ".env"), envContent);
       const writtenTree = fileTree([
         ...starter.files.map((f) => f.path),
         ...(starter.assets ?? []).map((a) => a.path),
@@ -32706,11 +32819,11 @@ server.registerTool(
         "\u8981\u770B\u4F1A\u8BDD\u5206\u6790,\u9700\u8981\u5148\u540C\u610F\u8BB0\u5F55\u4F60\u7684 lab \u4F1A\u8BDD\u6570\u636E(\u7528\u4E8E\u751F\u6210\u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929)\u3002\u540C\u610F\u5C31\u7528 /lab-analysis \u65F6\u56DE\u7B54\u300C\u53EF\u4EE5\u300D,\u6216\u76F4\u63A5\u8BF4\u300C\u6211\u540C\u610F\u5206\u6790\u300D\u3002"
       );
     }
-    const dir = join4(homedir4(), ".parallight", "analysis");
-    const file2 = join4(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
+    const dir = join5(homedir5(), ".parallight", "analysis");
+    const file2 = join5(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
     try {
-      mkdirSync4(dir, { recursive: true });
-      writeFileSync4(file2, report.html ?? "");
+      mkdirSync5(dir, { recursive: true });
+      writeFileSync5(file2, report.html ?? "");
     } catch (e) {
       return err(`\u5199\u62A5\u544A\u6587\u4EF6\u5931\u8D25\uFF1A${String(e)}`);
     }
@@ -32959,6 +33072,32 @@ server.registerTool(
   }
 );
 server.registerTool(
+  "list_models",
+  {
+    title: "List available models + prices, or switch",
+    description: "\u5217\u51FA\u53EF\u5207\u6362\u7684 LLM \u6A21\u578B(Claude/GLM/Kimi/DeepSeek/Qwen/MiniMax)+ \u4EF7\u683C\u3002\u4F20 select=<slug> \u5207\u6362\u9ED8\u8BA4\u6A21\u578B\u3002",
+    inputSchema: { select: external_exports.string().optional() }
+  },
+  async ({ select }) => {
+    if (typeof select === "string" && select.trim()) {
+      const r = setAgentModel(select.trim());
+      return r.ok ? ok(r.msg) : err(r.msg);
+    }
+    let current2;
+    try {
+      const p = join5(homedir5(), ".claude", "settings.json");
+      if (existsSync4(p)) {
+        const s = JSON.parse(readFileSync5(p, "utf8"));
+        if (typeof s?.env?.ANTHROPIC_MODEL === "string") current2 = s.env.ANTHROPIC_MODEL;
+      }
+    } catch {
+    }
+    return ok(
+      renderCatalog(current2) + "\n\n[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u8868\u683C\u539F\u6837\u5B8C\u6574\u5C55\u793A\u7ED9\u5B66\u5458\u3002\u7136\u540E\u7528 AskUserQuestion \u8BA9\u4ED6\u4ECE \u2705 \u53EF\u5207\u7684\u6A21\u578B\u91CC\u9009\u4E00\u4E2A(\u9009\u9879\u6807\u7B7E\u7528\u6A21\u578B\u540D + \u4EF7\u683C,\u5916\u52A0\u300C\u4E0D\u5207 / \u5148\u770B\u770B\u300D),\u4E0D\u8981\u8BA9\u4ED6\u6253\u5B57\u8F93 slug\u3002\u9009\u5B9A\u540E\u8C03 list_models \u5E76\u4F20 select=<\u90A3\u4E00\u884C\u7684 slug>\u3002\u300C\u9700\u4EE3\u7406\u300D\u5C42\u7684\u4E0D\u53EF\u9009\u3002"
+    );
+  }
+);
+server.registerTool(
   "list_hotspots",
   {
     title: "List taste hotspots",
@@ -32996,9 +33135,9 @@ server.registerTool(
       const cards = await fetchHotspots();
       const card = cards.find((c) => c.slug === slug);
       if (!card) return err(`\u6CA1\u627E\u5230\u70ED\u70B9\u5361 ${slug}(\u53EF\u80FD\u5DF2\u4E0B\u7EBF),\u7528 list_hotspots \u91CD\u65B0\u770B\u5217\u8868\u3002`);
-      mkdirSync4(join4(process.cwd(), "fresh"), { recursive: true });
-      const file2 = join4(process.cwd(), "fresh", `${slug}.md`);
-      writeFileSync4(file2, hotspotMarkdown(card), "utf8");
+      mkdirSync5(join5(process.cwd(), "fresh"), { recursive: true });
+      const file2 = join5(process.cwd(), "fresh", `${slug}.md`);
+      writeFileSync5(file2, hotspotMarkdown(card), "utf8");
       let synced = false;
       try {
         const token = requireToken();
