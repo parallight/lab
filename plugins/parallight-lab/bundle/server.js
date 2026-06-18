@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.13-phase1";
+var PARALLIGHT_VERSION = "0.1.14-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30972,6 +30972,7 @@ import { join as join2, dirname } from "node:path";
 var MODEL_CATALOG = [
   {
     provider: "Claude (Anthropic)",
+    providerKey: "anthropic",
     tier: "live",
     models: [
       { slug: "claude-opus-4-5", name: "Claude Opus 4.5", input: 5, output: 25, note: "\u6700\u5F3A\u63A8\u7406 / \u957F\u4EFB\u52A1" },
@@ -30981,6 +30982,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "GLM (Z.ai / \u667A\u8C31)",
+    providerKey: "glm",
     tier: "live",
     models: [
       { slug: "glm-5.2", name: "GLM-5.2", input: 1.4, output: 4.4, note: "\u6700\u65B0\u65D7\u8230(\u9700 Coding Plan, \u5F53\u524D\u5BB9\u91CF\u7D27\u5F20)" },
@@ -30990,6 +30992,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "Kimi (Moonshot / \u6708\u4E4B\u6697\u9762)",
+    providerKey: "kimi",
     tier: "live",
     models: [
       { slug: "kimi-k2.7-code", name: "Kimi K2.7 Code", input: 0.95, output: 4, note: "\u7F16\u7801\u65D7\u8230" },
@@ -30998,6 +31001,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "DeepSeek (\u6DF1\u5EA6\u6C42\u7D22)",
+    providerKey: "deepseek",
     tier: "live",
     models: [
       { slug: "deepseek-v4-pro", name: "DeepSeek V4 Pro", input: 0.435, output: 0.87, note: "\u5168\u7403\u4EF7 \xB7 \u65E0\u7F13\u5B58\u6298\u6263" },
@@ -31006,6 +31010,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "Qwen (\u963F\u91CC\u901A\u4E49)",
+    providerKey: "qwen",
     tier: "live",
     models: [
       { slug: "qwen3-max", name: "Qwen3 Max", input: 1.2, output: 6, note: "\u6309\u8F93\u5165\u91CF\u5206\u6863\u8BA1\u4EF7" },
@@ -31014,6 +31019,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "MiniMax",
+    providerKey: "minimax",
     tier: "live",
     models: [
       { slug: "MiniMax-M2", name: "MiniMax M2", input: 0.3, output: 1.2, note: "thinking \u5F3A\u5236\u5F00 / \u65E0\u56FE\u50CF" },
@@ -31022,6 +31028,7 @@ var MODEL_CATALOG = [
   },
   {
     provider: "\u9700\u4EE3\u7406(OpenAI \u683C\u5F0F \xB7 \u6682\u4E0D\u53EF\u5207)",
+    providerKey: "proxy",
     tier: "proxy",
     models: [
       { slug: "gpt-5.x", name: "OpenAI GPT-5.x", input: 0, output: 0, note: "\u9700 LiteLLM \u4EE3\u7406" },
@@ -31030,17 +31037,45 @@ var MODEL_CATALOG = [
     ]
   }
 ];
-function switchableSlugs() {
+function visibleGroups(opts) {
+  if (opts?.gatewayRouted === false) {
+    return {
+      groups: MODEL_CATALOG.filter((g) => g.providerKey === "anthropic"),
+      note: "\u26A0\uFE0F \u5F53\u524D Claude Code \u672A\u8FDE Parallight \u7F51\u5173(ANTHROPIC_BASE_URL \u4E0D\u662F\u7F51\u5173),\u5916\u90E8\u6A21\u578B(GLM/Kimi/DeepSeek\u2026)\u65E0\u6CD5\u8DEF\u7531,\u8FD9\u91CC\u53EA\u5217 Claude\u3002\u8981\u7528\u5916\u90E8\u6A21\u578B,\u8BF7\u5728 Parallight \u5728\u7EBF\u5B9E\u9A8C\u53F0 / \u914D\u597D\u7F51\u5173\u7684 CC \u91CC\u64CD\u4F5C\u3002"
+    };
+  }
+  const configured = opts?.configured;
+  if (!configured) {
+    return {
+      groups: MODEL_CATALOG,
+      note: "(\u6682\u65F6\u65E0\u6CD5\u786E\u8BA4\u540E\u53F0\u5DF2\u914D\u54EA\u4E9B provider key,\u5148\u5217\u51FA\u5168\u90E8;\u5207\u6362\u524D\u8BF7\u786E\u8BA4\u76EE\u6807 provider \u5DF2\u914D\u3002)"
+    };
+  }
+  const groups = MODEL_CATALOG.filter(
+    (g) => g.providerKey === "anthropic" || g.tier === "live" && configured[g.providerKey] === true
+  );
+  const hidden = MODEL_CATALOG.filter(
+    (g) => g.tier === "live" && g.providerKey !== "anthropic" && configured[g.providerKey] !== true
+  ).map((g) => g.provider);
+  return {
+    groups,
+    note: hidden.length > 0 ? `(\u5DF2\u9690\u85CF\u540E\u53F0\u672A\u914D key \u7684 provider:${hidden.join("\u3001")} \u2014\u2014 \u5728 /admin-provider-keys \u914D\u597D key \u540E\u5373\u51FA\u73B0\u3002)` : ""
+  };
+}
+function switchableSlugs(opts) {
   const s = /* @__PURE__ */ new Set();
-  for (const g of MODEL_CATALOG) if (g.tier === "live") for (const m of g.models) s.add(m.slug);
+  for (const g of visibleGroups(opts).groups) {
+    if (g.tier === "live") for (const m of g.models) s.add(m.slug);
+  }
   return s;
 }
 var price = (n) => n > 0 ? `$${n}` : "\u2014";
-function renderCatalog(currentModel) {
+function renderCatalog(currentModel, opts) {
+  const { groups, note } = visibleGroups(opts);
   const lines = [];
   lines.push("## \u53EF\u7528\u6A21\u578B / \u4EF7\u683C(\u6BCF 100 \u4E07 token,input / output)\n");
-  lines.push("> \u5207\u6362\uFF1A\u9009\u4E00\u4E2A\uFF0C\u6211\u5E2E\u4F60\u5199\u8FDB\u8BBE\u7F6E\uFF1B\u6216\u81EA\u5DF1\u8FD0\u884C `/model <slug>`\u3002\u5B9E\u4ED8 \u2248 \u4F30\u4EF7 \xD7 1.25\u3002\n");
-  for (const g of MODEL_CATALOG) {
+  lines.push("> \u5207\u6362:\u4ECE\u4E0B\u9762\u9009\u4E00\u4E2A,\u6211\u5E2E\u4F60\u5199\u8FDB\u8BBE\u7F6E(**\u9700\u91CD\u542F claude \u751F\u6548**)\u3002\u5B9E\u4ED8 \u2248 \u4F30\u4EF7 \xD7 1.25\u3002\n");
+  for (const g of groups) {
     const badge = g.tier === "live" ? "\u2705 \u53EF\u5207" : "\u{1F50C} \u9700\u4EE3\u7406";
     lines.push(`
 ### ${g.provider} \u2014 ${badge}`);
@@ -31051,14 +31086,22 @@ function renderCatalog(currentModel) {
       lines.push(`| ${m.name}${cur} | \`${m.slug}\` | ${price(m.input)} | ${price(m.output)} | ${m.note ?? ""} |`);
     }
   }
-  lines.push(
-    "\n\u6CE8\uFF1A\u7B2C\u4E09\u65B9\u6A21\u578B\u5B9E\u9645\u53EF\u7528\u53D6\u51B3\u4E8E\u540E\u53F0\u662F\u5426\u5DF2\u914D\u8BE5\u5382\u5546 key;\u2705 \u5217\u5728\u7F51\u5173\u5DF2\u63A5\u5165,\u914D\u597D key \u5373\u751F\u6548\u3002`\u9700\u4EE3\u7406` \u7684\u9700 LiteLLM \u8F6C\u4E00\u5C42,\u6682\u4E0D\u53EF\u76F4\u63A5\u5207\u3002"
-  );
+  if (note) lines.push(`
+${note}`);
   return lines.join("\n");
 }
-function setAgentModel(slug) {
-  if (!switchableSlugs().has(slug)) {
-    return { ok: false, msg: `\u300C${slug}\u300D\u4E0D\u5728\u53EF\u5207\u6362\u6E05\u5355\u91CC(\u6216\u5C5E\u4E8E\u300C\u9700\u4EE3\u7406\u300D\u5C42)\u3002\u8BF7\u4ECE \u2705 \u5217\u91CC\u9009\u3002` };
+function setAgentModel(slug, opts) {
+  if (!switchableSlugs(opts).has(slug)) {
+    if (opts?.gatewayRouted === false) {
+      return {
+        ok: false,
+        msg: `\u300C${slug}\u300D\u4E0D\u80FD\u5207:\u5F53\u524D Claude Code \u672A\u8FDE Parallight \u7F51\u5173,\u53EA\u80FD\u7528 Claude \u5404\u6863\u3002\u5916\u90E8\u6A21\u578B\u8BF7\u5728 Parallight \u5728\u7EBF\u5B9E\u9A8C\u53F0 / \u914D\u597D\u7F51\u5173\u7684 CC \u91CC\u5207\u3002`
+      };
+    }
+    return {
+      ok: false,
+      msg: `\u300C${slug}\u300D\u5F53\u524D\u4E0D\u53EF\u5207 \u2014\u2014 \u53EF\u80FD\u540E\u53F0\u6CA1\u914D\u8BE5 provider \u7684 key(\u53BB /admin-provider-keys \u914D),\u6216\u5B83\u5C5E\u4E8E\u300C\u9700\u4EE3\u7406\u300D\u5C42\u3002\u5148\u8C03 list_models \u770B\u5F53\u524D\u771F\u6B63\u53EF\u5207\u7684\u6E05\u5355\u3002`
+    };
   }
   const path = join2(homedir2(), ".claude", "settings.json");
   let settings = {};
@@ -31074,7 +31117,7 @@ function setAgentModel(slug) {
   writeFileSync(path, JSON.stringify(settings, null, 2) + "\n");
   return {
     ok: true,
-    msg: `\u5DF2\u628A\u9ED8\u8BA4\u6A21\u578B\u8BBE\u4E3A ${slug}(\u5199\u5165 ~/.claude/settings.json)\u3002\u4E0B\u6B21\u5BF9\u8BDD\u5373\u7528\u5B83;\u60F3\u73B0\u5728\u7ACB\u523B\u5207,\u8FD0\u884C /model ${slug}\u3002`
+    msg: `\u5DF2\u628A\u9ED8\u8BA4\u6A21\u578B\u8BBE\u4E3A ${slug}(\u5199\u5165 ~/.claude/settings.json)\u3002\u26A0\uFE0F \u9700\u8981**\u91CD\u542F claude**(\u9000\u51FA\u540E\u91CD\u65B0\u8FD0\u884C \`claude\`)\u624D\u751F\u6548,\u5F53\u524D\u4F1A\u8BDD\u4E0D\u53D8\u3002(\u4E0D\u8981\u7528 /model \u5207 \u2014\u2014 Claude Code \u7684 /model \u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found\u3002)`
   };
 }
 
@@ -33071,6 +33114,48 @@ server.registerTool(
     }
   }
 );
+function readClaudeEnvConfig() {
+  let baseUrl = process.env.ANTHROPIC_BASE_URL ?? "";
+  let authToken = process.env.ANTHROPIC_AUTH_TOKEN ?? "";
+  try {
+    const p = join5(homedir5(), ".claude", "settings.json");
+    if (existsSync4(p)) {
+      const s = JSON.parse(readFileSync5(p, "utf8"));
+      const e = s?.env ?? {};
+      if (!baseUrl && typeof e.ANTHROPIC_BASE_URL === "string") baseUrl = e.ANTHROPIC_BASE_URL;
+      if (!authToken && typeof e.ANTHROPIC_AUTH_TOKEN === "string") authToken = e.ANTHROPIC_AUTH_TOKEN;
+    }
+  } catch {
+  }
+  return { baseUrl, authToken };
+}
+function isGatewayRouted() {
+  const { baseUrl, authToken } = readClaudeEnvConfig();
+  return /parallight/i.test(baseUrl) || authToken.startsWith("plk_");
+}
+function gatewayProbeToken() {
+  try {
+    const a = loadAuth();
+    if (a?.proxy_token) return a.proxy_token;
+  } catch {
+  }
+  const { authToken } = readClaudeEnvConfig();
+  return authToken.startsWith("plk_") ? authToken : null;
+}
+async function fetchConfiguredProviders() {
+  const token = gatewayProbeToken();
+  if (!token) return null;
+  try {
+    const res = await fetch(`${LLM_PROXY_URL}/v1/providers`, {
+      headers: { authorization: `Bearer ${token}` }
+    });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return j && typeof j.providers === "object" ? j.providers : null;
+  } catch {
+    return null;
+  }
+}
 server.registerTool(
   "list_models",
   {
@@ -33079,8 +33164,11 @@ server.registerTool(
     inputSchema: { select: external_exports.string().optional() }
   },
   async ({ select }) => {
+    const gatewayRouted = isGatewayRouted();
+    const configured = gatewayRouted ? await fetchConfiguredProviders() : null;
+    const filter = { gatewayRouted, configured };
     if (typeof select === "string" && select.trim()) {
-      const r = setAgentModel(select.trim());
+      const r = setAgentModel(select.trim(), filter);
       return r.ok ? ok(r.msg) : err(r.msg);
     }
     let current2;
@@ -33093,7 +33181,7 @@ server.registerTool(
     } catch {
     }
     return ok(
-      renderCatalog(current2) + "\n\n[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u8868\u683C\u539F\u6837\u5B8C\u6574\u5C55\u793A\u7ED9\u5B66\u5458\u3002\u7136\u540E\u7528 AskUserQuestion \u8BA9\u4ED6\u4ECE \u2705 \u53EF\u5207\u7684\u6A21\u578B\u91CC\u9009\u4E00\u4E2A(\u9009\u9879\u6807\u7B7E\u7528\u6A21\u578B\u540D + \u4EF7\u683C,\u5916\u52A0\u300C\u4E0D\u5207 / \u5148\u770B\u770B\u300D),\u4E0D\u8981\u8BA9\u4ED6\u6253\u5B57\u8F93 slug\u3002\u9009\u5B9A\u540E\u8C03 list_models \u5E76\u4F20 select=<\u90A3\u4E00\u884C\u7684 slug>\u3002\u300C\u9700\u4EE3\u7406\u300D\u5C42\u7684\u4E0D\u53EF\u9009\u3002"
+      renderCatalog(current2, filter) + "\n\n[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u8868\u683C\u539F\u6837\u5B8C\u6574\u5C55\u793A\u7ED9\u5B66\u5458\u3002\u7136\u540E\u7528 AskUserQuestion \u8BA9\u4ED6\u4ECE \u2705 \u53EF\u5207\u7684\u6A21\u578B\u91CC\u9009\u4E00\u4E2A(\u9009\u9879\u6807\u7B7E\u7528\u6A21\u578B\u540D + \u4EF7\u683C,\u5916\u52A0\u300C\u4E0D\u5207 / \u5148\u770B\u770B\u300D),\u4E0D\u8981\u8BA9\u4ED6\u6253\u5B57\u8F93 slug\u3002\u9009\u5B9A\u540E\u8C03 list_models \u5E76\u4F20 select=<\u90A3\u4E00\u884C\u7684 slug>\u3002\u5207\u6362\u540E\u5FC5\u987B**\u91CD\u542F claude** \u624D\u751F\u6548;**\u4E0D\u8981**\u5EFA\u8BAE\u7528 /model \u5207(\u5B83\u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found)\u3002"
     );
   }
 );
