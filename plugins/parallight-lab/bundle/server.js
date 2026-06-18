@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.18-phase1";
+var PARALLIGHT_VERSION = "0.1.19-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30986,7 +30986,7 @@ var MODEL_CATALOG = [
     providerKey: "glm",
     tier: "live",
     models: [
-      { slug: "glm-5.2", name: "GLM-5.2", input: 1.4, output: 4.4, note: "\u6700\u65B0\u65D7\u8230(\u9700 Coding Plan, \u5F53\u524D\u5BB9\u91CF\u7D27\u5F20)" },
+      { slug: "glm-5.2", name: "GLM-5.2", input: 1.4, output: 4.4 },
       { slug: "glm-5", name: "GLM-5", input: 1, output: 3.2 },
       { slug: "glm-4.7", name: "GLM-4.7", input: 0.6, output: 2.2, note: "\u4FBF\u5B9C lane" }
     ]
