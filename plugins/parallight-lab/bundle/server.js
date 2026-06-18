@@ -6886,7 +6886,7 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync5, existsSync as existsSync4 } from "node:fs";
+import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync5, existsSync as existsSync4, chmodSync as chmodSync2 } from "node:fs";
 import { homedir as homedir5 } from "node:os";
 import { join as join5, dirname as dirname2 } from "node:path";
 
@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.17-phase1";
+var PARALLIGHT_VERSION = "0.1.18-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30966,7 +30966,7 @@ var LLM_PROXY_URL = `${BACKEND_URL}/api/llm`;
 var SANDBOX_PROXY_URL = `${BACKEND_URL}/api/sandbox/v1`;
 
 // src/models-catalog.ts
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, chmodSync } from "node:fs";
 import { homedir as homedir2 } from "node:os";
 import { join as join2, dirname } from "node:path";
 var MODEL_CATALOG = [
@@ -31091,12 +31091,25 @@ function renderCatalog(currentModel, opts) {
 ${note}`);
   return lines.join("\n");
 }
+function resolveSettingsPath() {
+  const cwdSettings = join2(process.cwd(), ".claude", "settings.json");
+  try {
+    if (existsSync(cwdSettings)) {
+      const s = JSON.parse(readFileSync(cwdSettings, "utf8"));
+      if (typeof s?.env?.ANTHROPIC_BASE_URL === "string" && s.env.ANTHROPIC_BASE_URL.trim()) {
+        return cwdSettings;
+      }
+    }
+  } catch {
+  }
+  return join2(homedir2(), ".claude", "settings.json");
+}
 function setAgentModel(slug, opts) {
   if (!switchableSlugs(opts).has(slug)) {
     if (opts?.gatewayRouted === false) {
       return {
         ok: false,
-        msg: `\u300C${slug}\u300D\u4E0D\u80FD\u5207:\u5F53\u524D Claude Code \u672A\u8FDE Parallight \u7F51\u5173,\u53EA\u80FD\u7528 Claude \u5404\u6863\u3002\u5916\u90E8\u6A21\u578B\u8BF7\u5728 Parallight \u5728\u7EBF\u5B9E\u9A8C\u53F0 / \u914D\u597D\u7F51\u5173\u7684 CC \u91CC\u5207\u3002`
+        msg: `\u300C${slug}\u300D\u4E0D\u80FD\u5207:\u5F53\u524D Claude Code \u672A\u8FDE Parallight \u7F51\u5173,\u53EA\u80FD\u7528 Claude \u5404\u6863\u3002\u5916\u90E8\u6A21\u578B\u8BF7\u5728 Parallight \u5728\u7EBF\u5B9E\u9A8C\u53F0 / \u914D\u597D\u7F51\u5173\u7684 CC \u91CC\u5207(\u6216\u8BA9\u6211\u7528 setup_local_gateway \u5EFA\u4E00\u4E2A\u672C\u5730\u7F51\u5173\u76EE\u5F55)\u3002`
       };
     }
     return {
@@ -31104,7 +31117,7 @@ function setAgentModel(slug, opts) {
       msg: `\u300C${slug}\u300D\u5F53\u524D\u4E0D\u53EF\u5207 \u2014\u2014 \u53EF\u80FD\u540E\u53F0\u6CA1\u914D\u8BE5 provider \u7684 key(\u53BB /admin-provider-keys \u914D),\u6216\u5B83\u5C5E\u4E8E\u300C\u9700\u4EE3\u7406\u300D\u5C42\u3002\u5148\u8C03 list_models \u770B\u5F53\u524D\u771F\u6B63\u53EF\u5207\u7684\u6E05\u5355\u3002`
     };
   }
-  const path = join2(homedir2(), ".claude", "settings.json");
+  const path = resolveSettingsPath();
   let settings = {};
   try {
     if (existsSync(path)) settings = JSON.parse(readFileSync(path, "utf8"));
@@ -31115,10 +31128,12 @@ function setAgentModel(slug, opts) {
   env.ANTHROPIC_MODEL = slug;
   settings.env = env;
   mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, JSON.stringify(settings, null, 2) + "\n");
+  writeFileSync(path, JSON.stringify(settings, null, 2) + "\n", { mode: 384 });
+  chmodSync(path, 384);
+  const where = path.startsWith(homedir2()) ? path.replace(homedir2(), "~") : path;
   return {
     ok: true,
-    msg: `\u5DF2\u628A\u9ED8\u8BA4\u6A21\u578B\u8BBE\u4E3A ${slug}(\u5199\u5165 ~/.claude/settings.json)\u3002\u26A0\uFE0F \u9700\u8981**\u91CD\u542F claude**(\u9000\u51FA\u540E\u91CD\u65B0\u8FD0\u884C \`claude\`)\u624D\u751F\u6548,\u5F53\u524D\u4F1A\u8BDD\u4E0D\u53D8\u3002(\u4E0D\u8981\u7528 /model \u5207 \u2014\u2014 Claude Code \u7684 /model \u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found\u3002)`
+    msg: `\u5DF2\u628A\u9ED8\u8BA4\u6A21\u578B\u8BBE\u4E3A ${slug}(\u5199\u5165 ${where})\u3002\u26A0\uFE0F \u9700\u8981**\u91CD\u542F claude**(\u9000\u51FA\u540E\u91CD\u65B0\u8FD0\u884C \`claude\`)\u624D\u751F\u6548,\u5F53\u524D\u4F1A\u8BDD\u4E0D\u53D8\u3002(\u4E0D\u8981\u7528 /model \u5207 \u2014\u2014 Claude Code \u7684 /model \u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found\u3002)`
   };
 }
 
@@ -33184,6 +33199,60 @@ server.registerTool(
     return ok(
       renderCatalog(current2, filter) + "\n\n[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u8868\u683C\u539F\u6837\u5B8C\u6574\u5C55\u793A\u7ED9\u5B66\u5458\u3002\u7136\u540E\u7528 AskUserQuestion \u8BA9\u4ED6\u4ECE \u2705 \u53EF\u5207\u7684\u6A21\u578B\u91CC\u9009\u4E00\u4E2A(\u9009\u9879\u6807\u7B7E\u7528\u6A21\u578B\u540D + \u4EF7\u683C,\u5916\u52A0\u300C\u4E0D\u5207 / \u5148\u770B\u770B\u300D),\u4E0D\u8981\u8BA9\u4ED6\u6253\u5B57\u8F93 slug\u3002\u9009\u5B9A\u540E\u8C03 list_models \u5E76\u4F20 select=<\u90A3\u4E00\u884C\u7684 slug>\u3002\u5207\u6362\u540E\u5FC5\u987B**\u91CD\u542F claude** \u624D\u751F\u6548;**\u4E0D\u8981**\u5EFA\u8BAE\u7528 /model \u5207(\u5B83\u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found)\u3002"
     );
+  }
+);
+server.registerTool(
+  "setup_local_gateway",
+  {
+    title: "Set up a local gateway workspace (use external models locally)",
+    description: "\u5728\u672C\u5730\u5EFA\u4E00\u4E2A\u8D70 Parallight \u7F51\u5173\u7684\u4E13\u7528\u76EE\u5F55(\u9ED8\u8BA4 ~/parallight-gw):\u5199\u5165\u7F51\u5173\u5730\u5740 + \u5B66\u5458\u81EA\u5DF1\u7684 token + \u9ED8\u8BA4\u6A21\u578B\u3002\u5B66\u5458 cd \u8FDB\u53BB\u5F00 claude \u5373\u53EF\u5728\u672C\u5730\u7528 GLM/Kimi/MiniMax/DeepSeek/Opus 4.8 \u7B49\u5916\u90E8\u6A21\u578B,\u4E3B CC \u5B8C\u5168\u4E0D\u53D7\u5F71\u54CD\u3002model=<slug> \u8BBE\u9ED8\u8BA4\u6A21\u578B(\u9ED8\u8BA4 claude-sonnet-4-6);dir=<\u8DEF\u5F84> \u81EA\u5B9A\u4E49\u76EE\u5F55\u3002",
+    inputSchema: { model: external_exports.string().optional(), dir: external_exports.string().optional() }
+  },
+  async ({ model, dir }) => {
+    const token = gatewayProbeToken();
+    if (!token) {
+      return err(
+        "\u6CA1\u627E\u5230\u4F60\u7684 Parallight token \u2014\u2014 \u5148\u5728\u4E3B CC \u91CC\u8DD1 /lab \u767B\u5F55\u62FF\u5230 token,\u518D\u6765\u5EFA\u7F51\u5173\u76EE\u5F55\u3002"
+      );
+    }
+    const raw = dir && dir.trim() || "~/parallight-gw";
+    const target = raw.startsWith("~") ? join5(homedir5(), raw.slice(1).replace(/^[/\\]/, "")) : raw;
+    const chosen = model && model.trim() || "claude-sonnet-4-6";
+    try {
+      const claudeDir = join5(target, ".claude");
+      mkdirSync5(claudeDir, { recursive: true, mode: 448 });
+      const settingsPath = join5(claudeDir, "settings.json");
+      let settings = {};
+      try {
+        if (existsSync4(settingsPath))
+          settings = JSON.parse(readFileSync5(settingsPath, "utf8"));
+      } catch {
+        settings = {};
+      }
+      const env = settings.env && typeof settings.env === "object" ? settings.env : {};
+      env.ANTHROPIC_BASE_URL = LLM_PROXY_URL;
+      env.ANTHROPIC_AUTH_TOKEN = token;
+      env.ANTHROPIC_MODEL = chosen;
+      settings.env = env;
+      writeFileSync5(settingsPath, JSON.stringify(settings, null, 2) + "\n", { mode: 384 });
+      chmodSync2(settingsPath, 384);
+      try {
+        writeFileSync5(join5(target, ".gitignore"), ".claude/\n");
+      } catch {
+      }
+      return ok(
+        `\u2705 \u5DF2\u5EFA\u597D\u7F51\u5173\u4E13\u7528\u76EE\u5F55:${target}(\u9ED8\u8BA4\u6A21\u578B ${chosen})\u3002
+
+\u7528\u6CD5:
+  cd ${target}
+  claude
+
+\u8FDB\u53BB\u540E\u8DD1 /more-model \u5C31\u80FD\u770B\u5230\u5E76\u5207\u6362 GLM / Kimi / MiniMax / DeepSeek / Opus 4.8(\u8D70\u7F51\u5173,\u6309\u91CF\u8BA1\u8D39)\u3002\u4F60\u4E3B CC \u5B8C\u5168\u4E0D\u53D7\u5F71\u54CD(\u4ECD\u662F\u4F60\u81EA\u5DF1\u7684\u8D26\u53F7 / \u6A21\u578B / \u5957\u9910)\u3002
+(\u8BE5\u76EE\u5F55\u542B\u4F60\u7684 token,\u5DF2\u81EA\u52A8\u52A0 .gitignore,\u522B\u624B\u52A8\u63D0\u4EA4\u5230 git\u3002)`
+      );
+    } catch (e) {
+      return err(`\u5EFA\u7F51\u5173\u76EE\u5F55\u5931\u8D25:${String(e)}`);
+    }
   }
 );
 server.registerTool(
