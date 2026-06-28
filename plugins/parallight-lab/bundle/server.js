@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.20-phase1";
+var PARALLIGHT_VERSION = "0.1.21-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -32144,6 +32144,13 @@ function composeSystemPrompt(master, ctx, variant, contextPack) {
     "  required where the learner must ARTICULATE.",
     `- End EVERY response with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 {X}% complete]`,
     "  where X reflects checkpoint progress (you'll be told the current %).",
+    "- \u26D4 The badge is a SUFFIX, NEVER the whole reply. NEVER send a reply that is",
+    "  only the badge (or near-empty + badge). EVERY turn must carry substance",
+    "  BEFORE the badge: what you just did and what it showed (\u{1F52C} block if you ran",
+    "  anything), or a concrete question / options for the learner. If the learner",
+    "  asked you to do something, DO it this turn and REPORT what happened \u2014 never",
+    "  go silent while you work. A badge-only reply = the learner saw nothing happen,",
+    "  can't follow you and can't direct you. That is a failure of your core job.",
     "",
     "## OUTPUT & EXPERIMENT STYLE (you are a science demonstrator, not a code dumper):",
     "- Write SCANNABLE, not dense. Default to bullet lists; bold the key term;",
