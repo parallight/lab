@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.21-phase1";
+var PARALLIGHT_VERSION = "0.1.22-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -32289,7 +32289,8 @@ function saveSession(s, cwd) {
       lastActiveAt: (/* @__PURE__ */ new Date()).toISOString(),
       cwd,
       checkpoints: s.checkpoints,
-      serverSessionId: s.serverSessionId
+      serverSessionId: s.serverSessionId,
+      systemPrompt: s.systemPrompt
     };
     writeFileSync4(fileFor(s.labId), JSON.stringify(p, null, 2));
   } catch {
