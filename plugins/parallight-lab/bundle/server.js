@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.22-phase1";
+var PARALLIGHT_VERSION = "0.1.23-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -30964,6 +30964,18 @@ var AUTH_DIR = join(homedir(), ".parallight");
 var AUTH_FILE = join(AUTH_DIR, "auth.json");
 var LLM_PROXY_URL = `${BACKEND_URL}/api/llm`;
 var SANDBOX_PROXY_URL = `${BACKEND_URL}/api/sandbox/v1`;
+
+// src/lab-tracks.ts
+var LAB_TRACKS = [
+  { key: "prep", label: "\u9884\u4FEE", desc: "\u5F00\u8425\u524D\u6253\u5E95\u5B50(lab 0 \u7CFB\u5217)" },
+  { key: "cohort-1", label: "\u7B2C\u4E00\u671F", desc: "\u7B2C\u4E00\u671F\u8BAD\u7EC3\u8425 \xB7 Agentic Engineering" },
+  { key: "cohort-2", label: "\u7B2C\u4E8C\u671F", desc: "\u7B2C\u4E8C\u671F\u8BAD\u7EC3\u8425 \xB7 \u9AD8\u7EA7\u667A\u80FD\u4F53\u7CFB\u7EDF" }
+];
+var LAB_TRACK_KEYS = LAB_TRACKS.map((t) => t.key);
+var KNOWN_TRACKS = new Set(LAB_TRACKS.map((t) => t.key));
+function labsOfTrack(labs, key) {
+  return labs.filter((l) => l.track === key || l.track == null || !KNOWN_TRACKS.has(l.track));
+}
 
 // src/models-catalog.ts
 import { readFileSync, writeFileSync, mkdirSync, existsSync, chmodSync } from "node:fs";
@@ -30977,7 +30989,7 @@ var MODEL_CATALOG = [
     models: [
       { slug: "claude-opus-4-8", name: "Claude Opus 4.8", input: 5, output: 25, note: "\u6700\u65B0\u65D7\u8230 \xB7 \u6700\u5F3A\u63A8\u7406 \xB7 1M \u4E0A\u4E0B\u6587" },
       { slug: "claude-opus-4-5", name: "Claude Opus 4.5", input: 5, output: 25, note: "\u4E0A\u4E00\u4EE3\u65D7\u8230" },
-      { slug: "claude-sonnet-4-6", name: "Claude Sonnet 4.6", input: 3, output: 15, note: "\u9ED8\u8BA4 \xB7 \u5747\u8861" },
+      { slug: "claude-sonnet-5", name: "Claude Sonnet 5", input: 3, output: 15, note: "\u5747\u8861 \xB7 \u65B0(8/31 \u524D introductory $2/$10)" },
       { slug: "claude-haiku-4-5", name: "Claude Haiku 4.5", input: 1, output: 5, note: "\u6700\u5FEB / \u4FBF\u5B9C" }
     ]
   },
@@ -32426,8 +32438,14 @@ server.registerTool(
 );
 server.registerTool(
   "list_labs",
-  { title: "List labs", description: "List labs available to the logged-in learner." },
-  async () => {
+  {
+    title: "List labs",
+    description: "List labs available to the logged-in learner. Call WITHOUT track first: it returns a category picker (\u9884\u4FEE/\u7B2C\u4E00\u671F/\u7B2C\u4E8C\u671F). After the learner picks, call again with track.",
+    inputSchema: {
+      track: external_exports.enum(LAB_TRACK_KEYS).optional().describe("lab \u7C7B\u522B;\u7F3A\u7701 = \u5148\u5F39\u7C7B\u522B\u9009\u5355")
+    }
+  },
+  async ({ track }) => {
     try {
       requireToken();
     } catch {
@@ -32436,11 +32454,45 @@ server.registerTool(
     try {
       const labs = await listLabs();
       if (labs.length === 0) return ok("\u76EE\u524D\u6CA1\u6709\u53EF\u7528\u7684 lab\u3002");
+      const session = getSession();
+      const sessionLine = session ? `\u5F53\u524D\u8FDB\u884C\u4E2D\uFF1A**${session.title}** (${percentComplete()}%)
+
+` : "";
+      if (!track) {
+        const banner = maybeUpdateBanner(PARALLIGHT_VERSION, await getLatestVersion());
+        const counts = LAB_TRACKS.map((t) => ({ ...t, n: labsOfTrack(labs, t.key).length }));
+        const table2 = [
+          "| \u7C7B\u522B | \u5185\u5BB9 | lab \u6570 |",
+          "|:-----|:-----|:------|",
+          ...counts.map((t) => `| ${t.label} | ${t.desc} | ${t.n} |`)
+        ].join("\n");
+        const optionMap2 = counts.map((t) => `${t.label} \u2192 list_labs(track="${t.key}")`).join("; ");
+        return ok(
+          [
+            ...banner ? [banner, ""] : [],
+            `${sessionLine}## \u9009\u62E9 Lab \u7C7B\u522B`,
+            "",
+            table2,
+            "",
+            (banner ? "[NOW DO THIS] FIRST show the \u{1F514} update notice at the very top to the learner VERBATIM. THEN: " : "[NOW DO THIS] ") + `Ask the learner which category they want via AskUserQuestion \u2014 one option per row above, option label = the \u7C7B\u522B name, description = \u5185\u5BB9 + lab \u6570. Do NOT list or start individual labs yet. On their pick, call list_labs again with that category's track. Option\u2192call map: ${optionMap2}.`
+          ].join("\n")
+        );
+      }
+      const trackDef = LAB_TRACKS.find((t) => t.key === track);
+      const inTrack = labsOfTrack(labs, track);
+      if (inTrack.length === 0) {
+        const others = LAB_TRACKS.filter((t) => t.key !== track).map((t) => `${t.label} ${labsOfTrack(labs, t.key).length} \u4E2A`).join("\u3001");
+        return ok(
+          `\u300C${trackDef.label}\u300D\u76EE\u524D\u8FD8\u6CA1\u6709\u5DF2\u53D1\u5E03\u7684 lab\u3002
+
+[NOW DO THIS] Tell the learner this category is empty for now, then re-offer the other categories via AskUserQuestion (${others}); on pick call list_labs with that track.`
+        );
+      }
       const fmtDur = (d) => d ? `${d[0]}\u2013${d[1]}h` : "\u2014";
       const practice = (l) => (l.skills && l.skills.length ? l.skills : l.learning_objectives.map((o) => o.name)).join(
         " \xB7 "
       );
-      const rows = labs.map(
+      const rows = inTrack.map(
         (l) => `| ${l.order} | ${l.title} | ${practice(l)} | ${l.tagline ?? ""} | ${fmtDur(
           l.duration_estimate_hours
         )} |`
@@ -32450,20 +32502,14 @@ server.registerTool(
         "|:--|:----|:--------|:----------|:----|",
         ...rows
       ].join("\n");
-      const session = getSession();
-      const header = session ? `\u5F53\u524D\u8FDB\u884C\u4E2D\uFF1A**${session.title}** (${percentComplete()}%)
-
-## \u53EF\u7528 Lab` : "## \u53EF\u7528 Lab";
-      const optionMap = labs.map((l) => `${l.order} \u2192 start_lab(lab_id="${l.lab_id}")`).join("; ");
-      const banner = maybeUpdateBanner(PARALLIGHT_VERSION, await getLatestVersion());
+      const optionMap = inTrack.map((l) => `${l.order} \u2192 start_lab(lab_id="${l.lab_id}")`).join("; ");
       return ok(
         [
-          ...banner ? [banner, ""] : [],
-          header,
+          `${sessionLine}## \u53EF\u7528 Lab \xB7 ${trackDef.label}`,
           "",
           table,
           "",
-          (banner ? "[NOW DO THIS] FIRST show the \u{1F514} update notice at the very top to the learner VERBATIM. THEN show the table below. " : "[NOW DO THIS] Show the table above to the learner VERBATIM ") + `(it is the scannable catalog \u2014 do not collapse it into the option cards). Then DO NOT ask them to type a lab id. Present the labs as SELECTABLE OPTIONS via AskUserQuestion \u2014 one option per row, the option label = a SHORT lab name (not the full title), so they pick by arrow keys (CLI) / cards (VSCode). On their pick, call start_lab with that row's lab_id. Row\u2192id map: ${optionMap}.`
+          `[NOW DO THIS] Show the table above to the learner VERBATIM (it is the scannable catalog \u2014 do not collapse it into the option cards). Then DO NOT ask them to type a lab id. Present the labs as SELECTABLE OPTIONS via AskUserQuestion \u2014 one option per row, the option label = a SHORT lab name (not the full title), plus a \u300C\u21A9 \u6362\u4E2A\u7C7B\u522B\u300Doption (on pick call list_labs with no track), so they pick by arrow keys (CLI) / cards (VSCode). On their pick, call start_lab with that row's lab_id. Row\u2192id map: ${optionMap}.`
         ].join("\n")
       );
     } catch (e) {
@@ -32726,6 +32772,23 @@ Checkpoints:
 ${kp}`
     );
   }
+);
+server.registerTool(
+  "super_loop",
+  {
+    title: "\u8D85\u957F\u81EA\u4E3B\u4EFB\u52A1",
+    description: "\u8FD4\u56DE super-run \u63D0\u4EA4\u5165\u53E3 URL:\u5B66\u5458\u5728\u7F51\u9875\u8868\u5355\u91CC\u586B\u76EE\u6807/\u8BC4\u6D4B\u6307\u6807/\u9884\u671F\u65F6\u95F4/\u6700\u5927\u8D44\u6E90,\u63D0\u4EA4\u540E agent \u5728\u4E91\u7AEF\u6C99\u7BB1\u91CC\u957F\u8DD1\u3002"
+  },
+  () => ok(
+    [
+      "\u{1F680} \u8D85\u957F\u81EA\u4E3B\u4EFB\u52A1(super-run)\u5165\u53E3:",
+      "",
+      "https://lab.parallight.ai/lab/super-loop",
+      "",
+      "\u628A\u4E0A\u9762\u7684\u94FE\u63A5\u5C55\u793A\u7ED9\u5B66\u5458,\u8BF7\u5B66\u5458\u6253\u5F00\u5B83:\u586B\u5199 \u76EE\u6807 / \u8BC4\u6D4B\u6307\u6807 / \u9884\u671F\u65F6\u95F4 / \u6700\u5927\u8D44\u6E90 \u5E76\u63D0\u4EA4\u3002",
+      "\u63D0\u4EA4\u540E\u4E91\u7AEF\u6C99\u7BB1\u4F1A\u81EA\u52A8\u5F00\u8DD1;\u5173\u6389\u9875\u9762\u4E5F\u4E0D\u5F71\u54CD\u3002\u8FDB\u5EA6\u968F\u65F6\u56DE\u540C\u4E00\u9875\u9762\u770B\u3002"
+    ].join("\n")
+  )
 );
 server.registerTool(
   "get_lab_kb",
@@ -33213,7 +33276,7 @@ server.registerTool(
   "setup_local_gateway",
   {
     title: "Set up a local gateway workspace (use external models locally)",
-    description: "\u5728\u672C\u5730\u5EFA\u4E00\u4E2A\u8D70 Parallight \u7F51\u5173\u7684\u4E13\u7528\u76EE\u5F55(\u9ED8\u8BA4 ~/parallight-gw):\u5199\u5165\u7F51\u5173\u5730\u5740 + \u5B66\u5458\u81EA\u5DF1\u7684 token + \u9ED8\u8BA4\u6A21\u578B\u3002\u5B66\u5458 cd \u8FDB\u53BB\u5F00 claude \u5373\u53EF\u5728\u672C\u5730\u7528 GLM/Kimi/MiniMax/DeepSeek/Opus 4.8 \u7B49\u5916\u90E8\u6A21\u578B,\u4E3B CC \u5B8C\u5168\u4E0D\u53D7\u5F71\u54CD\u3002model=<slug> \u8BBE\u9ED8\u8BA4\u6A21\u578B(\u9ED8\u8BA4 claude-sonnet-4-6);dir=<\u8DEF\u5F84> \u81EA\u5B9A\u4E49\u76EE\u5F55\u3002",
+    description: "\u5728\u672C\u5730\u5EFA\u4E00\u4E2A\u8D70 Parallight \u7F51\u5173\u7684\u4E13\u7528\u76EE\u5F55(\u9ED8\u8BA4 ~/parallight-gw):\u5199\u5165\u7F51\u5173\u5730\u5740 + \u5B66\u5458\u81EA\u5DF1\u7684 token + \u9ED8\u8BA4\u6A21\u578B\u3002\u5B66\u5458 cd \u8FDB\u53BB\u5F00 claude \u5373\u53EF\u5728\u672C\u5730\u7528 GLM/Kimi/MiniMax/DeepSeek/Opus 4.8 \u7B49\u5916\u90E8\u6A21\u578B,\u4E3B CC \u5B8C\u5168\u4E0D\u53D7\u5F71\u54CD\u3002model=<slug> \u8BBE\u9ED8\u8BA4\u6A21\u578B(\u9ED8\u8BA4 claude-sonnet-5);dir=<\u8DEF\u5F84> \u81EA\u5B9A\u4E49\u76EE\u5F55\u3002",
     inputSchema: { model: external_exports.string().optional(), dir: external_exports.string().optional() }
   },
   async ({ model, dir }) => {
@@ -33225,7 +33288,7 @@ server.registerTool(
     }
     const raw = dir && dir.trim() || "~/parallight-gw";
     const target = raw.startsWith("~") ? join5(homedir5(), raw.slice(1).replace(/^[/\\]/, "")) : raw;
-    const chosen = model && model.trim() || "claude-sonnet-4-6";
+    const chosen = model && model.trim() || "claude-sonnet-5";
     try {
       const claudeDir = join5(target, ".claude");
       mkdirSync5(claudeDir, { recursive: true, mode: 448 });

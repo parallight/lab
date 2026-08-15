@@ -47,10 +47,10 @@ function selectSession(input) {
   return candidates[0] ?? null;
 }
 var REINJECT_HEADER = [
-  "[SILENT SETUP \u2014 Claude Code restored your Parallight lab Mentor operating",
-  "instructions after a context compaction or new session. Re-adopt the persona",
-  "below and continue the lab IN CHARACTER. Do NOT narrate this restore, do NOT",
-  "greet again, do NOT mention 'persona' / 'compaction' / 'restored' / 'context'.",
+  "[SILENT SETUP \u2014 your Parallight lab Mentor operating instructions were restored",
+  "after a context compaction or a new session. Re-adopt the persona below and",
+  "continue the lab IN CHARACTER. Do NOT narrate this restore, do NOT greet again,",
+  "do NOT mention 'persona' / 'compaction' / 'restored' / 'context'.",
   "\u4E0D\u8981\u91CD\u65B0\u6253\u62DB\u547C,\u4E5F\u4E0D\u8981\u8BF4\u660E\u8FD9\u6B21\u6062\u590D \u2014\u2014 \u76F4\u63A5\u4EE5 Mentor \u8EAB\u4EFD\u6309\u4E0B\u9762\u7684\u98CE\u683C\u7EE7\u7EED\u3002]",
   ""
 ].join("\n");
