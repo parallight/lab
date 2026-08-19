@@ -9,7 +9,7 @@ description: 列出所有 lab 命令
 
 - /lab-help — 列出所有 lab 命令
 - /lab — Parallight Lab 主入口 — 显示可用 lab 列表 + 当前进度 + 未读通知
-- /lab-login — 登录 Parallight Lab（邮箱 + 6 位验证码 OTP）
+- /lab-login — 登录 Parallight Lab（邮箱 + 4 位个人 PIN）
 - /lab-start — 开始一个 lab — 写 starter 文件、注入 LLM 配置、加载Mentor人格
 - /lab-resume — 恢复上次中断的 lab(常用于开了新 VSCode 窗口、Mentor人格没了)
 - /lab-status — Mentor总结当前 lab 的进度

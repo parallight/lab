@@ -30954,7 +30954,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.23-phase1";
+var PARALLIGHT_VERSION = "0.1.24-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -31264,6 +31264,26 @@ async function verifyOtp(email3, code) {
     email: r.user?.email
   });
   return { email: r.user?.email };
+}
+async function pinLookup(email3) {
+  const r = await postJson("/api/auth/pin/lookup", { email: email3 });
+  if (!r.ok || !r.state) {
+    throw new Error(r.message ?? r.error ?? "\u90AE\u7BB1\u67E5\u8BE2\u5931\u8D25");
+  }
+  return { state: r.state, message: r.message, settings_url: r.settings_url };
+}
+async function pinLogin(email3, pin) {
+  const r = await postJson("/api/auth/pin/verify", { email: email3, pin });
+  if (!r.ok || !r.proxy_token) {
+    throw new Error(r.message ?? r.error ?? "PIN \u767B\u5F55\u5931\u8D25");
+  }
+  saveAuth({
+    proxy_token: r.proxy_token,
+    access_token: "",
+    refresh_token: "",
+    email: r.user?.email ?? email3
+  });
+  return { email: r.user?.email ?? email3 };
 }
 async function listLabs() {
   const r = await getJson("/api/labs");
@@ -32424,6 +32444,41 @@ server.registerTool(
       return ok(`\u767B\u5F55\u6210\u529F \u2705 (${e ?? email3})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
     } catch (e) {
       return err(`\u9A8C\u8BC1\u5931\u8D25\uFF1A${String(e)}`);
+    }
+  }
+);
+server.registerTool(
+  "auth_pin_lookup",
+  {
+    title: "Check email before asking for PIN",
+    description: "Step 1 of PIN login. Given the learner's email, returns one of: no_course (no course record \u2014 show the message, do NOT ask for a PIN), needs_setup (has a course but no PIN yet \u2014 send them to the settings URL, do NOT ask for a PIN), ready (ask the learner for their 4-digit PIN, then call auth_pin_login).",
+    inputSchema: { email: external_exports.string().email() }
+  },
+  async ({ email: email3 }) => {
+    try {
+      const r = await pinLookup(email3);
+      if (r.state === "ready") {
+        return ok(`\u90AE\u7BB1\u786E\u8BA4\u65E0\u8BEF \u2705 \u8BF7\u8F93\u5165\u4F60\u7684 4 \u4F4D\u4E2A\u4EBA PIN\u3002`);
+      }
+      return ok(r.message ?? `state=${r.state}`);
+    } catch (e) {
+      return err(String(e instanceof Error ? e.message : e));
+    }
+  }
+);
+server.registerTool(
+  "auth_pin_login",
+  {
+    title: "Log in with email + personal PIN",
+    description: "Step 2 of PIN login. Verifies the learner's 4-digit PIN and stores their credential. Only call after auth_pin_lookup returned state=ready.",
+    inputSchema: { email: external_exports.string().email(), pin: external_exports.string() }
+  },
+  async ({ email: email3, pin }) => {
+    try {
+      const { email: e } = await pinLogin(email3, pin);
+      return ok(`\u767B\u5F55\u6210\u529F \u2705 (${e})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
+    } catch (e) {
+      return err(String(e instanceof Error ? e.message : e));
     }
   }
 );
