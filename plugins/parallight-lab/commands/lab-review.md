@@ -1,6 +1,6 @@
 ---
 name: lab-review
-description: 提交一次 lab review 给真人 Marvin 批改
+description: 提交一次 lab review 给真人 Mentor 批改
 ---
 
 <!-- AUTO-GENERATED from commands-src/lab-review.md — do not edit. Run `pnpm gen:commands`. -->

@@ -29,9 +29,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js
 var require_code = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/code.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = void 0;
@@ -183,9 +183,9 @@ var require_code = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js
 var require_scope = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/scope.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = void 0;
@@ -328,9 +328,9 @@ var require_scope = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js
 var require_codegen = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/codegen/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = void 0;
@@ -1048,9 +1048,9 @@ var require_codegen = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js
 var require_util = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/util.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.checkStrictMode = exports.getErrorPath = exports.Type = exports.useFunc = exports.setEvaluated = exports.evaluatedPropsToName = exports.mergeEvaluated = exports.eachItem = exports.unescapeJsonPointer = exports.escapeJsonPointer = exports.escapeFragment = exports.unescapeFragment = exports.schemaRefOrVal = exports.schemaHasRulesButRef = exports.schemaHasRules = exports.checkUnknownRules = exports.alwaysValidSchema = exports.toHash = void 0;
@@ -1215,9 +1215,9 @@ var require_util = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js
 var require_names = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/names.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -1254,9 +1254,9 @@ var require_names = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js
 var require_errors = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/errors.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
@@ -1298,21 +1298,21 @@ var require_errors = __commonJS({
     function extendErrors({ gen, keyword, schemaValue, data, errsCount, it }) {
       if (errsCount === void 0)
         throw new Error("ajv implementation error");
-      const err2 = gen.name("err");
+      const err4 = gen.name("err");
       gen.forRange("i", errsCount, names_1.default.errors, (i) => {
-        gen.const(err2, (0, codegen_1._)`${names_1.default.vErrors}[${i}]`);
-        gen.if((0, codegen_1._)`${err2}.instancePath === undefined`, () => gen.assign((0, codegen_1._)`${err2}.instancePath`, (0, codegen_1.strConcat)(names_1.default.instancePath, it.errorPath)));
-        gen.assign((0, codegen_1._)`${err2}.schemaPath`, (0, codegen_1.str)`${it.errSchemaPath}/${keyword}`);
+        gen.const(err4, (0, codegen_1._)`${names_1.default.vErrors}[${i}]`);
+        gen.if((0, codegen_1._)`${err4}.instancePath === undefined`, () => gen.assign((0, codegen_1._)`${err4}.instancePath`, (0, codegen_1.strConcat)(names_1.default.instancePath, it.errorPath)));
+        gen.assign((0, codegen_1._)`${err4}.schemaPath`, (0, codegen_1.str)`${it.errSchemaPath}/${keyword}`);
         if (it.opts.verbose) {
-          gen.assign((0, codegen_1._)`${err2}.schema`, schemaValue);
-          gen.assign((0, codegen_1._)`${err2}.data`, data);
+          gen.assign((0, codegen_1._)`${err4}.schema`, schemaValue);
+          gen.assign((0, codegen_1._)`${err4}.data`, data);
         }
       });
     }
     exports.extendErrors = extendErrors;
     function addError(gen, errObj) {
-      const err2 = gen.const("err", errObj);
-      gen.if((0, codegen_1._)`${names_1.default.vErrors} === null`, () => gen.assign(names_1.default.vErrors, (0, codegen_1._)`[${err2}]`), (0, codegen_1._)`${names_1.default.vErrors}.push(${err2})`);
+      const err4 = gen.const("err", errObj);
+      gen.if((0, codegen_1._)`${names_1.default.vErrors} === null`, () => gen.assign(names_1.default.vErrors, (0, codegen_1._)`[${err4}]`), (0, codegen_1._)`${names_1.default.vErrors}.push(${err4})`);
       gen.code((0, codegen_1._)`${names_1.default.errors}++`);
     }
     function returnErrors(it, errs) {
@@ -1376,9 +1376,9 @@ var require_errors = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js
 var require_boolSchema = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/boolSchema.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.boolOrEmptySchema = exports.topBoolOrEmptySchema = void 0;
@@ -1427,9 +1427,9 @@ var require_boolSchema = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js
 var require_rules = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/rules.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getRules = exports.isJSONType = void 0;
@@ -1458,9 +1458,9 @@ var require_rules = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js
 var require_applicability = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/applicability.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.shouldUseRule = exports.shouldUseGroup = exports.schemaHasRulesForType = void 0;
@@ -1481,9 +1481,9 @@ var require_applicability = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js
 var require_dataType = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/dataType.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.reportTypeError = exports.checkDataTypes = exports.checkDataType = exports.coerceAndCheckDataType = exports.getJSONTypes = exports.getSchemaTypes = exports.DataType = void 0;
@@ -1665,9 +1665,9 @@ var require_dataType = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js
 var require_defaults = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/defaults.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.assignDefaults = void 0;
@@ -1702,9 +1702,9 @@ var require_defaults = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js
 var require_code2 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/code.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateUnion = exports.validateArray = exports.usePattern = exports.callValidateCode = exports.schemaProperties = exports.allSchemaProperties = exports.noPropertyInData = exports.propertyInData = exports.isOwnProperty = exports.hasPropFunc = exports.reportMissingProp = exports.checkMissingProp = exports.checkReportMissingProp = void 0;
@@ -1835,9 +1835,9 @@ var require_code2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js
 var require_keyword = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/keyword.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateKeywordUsage = exports.validSchemaType = exports.funcKeywordCode = exports.macroKeywordCode = void 0;
@@ -1953,9 +1953,9 @@ var require_keyword = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js
 var require_subschema = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/subschema.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.extendSubschemaMode = exports.extendSubschemaData = exports.getSubschema = void 0;
@@ -2036,9 +2036,9 @@ var require_subschema = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
 var require_fast_deep_equal = __commonJS({
-  "../../node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(exports, module) {
     "use strict";
     module.exports = function equal(a, b) {
       if (a === b) return true;
@@ -2071,9 +2071,9 @@ var require_fast_deep_equal = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js
 var require_json_schema_traverse = __commonJS({
-  "../../node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js"(exports, module) {
     "use strict";
     var traverse = module.exports = function(schema, opts, cb) {
       if (typeof opts == "function") {
@@ -2159,9 +2159,9 @@ var require_json_schema_traverse = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js
 var require_resolve = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/resolve.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getSchemaRefs = exports.resolveUrl = exports.normalizeId = exports._getFullPath = exports.getFullPath = exports.inlineRef = void 0;
@@ -2315,9 +2315,9 @@ var require_resolve = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js
 var require_validate = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/validate/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getData = exports.KeywordCxt = exports.validateFunctionCode = void 0;
@@ -2823,9 +2823,9 @@ var require_validate = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js
 var require_validation_error = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/validation_error.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ValidationError = class extends Error {
@@ -2839,9 +2839,9 @@ var require_validation_error = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js
 var require_ref_error = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/ref_error.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var resolve_1 = require_resolve();
@@ -2856,9 +2856,9 @@ var require_ref_error = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js
 var require_compile = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/compile/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.resolveSchema = exports.getCompilingSchema = exports.resolveRef = exports.compileSchema = exports.SchemaEnv = void 0;
@@ -3080,9 +3080,9 @@ var require_compile = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json
 var require_data = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/data.json"(exports, module) {
     module.exports = {
       $id: "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
       description: "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -3099,9 +3099,9 @@ var require_data = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/utils.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/utils.js
 var require_utils = __commonJS({
-  "../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/utils.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/utils.js"(exports, module) {
     "use strict";
     var isUUID = RegExp.prototype.test.bind(/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iu);
     var isIPv4 = RegExp.prototype.test.bind(/^(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)$/u);
@@ -3412,9 +3412,9 @@ var require_utils = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/schemes.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/schemes.js
 var require_schemes = __commonJS({
-  "../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/schemes.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/lib/schemes.js"(exports, module) {
     "use strict";
     var { isUUID } = require_utils();
     var URN_REG = /([\da-z][\d\-a-z]{0,31}):((?:[\w!$'()*+,\-.:;=@]|%[\da-f]{2})+)/iu;
@@ -3622,9 +3622,9 @@ var require_schemes = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/index.js
 var require_fast_uri = __commonJS({
-  "../../node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/index.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/fast-uri@3.1.2/node_modules/fast-uri/index.js"(exports, module) {
     "use strict";
     var { normalizeIPv6, removeDotSegments, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, escapePreservingEscapes, reescapeHostDelimiters, isIPv4, nonSimpleDomain } = require_utils();
     var { SCHEMES, getSchemeHandler } = require_schemes();
@@ -3644,49 +3644,49 @@ var require_fast_uri = __commonJS({
       schemelessOptions.skipEscape = true;
       return serialize(resolved, schemelessOptions);
     }
-    function resolveComponent(base, relative2, options, skipNormalization) {
+    function resolveComponent(base, relative3, options, skipNormalization) {
       const target = {};
       if (!skipNormalization) {
         base = parse3(serialize(base, options), options);
-        relative2 = parse3(serialize(relative2, options), options);
+        relative3 = parse3(serialize(relative3, options), options);
       }
       options = options || {};
-      if (!options.tolerant && relative2.scheme) {
-        target.scheme = relative2.scheme;
-        target.userinfo = relative2.userinfo;
-        target.host = relative2.host;
-        target.port = relative2.port;
-        target.path = removeDotSegments(relative2.path || "");
-        target.query = relative2.query;
+      if (!options.tolerant && relative3.scheme) {
+        target.scheme = relative3.scheme;
+        target.userinfo = relative3.userinfo;
+        target.host = relative3.host;
+        target.port = relative3.port;
+        target.path = removeDotSegments(relative3.path || "");
+        target.query = relative3.query;
       } else {
-        if (relative2.userinfo !== void 0 || relative2.host !== void 0 || relative2.port !== void 0) {
-          target.userinfo = relative2.userinfo;
-          target.host = relative2.host;
-          target.port = relative2.port;
-          target.path = removeDotSegments(relative2.path || "");
-          target.query = relative2.query;
+        if (relative3.userinfo !== void 0 || relative3.host !== void 0 || relative3.port !== void 0) {
+          target.userinfo = relative3.userinfo;
+          target.host = relative3.host;
+          target.port = relative3.port;
+          target.path = removeDotSegments(relative3.path || "");
+          target.query = relative3.query;
         } else {
-          if (!relative2.path) {
+          if (!relative3.path) {
             target.path = base.path;
-            if (relative2.query !== void 0) {
-              target.query = relative2.query;
+            if (relative3.query !== void 0) {
+              target.query = relative3.query;
             } else {
               target.query = base.query;
             }
           } else {
-            if (relative2.path[0] === "/") {
-              target.path = removeDotSegments(relative2.path);
+            if (relative3.path[0] === "/") {
+              target.path = removeDotSegments(relative3.path);
             } else {
               if ((base.userinfo !== void 0 || base.host !== void 0 || base.port !== void 0) && !base.path) {
-                target.path = "/" + relative2.path;
+                target.path = "/" + relative3.path;
               } else if (!base.path) {
-                target.path = relative2.path;
+                target.path = relative3.path;
               } else {
-                target.path = base.path.slice(0, base.path.lastIndexOf("/") + 1) + relative2.path;
+                target.path = base.path.slice(0, base.path.lastIndexOf("/") + 1) + relative3.path;
               }
               target.path = removeDotSegments(target.path);
             }
-            target.query = relative2.query;
+            target.query = relative3.query;
           }
           target.userinfo = base.userinfo;
           target.host = base.host;
@@ -3694,7 +3694,7 @@ var require_fast_uri = __commonJS({
         }
         target.scheme = base.scheme;
       }
-      target.fragment = relative2.fragment;
+      target.fragment = relative3.fragment;
       return target;
     }
     function equal(uriA, uriB, options) {
@@ -3908,9 +3908,9 @@ var require_fast_uri = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js
 var require_uri = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/uri.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var uri = require_fast_uri();
@@ -3919,9 +3919,9 @@ var require_uri = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js
 var require_core = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/core.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -4530,9 +4530,9 @@ var require_core = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js
 var require_id = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/id.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var def = {
@@ -4545,9 +4545,9 @@ var require_id = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js
 var require_ref = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/ref.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.callRef = exports.getValidate = void 0;
@@ -4667,9 +4667,9 @@ var require_ref = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js
 var require_core2 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/core/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var id_1 = require_id();
@@ -4688,9 +4688,9 @@ var require_core2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js
 var require_limitNumber = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitNumber.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -4720,9 +4720,9 @@ var require_limitNumber = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js
 var require_multipleOf = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/multipleOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -4748,9 +4748,9 @@ var require_multipleOf = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js
 var require_ucs2length = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/ucs2length.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function ucs2length(str) {
@@ -4774,9 +4774,9 @@ var require_ucs2length = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js
 var require_limitLength = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitLength.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -4806,9 +4806,9 @@ var require_limitLength = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js
 var require_pattern = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/pattern.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -4843,9 +4843,9 @@ var require_pattern = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js
 var require_limitProperties = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -4872,9 +4872,9 @@ var require_limitProperties = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js
 var require_required = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/required.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -4954,9 +4954,9 @@ var require_required = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js
 var require_limitItems = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/limitItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -4983,9 +4983,9 @@ var require_limitItems = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js
 var require_equal = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/runtime/equal.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var equal = require_fast_deep_equal();
@@ -4994,9 +4994,9 @@ var require_equal = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js
 var require_uniqueItems = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var dataType_1 = require_dataType();
@@ -5061,9 +5061,9 @@ var require_uniqueItems = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js
 var require_const = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/const.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5090,9 +5090,9 @@ var require_const = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js
 var require_enum = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/enum.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5139,9 +5139,9 @@ var require_enum = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js
 var require_validation = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/validation/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var limitNumber_1 = require_limitNumber();
@@ -5177,9 +5177,9 @@ var require_validation = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js
 var require_additionalItems = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateAdditionalItems = void 0;
@@ -5230,9 +5230,9 @@ var require_additionalItems = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js
 var require_items = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateTuple = void 0;
@@ -5287,9 +5287,9 @@ var require_items = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js
 var require_prefixItems = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var items_1 = require_items();
@@ -5304,9 +5304,9 @@ var require_prefixItems = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js
 var require_items2020 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/items2020.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5339,9 +5339,9 @@ var require_items2020 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js
 var require_contains = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/contains.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5433,9 +5433,9 @@ var require_contains = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js
 var require_dependencies = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/dependencies.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
@@ -5527,9 +5527,9 @@ var require_dependencies = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js
 var require_propertyNames = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5570,9 +5570,9 @@ var require_propertyNames = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js
 var require_additionalProperties = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5676,9 +5676,9 @@ var require_additionalProperties = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js
 var require_properties = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/properties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var validate_1 = require_validate();
@@ -5734,9 +5734,9 @@ var require_properties = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js
 var require_patternProperties = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5808,9 +5808,9 @@ var require_patternProperties = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js
 var require_not = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/not.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -5839,9 +5839,9 @@ var require_not = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js
 var require_anyOf = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/anyOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var code_1 = require_code2();
@@ -5856,9 +5856,9 @@ var require_anyOf = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js
 var require_oneOf = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/oneOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -5914,9 +5914,9 @@ var require_oneOf = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js
 var require_allOf = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/allOf.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -5941,9 +5941,9 @@ var require_allOf = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js
 var require_if = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/if.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6010,9 +6010,9 @@ var require_if = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js
 var require_thenElse = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/thenElse.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var util_1 = require_util();
@@ -6028,9 +6028,9 @@ var require_thenElse = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js
 var require_applicator = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/applicator/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var additionalItems_1 = require_additionalItems();
@@ -6076,9 +6076,9 @@ var require_applicator = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js
 var require_format = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/format.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6166,9 +6166,9 @@ var require_format = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js
 var require_format2 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/format/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var format_1 = require_format();
@@ -6177,9 +6177,9 @@ var require_format2 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js
 var require_metadata = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/metadata.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.contentVocabulary = exports.metadataVocabulary = void 0;
@@ -6200,9 +6200,9 @@ var require_metadata = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js
 var require_draft7 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/draft7.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var core_1 = require_core2();
@@ -6222,9 +6222,9 @@ var require_draft7 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js
 var require_types = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/types.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.DiscrError = void 0;
@@ -6236,9 +6236,9 @@ var require_types = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js
 var require_discriminator = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/vocabularies/discriminator/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var codegen_1 = require_codegen();
@@ -6341,9 +6341,9 @@ var require_discriminator = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json
 var require_json_schema_draft_07 = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/refs/json-schema-draft-07.json"(exports, module) {
     module.exports = {
       $schema: "http://json-schema.org/draft-07/schema#",
       $id: "http://json-schema.org/draft-07/schema#",
@@ -6498,9 +6498,9 @@ var require_json_schema_draft_07 = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js
 var require_ajv = __commonJS({
-  "../../node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv@8.20.0/node_modules/ajv/dist/ajv.js"(exports, module) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = exports.Ajv = void 0;
@@ -6568,9 +6568,9 @@ var require_ajv = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js
 var require_formats = __commonJS({
-  "../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/formats.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.formatNames = exports.fastFormats = exports.fullFormats = void 0;
@@ -6771,9 +6771,9 @@ var require_formats = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js
 var require_limit = __commonJS({
-  "../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js"(exports) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/limit.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.formatLimitDefinition = void 0;
@@ -6843,9 +6843,9 @@ var require_limit = __commonJS({
   }
 });
 
-// ../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js
 var require_dist = __commonJS({
-  "../../node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js"(exports, module) {
+  "../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.20.0/node_modules/ajv-formats/dist/index.js"(exports, module) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var formats_1 = require_formats();
@@ -6886,11 +6886,11 @@ var require_dist = __commonJS({
 });
 
 // src/index.ts
-import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync5, existsSync as existsSync4, chmodSync as chmodSync2 } from "node:fs";
+import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync7, existsSync as existsSync8, chmodSync as chmodSync2 } from "node:fs";
 import { homedir as homedir5 } from "node:os";
-import { join as join5, dirname as dirname2 } from "node:path";
+import { join as join7, dirname as dirname2 } from "node:path";
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
 var util;
 (function(util2) {
   util2.assertEqual = (_) => {
@@ -7024,7 +7024,7 @@ var getParsedType = (data) => {
   }
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js
 var ZodIssueCode = util.arrayToEnum([
   "invalid_type",
   "invalid_literal",
@@ -7138,7 +7138,7 @@ ZodError.create = (issues) => {
   return error51;
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js
 var errorMap = (issue2, _ctx) => {
   let message;
   switch (issue2.code) {
@@ -7241,13 +7241,13 @@ var errorMap = (issue2, _ctx) => {
 };
 var en_default = errorMap;
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js
 var overrideErrorMap = en_default;
 function getErrorMap() {
   return overrideErrorMap;
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js
 var makeIssue = (params) => {
   const { data, path, errorMaps, issueData } = params;
   const fullPath = [...path, ...issueData.path || []];
@@ -7356,14 +7356,14 @@ var isDirty = (x) => x.status === "dirty";
 var isValid = (x) => x.status === "valid";
 var isAsync = (x) => typeof Promise !== "undefined" && x instanceof Promise;
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js
 var errorUtil;
 (function(errorUtil2) {
   errorUtil2.errToObj = (message) => typeof message === "string" ? { message } : message || {};
   errorUtil2.toString = (message) => typeof message === "string" ? message : message?.message;
 })(errorUtil || (errorUtil = {}));
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js
 var ParseInputLazyPath = class {
   constructor(parent, value, path, key) {
     this._cachedPath = [];
@@ -7508,8 +7508,8 @@ var ZodType = class {
         } : {
           issues: ctx.common.issues
         };
-      } catch (err2) {
-        if (err2?.message?.toLowerCase()?.includes("encountered")) {
+      } catch (err4) {
+        if (err4?.message?.toLowerCase()?.includes("encountered")) {
           this["~standard"].async = true;
         }
         ctx.common = {
@@ -10766,7 +10766,7 @@ var nullableType = ZodNullable.create;
 var preprocessType = ZodEffects.createWithPreprocess;
 var pipelineType = ZodPipeline.create;
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
 var core_exports2 = {};
 __export(core_exports2, {
   $ZodAny: () => $ZodAny,
@@ -11045,7 +11045,7 @@ __export(core_exports2, {
   version: () => version
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
 var _a;
 var NEVER = /* @__PURE__ */ Object.freeze({
   status: "aborted"
@@ -11122,7 +11122,7 @@ function config(newConfig) {
   return globalConfig;
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -11818,7 +11818,7 @@ var Class = class {
   }
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
 var initializer = (inst, def) => {
   inst.name = "$ZodError";
   Object.defineProperty(inst, "_zod", {
@@ -11957,7 +11957,7 @@ function prettifyError(error51) {
   return lines.join("\n");
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
   const result = schema._zod.run({ value, issues: [] }, ctx);
@@ -12045,7 +12045,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
 var regexes_exports = {};
 __export(regexes_exports, {
   base64: () => base64,
@@ -12204,7 +12204,7 @@ var sha512_hex = /^[0-9a-fA-F]{128}$/;
 var sha512_base64 = /* @__PURE__ */ fixedBase64(86, "==");
 var sha512_base64url = /* @__PURE__ */ fixedBase64url(86);
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a3;
   inst._zod ?? (inst._zod = {});
@@ -12752,7 +12752,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
 var Doc = class {
   constructor(args = []) {
     this.content = [];
@@ -12788,14 +12788,14 @@ var Doc = class {
   }
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 4,
   patch: 3
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a3;
   inst ?? (inst = {});
@@ -14888,7 +14888,7 @@ function handleRefineResult(result, payload, input, inst) {
   }
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
 var locales_exports = {};
 __export(locales_exports, {
   ar: () => ar_default,
@@ -14945,7 +14945,7 @@ __export(locales_exports, {
   zhTW: () => zh_TW_default
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
 var error = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0641", verb: "\u0623\u0646 \u064A\u062D\u0648\u064A" },
@@ -15052,7 +15052,7 @@ function ar_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
 var error2 = () => {
   const Sizable = {
     string: { unit: "simvol", verb: "olmal\u0131d\u0131r" },
@@ -15158,7 +15158,7 @@ function az_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
 function getBelarusianPlural(count, one, few, many) {
   const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
@@ -15315,7 +15315,7 @@ function be_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
 var error4 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0430", verb: "\u0434\u0430 \u0441\u044A\u0434\u044A\u0440\u0436\u0430" },
@@ -15436,7 +15436,7 @@ function bg_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
 var error5 = () => {
   const Sizable = {
     string: { unit: "car\xE0cters", verb: "contenir" },
@@ -15545,7 +15545,7 @@ function ca_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
 var error6 = () => {
   const Sizable = {
     string: { unit: "znak\u016F", verb: "m\xEDt" },
@@ -15657,7 +15657,7 @@ function cs_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
 var error7 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "havde" },
@@ -15773,7 +15773,7 @@ function da_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
 var error8 = () => {
   const Sizable = {
     string: { unit: "Zeichen", verb: "zu haben" },
@@ -15882,7 +15882,7 @@ function de_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
 var error9 = () => {
   const Sizable = {
     string: { unit: "\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2", verb: "\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9" },
@@ -15992,7 +15992,7 @@ function el_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
 var error10 = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -16105,7 +16105,7 @@ function en_default2() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
 var error11 = () => {
   const Sizable = {
     string: { unit: "karaktrojn", verb: "havi" },
@@ -16215,7 +16215,7 @@ function eo_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
 var error12 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "tener" },
@@ -16348,7 +16348,7 @@ function es_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
 var error13 = () => {
   const Sizable = {
     string: { unit: "\u06A9\u0627\u0631\u0627\u06A9\u062A\u0631", verb: "\u062F\u0627\u0634\u062A\u0647 \u0628\u0627\u0634\u062F" },
@@ -16463,7 +16463,7 @@ function fa_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
 var error14 = () => {
   const Sizable = {
     string: { unit: "merkki\xE4", subject: "merkkijonon" },
@@ -16576,7 +16576,7 @@ function fi_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
 var error15 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -16702,7 +16702,7 @@ function fr_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
 var error16 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -16810,7 +16810,7 @@ function fr_CA_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
 var error17 = () => {
   const TypeNames = {
     string: { label: "\u05DE\u05D7\u05E8\u05D5\u05D6\u05EA", gender: "f" },
@@ -17005,7 +17005,7 @@ function he_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
 var error18 = () => {
   const Sizable = {
     string: { unit: "znakova", verb: "imati" },
@@ -17128,7 +17128,7 @@ function hr_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
 var error19 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "legyen" },
@@ -17237,7 +17237,7 @@ function hu_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
 function getArmenianPlural(count, one, many) {
   return Math.abs(count) === 1 ? one : many;
 }
@@ -17385,7 +17385,7 @@ function hy_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
 var error21 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "memiliki" },
@@ -17492,7 +17492,7 @@ function id_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
 var error22 = () => {
   const Sizable = {
     string: { unit: "stafi", verb: "a\xF0 hafa" },
@@ -17602,7 +17602,7 @@ function is_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
 var error23 = () => {
   const Sizable = {
     string: { unit: "caratteri", verb: "avere" },
@@ -17711,7 +17711,7 @@ function it_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
 var error24 = () => {
   const Sizable = {
     string: { unit: "\u6587\u5B57", verb: "\u3067\u3042\u308B" },
@@ -17819,7 +17819,7 @@ function ja_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
 var error25 = () => {
   const Sizable = {
     string: { unit: "\u10E1\u10D8\u10DB\u10D1\u10DD\u10DA\u10DD", verb: "\u10E3\u10DC\u10D3\u10D0 \u10E8\u10D4\u10D8\u10EA\u10D0\u10D5\u10D3\u10D4\u10E1" },
@@ -17932,7 +17932,7 @@ function ka_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
 var error26 = () => {
   const Sizable = {
     string: { unit: "\u178F\u17BD\u17A2\u1780\u17D2\u179F\u179A", verb: "\u1782\u17BD\u179A\u1798\u17B6\u1793" },
@@ -18043,12 +18043,12 @@ function km_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
 function kh_default() {
   return km_default();
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
 var error27 = () => {
   const Sizable = {
     string: { unit: "\uBB38\uC790", verb: "to have" },
@@ -18160,7 +18160,7 @@ function ko_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
 var capitalizeFirstCharacter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -18364,7 +18364,7 @@ function lt_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
 var error29 = () => {
   const Sizable = {
     string: { unit: "\u0437\u043D\u0430\u0446\u0438", verb: "\u0434\u0430 \u0438\u043C\u0430\u0430\u0442" },
@@ -18474,7 +18474,7 @@ function mk_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
 var error30 = () => {
   const Sizable = {
     string: { unit: "aksara", verb: "mempunyai" },
@@ -18582,7 +18582,7 @@ function ms_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
 var error31 = () => {
   const Sizable = {
     string: { unit: "tekens", verb: "heeft" },
@@ -18693,7 +18693,7 @@ function nl_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
 var error32 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "\xE5 ha" },
@@ -18802,7 +18802,7 @@ function no_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
 var error33 = () => {
   const Sizable = {
     string: { unit: "harf", verb: "olmal\u0131d\u0131r" },
@@ -18912,7 +18912,7 @@ function ota_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
 var error34 = () => {
   const Sizable = {
     string: { unit: "\u062A\u0648\u06A9\u064A", verb: "\u0648\u0644\u0631\u064A" },
@@ -19027,7 +19027,7 @@ function ps_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
 var error35 = () => {
   const Sizable = {
     string: { unit: "znak\xF3w", verb: "mie\u0107" },
@@ -19137,7 +19137,7 @@ function pl_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
 var error36 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "ter" },
@@ -19246,7 +19246,7 @@ function pt_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
 var error37 = () => {
   const Sizable = {
     string: { unit: "caractere", verb: "s\u0103 aib\u0103" },
@@ -19366,7 +19366,7 @@ function ro_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
 function getRussianPlural(count, one, few, many) {
   const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
@@ -19523,7 +19523,7 @@ function ru_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
 var error39 = () => {
   const Sizable = {
     string: { unit: "znakov", verb: "imeti" },
@@ -19633,7 +19633,7 @@ function sl_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
 var error40 = () => {
   const Sizable = {
     string: { unit: "tecken", verb: "att ha" },
@@ -19744,7 +19744,7 @@ function sv_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
 var error41 = () => {
   const Sizable = {
     string: { unit: "\u0B8E\u0BB4\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1\u0B95\u0BCD\u0B95\u0BB3\u0BCD", verb: "\u0B95\u0BCA\u0BA3\u0BCD\u0B9F\u0BBF\u0BB0\u0BC1\u0B95\u0BCD\u0B95 \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD" },
@@ -19855,7 +19855,7 @@ function ta_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
 var error42 = () => {
   const Sizable = {
     string: { unit: "\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23", verb: "\u0E04\u0E27\u0E23\u0E21\u0E35" },
@@ -19966,7 +19966,7 @@ function th_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
 var error43 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "olmal\u0131" },
@@ -20072,7 +20072,7 @@ function tr_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
 var error44 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432", verb: "\u043C\u0430\u0442\u0438\u043C\u0435" },
@@ -20181,12 +20181,12 @@ function uk_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
 function ua_default() {
   return uk_default();
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
 var error45 = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0648\u0641", verb: "\u06C1\u0648\u0646\u0627" },
@@ -20297,7 +20297,7 @@ function ur_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
 var error46 = () => {
   const Sizable = {
     string: { unit: "belgi", verb: "bo\u2018lishi kerak" },
@@ -20408,7 +20408,7 @@ function uz_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
 var error47 = () => {
   const Sizable = {
     string: { unit: "k\xFD t\u1EF1", verb: "c\xF3" },
@@ -20517,7 +20517,7 @@ function vi_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
 var error48 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u7B26", verb: "\u5305\u542B" },
@@ -20627,7 +20627,7 @@ function zh_CN_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
 var error49 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u5143", verb: "\u64C1\u6709" },
@@ -20735,7 +20735,7 @@ function zh_TW_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
 var error50 = () => {
   const Sizable = {
     string: { unit: "\xE0mi", verb: "n\xED" },
@@ -20843,7 +20843,7 @@ function yo_default() {
   };
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
 var _a2;
 var $output = /* @__PURE__ */ Symbol("ZodOutput");
 var $input = /* @__PURE__ */ Symbol("ZodInput");
@@ -20893,7 +20893,7 @@ function registry() {
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
 // @__NO_SIDE_EFFECTS__
 function _string(Class2, params) {
   return new Class2({
@@ -21932,7 +21932,7 @@ function _stringFormat(Class2, format, fnOrRegex, _params = {}) {
   return inst;
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
   let target = params?.target ?? "draft-2020-12";
   if (target === "draft-4")
@@ -22291,7 +22291,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   return finalize(ctx, schema);
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
 var formatMap = {
   guid: "uuid",
   url: "uri",
@@ -22835,7 +22835,7 @@ function toJSONSchema(input, params) {
   return finalize(ctx, input);
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
 var JSONSchemaGenerator = class {
   /** @deprecated Access via ctx instead */
   get metadataRegistry() {
@@ -22910,10 +22910,10 @@ var JSONSchemaGenerator = class {
   }
 };
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
 var json_schema_exports = {};
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js
 var ZodMiniType = /* @__PURE__ */ $constructor("ZodMiniType", (inst, def) => {
   if (!inst._zod)
     throw new Error("Uninitialized schema in ZodMiniType.");
@@ -22959,7 +22959,7 @@ function object(shape, params) {
   return new ZodMiniObject(def);
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js
 function isZ4Schema(s) {
   const schema = s;
   return !!schema._zod;
@@ -23103,7 +23103,7 @@ function getLiteralValue(schema) {
   return void 0;
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 var external_exports = {};
 __export(external_exports, {
   $brand: () => $brand,
@@ -23346,7 +23346,7 @@ __export(external_exports, {
   xor: () => xor
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var schemas_exports2 = {};
 __export(schemas_exports2, {
   ZodAny: () => ZodAny2,
@@ -23517,7 +23517,7 @@ __export(schemas_exports2, {
   xor: () => xor
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
 var checks_exports2 = {};
 __export(checks_exports2, {
   endsWith: () => _endsWith,
@@ -23551,7 +23551,7 @@ __export(checks_exports2, {
   uppercase: () => _uppercase
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
 var iso_exports2 = {};
 __export(iso_exports2, {
   ZodISODate: () => ZodISODate,
@@ -23592,7 +23592,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
 var initializer2 = (inst, issues) => {
   $ZodError.init(inst, issues);
   inst.name = "ZodError";
@@ -23632,7 +23632,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, {
   Parent: Error
 });
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse3 = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -23646,7 +23646,7 @@ var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var _installedGroups = /* @__PURE__ */ new WeakMap();
 function _installLazyMethods(inst, group, methods) {
   const proto = Object.getPrototypeOf(inst);
@@ -24936,7 +24936,7 @@ function preprocess(fn, schema) {
   });
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
 var ZodIssueCode2 = {
   invalid_type: "invalid_type",
   too_big: "too_big",
@@ -24962,7 +24962,7 @@ var ZodFirstPartyTypeKind2;
 /* @__PURE__ */ (function(ZodFirstPartyTypeKind3) {
 })(ZodFirstPartyTypeKind2 || (ZodFirstPartyTypeKind2 = {}));
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
 var z = {
   ...schemas_exports2,
   ...checks_exports2,
@@ -25442,7 +25442,7 @@ function fromJSONSchema(schema, params) {
   return convertSchema(normalized, ctx);
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
 var coerce_exports2 = {};
 __export(coerce_exports2, {
   bigint: () => bigint3,
@@ -25467,10 +25467,10 @@ function date4(params) {
   return _coercedDate(ZodDate2, params);
 }
 
-// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 config(en_default2());
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js
 var LATEST_PROTOCOL_VERSION = "2025-11-25";
 var SUPPORTED_PROTOCOL_VERSIONS = [LATEST_PROTOCOL_VERSION, "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"];
 var RELATED_TASK_META_KEY = "io.modelcontextprotocol/related-task";
@@ -27001,12 +27001,12 @@ var UrlElicitationRequiredError = class extends McpError {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js
 function isTerminal(status) {
   return status === "completed" || status === "failed" || status === "cancelled";
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js
 var ignoreOverride = /* @__PURE__ */ Symbol("Let zodToJsonSchema decide on which parser to use");
 var defaultOptions = {
   name: void 0,
@@ -27040,7 +27040,7 @@ var getDefaultOptions = (options) => typeof options === "string" ? {
   ...options
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js
 var getRefs = (options) => {
   const _options = getDefaultOptions(options);
   const currentPath = _options.name !== void 0 ? [..._options.basePath, _options.definitionPath, _options.name] : _options.basePath;
@@ -27061,7 +27061,7 @@ var getRefs = (options) => {
   };
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js
 function addErrorMessage(res, key, errorMessage, refs) {
   if (!refs?.errorMessages)
     return;
@@ -27077,7 +27077,7 @@ function setResponseValueAndErrors(res, key, value, errorMessage, refs) {
   addErrorMessage(res, key, errorMessage, refs);
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js
 var getRelativePath = (pathA, pathB) => {
   let i = 0;
   for (; i < pathA.length && i < pathB.length; i++) {
@@ -27087,7 +27087,7 @@ var getRelativePath = (pathA, pathB) => {
   return [(pathA.length - i).toString(), ...pathB.slice(i)].join("/");
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js
 function parseAnyDef(refs) {
   if (refs.target !== "openAi") {
     return {};
@@ -27103,7 +27103,7 @@ function parseAnyDef(refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js
 function parseArrayDef(def, refs) {
   const res = {
     type: "array"
@@ -27127,7 +27127,7 @@ function parseArrayDef(def, refs) {
   return res;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js
 function parseBigintDef(def, refs) {
   const res = {
     type: "integer",
@@ -27173,24 +27173,24 @@ function parseBigintDef(def, refs) {
   return res;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js
 function parseBooleanDef() {
   return {
     type: "boolean"
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js
 function parseBrandedDef(_def, refs) {
   return parseDef(_def.type._def, refs);
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js
 var parseCatchDef = (def, refs) => {
   return parseDef(def.innerType._def, refs);
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js
 function parseDateDef(def, refs, overrideDateStrategy) {
   const strategy = overrideDateStrategy ?? refs.dateStrategy;
   if (Array.isArray(strategy)) {
@@ -27249,7 +27249,7 @@ var integerDateParser = (def, refs) => {
   return res;
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js
 function parseDefaultDef(_def, refs) {
   return {
     ...parseDef(_def.innerType._def, refs),
@@ -27257,12 +27257,12 @@ function parseDefaultDef(_def, refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js
 function parseEffectsDef(_def, refs) {
   return refs.effectStrategy === "input" ? parseDef(_def.schema._def, refs) : parseAnyDef(refs);
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js
 function parseEnumDef(def) {
   return {
     type: "string",
@@ -27270,7 +27270,7 @@ function parseEnumDef(def) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js
 var isJsonSchema7AllOfType = (type) => {
   if ("type" in type && type.type === "string")
     return false;
@@ -27312,7 +27312,7 @@ function parseIntersectionDef(def, refs) {
   } : void 0;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js
 function parseLiteralDef(def, refs) {
   const parsedType2 = typeof def.value;
   if (parsedType2 !== "bigint" && parsedType2 !== "number" && parsedType2 !== "boolean" && parsedType2 !== "string") {
@@ -27332,7 +27332,7 @@ function parseLiteralDef(def, refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js
 var emojiRegex2 = void 0;
 var zodPatterns = {
   /**
@@ -27657,7 +27657,7 @@ function stringifyRegExpWithFlags(regex, refs) {
   return pattern;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js
 function parseRecordDef(def, refs) {
   if (refs.target === "openAi") {
     console.warn("Warning: OpenAI may not support records in schemas! Try an array of key-value pairs instead.");
@@ -27709,7 +27709,7 @@ function parseRecordDef(def, refs) {
   return schema;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js
 function parseMapDef(def, refs) {
   if (refs.mapStrategy === "record") {
     return parseRecordDef(def, refs);
@@ -27734,7 +27734,7 @@ function parseMapDef(def, refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js
 function parseNativeEnumDef(def) {
   const object3 = def.values;
   const actualKeys = Object.keys(def.values).filter((key) => {
@@ -27748,7 +27748,7 @@ function parseNativeEnumDef(def) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js
 function parseNeverDef(refs) {
   return refs.target === "openAi" ? void 0 : {
     not: parseAnyDef({
@@ -27758,7 +27758,7 @@ function parseNeverDef(refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js
 function parseNullDef(refs) {
   return refs.target === "openApi3" ? {
     enum: ["null"],
@@ -27768,7 +27768,7 @@ function parseNullDef(refs) {
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js
 var primitiveMappings = {
   ZodString: "string",
   ZodNumber: "number",
@@ -27836,7 +27836,7 @@ var asAnyOf = (def, refs) => {
   return anyOf.length ? { anyOf } : void 0;
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js
 function parseNullableDef(def, refs) {
   if (["ZodString", "ZodNumber", "ZodBigInt", "ZodBoolean", "ZodNull"].includes(def.innerType._def.typeName) && (!def.innerType._def.checks || !def.innerType._def.checks.length)) {
     if (refs.target === "openApi3") {
@@ -27868,7 +27868,7 @@ function parseNullableDef(def, refs) {
   return base && { anyOf: [base, { type: "null" }] };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js
 function parseNumberDef(def, refs) {
   const res = {
     type: "number"
@@ -27917,7 +27917,7 @@ function parseNumberDef(def, refs) {
   return res;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js
 function parseObjectDef(def, refs) {
   const forceOptionalIntoNullable = refs.target === "openAi";
   const result = {
@@ -27987,7 +27987,7 @@ function safeIsOptional(schema) {
   }
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js
 var parseOptionalDef = (def, refs) => {
   if (refs.currentPath.toString() === refs.propertyPath?.toString()) {
     return parseDef(def.innerType._def, refs);
@@ -28006,7 +28006,7 @@ var parseOptionalDef = (def, refs) => {
   } : parseAnyDef(refs);
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js
 var parsePipelineDef = (def, refs) => {
   if (refs.pipeStrategy === "input") {
     return parseDef(def.in._def, refs);
@@ -28026,12 +28026,12 @@ var parsePipelineDef = (def, refs) => {
   };
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js
 function parsePromiseDef(def, refs) {
   return parseDef(def.type._def, refs);
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js
 function parseSetDef(def, refs) {
   const items = parseDef(def.valueType._def, {
     ...refs,
@@ -28051,7 +28051,7 @@ function parseSetDef(def, refs) {
   return schema;
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js
 function parseTupleDef(def, refs) {
   if (def.rest) {
     return {
@@ -28079,24 +28079,24 @@ function parseTupleDef(def, refs) {
   }
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js
 function parseUndefinedDef(refs) {
   return {
     not: parseAnyDef(refs)
   };
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js
 function parseUnknownDef(refs) {
   return parseAnyDef(refs);
 }
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js
 var parseReadonlyDef = (def, refs) => {
   return parseDef(def.innerType._def, refs);
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js
 var selectParser = (def, typeName, refs) => {
   switch (typeName) {
     case ZodFirstPartyTypeKind.ZodString:
@@ -28172,7 +28172,7 @@ var selectParser = (def, typeName, refs) => {
   }
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js
 function parseDef(def, refs, forceResolution = false) {
   const seenItem = refs.seen.get(def);
   if (refs.override) {
@@ -28228,7 +28228,7 @@ var addMeta = (def, refs, jsonSchema) => {
   return jsonSchema;
 };
 
-// ../../node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/zod-to-json-schema@3.25.2_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js
 var zodToJsonSchema = (schema, options) => {
   const refs = getRefs(options);
   let definitions = typeof options === "object" && options.definitions ? Object.entries(options.definitions).reduce((acc, [name2, schema2]) => ({
@@ -28290,7 +28290,7 @@ var zodToJsonSchema = (schema, options) => {
   return combined;
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js
 function mapMiniTarget(t) {
   if (!t)
     return "draft-7";
@@ -28332,7 +28332,7 @@ function parseWithCompat(schema, data) {
   return result.data;
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js
 var DEFAULT_REQUEST_TIMEOUT_MSEC = 6e4;
 var Protocol = class {
   constructor(_options) {
@@ -29286,7 +29286,7 @@ function mergeCapabilities(base, additional) {
   return result;
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js
 var import_ajv = __toESM(require_ajv(), 1);
 var import_ajv_formats = __toESM(require_dist(), 1);
 function createDefaultAjvInstance() {
@@ -29354,7 +29354,7 @@ var AjvJsonSchemaValidator = class {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js
 var ExperimentalServerTasks = class {
   constructor(_server) {
     this._server = _server;
@@ -29567,7 +29567,7 @@ var ExperimentalServerTasks = class {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js
 function assertToolsCallTaskCapability(requests, method, entityName) {
   if (!requests) {
     throw new Error(`${entityName} does not support task creation (required for ${method})`);
@@ -29602,7 +29602,7 @@ function assertClientRequestTaskCapability(requests, method, entityName) {
   }
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js
 var Server = class extends Protocol {
   /**
    * Initializes this server with the given name and version information.
@@ -29982,7 +29982,7 @@ var Server = class extends Protocol {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js
 var COMPLETABLE_SYMBOL = /* @__PURE__ */ Symbol.for("mcp.completable");
 function isCompletable(schema) {
   return !!schema && typeof schema === "object" && COMPLETABLE_SYMBOL in schema;
@@ -29996,7 +29996,7 @@ var McpZodTypeKind;
   McpZodTypeKind2["Completable"] = "McpCompletable";
 })(McpZodTypeKind || (McpZodTypeKind = {}));
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js
 var TOOL_NAME_REGEX = /^[A-Za-z0-9._-]{1,128}$/;
 function validateToolName(name) {
   const warnings = [];
@@ -30054,7 +30054,7 @@ function validateAndWarnToolName(name) {
   return result.isValid;
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js
 var ExperimentalMcpServerTasks = class {
   constructor(_mcpServer) {
     this._mcpServer = _mcpServer;
@@ -30069,7 +30069,7 @@ var ExperimentalMcpServerTasks = class {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js
 var McpServer = class {
   constructor(serverInfo, options) {
     this._registeredResources = {};
@@ -30861,10 +30861,10 @@ var EMPTY_COMPLETION_RESULT = {
   }
 };
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
 import process3 from "node:process";
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js
 var ReadBuffer = class {
   append(chunk) {
     this._buffer = this._buffer ? Buffer.concat([this._buffer, chunk]) : chunk;
@@ -30892,7 +30892,7 @@ function serializeMessage(message) {
   return JSON.stringify(message) + "\n";
 }
 
-// ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js
 var StdioServerTransport = class {
   constructor(_stdin = process3.stdin, _stdout = process3.stdout) {
     this._stdin = _stdin;
@@ -30953,8 +30953,8 @@ var StdioServerTransport = class {
   }
 };
 
-// ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.25-phase1";
+// ../../../../../../../../../../Users/mgao/Documents/Parallight/lab-agent-oriented/packages/shared/src/index.ts
+var PARALLIGHT_VERSION = "0.1.26-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -31509,6 +31509,92 @@ async function getMostRecentSession() {
     return null;
   }
 }
+async function submitEvaluation(labId, task, k, bytes) {
+  const headers = { "x-eval-task": task };
+  if (k) headers["x-eval-k"] = String(k);
+  const { status, json: json2 } = await postBlob(`/api/labs/${labId}/evaluate`, bytes, headers);
+  const r = json2 ?? {};
+  if (status === 402) throw new Error("\u5C1A\u672A\u4ED8\u8D39\u5F00\u901A,\u8BC4\u6D4B\u4E0D\u53EF\u7528");
+  if (status === 413) throw new Error("\u63D0\u4EA4\u5305\u8FC7\u5927");
+  if (status === 400) throw new Error(`\u53C2\u6570\u9519\u8BEF:${r.error ?? "\u672A\u77E5"}`);
+  if (status === 502) throw new Error(`\u4E91\u7AEF\u8C03\u5EA6\u5931\u8D25,\u7A0D\u540E\u91CD\u8BD5(job ${r.job_id ?? "?"})`);
+  if (!r.ok || !r.job_id) throw new Error(r.error ?? `\u63D0\u4EA4\u8BC4\u6D4B\u5931\u8D25(HTTP ${status})`);
+  return r.job_id;
+}
+async function fetchEvaluation(labId, jobId) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/evaluate/${jobId}`, {
+    headers: { authorization: `Bearer ${requireToken()}`, "x-parallight-mcp": "1" }
+  });
+  if (res.status === 404) throw new Error("\u627E\u4E0D\u5230\u8FD9\u4E2A\u8BC4\u6D4B\u4EFB\u52A1(\u662F\u4E0D\u662F\u5728\u522B\u7684 lab \u63D0\u4EA4\u7684?)");
+  if (res.status === 403) throw new Error("\u8FD9\u4E2A\u8BC4\u6D4B\u4EFB\u52A1\u4E0D\u5C5E\u4E8E\u5F53\u524D\u8D26\u53F7");
+  const r = await res.json();
+  if (!r.ok) throw new Error(r.error ?? "\u67E5\u8BE2\u8BC4\u6D4B\u4EFB\u52A1\u5931\u8D25");
+  if (!r.job_id || !r.status) throw new Error("\u8BC4\u6D4B\u4EFB\u52A1\u54CD\u5E94\u5F02\u5E38(\u7F3A job_id/status)");
+  return r;
+}
+async function askAssistant(labId, body) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/assistant`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify(body)
+  });
+  let r;
+  try {
+    r = await res.json();
+  } catch {
+    r = {};
+  }
+  if (res.status === 401) throw new Error("\u767B\u5F55\u5DF2\u5931\u6548,\u8BF7\u91CD\u65B0 /lab-login");
+  if (res.status === 403) throw new Error("\u8FD9\u4E2A\u63A5\u53E3\u53EA\u63A5\u53D7 Lab \u63D2\u4EF6\u7684\u8C03\u7528(MCP_ONLY)");
+  if (res.status === 402) throw new Error("\u5C1A\u672A\u4ED8\u8D39\u5F00\u901A,Lab \u52A9\u624B\u4E0D\u53EF\u7528");
+  if (res.status === 400) throw new Error(`\u53C2\u6570\u9519\u8BEF:${r.message ?? r.error ?? "\u672A\u77E5"}`);
+  if (res.status === 404) throw new Error("\u627E\u4E0D\u5230\u8FD9\u4E2A lab \u7684\u8D44\u6599(lab \u53EF\u80FD\u8FD8\u6CA1\u63A5\u5165 Lab \u52A9\u624B)");
+  if (res.status === 500) throw new Error("Lab \u52A9\u624B\u6682\u65F6\u51FA\u9519\u4E86,\u7A0D\u540E\u518D\u8BD5");
+  if (!r.ok || typeof r.answer !== "string") {
+    throw new Error(r.error ?? `\u8BF7\u6559 Lab \u52A9\u624B\u5931\u8D25(HTTP ${res.status})`);
+  }
+  return {
+    answer: r.answer,
+    level: r.level === "reveal" ? "reveal" : "hint",
+    used_eval_jobs: typeof r.used_eval_jobs === "number" ? r.used_eval_jobs : 0,
+    redacted_lines: typeof r.redacted_lines === "number" ? r.redacted_lines : 0,
+    kps: Array.isArray(r.kps) ? r.kps.filter((k) => typeof k === "string") : []
+  };
+}
+function mapCommonError(status, r, what) {
+  if (status === 401) return new Error("\u767B\u5F55\u5DF2\u5931\u6548,\u8BF7\u91CD\u65B0 /lab-login");
+  if (status === 403) return new Error("\u8FD9\u4E2A\u63A5\u53E3\u53EA\u63A5\u53D7 Lab \u63D2\u4EF6\u7684\u8C03\u7528(MCP_ONLY)");
+  if (status === 402) return new Error(`\u5C1A\u672A\u4ED8\u8D39\u5F00\u901A,${what}\u4E0D\u53EF\u7528`);
+  if (status === 400 && r.error === "NOT_V2") return new Error("\u8FD9\u4E2A lab \u8FD8\u6CA1\u5207\u5230 v2 \u4EFB\u52A1\u4E66(\u8FDB\u5EA6/\u81EA\u68C0\u53EA\u5BF9 v2 lab \u53EF\u7528)");
+  if (status === 400) return new Error(`\u53C2\u6570\u9519\u8BEF:${r.message ?? r.error ?? "\u672A\u77E5"}`);
+  if (status >= 500) return new Error("\u670D\u52A1\u6682\u65F6\u51FA\u9519\u4E86,\u7A0D\u540E\u518D\u8BD5");
+  return new Error(r.error ?? `${what}\u5931\u8D25(HTTP ${status})`);
+}
+async function getProgress(labId) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/progress`, { headers: mcpHeaders() });
+  let r = {};
+  try {
+    r = await res.json();
+  } catch {
+    r = {};
+  }
+  if (!res.ok || !r.ok || !r.progress) throw mapCommonError(res.status, r, "\u8FDB\u5EA6");
+  return r.progress;
+}
+async function postTaskCheck(labId, taskId, body) {
+  const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/tasks/${taskId}/check`, {
+    method: "POST",
+    headers: mcpHeaders(),
+    body: JSON.stringify(body)
+  });
+  let r = {};
+  try {
+    r = await res.json();
+  } catch {
+    r = {};
+  }
+  if (!res.ok || !r.ok) throw mapCommonError(res.status, r, "\u81EA\u68C0\u4E0A\u62A5");
+}
 
 // src/update-nudge.ts
 var VERSION_RE = /^(\d+)\.(\d+)\.(\d+)(?:-[a-zA-Z0-9]+)?$/;
@@ -31541,20 +31627,22 @@ function maybeUpdateBanner(installed, latest) {
 // src/browser.ts
 import { spawn } from "node:child_process";
 import { isAbsolute } from "node:path";
-function openInBrowser(filePath) {
+var HTTP_URL = /^https?:\/\//i;
+function openInBrowser(target) {
   try {
-    if (!isAbsolute(filePath) || filePath.startsWith("-")) return;
+    if (target.startsWith("-")) return;
+    if (!isAbsolute(target) && !HTTP_URL.test(target)) return;
     let cmd;
     let args;
     if (process.platform === "win32") {
       cmd = "cmd";
-      args = ["/c", "start", "", filePath];
+      args = ["/c", "start", "", target];
     } else if (process.platform === "darwin") {
       cmd = "open";
-      args = ["--", filePath];
+      args = ["--", target];
     } else {
       cmd = "xdg-open";
-      args = [filePath];
+      args = [target];
     }
     const child = spawn(cmd, args, { stdio: "ignore", detached: true });
     child.unref();
@@ -31673,11 +31761,11 @@ async function git(args, cwd) {
     });
     return { code: 0, stdout: stdout.trim(), stderr: stderr.trim() };
   } catch (e) {
-    const err2 = e;
+    const err4 = e;
     return {
-      code: typeof err2.code === "number" ? err2.code : 1,
-      stdout: (err2.stdout ?? "").toString().trim(),
-      stderr: (err2.stderr ?? "").toString().trim()
+      code: typeof err4.code === "number" ? err4.code : 1,
+      stdout: (err4.stdout ?? "").toString().trim(),
+      stderr: (err4.stderr ?? "").toString().trim()
     };
   }
 }
@@ -32122,6 +32210,52 @@ function buildRollbackList(tags, commits) {
   return lines.join("\n");
 }
 
+// src/eval-pack.ts
+import { execFile as execFile2 } from "node:child_process";
+import { promisify as promisify2 } from "node:util";
+import { existsSync as existsSync4, mkdtempSync as mkdtempSync2, readFileSync as readFileSync4, rmSync as rmSync3, statSync } from "node:fs";
+import { tmpdir as tmpdir2 } from "node:os";
+import { join as join4 } from "node:path";
+var execFileAsync2 = promisify2(execFile2);
+var MAX_SUBMISSION_BYTES = 20 * 1024 * 1024;
+async function packEvalSubmission(labDir) {
+  const agentDir = join4(labDir, "agent");
+  if (!existsSync4(agentDir)) {
+    throw new Error("\u5F53\u524D\u76EE\u5F55\u6CA1\u6709 agent/,\u8BF7\u5728 lab \u5DE5\u4F5C\u76EE\u5F55\u8FD0\u884C");
+  }
+  const tmpDir = mkdtempSync2(join4(tmpdir2(), "pl-eval-"));
+  const tmpFile = join4(tmpDir, "submission.tar.gz");
+  try {
+    await execFileAsync2(
+      "tar",
+      [
+        "-czf",
+        tmpFile,
+        "-C",
+        labDir,
+        "--exclude=__pycache__",
+        "--exclude=*.pyc",
+        "--exclude=*.mp4",
+        "--exclude=*.mov",
+        "--exclude=.git",
+        "--exclude=.venv",
+        "--exclude=venv",
+        "--exclude=node_modules",
+        "agent"
+      ],
+      { maxBuffer: 64 * 1024 * 1024 }
+    );
+    const size = statSync(tmpFile).size;
+    if (size > MAX_SUBMISSION_BYTES) {
+      throw new Error("\u63D0\u4EA4\u5305\u8D85\u8FC7 20MB(\u53BB\u6389\u5927\u6587\u4EF6/\u5F55\u50CF\u540E\u91CD\u8BD5)");
+    }
+    return readFileSync4(tmpFile);
+  } finally {
+    rmSync3(tmpFile, { force: true });
+    rmSync3(tmpDir, { recursive: true, force: true });
+  }
+}
+
 // src/prompt-composer.ts
 var PRIVATE_BANNER = [
   "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
@@ -32302,12 +32436,12 @@ function percentComplete() {
 }
 
 // src/session-store.ts
-import { mkdirSync as mkdirSync4, writeFileSync as writeFileSync4, readFileSync as readFileSync4, readdirSync, rmSync as rmSync3 } from "node:fs";
-import { join as join4 } from "node:path";
+import { mkdirSync as mkdirSync4, writeFileSync as writeFileSync4, readFileSync as readFileSync5, readdirSync, rmSync as rmSync4 } from "node:fs";
+import { join as join5 } from "node:path";
 import { homedir as homedir4 } from "node:os";
-var SESSIONS_DIR = join4(homedir4(), ".parallight", "sessions");
+var SESSIONS_DIR = join5(homedir4(), ".parallight", "sessions");
 function fileFor(labId) {
-  return join4(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
+  return join5(SESSIONS_DIR, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.json`);
 }
 function saveSession(s, cwd) {
   try {
@@ -32317,6 +32451,7 @@ function saveSession(s, cwd) {
       title: s.title,
       masterId: s.masterId,
       masterVersion: s.masterVersion,
+      masterName: s.masterName,
       startedAt: s.startedAt,
       lastActiveAt: (/* @__PURE__ */ new Date()).toISOString(),
       cwd,
@@ -32330,7 +32465,7 @@ function saveSession(s, cwd) {
 }
 function loadByLab(labId) {
   try {
-    return JSON.parse(readFileSync4(fileFor(labId), "utf8"));
+    return JSON.parse(readFileSync5(fileFor(labId), "utf8"));
   } catch {
     return null;
   }
@@ -32341,7 +32476,7 @@ function loadMostRecent() {
     for (const f of readdirSync(SESSIONS_DIR)) {
       if (!f.endsWith(".json")) continue;
       try {
-        out.push(JSON.parse(readFileSync4(join4(SESSIONS_DIR, f), "utf8")));
+        out.push(JSON.parse(readFileSync5(join5(SESSIONS_DIR, f), "utf8")));
       } catch {
       }
     }
@@ -32353,24 +32488,457 @@ function loadMostRecent() {
 }
 function removeSession(labId) {
   try {
-    rmSync3(fileFor(labId), { force: true });
+    rmSync4(fileFor(labId), { force: true });
   } catch {
   }
 }
 
-// src/index.ts
-var SERVER_NAME = "parallight-lab";
-var PLACEHOLDER_PORTRAIT = [
-  '   .-""""-.',
-  "  / _   _  \\",
-  " | (o)_(o) |",
-  "  \\  ___  /",
-  "   '.___.'",
-  "    Marvin"
-].join("\n");
-var server = new McpServer({ name: SERVER_NAME, version: PARALLIGHT_VERSION });
+// src/tools/assistant.ts
+import { existsSync as existsSync6 } from "node:fs";
+
+// src/workspace-summary.ts
+import { existsSync as existsSync5, readdirSync as readdirSync2, readFileSync as readFileSync6, realpathSync, statSync as statSync2 } from "node:fs";
+import { arch, release } from "node:os";
+import { basename, extname, isAbsolute as isAbsolute3, join as join6, relative as relative2 } from "node:path";
+var MAX_SUMMARY_CHARS = 12e3;
+var MAX_CONTEXT_FILE_CHARS = 8e3;
+var MAX_CONTEXT_FILES = 3;
+var MAX_CONTEXT_PATH_CHARS = 200;
+var DEFAULT_MAX_ENTRIES = 200;
+var DEFAULT_RECENT_HOURS = 24;
+var MAX_RECENT_LISTED = 50;
+var EXCLUDED_NAMES = /* @__PURE__ */ new Set(["__pycache__", ".git", ".venv", "venv", "node_modules"]);
+var EXCLUDED_EXTS = /* @__PURE__ */ new Set([".pyc", ".mp4", ".mov"]);
+var NUL = String.fromCharCode(0);
+function walk(dir, rel, out) {
+  let dirents;
+  try {
+    dirents = readdirSync2(dir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+  dirents.sort((a, b) => a.name.localeCompare(b.name));
+  for (const d of dirents) {
+    if (EXCLUDED_NAMES.has(d.name)) continue;
+    if (d.isSymbolicLink()) continue;
+    const childRel = `${rel}/${d.name}`;
+    const childAbs = join6(dir, d.name);
+    if (d.isDirectory()) {
+      walk(childAbs, childRel, out);
+    } else if (d.isFile()) {
+      if (EXCLUDED_EXTS.has(extname(d.name).toLowerCase())) continue;
+      try {
+        const st = statSync2(childAbs);
+        out.push({ rel: childRel, size: st.size, mtimeMs: st.mtimeMs });
+      } catch {
+      }
+    }
+  }
+}
+function fmtSize(n) {
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(1)} MB`;
+}
+function fmtTime(ms) {
+  return new Date(ms).toISOString().slice(0, 16).replace("T", " ") + "Z";
+}
+function capSummary(text) {
+  if (text.length <= MAX_SUMMARY_CHARS) return text;
+  const marker = "\n\u2026(\u6458\u8981\u5DF2\u622A\u65AD)";
+  return text.slice(0, MAX_SUMMARY_CHARS - marker.length) + marker;
+}
+function labDirMissingMessage(labDir, labId) {
+  const name = labId ?? basename(labDir);
+  return `\u672C\u5730\u627E\u4E0D\u5230 lab \u76EE\u5F55:${labDir}\u3002\u8BF7\u5728**\u5305\u542B** ${name}/ \u7684\u90A3\u4E2A\u76EE\u5F55\u91CC\u542F\u52A8 Claude Code(/lab-start \u5EFA\u7684\u5C31\u662F\u8FD9\u4E2A\u5E03\u5C40:<\u5DE5\u4F5C\u76EE\u5F55>/${name}/agent/\u2026),\u4E0D\u8981\u5728 ${name}/ \u91CC\u9762\u542F\u52A8;\u6362\u5230\u6B63\u786E\u76EE\u5F55\u540E\u91CD\u5F00\u4F1A\u8BDD\u518D\u8BD5\u3002`;
+}
+function withPlatformLine(summary) {
+  return capSummary(`\u5E73\u53F0: ${process.platform} ${release()} ${arch()}
+${summary}`);
+}
+function buildWorkspaceSummary(labDir, opts = {}) {
+  const maxEntries = opts.maxEntries ?? DEFAULT_MAX_ENTRIES;
+  const recentHours = opts.recentHours ?? DEFAULT_RECENT_HOURS;
+  const agentDir = join6(labDir, "agent");
+  if (!existsSync5(agentDir)) return "(\u5F53\u524D\u76EE\u5F55\u6CA1\u6709 agent/)";
+  const entries = [];
+  walk(agentDir, "agent", entries);
+  const lines = [];
+  lines.push(`## agent/ \u6587\u4EF6\u6811(\u5171 ${entries.length} \u4E2A\u6587\u4EF6)`);
+  for (const e of entries.slice(0, maxEntries)) lines.push(`${e.rel} (${fmtSize(e.size)})`);
+  if (entries.length > maxEntries) lines.push(`\u2026(+${entries.length - maxEntries})`);
+  const since = Date.now() - recentHours * 3600 * 1e3;
+  const recent = entries.filter((e) => e.mtimeMs >= since).sort((a, b) => b.mtimeMs - a.mtimeMs);
+  lines.push("");
+  lines.push(`## \u6700\u8FD1 ${recentHours}h \u6539\u52A8(${recent.length} \u4E2A)`);
+  if (recent.length === 0) lines.push("(\u65E0)");
+  for (const e of recent.slice(0, MAX_RECENT_LISTED)) lines.push(`${e.rel} (${fmtTime(e.mtimeMs)})`);
+  if (recent.length > MAX_RECENT_LISTED) lines.push(`\u2026(+${recent.length - MAX_RECENT_LISTED})`);
+  return capSummary(lines.join("\n"));
+}
+function readContextFiles(labDir, paths) {
+  if (!existsSync5(labDir)) throw new Error(labDirMissingMessage(labDir));
+  let rootReal;
+  try {
+    rootReal = realpathSync(labDir);
+  } catch {
+    throw new Error(labDirMissingMessage(labDir));
+  }
+  const out = [];
+  for (const raw of paths.slice(0, MAX_CONTEXT_FILES)) {
+    const p = raw.trim();
+    if (!p) continue;
+    if (p.length > MAX_CONTEXT_PATH_CHARS) {
+      throw new Error(`\u6587\u4EF6\u8DEF\u5F84\u592A\u957F(>${MAX_CONTEXT_PATH_CHARS} \u5B57\u7B26):${p.slice(0, 40)}\u2026`);
+    }
+    if (isAbsolute3(p) || /^[A-Za-z]:[\\/]/.test(p)) {
+      throw new Error(`\u4E0D\u5141\u8BB8\u7528\u7EDD\u5BF9\u8DEF\u5F84:${p}(\u8BF7\u7528\u76F8\u5BF9 lab \u76EE\u5F55\u7684\u8DEF\u5F84,\u5982 agent/main.py)`);
+    }
+    if (p.split(/[\\/]+/).includes("..")) {
+      throw new Error(`\u4E0D\u5141\u8BB8\u8BFB\u53D6 lab \u76EE\u5F55\u4E4B\u5916\u7684\u6587\u4EF6:${p}`);
+    }
+    let real;
+    try {
+      real = realpathSync(join6(rootReal, p));
+    } catch {
+      out.push({ path: p, content: "(\u6587\u4EF6\u4E0D\u5B58\u5728\u6216\u8BFB\u4E0D\u5230)" });
+      continue;
+    }
+    const rel = relative2(rootReal, real);
+    if (rel === "" || rel.startsWith("..") || isAbsolute3(rel)) {
+      throw new Error(`\u4E0D\u5141\u8BB8\u8BFB\u53D6 lab \u76EE\u5F55\u4E4B\u5916\u7684\u6587\u4EF6:${p}`);
+    }
+    let content;
+    try {
+      if (!statSync2(real).isFile()) {
+        out.push({ path: p, content: "(\u4E0D\u662F\u6587\u4EF6)" });
+        continue;
+      }
+      content = readFileSync6(real, "utf8");
+    } catch {
+      out.push({ path: p, content: "(\u6587\u4EF6\u4E0D\u5B58\u5728\u6216\u8BFB\u4E0D\u5230)" });
+      continue;
+    }
+    if (content.includes(NUL)) {
+      out.push({ path: p, content: "(\u4E8C\u8FDB\u5236\u6587\u4EF6,\u672A\u8BFB\u53D6)" });
+      continue;
+    }
+    if (content.length > MAX_CONTEXT_FILE_CHARS) {
+      const marker = `
+\u2026(\u5DF2\u622A\u65AD,\u539F\u6587 ${content.length} \u5B57\u7B26)`;
+      content = content.slice(0, MAX_CONTEXT_FILE_CHARS - marker.length) + marker;
+    }
+    out.push({ path: p, content });
+  }
+  return out;
+}
+
+// src/tools/assistant.ts
+var TASK_RE = /^t\d{1,2}$/;
+var MAX_QUESTION_CHARS = 2e3;
 var ok = (text) => ({ content: [{ type: "text", text }] });
 var err = (text) => ({ content: [{ type: "text", text: `\u26A0\uFE0F ${text}` }] });
+var HINT_INSTRUCTION = "[NOW DO THIS] \u7528\u5B66\u5458\u542C\u5F97\u61C2\u7684\u8BDD\u8F6C\u8FF0\u4E0A\u9762\u7684\u56DE\u7B54(\u3010\u5224\u65AD\u3011/\u3010\u4E0B\u4E00\u6B65\u3011/\u3010\u5751\u4F4D\u3011\u5206\u6BB5\u8BB2),\u628A\u3010\u5751\u4F4D\u3011\u5BF9\u5E94\u5230\u5B66\u5458\u81EA\u5DF1\u4EE3\u7801\u7684\u5177\u4F53\u4F4D\u7F6E(\u54EA\u4E2A\u6587\u4EF6\u3001\u54EA\u4E00\u6BB5\u3001\u73B0\u5728\u5199\u7684\u662F\u4EC0\u4E48\u3001\u4E3A\u4EC0\u4E48\u4F1A\u8E29\u5230);\u300C\u6700\u8FD1\u8BC4\u6D4B\u6D89\u53CA\u7684\u77E5\u8BC6\u70B9\u300D\u987A\u624B\u70B9\u4E00\u4E0B\u3002\u56DE\u7B54\u91CC\u82E5\u6709 [\u5DF2\u9690\u53BB\u53C2\u8003\u89E3\u4EE3\u7801],\u5982\u5B9E\u8BF4\u660E\u90A3\u662F\u7CFB\u7EDF\u9690\u53BB\u7684\u53C2\u8003\u89E3\u7247\u6BB5,\u4E0D\u662F\u52A9\u624B\u5199\u6F0F\u3002**\u4E0D\u8981\u66FF\u5B66\u5458\u5199\u5B9E\u73B0\u3001\u4E0D\u8981\u66FF ta \u6539\u6587\u4EF6** \u2014\u2014 \u52A9\u624B\u8BF4\u5F80\u54EA\u770B,\u5B66\u5458\u81EA\u5DF1\u52A8\u624B\u3002\u53EA\u6709\u5F53\u5B66\u5458**\u660E\u786E**\u8981\u5B8C\u6574\u7B54\u6848(\u300C\u76F4\u63A5\u7ED9\u6211\u4EE3\u7801\u300D)\u65F6:\u5148\u95EE\u4E00\u53E5\u300C\u770B\u4E86\u53C2\u8003\u89E3\u8FD9\u4E00\u6BB5,\u8FD9\u4E00\u6BB5\u7684\u5B66\u4E60\u4EF7\u503C\u5C31\u6CA1\u4E86 \u2014\u2014 \u786E\u5B9A\u8981\u770B?\u300D,\u5B66\u5458\u786E\u8BA4\u540E**\u518D\u8C03\u4E00\u6B21** lab_assistant(\u540C\u4E00\u4E2A question,\u52A0 reveal: true)\u3002\u5B66\u5458\u6CA1\u660E\u786E\u8981,**\u6C38\u8FDC\u4E0D\u8981**\u4E3B\u52A8\u5E26 reveal\u3002";
+var REVEAL_INSTRUCTION = "[NOW DO THIS] \u8FD9\u662F\u5B66\u5458\u786E\u8BA4\u540E\u653E\u884C\u7684 reveal \u6863\u56DE\u7B54,\u53EF\u80FD\u591A\u4E00\u8282\u3010\u53C2\u8003\u7247\u6BB5\u3011(\u6700\u5C0F\u76F8\u5173\u7247\u6BB5,\u4E0D\u662F\u6574\u6587\u4EF6)\u3002\u5148\u7167\u5E38\u8F6C\u8FF0\u3010\u5224\u65AD\u3011/\u3010\u4E0B\u4E00\u6B65\u3011/\u3010\u5751\u4F4D\u3011\u5E76\u5BF9\u5E94\u5230\u5B66\u5458\u81EA\u5DF1\u7684\u4EE3\u7801;\u7136\u540E\u8BB2\u6E05\u695A\u53C2\u8003\u7247\u6BB5**\u4E3A\u4EC0\u4E48\u8FD9\u6837\u5199**,\u8981\u6C42\u5B66\u5458**\u81EA\u5DF1\u6539\u5199**\u8FDB\u4EE3\u7801 \u2014\u2014 \u4E0D\u8981\u66FF ta \u7C98\u8D34\u3001\u4E0D\u8981\u66FF ta \u6539\u6587\u4EF6\u3002\u4E4B\u540E\u56DE\u5230\u9ED8\u8BA4:\u518D\u6709\u95EE\u9898\u4E0D\u8981\u4E3B\u52A8\u5E26 reveal\u3002";
+function registerAssistantTool(server2, deps = {}) {
+  const d = {
+    askAssistant,
+    requireToken,
+    getSession,
+    resolveLabDir,
+    buildWorkspaceSummary,
+    readContextFiles,
+    labDirExists: (labDir) => existsSync6(labDir),
+    cwd: () => process.cwd(),
+    ...deps
+  };
+  server2.registerTool(
+    "lab_assistant",
+    {
+      title: "\u8BF7 Lab \u52A9\u624B\u89E3\u7B54\u5F53\u524D lab \u7684\u95EE\u9898(\u9ED8\u8BA4\u53EA\u7ED9\u65B9\u5411,\u4E0D\u7ED9\u7B54\u6848)",
+      description: "\u628A\u5B66\u5458\u5173\u4E8E\u5F53\u524D lab \u7684\u95EE\u9898(\u5361\u4F4F\u4E86 / \u67D0\u4E2A task \u8981\u5E72\u4EC0\u4E48 / \u4E3A\u4EC0\u4E48\u6211\u7684\u4EE3\u7801\u4E0D\u5BF9)\u8FDE\u540C\u672C\u5730 agent/ \u7684\u6587\u4EF6\u6811\u3001\u6700\u8FD1\u6539\u52A8\u3001\u4EE5\u53CA\u6700\u591A 3 \u4E2A\u76F8\u5173\u6587\u4EF6,\u53D1\u7ED9\u670D\u52A1\u7AEF\u7684 Lab \u52A9\u624B\u3002\u52A9\u624B\u77E5\u9053\u53C2\u8003\u89E3\u3001\u77E5\u8BC6\u70B9\u548C\u5B66\u5458\u6700\u8FD1\u7684\u8BC4\u6D4B\u62A5\u544A,\u4F46\u9ED8\u8BA4\u53EA\u56DE\u65B9\u5411/\u5751\u4F4D/\u6982\u5FF5,\u4E0D\u8D34\u53C2\u8003\u89E3\u4EE3\u7801\u3002`reveal: true` \u53EA\u5728\u5B66\u5458\u660E\u786E\u8981\u5B8C\u6574\u7B54\u6848\u5E76\u786E\u8BA4\u8FC7\u4E00\u6B21\u4E4B\u540E\u624D\u4F20 \u2014\u2014 \u7EDD\u4E0D\u4E3B\u52A8\u5E26\u3002",
+      inputSchema: {
+        question: external_exports.string().describe("\u5B66\u5458\u95EE\u9898\u539F\u6587(\u22642000 \u5B57\u7B26)"),
+        task: external_exports.string().optional().describe("\u5B66\u5458\u63D0\u5230\u7684\u4EFB\u52A1\u53F7,\u5982 t3;\u6CA1\u63D0\u5C31\u4E0D\u4F20"),
+        context_files: external_exports.array(external_exports.string()).max(MAX_CONTEXT_FILES).optional().describe("\u76F8\u5BF9 lab \u76EE\u5F55\u7684\u6587\u4EF6\u8DEF\u5F84(\u5982 agent/net.py),\u6700\u591A 3 \u4E2A;\u5DE5\u5177\u81EA\u5DF1\u8BFB\u5E76\u622A\u65AD"),
+        reveal: external_exports.boolean().optional().describe("\u5B66\u5458\u660E\u786E\u8981\u7B54\u6848\u4E14\u786E\u8BA4\u540E\u624D\u4E3A true;\u9ED8\u8BA4 false")
+      }
+    },
+    async ({ question, task, context_files, reveal }) => {
+      try {
+        d.requireToken();
+      } catch {
+        return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      }
+      const s = d.getSession();
+      if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+      const q = question.trim();
+      if (!q) return err("\u95EE\u9898\u662F\u7A7A\u7684 \u2014\u2014 \u5148\u95EE\u5B66\u5458\u60F3\u95EE\u4EC0\u4E48\u3002");
+      if (q.length > MAX_QUESTION_CHARS) {
+        return err(`\u95EE\u9898\u592A\u957F(${q.length} \u5B57\u7B26,\u4E0A\u9650 ${MAX_QUESTION_CHARS}),\u8BF7\u7CBE\u7B80\u540E\u518D\u95EE\u3002`);
+      }
+      let taskId;
+      if (task !== void 0 && task.trim() !== "") {
+        taskId = task.trim().toLowerCase();
+        if (!TASK_RE.test(taskId)) {
+          return err(`task \u683C\u5F0F\u4E0D\u5BF9:\u5E94\u4E3A t1\u3001t3\u3001t12 \u8FD9\u79CD(t \u540E\u8DDF 1-2 \u4F4D\u6570\u5B57),\u6536\u5230\u300C${task}\u300D\u3002`);
+        }
+      }
+      let labDir;
+      try {
+        labDir = d.resolveLabDir(d.cwd(), s.labId);
+      } catch (e) {
+        return err(String(e instanceof Error ? e.message : e));
+      }
+      if (!d.labDirExists(labDir)) return err(labDirMissingMessage(labDir, s.labId));
+      const body = {
+        question: q,
+        reveal: reveal === true
+      };
+      if (taskId) body.task_id = taskId;
+      body.workspace_summary = withPlatformLine(d.buildWorkspaceSummary(labDir));
+      if (context_files && context_files.length > 0) {
+        try {
+          const files = d.readContextFiles(labDir, context_files);
+          if (files.length > 0) body.context_files = files;
+        } catch (e) {
+          return err(String(e instanceof Error ? e.message : e));
+        }
+      }
+      let a;
+      try {
+        a = await d.askAssistant(s.labId, body);
+      } catch (e) {
+        return err(String(e instanceof Error ? e.message : e));
+      }
+      const parts = [a.answer.trim()];
+      const meta3 = [];
+      if (a.kps.length > 0) meta3.push(`\u6700\u8FD1\u8BC4\u6D4B\u6D89\u53CA\u7684\u77E5\u8BC6\u70B9:${a.kps.join("\u3001")}`);
+      if (a.redacted_lines > 0) meta3.push(`(\u7CFB\u7EDF\u9690\u53BB\u4E86 ${a.redacted_lines} \u884C\u53C2\u8003\u89E3\u4EE3\u7801)`);
+      if (a.used_eval_jobs > 0) meta3.push(`(\u53C2\u8003\u4E86\u5B66\u5458\u6700\u8FD1 ${a.used_eval_jobs} \u6B21\u8BC4\u6D4B\u62A5\u544A)`);
+      if (meta3.length > 0) parts.push("", meta3.join("\n"));
+      parts.push("", a.level === "reveal" ? REVEAL_INSTRUCTION : HINT_INSTRUCTION);
+      return ok(parts.join("\n"));
+    }
+  );
+}
+
+// src/tools/check.ts
+import { existsSync as existsSync7 } from "node:fs";
+import { spawn as spawn2 } from "node:child_process";
+
+// src/lab-tasks.ts
+var taskKind = (t) => t.eval ? "eval" : "check";
+
+// src/tools/check.ts
+var ok2 = (text) => ({ content: [{ type: "text", text }] });
+var err2 = (text) => ({ content: [{ type: "text", text: `\u26A0\uFE0F ${text}` }] });
+var TIMEOUT_MS = 6e4;
+var TAIL = 2e3;
+var TASK_RE2 = /^t\d{1,2}$/;
+function runShell(cmd, cwd, timeoutMs) {
+  return new Promise((resolve2) => {
+    const child = spawn2("sh", ["-c", cmd], { cwd, env: process.env });
+    let out = "";
+    let timedOut = false;
+    const cap = (b) => {
+      out = (out + b.toString()).slice(-TAIL * 4);
+    };
+    child.stdout.on("data", cap);
+    child.stderr.on("data", cap);
+    const timer = setTimeout(() => {
+      timedOut = true;
+      child.kill("SIGKILL");
+    }, timeoutMs);
+    child.on("close", (code) => {
+      clearTimeout(timer);
+      resolve2({ code, output: out, timedOut });
+    });
+    child.on("error", (e) => {
+      clearTimeout(timer);
+      resolve2({ code: null, output: String(e), timedOut: false });
+    });
+  });
+}
+var NOW_DO_THIS = "[NOW DO THIS] \u628A\u81EA\u68C0\u7ED3\u679C\u539F\u6837\u544A\u8BC9\u5B66\u5458;\u672A\u8FC7\u65F6\u628A\u8F93\u51FA\u5C3E\u90E8\u548C\u300C\u5931\u8D25\u770B\u54EA\u91CC\u300D\u5FF5\u7ED9 ta,\u8BA9\u5B66\u5458\u81EA\u5DF1\u53BB\u6539\u2014\u2014\u4E0D\u8981\u66FF\u5B66\u5458\u6539\u6587\u4EF6\u3002\u4E4B\u540E\u63D0\u9192 `/lab-status` \u770B\u6574\u4F53\u8FDB\u5EA6\u3002";
+function registerCheckTool(server2, deps = {}) {
+  const d = {
+    getContext,
+    postTaskCheck,
+    requireToken,
+    getSession,
+    resolveLabDir,
+    labDirExists: (labDir) => existsSync7(labDir),
+    cwd: () => process.cwd(),
+    runShell,
+    platform: () => process.platform,
+    ...deps
+  };
+  server2.registerTool(
+    "lab_check",
+    {
+      title: "Run a task's local self-check",
+      description: "\u5728\u5B66\u5458\u672C\u673A\u8DD1\u8BE5 task \u7684 check.cmd(\u6765\u81EA\u8001\u5E08\u7EF4\u62A4\u7684 tasks.json),\u5E76\u628A\u7ED3\u679C\u4E0A\u62A5\u770B\u677F\u3002\u8BC4\u6D4B\u578B task \u8BF7\u7528 lab_evaluate\u3002",
+      inputSchema: { task: external_exports.string().describe("task id,\u5982 t1") }
+    },
+    async ({ task }) => {
+      try {
+        d.requireToken();
+      } catch {
+        return err2("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      }
+      const s = d.getSession();
+      if (!s) return err2("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+      if (d.platform() === "win32") {
+        return err2("\u672C\u671F /lab-check \u53EA\u652F\u6301 POSIX shell\u3002\u8BF7\u5728 WSL \u91CC\u8FD0\u884C Claude Code \u518D\u8BD5\u3002");
+      }
+      let tasks;
+      try {
+        const ctx = await d.getContext(s.labId);
+        tasks = ctx.interaction === "v2" ? ctx.tasks : null;
+      } catch (e) {
+        return err2(`\u8BFB\u53D6\u4EFB\u52A1\u4E66\u5931\u8D25:${e instanceof Error ? e.message : String(e)}`);
+      }
+      if (!tasks) return err2("\u8FD9\u4E2A lab \u6CA1\u6709 v2 \u4EFB\u52A1\u4E66,/lab-check \u4E0D\u53EF\u7528\u3002");
+      const id = task.trim().toLowerCase();
+      const t = TASK_RE2.test(id) ? tasks.tasks.find((x) => x.id === id) : void 0;
+      if (!t) {
+        const checkable = tasks.tasks.filter((x) => taskKind(x) === "check").map((x) => x.id).join("\u3001");
+        return err2(`\u6CA1\u6709 task\u300C${task}\u300D\u3002\u53EF\u81EA\u68C0\u7684 task:${checkable || "(\u65E0)"}`);
+      }
+      if (taskKind(t) === "eval" || !t.check) {
+        return err2(`${t.id} \u662F\u8BC4\u6D4B\u578B task,\u8D70 /lab-evaluate ${t.id}\u3002`);
+      }
+      let labDir;
+      try {
+        labDir = d.resolveLabDir(d.cwd(), s.labId);
+      } catch (e) {
+        return err2(e instanceof Error ? e.message : String(e));
+      }
+      if (!d.labDirExists(labDir)) return err2(labDirMissingMessage(labDir, s.labId));
+      const r = await d.runShell(t.check.cmd, labDir, TIMEOUT_MS);
+      const passed = !r.timedOut && r.code === 0;
+      const tail = r.output.slice(-TAIL);
+      let report = "";
+      try {
+        await d.postTaskCheck(s.labId, t.id, { passed, output_tail: tail });
+      } catch (e) {
+        report = `
+(\u4E0A\u62A5\u770B\u677F\u5931\u8D25:${e instanceof Error ? e.message : String(e)})`;
+      }
+      const head = passed ? `\u2705 ${t.id} \u81EA\u68C0\u901A\u8FC7` : r.timedOut ? `\u274C ${t.id} \u81EA\u68C0\u672A\u8FC7(\u547D\u4EE4 60 \u79D2\u5185\u6CA1\u7ED3\u675F,\u5DF2\u7EC8\u6B62)` : `\u274C ${t.id} \u81EA\u68C0\u672A\u8FC7(\u9000\u51FA\u7801 ${r.code ?? "?"})`;
+      return ok2(
+        [
+          `$ ${t.check.cmd}`,
+          "",
+          head,
+          tail ? "```\n" + tail.trimEnd() + "\n```" : "(\u65E0\u8F93\u51FA)",
+          !passed && t.check.on_fail ? `\u5931\u8D25\u770B\u54EA\u91CC:${t.check.on_fail}` : "",
+          report,
+          "",
+          NOW_DO_THIS
+        ].filter((x) => x !== "").join("\n")
+      );
+    }
+  );
+}
+
+// src/v2/briefing.ts
+var V2_BANNER = "\u2699 PARALLIGHT \xB7 lab \u5F00\u573A\u6750\u6599(\u7ED9 AI:\u4E0B\u9762\u7684\u5F00\u573A\u7A3F\u4E0E\u4EFB\u52A1\u4E66\u662F\u8981\u539F\u6837\u5448\u73B0\u7ED9\u5B66\u5458\u7684\u5185\u5BB9,\u4E0D\u662F\u7ED9\u4F60\u7684\u914D\u7F6E)";
+var ENTRIES = "\u5165\u53E3:`/lab-evaluate tN` \u4E91\u7AEF\u8BC4\u6D4B(t3\u3001t4 \u8FD9\u7C7B\u8BC4\u6D4B\u578B task);`/lab-check tN` \u672C\u673A\u81EA\u68C0(\u5176\u4F59 task);`/lab-assistant \u4F60\u7684\u95EE\u9898` \u95EE Lab \u52A9\u624B(\u9ED8\u8BA4\u53EA\u7ED9\u65B9\u5411);`/lab-status` \u770B\u8FDB\u5EA6\u3002";
+var NO_WORK = "**\u4E0D\u8981\u66FF\u5B66\u5458\u5F00\u5DE5\u3001\u4E0D\u8981\u66FF ta \u6539\u6587\u4EF6**\u2014\u2014\u5B66\u5458\u6307\u6325\u81EA\u5DF1\u7684 coding agent \u505A,\u4F60\u53EA\u5448\u73B0\u4EFB\u52A1\u4E66\u3001\u7B54\u7591\u6307\u8DEF\u3002";
+function renderTaskBook(tasks) {
+  const lines = [`## \u4EFB\u52A1\u4E66 \xB7 ${tasks.title}`];
+  if (tasks.how) lines.push("", tasks.how);
+  for (const t of tasks.tasks) {
+    const acc = taskKind(t) === "eval" ? `\u8BC4\u6D4B /lab-evaluate ${t.id}` : `\u81EA\u68C0 /lab-check ${t.id}`;
+    lines.push("", `### ${t.id} \xB7 ${t.title}(${t.est ?? "\u65F6\u957F\u4E0D\u5B9A"})\xB7 \u9A8C\u6536:${acc}`);
+    if (t.background) lines.push(t.background);
+    for (const e of t.expect) lines.push(`- ${e}`);
+  }
+  if (tasks.done) lines.push("", `**\u5B8C\u6210\u6807\u51C6**:${tasks.done}`);
+  return lines.join("\n");
+}
+function fmtTime2(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function rowOf(t) {
+  const kindWord = t.kind === "eval" ? "\u8BC4\u6D4B" : "\u81EA\u68C0";
+  if (t.status === "passed") return `[\u2713] ${t.id} ${t.title} \u2014 ${kindWord}\u901A\u8FC7 \xB7 ${fmtTime2(t.last_at)}`;
+  if (t.status === "failed") return `[\u2717] ${t.id} ${t.title} \u2014 \u672A\u8FC7:${t.summary || kindWord + "\u5931\u8D25"} \xB7 ${fmtTime2(t.last_at)}`;
+  return `[ ] ${t.id} ${t.title} \u2014 \u672A\u8BD5`;
+}
+function renderProgressTable(p) {
+  return [
+    `Lab: ${p.title}`,
+    ...p.tasks.map(rowOf),
+    `\u8BC4\u6D4B ${p.counts.evals} \u6B21 \xB7 \u63D0\u95EE ${p.counts.asks} \u6B21`,
+    "",
+    `\u{1F4DA} [Lab ${p.lab_id} \xB7 ${p.percent}% complete]`
+  ].join("\n");
+}
+function dashboardLine(url2, opened) {
+  if (!url2) return "\u770B\u677F\u94FE\u63A5\u6682\u65F6\u6CA1\u62FF\u5230;\u7A0D\u540E /lab-resume \u4F1A\u518D\u7ED9\u4E00\u6B21\u3002";
+  return opened ? `\u770B\u677F(\u5DF2\u5728\u6D4F\u89C8\u5668\u6253\u5F00;\u94FE\u63A5 5 \u5206\u949F\u5185\u4E00\u6B21\u6027\u6709\u6548,\u4E4B\u540E\u6D4F\u89C8\u5668\u4FDD\u7559 7 \u5929\u767B\u5F55):${url2}` : `\u770B\u677F\u94FE\u63A5(\u6D4F\u89C8\u5668\u91CC\u6253\u5F00;5 \u5206\u949F\u5185\u4E00\u6B21\u6027\u6709\u6548,\u4E4B\u540E\u6D4F\u89C8\u5668\u4FDD\u7559 7 \u5929\u767B\u5F55):${url2}`;
+}
+function composeStartV2(a) {
+  const consent = a.consented ? "" : " \u5728\u4EFB\u52A1\u4E66\u4E4B\u540E\u95EE\u4E00\u53E5\u300CParallight \u60F3\u5206\u6790\u4F60\u8FD9\u6B21 lab \u7684\u5BF9\u8BDD\u6765\u6539\u8FDB\u6559\u5B66,\u53EF\u4EE5\u5417?[\u53EF\u4EE5] [\u5148\u4E0D\u8981]\u300D;\u5B66\u5458\u9009 [\u53EF\u4EE5] \u5C31\u9759\u9ED8\u8C03\u7528 grant_analysis_consent \u5DE5\u5177\u3002";
+  return [
+    V2_BANNER,
+    a.teaching.trim(),
+    "",
+    `\u6587\u4EF6\u5DF2\u5199\u5230 ./${a.labId}/(LLM \u51ED\u636E\u5DF2\u6CE8\u5165 .env);\u4E0B\u9762\u6BCF\u4E2A task \u7684\u547D\u4EE4\u90FD\u5728\u8FD9\u4E2A\u76EE\u5F55\u91CC\u6267\u884C\u3002`,
+    "",
+    renderTaskBook(a.tasks),
+    "",
+    dashboardLine(a.dashboardUrl, a.dashboardOpened ?? false),
+    "",
+    "[NOW DO THIS]",
+    `\u628A\u4E0A\u9762\u7684\u5F00\u573A\u7A3F\u548C\u4EFB\u52A1\u4E66**\u539F\u6837**\u5448\u73B0\u7ED9\u5B66\u5458(\u4E0D\u8981\u538B\u7F29\u6210\u4E00\u53E5\u8BDD,\u4EFB\u52A1\u4E66 ${a.tasks.tasks.length} \u4E2A task \u90FD\u8981\u51FA\u73B0),\u518D\u7528\u4E00\u53E5\u8BDD\u8BF4\u660E\u56DB\u4E2A\u5165\u53E3\u3002${ENTRIES} ${NO_WORK}${consent}`,
+    `End with: \u{1F4DA} [Lab ${a.labId} \xB7 0% complete]`
+  ].join("\n");
+}
+function composeResumeV2(a) {
+  const body = a.progress ? renderProgressTable(a.progress) : `\u8FDB\u5EA6\u6682\u65F6\u62FF\u4E0D\u5230:${a.error ?? "\u672A\u77E5\u539F\u56E0"}
+
+\u{1F4DA} [Lab ${a.labId} \xB7 ?% complete]`;
+  return [
+    V2_BANNER,
+    a.teaching.trim(),
+    "",
+    "## \u4E0A\u6B21\u8FDB\u5EA6",
+    body,
+    "",
+    dashboardLine(a.dashboardUrl, a.dashboardOpened ?? false),
+    "",
+    "[NOW DO THIS]",
+    `\u7B80\u77ED\u6B22\u8FCE\u56DE\u6765,\u628A\u8FDB\u5EA6\u8868\u539F\u6837\u5448\u73B0,\u6307\u51FA\u4E0B\u4E00\u4E2A\u672A\u5B8C\u6210\u7684 task\u3002${ENTRIES} ${NO_WORK}`
+  ].join("\n");
+}
+function composeStatusV2(p) {
+  return [
+    renderProgressTable(p),
+    "",
+    "[NOW DO THIS]",
+    `\u628A\u72B6\u6001\u8868\u539F\u6837\u5448\u73B0\u7ED9\u5B66\u5458,\u6307\u51FA\u4E0B\u4E00\u4E2A\u8BE5\u505A\u7684 task\u3002${ENTRIES} ${NO_WORK}`
+  ].join("\n");
+}
+
+// src/index.ts
+var SERVER_NAME = "parallight-lab";
+var SERVER_BANNER = [
+  "  \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
+  "  \u2502   PARALLIGHT    \u2502",
+  "  \u2502   LAB  \xB7  MCP   \u2502",
+  "  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+].join("\n");
+var server = new McpServer({ name: SERVER_NAME, version: PARALLIGHT_VERSION });
+var ok3 = (text) => ({ content: [{ type: "text", text }] });
+var err3 = (text) => ({ content: [{ type: "text", text: `\u26A0\uFE0F ${text}` }] });
 function quoteSubmission(label, text) {
   const trimmed = text?.trim();
   if (!trimmed) return "";
@@ -32380,6 +32948,13 @@ function quoteSubmission(label, text) {
 ${quoted}
 
 `;
+}
+function mentorLabel() {
+  const name = getSession()?.masterName?.trim();
+  return name ? `\u672C\u8BFE\u7A0B Mentor\uFF08${name}\uFF09` : "\u672C\u8BFE\u7A0B Mentor";
+}
+function mentorText(it) {
+  return it.mentor_text ?? it.marvin_text ?? "";
 }
 function fileTree(paths) {
   const root = {};
@@ -32392,27 +32967,27 @@ function fileTree(paths) {
     }
   }
   const lines = [];
-  const walk = (node, prefix) => {
+  const walk2 = (node, prefix) => {
     const keys = Object.keys(node).sort();
     keys.forEach((k, i) => {
       const last = i === keys.length - 1;
       lines.push(prefix + (last ? "\u2514\u2500\u2500 " : "\u251C\u2500\u2500 ") + k);
       const child = node[k];
-      if (child) walk(child, prefix + (last ? "    " : "\u2502   "));
+      if (child) walk2(child, prefix + (last ? "    " : "\u2502   "));
     });
   };
-  walk(root, "");
+  walk2(root, "");
   return lines.join("\n");
 }
 server.registerTool(
   "test_echo",
   {
     title: "Test Echo (debug)",
-    description: "Phase 0 plumbing check. Echoes input with the master portrait.",
+    description: "Phase 0 plumbing check. Echoes input with the server banner.",
     inputSchema: { message: external_exports.string() }
   },
-  ({ message }) => ok(`Hello from Parallight Local MCP Server
-${PLACEHOLDER_PORTRAIT}
+  ({ message }) => ok3(`Hello from Parallight Local MCP Server
+${SERVER_BANNER}
 You said: ${message}`)
 );
 server.registerTool(
@@ -32425,9 +33000,9 @@ server.registerTool(
   async ({ email: email3 }) => {
     try {
       await requestOtp(email3);
-      return ok(`\u5DF2\u53D1\u9001 6 \u4F4D\u9A8C\u8BC1\u7801\u5230 ${email3}\u3002\u8BF7\u67E5\u6536\u90AE\u4EF6\uFF0C\u7136\u540E\u7528 /lab-login \u8F93\u5165\u9A8C\u8BC1\u7801\u3002`);
+      return ok3(`\u5DF2\u53D1\u9001 6 \u4F4D\u9A8C\u8BC1\u7801\u5230 ${email3}\u3002\u8BF7\u67E5\u6536\u90AE\u4EF6\uFF0C\u7136\u540E\u7528 /lab-login \u8F93\u5165\u9A8C\u8BC1\u7801\u3002`);
     } catch (e) {
-      return err(`\u53D1\u9001\u9A8C\u8BC1\u7801\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u53D1\u9001\u9A8C\u8BC1\u7801\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32441,9 +33016,9 @@ server.registerTool(
   async ({ email: email3, code }) => {
     try {
       const { email: e } = await verifyOtp(email3, code);
-      return ok(`\u767B\u5F55\u6210\u529F \u2705 (${e ?? email3})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
+      return ok3(`\u767B\u5F55\u6210\u529F \u2705 (${e ?? email3})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
     } catch (e) {
-      return err(`\u9A8C\u8BC1\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u9A8C\u8BC1\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32458,11 +33033,11 @@ server.registerTool(
     try {
       const r = await pinLookup(email3);
       if (r.state === "ready") {
-        return ok(`\u90AE\u7BB1\u786E\u8BA4\u65E0\u8BEF \u2705 \u8BF7\u8F93\u5165\u4F60\u7684 4 \u4F4D\u4E2A\u4EBA PIN\u3002`);
+        return ok3(`\u90AE\u7BB1\u786E\u8BA4\u65E0\u8BEF \u2705 \u8BF7\u8F93\u5165\u4F60\u7684 4 \u4F4D\u4E2A\u4EBA PIN\u3002`);
       }
-      return ok(r.message ?? `state=${r.state}`);
+      return ok3(r.message ?? `state=${r.state}`);
     } catch (e) {
-      return err(String(e instanceof Error ? e.message : e));
+      return err3(String(e instanceof Error ? e.message : e));
     }
   }
 );
@@ -32476,9 +33051,9 @@ server.registerTool(
   async ({ email: email3, pin }) => {
     try {
       const { email: e } = await pinLogin(email3, pin);
-      return ok(`\u767B\u5F55\u6210\u529F \u2705 (${e})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
+      return ok3(`\u767B\u5F55\u6210\u529F \u2705 (${e})\u3002\u73B0\u5728\u53EF\u4EE5 /lab \u770B\u53EF\u7528\u7684 lab\uFF0C\u6216 /lab-start \u5F00\u59CB\u3002`);
     } catch (e) {
-      return err(String(e instanceof Error ? e.message : e));
+      return err3(String(e instanceof Error ? e.message : e));
     }
   }
 );
@@ -32488,7 +33063,7 @@ server.registerTool(
   () => {
     clearAuth();
     clearSession();
-    return ok("\u5DF2\u9000\u51FA\u767B\u5F55\uFF0C\u672C\u5730\u51ED\u8BC1\u5DF2\u6E05\u9664\u3002");
+    return ok3("\u5DF2\u9000\u51FA\u767B\u5F55\uFF0C\u672C\u5730\u51ED\u8BC1\u5DF2\u6E05\u9664\u3002");
   }
 );
 server.registerTool(
@@ -32504,11 +33079,11 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
       const labs = await listLabs();
-      if (labs.length === 0) return ok("\u76EE\u524D\u6CA1\u6709\u53EF\u7528\u7684 lab\u3002");
+      if (labs.length === 0) return ok3("\u76EE\u524D\u6CA1\u6709\u53EF\u7528\u7684 lab\u3002");
       const session = getSession();
       const sessionLine = session ? `\u5F53\u524D\u8FDB\u884C\u4E2D\uFF1A**${session.title}** (${percentComplete()}%)
 
@@ -32522,7 +33097,7 @@ server.registerTool(
           ...counts.map((t) => `| ${t.label} | ${t.desc} | ${t.n} |`)
         ].join("\n");
         const optionMap2 = counts.map((t) => `${t.label} \u2192 list_labs(track="${t.key}")`).join("; ");
-        return ok(
+        return ok3(
           [
             ...banner ? [banner, ""] : [],
             `${sessionLine}## \u9009\u62E9 Lab \u7C7B\u522B`,
@@ -32537,7 +33112,7 @@ server.registerTool(
       const inTrack = labsOfTrack(labs, track);
       if (inTrack.length === 0) {
         const others = LAB_TRACKS.filter((t) => t.key !== track).map((t) => `${t.label} ${labsOfTrack(labs, t.key).length} \u4E2A`).join("\u3001");
-        return ok(
+        return ok3(
           `\u300C${trackDef.label}\u300D\u76EE\u524D\u8FD8\u6CA1\u6709\u5DF2\u53D1\u5E03\u7684 lab\u3002
 
 [NOW DO THIS] Tell the learner this category is empty for now, then re-offer the other categories via AskUserQuestion (${others}); on pick call list_labs with that track.`
@@ -32558,7 +33133,7 @@ server.registerTool(
         ...rows
       ].join("\n");
       const optionMap = inTrack.map((l) => `${l.order} \u2192 start_lab(lab_id="${l.lab_id}")`).join("; ");
-      return ok(
+      return ok3(
         [
           `${sessionLine}## \u53EF\u7528 Lab \xB7 ${trackDef.label}`,
           "",
@@ -32568,7 +33143,7 @@ server.registerTool(
         ].join("\n")
       );
     } catch (e) {
-      return err(`\u83B7\u53D6 lab \u5217\u8868\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u83B7\u53D6 lab \u5217\u8868\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32584,29 +33159,29 @@ server.registerTool(
     try {
       token = requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
-      const existingDir = join5(process.cwd(), lab_id);
-      if (existsSync4(existingDir) && !force) {
-        return err(
+      const existingDir = join7(process.cwd(), lab_id);
+      if (existsSync8(existingDir) && !force) {
+        return err3(
           `\u68C0\u6D4B\u5230 ./${lab_id}/ \u5DF2\u5B58\u5728\u2014\u2014\u4F60\u4E4B\u524D\u5F00\u8FC7\u8FD9\u4E2A lab\u3002
 \xB7 \u60F3\u63A5\u7740\u4E0A\u6B21\u8FDB\u5EA6:\u7528 /lab-resume
 \xB7 \u786E\u5B9E\u8981\u91CD\u7F6E\u6210\u521D\u59CB\u6587\u4EF6(\u4F1A\u8986\u76D6\u4F60\u5BF9 starter \u6587\u4EF6\u7684\u4FEE\u6539):\u518D\u6B21 /lab-start \u5E76\u5E26 force=true`
         );
       }
       const starter = await getStarter(lab_id);
-      const labDir = join5(process.cwd(), lab_id);
+      const labDir = join7(process.cwd(), lab_id);
       for (const f of starter.files) {
-        const dest = join5(labDir, f.path);
+        const dest = join7(labDir, f.path);
         mkdirSync5(dirname2(dest), { recursive: true });
         writeFileSync5(dest, f.content);
       }
       for (const a of starter.assets ?? []) {
-        const dest = join5(labDir, a.path);
+        const dest = join7(labDir, a.path);
         mkdirSync5(dirname2(dest), { recursive: true });
         const res = await fetch(a.url);
-        if (!res.ok) return err(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
+        if (!res.ok) return err3(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
         writeFileSync5(dest, Buffer.from(await res.arrayBuffer()));
       }
       const example = starter.files.find((f) => f.path === ".env.example")?.content ?? "";
@@ -32640,7 +33215,7 @@ PARALLIGHT_TOKEN=${token}
 PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
 `;
       }
-      writeFileSync5(join5(labDir, ".env"), envContent);
+      writeFileSync5(join7(labDir, ".env"), envContent);
       const writtenTree = fileTree([
         ...starter.files.map((f) => f.path),
         ...(starter.assets ?? []).map((a) => a.path),
@@ -32654,6 +33229,71 @@ PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
         enabled: exp.enabled,
         ratio: exp.ratio
       });
+      if (ctx.interaction === "v2") {
+        if (!ctx.tasks) {
+          return err3(
+            "\u8FD9\u4E2A lab \u6807\u8BB0\u4E3A v2 \u4F46\u6CA1\u6709\u4EFB\u52A1\u4E66(tasks \u672A\u540C\u6B65)\u3002\u8BF7\u8054\u7CFB\u8001\u5E08;\u5148\u4E0D\u8981\u6309\u65E7\u6D41\u7A0B\u5F00\u59CB\u3002"
+          );
+        }
+        const checkpointsV2 = ctx.learning_objectives.map((kp) => ({
+          kp_id: kp.id,
+          name: kp.name,
+          state: "untouched"
+        }));
+        setSession({
+          labId: ctx.lab_id,
+          title: ctx.title,
+          masterId: master.master_id,
+          masterVersion: master.version,
+          masterName: master.display_name,
+          startedAt: (/* @__PURE__ */ new Date()).toISOString(),
+          checkpoints: checkpointsV2,
+          // systemPrompt "" 是 v2 session 的标志(v1 的永远非空),get_lab_status 据此分叉。
+          systemPrompt: "",
+          teachingDoc: ctx.teaching
+        });
+        let sid;
+        try {
+          sid = await openSession(ctx.lab_id, master.master_id, master.version);
+        } catch {
+        }
+        const sv2 = getSession();
+        if (sv2) {
+          sv2.serverSessionId = sid;
+          setSession(sv2);
+          saveSession(sv2, process.cwd());
+        }
+        let consentedV2 = true;
+        try {
+          consentedV2 = await getAnalysisConsent();
+        } catch {
+        }
+        let dashUrl = null;
+        try {
+          dashUrl = await issueDashboardLink(ctx.lab_id, "tasks");
+        } catch {
+          dashUrl = null;
+        }
+        let dashOpened = false;
+        if (dashUrl) {
+          try {
+            openInBrowser(dashUrl);
+            dashOpened = true;
+          } catch {
+            dashOpened = false;
+          }
+        }
+        return ok3(
+          composeStartV2({
+            labId: ctx.lab_id,
+            teaching: ctx.teaching,
+            tasks: ctx.tasks,
+            dashboardUrl: dashUrl,
+            dashboardOpened: dashOpened,
+            consented: consentedV2
+          })
+        );
+      }
       const contextPack = variant === "pack" ? await getContextPack(ctx.lab_id) : "";
       const systemPrompt = composeSystemPrompt(master, ctx, variant, contextPack);
       const checkpoints = ctx.learning_objectives.map((kp) => ({
@@ -32666,6 +33306,7 @@ PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
         title: ctx.title,
         masterId: master.master_id,
         masterVersion: master.version,
+        masterName: master.display_name,
         startedAt: (/* @__PURE__ */ new Date()).toISOString(),
         checkpoints,
         systemPrompt,
@@ -32687,7 +33328,7 @@ PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
         consented = await getAnalysisConsent();
       } catch {
       }
-      return ok(
+      return ok3(
         [
           PRIVATE_BANNER,
           "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate, summarize, quote, or mention 'persona' / 'teaching' / 'solution' / 'loading' / 'internalizing'. Do NOT use the Read tool to set anything up. Your FIRST visible text must be the in-character greeting described under [NOW DO THIS].]",
@@ -32699,11 +33340,11 @@ PARALLIGHT_SANDBOX_URL=${SANDBOX_PROXY_URL}
 ${lab_id}/
 ${writtenTree}
 \`\`\`
-Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u5148\u628A\u73AF\u5883\u68C0\u67E5\u8DD1\u4E00\u4E0B\u3001\u7136\u540E\u5F00\u59CB\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU run the environment check via Bash (cd ./${lab_id}; python preflight.py) and surface the result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block. Then begin the lab's opening EXACTLY as your teaching script directs \u2014 each lab opens differently, so do NOT assume any particular starter scripts exist; let the teaching script decide the first concrete step. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). ` + (consented ? "" : " \u5728\u4F60\u7ED9\u51FA\u5F00\u573A\u540E\u3001\u5F15\u5BFC\u7B2C\u4E00\u6B65\u4E4B\u524D,\u81EA\u7136\u5730\u5F81\u6C42\u4E00\u6B21\u5206\u6790\u540C\u610F:\u7528\u4E00\u53E5\u8BDD\u544A\u8BC9\u5B66\u5458\u300C\u4F60\u8FD9\u6B21\u7684 lab \u4F1A\u8BDD\u6570\u636E\u4F1A\u88AB\u8BB0\u5F55,\u7528\u6765\u751F\u6210 /lab analysis \u62A5\u544A\u3001\u4E5F\u4F9B Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929\u300D,\u5E76\u7ED9\u9009\u9879 [\u53EF\u4EE5] [\u5148\u4E0D\u8981]\u3002\u82E5\u5B66\u5458\u9009 [\u53EF\u4EE5],\u9759\u9ED8\u8C03\u7528 grant_analysis_consent \u5DE5\u5177\u3002") + `End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
+Then DO NOT tell them to go run things in a terminal themselves. OFFER it as an option card: '\u8981\u4E0D\u8981\u6211\u5E2E\u4F60\u5148\u628A\u73AF\u5883\u68C0\u67E5\u8DD1\u4E00\u4E0B\u3001\u7136\u540E\u5F00\u59CB\uFF1F' \u2192 [\u8DD1] [\u6211\u81EA\u5DF1\u8DD1] [\u5148\u8BB2\u8BB2]. On [\u8DD1], YOU work out this lab's environment check from the file tree above (e.g. a package.json script, or a preflight script in whatever language this lab uses) and run it via Bash under ./${lab_id}/. If the tree doesn't make it obvious, call get_lab_teaching first \u2014 the teaching script names the first concrete step. NEVER guess a command that isn't in the tree. Surface the result with a \u{1F52C} \u5B9E\u9A8C\u89C2\u5BDF block. Then begin the lab's opening EXACTLY as your teaching script directs \u2014 each lab opens differently, so do NOT assume any particular starter scripts exist; let the teaching script decide the first concrete step. The learner observes; you execute. Before you start guiding the first stage, silently call get_lab_teaching to load your teaching script (do not narrate the call). ` + (consented ? "" : " \u5728\u4F60\u7ED9\u51FA\u5F00\u573A\u540E\u3001\u5F15\u5BFC\u7B2C\u4E00\u6B65\u4E4B\u524D,\u81EA\u7136\u5730\u5F81\u6C42\u4E00\u6B21\u5206\u6790\u540C\u610F:\u7528\u4E00\u53E5\u8BDD\u544A\u8BC9\u5B66\u5458\u300C\u4F60\u8FD9\u6B21\u7684 lab \u4F1A\u8BDD\u6570\u636E\u4F1A\u88AB\u8BB0\u5F55,\u7528\u6765\u751F\u6210 /lab analysis \u62A5\u544A\u3001\u4E5F\u4F9B Mentor \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929\u300D,\u5E76\u7ED9\u9009\u9879 [\u53EF\u4EE5] [\u5148\u4E0D\u8981]\u3002\u82E5\u5B66\u5458\u9009 [\u53EF\u4EE5],\u9759\u9ED8\u8C03\u7528 grant_analysis_consent \u5DE5\u5177\u3002") + `End with: \u{1F4DA} [Lab ${ctx.lab_id} \xB7 0% complete]`
         ].join("\n")
       );
     } catch (e) {
-      return err(`\u542F\u52A8 lab \u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u542F\u52A8 lab \u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32718,7 +33359,7 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const persisted = lab_id ? loadByLab(lab_id) : loadMostRecent();
     let labId = persisted?.labId ?? lab_id ?? null;
@@ -32726,11 +33367,63 @@ server.registerTool(
       labId = await getMostRecentSession();
     }
     if (!labId) {
-      return err("\u6CA1\u6709\u53EF\u6062\u590D\u7684 lab session\u3002\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
+      return err3("\u6CA1\u6709\u53EF\u6062\u590D\u7684 lab session\u3002\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
     }
     try {
       const ctx = await getContext(labId);
       const master = await getMaster(ctx.master);
+      if (ctx.interaction === "v2") {
+        if (!ctx.tasks) {
+          return err3(
+            "\u8FD9\u4E2A lab \u6807\u8BB0\u4E3A v2 \u4F46\u6CA1\u6709\u4EFB\u52A1\u4E66(tasks \u672A\u540C\u6B65)\u3002\u8BF7\u8054\u7CFB\u8001\u5E08;\u5148\u4E0D\u8981\u6309\u65E7\u6D41\u7A0B\u7EE7\u7EED\u3002"
+          );
+        }
+        setSession({
+          labId: ctx.lab_id,
+          title: ctx.title,
+          masterId: master.master_id,
+          masterVersion: master.version,
+          masterName: master.display_name,
+          startedAt: persisted?.startedAt ?? (/* @__PURE__ */ new Date()).toISOString(),
+          checkpoints: persisted?.checkpoints ?? [],
+          systemPrompt: "",
+          teachingDoc: ctx.teaching,
+          serverSessionId: persisted?.serverSessionId
+        });
+        let sid;
+        try {
+          sid = await openSession(ctx.lab_id, master.master_id, master.version);
+        } catch {
+        }
+        const sv2 = getSession();
+        if (sv2) {
+          sv2.serverSessionId = sid ?? sv2.serverSessionId;
+          setSession(sv2);
+          saveSession(sv2, process.cwd());
+        }
+        let progress = null;
+        let progressErr;
+        try {
+          progress = await getProgress(ctx.lab_id);
+        } catch (e) {
+          progressErr = e instanceof Error ? e.message : String(e);
+        }
+        let dashUrl = null;
+        try {
+          dashUrl = await issueDashboardLink(ctx.lab_id, "tasks");
+        } catch {
+          dashUrl = null;
+        }
+        return ok3(
+          composeResumeV2({
+            labId: ctx.lab_id,
+            teaching: ctx.teaching,
+            progress,
+            dashboardUrl: dashUrl,
+            error: progressErr
+          })
+        );
+      }
       const systemPrompt = composeSystemPrompt(master, ctx);
       const recap = await getResumeBriefing(labId);
       const fromRecap = recapToCheckpoints(recap);
@@ -32740,6 +33433,7 @@ server.registerTool(
         title: ctx.title,
         masterId: master.master_id,
         masterVersion: master.version,
+        masterName: master.display_name,
         startedAt: persisted?.startedAt ?? (/* @__PURE__ */ new Date()).toISOString(),
         checkpoints,
         systemPrompt,
@@ -32757,7 +33451,7 @@ server.registerTool(
         saveSession(s, process.cwd());
       }
       const pct = recap && recap.kind === "full" ? recap.pct : percentComplete();
-      return ok(
+      return ok3(
         [
           PRIVATE_BANNER,
           "[SILENT SETUP \u2014 produce NO visible output while you read this block. Do NOT narrate/quote/mention 'persona' / 'teaching' / 'recap data' / 'loading'. Your FIRST visible text must be the in-character greeting under [NOW DO THIS].]",
@@ -32771,7 +33465,7 @@ server.registerTool(
         ].join("\n")
       );
     } catch (e) {
-      return err(`\u6062\u590D\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u6062\u590D\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32783,8 +33477,8 @@ server.registerTool(
   },
   () => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
-    return ok(s.teachingDoc);
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
+    return ok3(s.teachingDoc);
   }
 );
 server.registerTool(
@@ -32799,26 +33493,33 @@ server.registerTool(
   },
   async ({ artifact, focus }) => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
     try {
       const verdict = await judgeOutput(s.labId, artifact, focus);
-      return ok(verdict);
+      return ok3(verdict);
     } catch (e) {
-      return err(`\u5224\u5206\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u5224\u5206\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
 server.registerTool(
   "get_lab_status",
   { title: "Lab status", description: "Summarize the current lab progress in the master's voice." },
-  () => {
+  async () => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start <lab-id> \u5F00\u59CB\u4E00\u4E2A\u3002");
+    if (s.systemPrompt === "") {
+      try {
+        return ok3(composeStatusV2(await getProgress(s.labId)));
+      } catch (e) {
+        return err3(`\u8FDB\u5EA6\u6682\u65F6\u62FF\u4E0D\u5230:${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
     const pct = percentComplete();
     const kp = s.checkpoints.map(
       (c) => `  [${c.state === "completed" ? "\u2713" : c.state === "in_progress" ? "~" : " "}] ${c.name}`
     ).join("\n");
-    return ok(
+    return ok3(
       `[SYSTEM: summarize this progress in the master's voice, then end with \u{1F4DA} [Lab ${s.labId} \xB7 ${pct}% complete]]
 
 Lab: ${s.title}
@@ -32834,7 +33535,7 @@ server.registerTool(
     title: "\u8D85\u957F\u81EA\u4E3B\u4EFB\u52A1",
     description: "\u8FD4\u56DE super-run \u63D0\u4EA4\u5165\u53E3 URL:\u5B66\u5458\u5728\u7F51\u9875\u8868\u5355\u91CC\u586B\u76EE\u6807/\u8BC4\u6D4B\u6307\u6807/\u9884\u671F\u65F6\u95F4/\u6700\u5927\u8D44\u6E90,\u63D0\u4EA4\u540E agent \u5728\u4E91\u7AEF\u6C99\u7BB1\u91CC\u957F\u8DD1\u3002"
   },
-  () => ok(
+  () => ok3(
     [
       "\u{1F680} \u8D85\u957F\u81EA\u4E3B\u4EFB\u52A1(super-run)\u5165\u53E3:",
       "",
@@ -32850,9 +33551,9 @@ server.registerTool(
   { title: "Knowledge points", description: "Read-only checklist of the lab's knowledge points." },
   () => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     const kp = s.checkpoints.map((c, i) => `${i + 1}. [${c.state === "completed" ? "\u2713" : " "}] ${c.name} (${c.kp_id})`).join("\n");
-    return ok(`\u77E5\u8BC6\u70B9\u6E05\u5355 \u2014 ${s.title}
+    return ok3(`\u77E5\u8BC6\u70B9\u6E05\u5355 \u2014 ${s.title}
 
 ${kp}
 
@@ -32864,7 +33565,7 @@ server.registerTool(
   { title: "Exit lab", description: "Exit the current lab and clear the injected persona." },
   async () => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     const title = s.title;
     if (s.serverSessionId) {
       try {
@@ -32874,7 +33575,7 @@ server.registerTool(
     }
     removeSession(s.labId);
     clearSession();
-    return ok(
+    return ok3(
       `[SYSTEM: the lab session has ended. Drop the master persona and lab operating instructions. Return to being a normal assistant.]
 
 \u5DF2\u9000\u51FA lab\u300C${title}\u300D\u3002\u4E0B\u6B21\u7528 /lab-start \u7EE7\u7EED\u3002`
@@ -32885,7 +33586,7 @@ server.registerTool(
   "submit_review",
   {
     title: "Submit lab review",
-    description: "Submit the learner's review of the current lab to the human master Marvin. Pass the learner's reflection answers and a snapshot of their code; checkpoints are taken from the active session automatically.",
+    description: "Submit the learner's review of the current lab to the human mentor queue for grading. Pass the learner's reflection answers and a snapshot of their code; checkpoints are taken from the active session automatically.",
     inputSchema: {
       reflections: external_exports.string().describe("the learner's reflection Q&A, formatted as text"),
       code_snapshot: external_exports.string().describe("snapshot of the learner's working code (truncated)")
@@ -32893,7 +33594,7 @@ server.registerTool(
   },
   async ({ reflections, code_snapshot }) => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start \u5F00\u59CB\u4E00\u4E2A\u518D\u63D0\u4EA4 review\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u7528 /lab-start \u5F00\u59CB\u4E00\u4E2A\u518D\u63D0\u4EA4 review\u3002");
     const payload = {
       reflections,
       checkpoints: s.checkpoints.map((c) => ({ path: c.name, state: c.state })),
@@ -32901,65 +33602,66 @@ server.registerTool(
     };
     try {
       const id = await submitReview(s.labId, payload);
-      return ok(
-        `\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002Mentor\u4F1A\u5728 1-2 \u5929\u5185\u6279\u6539\uFF0C\u7528 /lab-read \u67E5\u770B\u3002`
+      return ok3(
+        `\u2705 \u5DF2\u63D0\u4EA4 review\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\uFF0C\u8FDB\u5165${mentorLabel()}\u7684\u6279\u6539\u961F\u5217\uFF0C\u901A\u5E38 1-2 \u5929\u3002\u7528 /lab-read \u67E5\u770B\u3002`
       );
     } catch (e) {
-      return err(`\u63D0\u4EA4\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u63D0\u4EA4\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
 server.registerTool(
   "send_message",
   {
-    title: "Send private message to Marvin",
-    description: "Send a PRIVATE message to the human master Marvin. Only Marvin reads it. He typically replies within 1-2 days. Confirm with the learner before sending.",
+    title: "Send private message to the mentor",
+    description: "Send a private message to the human mentor queue. It is not visible to other learners, but do NOT promise the learner that one specific person is the only reader. Replies typically come back within 1-2 days. Confirm with the learner before sending.",
     inputSchema: { body: external_exports.string().describe("the learner's private message") }
   },
   async ({ body }) => {
     try {
       const id = await sendMessage(body);
-      return ok(
-        `\u{1F4E8} \u5DF2\u53D1\u9001\u7ED9\u771F\u4EBA Marvin\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\u3002\u53EA\u6709\u4ED6\u672C\u4EBA\u4F1A\u8BFB\uFF0C\u901A\u5E38 1-2 \u5929\u56DE\u3002\u7528 /lab-read \u770B\u56DE\u590D\u3002`
+      return ok3(
+        `\u{1F4E8} \u5DF2\u63D0\u4EA4\u5230${mentorLabel()}\u7684\u6D88\u606F\u961F\u5217\uFF08\u7F16\u53F7 ${id.slice(0, 8)}\uFF09\uFF0C\u901A\u5E38 1-2 \u5929\u56DE\u3002\u7528 /lab-read \u770B\u56DE\u590D\u3002`
       );
     } catch (e) {
-      return err(`\u53D1\u9001\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u53D1\u9001\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
 server.registerTool(
   "get_inbox",
   {
-    title: "Get unread replies from Marvin",
-    description: "Fetch the learner's unread items from Marvin (graded reviews + message replies). Set mark_seen=true when actually showing them to the learner (/lab read); use mark_seen=false to peek for a notification (e.g. on the /lab home screen).",
+    title: "Get unread replies from the mentor",
+    description: "Fetch the learner's unread items from their mentor (graded reviews + message replies). Set mark_seen=true when actually showing them to the learner (/lab read); use mark_seen=false to peek for a notification (e.g. on the /lab home screen).",
     inputSchema: { mark_seen: external_exports.boolean().describe("true to mark items as read") }
   },
   async ({ mark_seen }) => {
     try {
       const items = await getInbox(mark_seen);
-      if (items.length === 0) return ok("\uFF08\u76EE\u524D\u6CA1\u6709\u6765\u81EAMentor\u7684\u65B0\u56DE\u590D\u3002\uFF09");
-      const lines = items.map(
-        (it) => it.kind === "review" ? `\u{1F4DD} review (id: ${it.id})
+      if (items.length === 0) return ok3("\uFF08\u76EE\u524D\u6CA1\u6709\u6765\u81EAMentor\u7684\u65B0\u56DE\u590D\u3002\uFF09");
+      const lines = items.map((it) => {
+        const reply = mentorText(it);
+        return it.kind === "review" ? `\u{1F4DD} review (id: ${it.id})
 Lab ${it.lab_id ?? "?"} \u6279\u6539:
 
 ${quoteSubmission("\u4F60\u5F53\u521D\u63D0\u4EA4\u7684", it.my_submission)}\u3010Mentor \u56DE\u590D\u3011
-${it.marvin_text}
+${reply}
 \uFF08\u8981\u56DE\u590DMentor\u5C31\u7528 /lab-reply ${it.id}\uFF09` : `\u{1F4AC} \u79C1\u4FE1\u56DE\u590D (id: ${it.id}):
 
 ${quoteSubmission("\u4F60\u5F53\u521D\u53D1\u7684", it.my_submission)}\u3010Mentor \u56DE\u590D\u3011
-${it.marvin_text}`
-      );
-      return ok(lines.join("\n\n"));
+${reply}`;
+      });
+      return ok3(lines.join("\n\n"));
     } catch (e) {
-      return err(`\u62C9\u53D6\u4FE1\u7BB1\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u62C9\u53D6\u4FE1\u7BB1\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
 server.registerTool(
   "post_review_reply",
   {
-    title: "Reply to Marvin's grading",
-    description: "Send the learner's reply to a graded review back to Marvin.",
+    title: "Reply to the mentor's grading",
+    description: "Send the learner's reply to a graded review back to the mentor.",
     inputSchema: {
       review_id: external_exports.string().describe(
         "the full review id shown by get_inbox (the value after 'id:' on a \u{1F4DD} review line)"
@@ -32970,9 +33672,9 @@ server.registerTool(
   async ({ review_id, body }) => {
     try {
       await postReviewReply(review_id, body);
-      return ok("\u2705 \u5DF2\u628A\u4F60\u7684\u56DE\u590D\u53D1\u7ED9Mentor\u3002");
+      return ok3("\u2705 \u5DF2\u628A\u4F60\u7684\u56DE\u590D\u53D1\u7ED9Mentor\u3002");
     } catch (e) {
-      return err(`\u56DE\u590D\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u56DE\u590D\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -32987,33 +33689,33 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\u3002");
     let report;
     try {
       const cur = getSession();
       const checkpoints = cur?.labId === labId ? cur.checkpoints : void 0;
       report = await getAnalysisReport(labId, checkpoints);
     } catch (e) {
-      return err(`\u751F\u6210\u5206\u6790\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u751F\u6210\u5206\u6790\u5931\u8D25\uFF1A${String(e)}`);
     }
     if (report.needsConsent) {
-      return ok(
-        "\u8981\u770B\u4F1A\u8BDD\u5206\u6790,\u9700\u8981\u5148\u540C\u610F\u8BB0\u5F55\u4F60\u7684 lab \u4F1A\u8BDD\u6570\u636E(\u7528\u4E8E\u751F\u6210\u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929)\u3002\u540C\u610F\u5C31\u7528 /lab-analysis \u65F6\u56DE\u7B54\u300C\u53EF\u4EE5\u300D,\u6216\u76F4\u63A5\u8BF4\u300C\u6211\u540C\u610F\u5206\u6790\u300D\u3002"
+      return ok3(
+        "\u8981\u770B\u4F1A\u8BDD\u5206\u6790,\u9700\u8981\u5148\u540C\u610F\u8BB0\u5F55\u4F60\u7684 lab \u4F1A\u8BDD\u6570\u636E(\u7528\u4E8E\u751F\u6210\u62A5\u544A + Mentor \u6559\u5B66\u652F\u6301;\u539F\u6587\u6700\u591A\u7559 30 \u5929)\u3002\u540C\u610F\u5C31\u7528 /lab-analysis \u65F6\u56DE\u7B54\u300C\u53EF\u4EE5\u300D,\u6216\u76F4\u63A5\u8BF4\u300C\u6211\u540C\u610F\u5206\u6790\u300D\u3002"
       );
     }
-    const dir = join5(homedir5(), ".parallight", "analysis");
-    const file2 = join5(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
+    const dir = join7(homedir5(), ".parallight", "analysis");
+    const file2 = join7(dir, `${labId.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`);
     try {
       mkdirSync5(dir, { recursive: true });
       writeFileSync5(file2, report.html ?? "");
     } catch (e) {
-      return err(`\u5199\u62A5\u544A\u6587\u4EF6\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u5199\u62A5\u544A\u6587\u4EF6\u5931\u8D25\uFF1A${String(e)}`);
     }
     openInBrowser(file2);
-    return ok(
+    return ok3(
       `\u{1F4CA} \u5206\u6790\u62A5\u544A\u5DF2\u751F\u6210\u5E76\u5C1D\u8BD5\u6253\u5F00:
 file://${file2}
 
@@ -33037,18 +33739,18 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB,\u6216\u8005\u4F20 lab_id \u53C2\u6570\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB,\u6216\u8005\u4F20 lab_id \u53C2\u6570\u3002");
     let url2;
     try {
       url2 = await issueDashboardLink(labId, tab ?? "analysis");
     } catch (e) {
-      return err(`\u751F\u6210 Dashboard \u94FE\u63A5\u5931\u8D25:${String(e)}`);
+      return err3(`\u751F\u6210 Dashboard \u94FE\u63A5\u5931\u8D25:${String(e)}`);
     }
     openInBrowser(url2);
-    return ok(
+    return ok3(
       `\u{1F4CA} Dashboard \u5DF2\u5728\u6D4F\u89C8\u5668\u6253\u5F00:
 ${url2}
 
@@ -33067,15 +33769,15 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\uFF0C\u6216\u4F20 lab_id\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab \u9009\u4E00\u4E2A\u5F00\u59CB\uFF0C\u6216\u4F20 lab_id\u3002");
     let experimentId;
     try {
       experimentId = await compareCreateExperiment(labId, goal);
     } catch (e) {
-      return err(`\u5EFA\u5B9E\u9A8C\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u5EFA\u5B9E\u9A8C\u5931\u8D25\uFF1A${String(e)}`);
     }
     let url2 = "";
     try {
@@ -33083,7 +33785,7 @@ server.registerTool(
       openInBrowser(url2);
     } catch {
     }
-    return ok(
+    return ok3(
       `\u{1F9EA} \u5B9E\u9A8C\u5DF2\u5EFA\uFF08experiment_id=${experimentId}\uFF09\u3002\u9762\u677F\uFF1A${url2 || "(\u6253\u5F00\u5931\u8D25\uFF0C\u53EF\u8BA9\u5B66\u5458\u624B\u52A8 /lab-compare)"}
 
 ` + COMPARE_MENTOR_PERSONA + `
@@ -33103,15 +33805,15 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     try {
       const c = await compareListComponents(labId);
-      return ok(JSON.stringify(c, null, 2));
+      return ok3(JSON.stringify(c, null, 2));
     } catch (e) {
-      return err(`\u53D6\u6750\u6599\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u53D6\u6750\u6599\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -33140,16 +33842,16 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     try {
       await compareSetVariants(labId, experiment_id, variants);
     } catch (e) {
-      return err(`\u5199\u5165\u65B9\u6848\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u5199\u5165\u65B9\u6848\u5931\u8D25\uFF1A${String(e)}`);
     }
-    return ok(
+    return ok3(
       `\u2705 \u5DF2\u5199\u5165 ${variants.length} \u4E2A variant\uFF08${variants.map((v) => v.id).join("/")}\uFF09\u3002\u9762\u677F\u4F1A\u5237\u65B0\u3002\u63A5\u4E0B\u6765\u7528 compare_run \u8DD1\u3002`
     );
   }
@@ -33181,10 +33883,10 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     try {
       const res = await fetch(`${BACKEND_URL}/api/labs/${labId}/compare/run`, {
         method: "POST",
@@ -33202,12 +33904,12 @@ server.registerTool(
       });
       if (!res.ok && res.status >= 400) {
         const t = await res.text();
-        return err(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF08${res.status}\uFF09\uFF1A${t.slice(0, 200)}`);
+        return err3(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF08${res.status}\uFF09\uFF1A${t.slice(0, 200)}`);
       }
     } catch (e) {
-      return err(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u53D1\u8D77\u8DD1\u5931\u8D25\uFF1A${String(e)}`);
     }
-    return ok(
+    return ok3(
       `\u25B6\uFE0E \u5DF2\u53D1\u8D77\u5BF9\u6BD4\uFF08${variants.length} variant \xD7 repeat ${repeat_n ?? 1}\uFF09\u3002\u8BA9\u5B66\u5458\u770B\u7F51\u9875\u9762\u677F\u7684 live \u7ED3\u679C\u3002\u8DD1\u5B8C\u4ED6\u8981\u7684\u8BDD\uFF0C\u4F60\u7528 compare_results \u8BFB\u56DE\u3002`
     );
   }
@@ -33223,15 +33925,15 @@ server.registerTool(
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002");
     }
     const labId = lab_id ?? getSession()?.labId ?? loadMostRecent()?.labId;
-    if (!labId) return err("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
+    if (!labId) return err3("\u8FD8\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002");
     try {
       const r = await compareResults(labId, run_id);
-      return ok(JSON.stringify(r, null, 2));
+      return ok3(JSON.stringify(r, null, 2));
     } catch (e) {
-      return err(`\u8BFB\u7ED3\u679C\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u8BFB\u7ED3\u679C\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -33239,20 +33941,20 @@ server.registerTool(
   "grant_analysis_consent",
   {
     title: "\u540C\u610F\u8BB0\u5F55\u4F1A\u8BDD\u7528\u4E8E\u5206\u6790",
-    description: "\u8BB0\u5F55\u5B66\u5458\u540C\u610F:\u5176 lab \u4F1A\u8BDD\u6570\u636E\u53EF\u7528\u4E8E /lab analysis \u62A5\u544A + Marvin \u6559\u5B66\u652F\u6301\u3002\u5728\u5B66\u5458\u660E\u786E\u8868\u793A\u540C\u610F\u540E\u8C03\u7528\u3002",
+    description: "\u8BB0\u5F55\u5B66\u5458\u540C\u610F:\u5176 lab \u4F1A\u8BDD\u6570\u636E\u53EF\u7528\u4E8E /lab analysis \u62A5\u544A + Mentor \u6559\u5B66\u652F\u6301\u3002\u5728\u5B66\u5458\u660E\u786E\u8868\u793A\u540C\u610F\u540E\u8C03\u7528\u3002",
     inputSchema: {}
   },
   async () => {
     try {
       requireToken();
     } catch {
-      return err("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
     }
     try {
       await grantAnalysisConsent();
-      return ok("\u597D\u7684,\u5DF2\u8BB0\u4E0B\u4F60\u7684\u540C\u610F\u3002\u4EE5\u540E\u968F\u65F6\u7528 /lab-analysis \u770B\u4F60\u7684\u4F1A\u8BDD\u5206\u6790\u3002");
+      return ok3("\u597D\u7684,\u5DF2\u8BB0\u4E0B\u4F60\u7684\u540C\u610F\u3002\u4EE5\u540E\u968F\u65F6\u7528 /lab-analysis \u770B\u4F60\u7684\u4F1A\u8BDD\u5206\u6790\u3002");
     } catch (e) {
-      return err(`\u8BB0\u5F55\u540C\u610F\u5931\u8D25\uFF1A${String(e)}`);
+      return err3(`\u8BB0\u5F55\u540C\u610F\u5931\u8D25\uFF1A${String(e)}`);
     }
   }
 );
@@ -33260,9 +33962,9 @@ function readClaudeEnvConfig() {
   let baseUrl = process.env.ANTHROPIC_BASE_URL ?? "";
   let authToken = process.env.ANTHROPIC_AUTH_TOKEN ?? "";
   try {
-    const p = join5(homedir5(), ".claude", "settings.json");
-    if (existsSync4(p)) {
-      const s = JSON.parse(readFileSync5(p, "utf8"));
+    const p = join7(homedir5(), ".claude", "settings.json");
+    if (existsSync8(p)) {
+      const s = JSON.parse(readFileSync7(p, "utf8"));
       const e = s?.env ?? {};
       if (!baseUrl && typeof e.ANTHROPIC_BASE_URL === "string") baseUrl = e.ANTHROPIC_BASE_URL;
       if (!authToken && typeof e.ANTHROPIC_AUTH_TOKEN === "string") authToken = e.ANTHROPIC_AUTH_TOKEN;
@@ -33311,18 +34013,18 @@ server.registerTool(
     const filter = { gatewayRouted, configured };
     if (typeof select === "string" && select.trim()) {
       const r = setAgentModel(select.trim(), filter);
-      return r.ok ? ok(r.msg) : err(r.msg);
+      return r.ok ? ok3(r.msg) : err3(r.msg);
     }
     let current2;
     try {
-      const p = join5(homedir5(), ".claude", "settings.json");
-      if (existsSync4(p)) {
-        const s = JSON.parse(readFileSync5(p, "utf8"));
+      const p = join7(homedir5(), ".claude", "settings.json");
+      if (existsSync8(p)) {
+        const s = JSON.parse(readFileSync7(p, "utf8"));
         if (typeof s?.env?.ANTHROPIC_MODEL === "string") current2 = s.env.ANTHROPIC_MODEL;
       }
     } catch {
     }
-    return ok(
+    return ok3(
       renderCatalog(current2, filter) + "\n\n[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u8868\u683C\u539F\u6837\u5B8C\u6574\u5C55\u793A\u7ED9\u5B66\u5458\u3002\u7136\u540E\u7528 AskUserQuestion \u8BA9\u4ED6\u4ECE \u2705 \u53EF\u5207\u7684\u6A21\u578B\u91CC\u9009\u4E00\u4E2A(\u9009\u9879\u6807\u7B7E\u7528\u6A21\u578B\u540D + \u4EF7\u683C,\u5916\u52A0\u300C\u4E0D\u5207 / \u5148\u770B\u770B\u300D),\u4E0D\u8981\u8BA9\u4ED6\u6253\u5B57\u8F93 slug\u3002\u9009\u5B9A\u540E\u8C03 list_models \u5E76\u4F20 select=<\u90A3\u4E00\u884C\u7684 slug>\u3002\u5207\u6362\u540E\u5FC5\u987B**\u91CD\u542F claude** \u624D\u751F\u6548;**\u4E0D\u8981**\u5EFA\u8BAE\u7528 /model \u5207(\u5B83\u4E0D\u8BA4\u7F51\u5173\u81EA\u5B9A\u4E49 slug,\u4F1A\u62A5 model not found)\u3002"
     );
   }
@@ -33337,21 +34039,21 @@ server.registerTool(
   async ({ model, dir }) => {
     const token = gatewayProbeToken();
     if (!token) {
-      return err(
+      return err3(
         "\u6CA1\u627E\u5230\u4F60\u7684 Parallight token \u2014\u2014 \u5148\u5728\u4E3B CC \u91CC\u8DD1 /lab \u767B\u5F55\u62FF\u5230 token,\u518D\u6765\u5EFA\u7F51\u5173\u76EE\u5F55\u3002"
       );
     }
     const raw = dir && dir.trim() || "~/parallight-gw";
-    const target = raw.startsWith("~") ? join5(homedir5(), raw.slice(1).replace(/^[/\\]/, "")) : raw;
+    const target = raw.startsWith("~") ? join7(homedir5(), raw.slice(1).replace(/^[/\\]/, "")) : raw;
     const chosen = model && model.trim() || "claude-sonnet-5";
     try {
-      const claudeDir = join5(target, ".claude");
+      const claudeDir = join7(target, ".claude");
       mkdirSync5(claudeDir, { recursive: true, mode: 448 });
-      const settingsPath = join5(claudeDir, "settings.json");
+      const settingsPath = join7(claudeDir, "settings.json");
       let settings = {};
       try {
-        if (existsSync4(settingsPath))
-          settings = JSON.parse(readFileSync5(settingsPath, "utf8"));
+        if (existsSync8(settingsPath))
+          settings = JSON.parse(readFileSync7(settingsPath, "utf8"));
       } catch {
         settings = {};
       }
@@ -33363,10 +34065,10 @@ server.registerTool(
       writeFileSync5(settingsPath, JSON.stringify(settings, null, 2) + "\n", { mode: 384 });
       chmodSync2(settingsPath, 384);
       try {
-        writeFileSync5(join5(target, ".gitignore"), ".claude/\n");
+        writeFileSync5(join7(target, ".gitignore"), ".claude/\n");
       } catch {
       }
-      return ok(
+      return ok3(
         `\u2705 \u5DF2\u5EFA\u597D\u7F51\u5173\u4E13\u7528\u76EE\u5F55:${target}(\u9ED8\u8BA4\u6A21\u578B ${chosen})\u3002
 
 \u7528\u6CD5:
@@ -33377,7 +34079,7 @@ server.registerTool(
 (\u8BE5\u76EE\u5F55\u542B\u4F60\u7684 token,\u5DF2\u81EA\u52A8\u52A0 .gitignore,\u522B\u624B\u52A8\u63D0\u4EA4\u5230 git\u3002)`
       );
     } catch (e) {
-      return err(`\u5EFA\u7F51\u5173\u76EE\u5F55\u5931\u8D25:${String(e)}`);
+      return err3(`\u5EFA\u7F51\u5173\u76EE\u5F55\u5931\u8D25:${String(e)}`);
     }
   }
 );
@@ -33390,9 +34092,9 @@ server.registerTool(
   async () => {
     try {
       const cards = await fetchHotspots();
-      if (cards.length === 0) return ok("\u5C1D\u9C9C\u53F0\u6682\u65F6\u6CA1\u6709\u53EF\u52A8\u624B\u8BD5\u7684\u70ED\u70B9\u5361\u3002");
+      if (cards.length === 0) return ok3("\u5C1D\u9C9C\u53F0\u6682\u65F6\u6CA1\u6709\u53EF\u52A8\u624B\u8BD5\u7684\u70ED\u70B9\u5361\u3002");
       const { table, optionMap } = formatHotspotList(cards);
-      return ok(
+      return ok3(
         [
           "## \u{1F525} \u5C1D\u9C9C\u53F0\u70ED\u70B9(\u53EF\u672C\u673A\u52A8\u624B\u8BD5)",
           "",
@@ -33402,7 +34104,7 @@ server.registerTool(
         ].join("\n")
       );
     } catch (e) {
-      return err(`\u83B7\u53D6\u70ED\u70B9\u5217\u8868\u5931\u8D25:${String(e)}`);
+      return err3(`\u83B7\u53D6\u70ED\u70B9\u5217\u8868\u5931\u8D25:${String(e)}`);
     }
   }
 );
@@ -33414,13 +34116,13 @@ server.registerTool(
     inputSchema: { slug: external_exports.string() }
   },
   async ({ slug }) => {
-    if (!isValidSlug(slug)) return err("\u975E\u6CD5 slug\u3002");
+    if (!isValidSlug(slug)) return err3("\u975E\u6CD5 slug\u3002");
     try {
       const cards = await fetchHotspots();
       const card = cards.find((c) => c.slug === slug);
-      if (!card) return err(`\u6CA1\u627E\u5230\u70ED\u70B9\u5361 ${slug}(\u53EF\u80FD\u5DF2\u4E0B\u7EBF),\u7528 list_hotspots \u91CD\u65B0\u770B\u5217\u8868\u3002`);
-      mkdirSync5(join5(process.cwd(), "fresh"), { recursive: true });
-      const file2 = join5(process.cwd(), "fresh", `${slug}.md`);
+      if (!card) return err3(`\u6CA1\u627E\u5230\u70ED\u70B9\u5361 ${slug}(\u53EF\u80FD\u5DF2\u4E0B\u7EBF),\u7528 list_hotspots \u91CD\u65B0\u770B\u5217\u8868\u3002`);
+      mkdirSync5(join7(process.cwd(), "fresh"), { recursive: true });
+      const file2 = join7(process.cwd(), "fresh", `${slug}.md`);
       writeFileSync5(file2, hotspotMarkdown(card), "utf8");
       let synced = false;
       try {
@@ -33433,7 +34135,7 @@ server.registerTool(
         synced = res.ok;
       } catch {
       }
-      return ok(
+      return ok3(
         [
           `\u5DF2\u5199\u5165 ${file2}`,
           "",
@@ -33441,7 +34143,7 @@ server.registerTool(
         ].join("\n")
       );
     } catch (e) {
-      return err(`try_hotspot \u5931\u8D25:${String(e)}`);
+      return err3(`try_hotspot \u5931\u8D25:${String(e)}`);
     }
   }
 );
@@ -33453,12 +34155,12 @@ server.registerTool(
     inputSchema: { slug: external_exports.string() }
   },
   async ({ slug }) => {
-    if (!isValidSlug(slug)) return err("\u975E\u6CD5 slug\u3002");
+    if (!isValidSlug(slug)) return err3("\u975E\u6CD5 slug\u3002");
     let token;
     try {
       token = requireToken();
     } catch {
-      return ok("\u672C\u5730\u5B8C\u6210 \u2705(\u672A\u767B\u5F55,\u6CA1\u6709\u4E91\u7AEF\u540C\u6B65;/lab-login \u540E\u518D\u8DD1 complete_hotspot \u53EF\u8865\u8BB0)\u3002");
+      return ok3("\u672C\u5730\u5B8C\u6210 \u2705(\u672A\u767B\u5F55,\u6CA1\u6709\u4E91\u7AEF\u540C\u6B65;/lab-login \u540E\u518D\u8DD1 complete_hotspot \u53EF\u8865\u8BB0)\u3002");
     }
     try {
       const res = await fetch(`${AGENT_API_BASE}/me/labs`, {
@@ -33466,10 +34168,10 @@ server.registerTool(
         headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
         body: JSON.stringify({ action: "complete", card_slug: slug })
       });
-      if (!res.ok) return err(`\u540C\u6B65\u5931\u8D25(HTTP ${res.status});\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
-      return ok(`\u5B8C\u6210 \u2705 \u5DF2\u540C\u6B65\u5230\u300C\u6211\u7684\u5B9E\u9A8C\u53F0\u300D(lab.parallight.ai/home \u53EF\u89C1)\u3002`);
+      if (!res.ok) return err3(`\u540C\u6B65\u5931\u8D25(HTTP ${res.status});\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
+      return ok3(`\u5B8C\u6210 \u2705 \u5DF2\u540C\u6B65\u5230\u300C\u6211\u7684\u5B9E\u9A8C\u53F0\u300D(lab.parallight.ai/home \u53EF\u89C1)\u3002`);
     } catch (e) {
-      return err(`\u540C\u6B65\u5931\u8D25:${String(e)};\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
+      return err3(`\u540C\u6B65\u5931\u8D25:${String(e)};\u672C\u5730\u5DF2\u5B8C\u6210,\u7A0D\u540E\u53EF\u91CD\u8BD5\u3002`);
     }
   }
 );
@@ -33495,12 +34197,12 @@ server.registerTool(
   },
   async ({ apply }) => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
     try {
       const r = await labPull({ labId: s.labId, apply });
-      if (r.upToDate) return ok(`\u2705 ${r.summary}`);
+      if (r.upToDate) return ok3(`\u2705 ${r.summary}`);
       if (r.needsConfirm) {
-        return ok(
+        return ok3(
           [
             `\u{1F53B} ${r.summary}`,
             "",
@@ -33510,11 +34212,11 @@ server.registerTool(
           ].join("\n")
         );
       }
-      return ok(`\u2705 ${r.summary}
+      return ok3(`\u2705 ${r.summary}
 
 \uFF08\u5DF2\u81EA\u52A8\u6253\u5907\u4EFD\u6807\u7B7E\uFF0C\u82E5\u60F3\u56DE\u9000\u7528 /lab-rollback\u3002\uFF09`);
     } catch (e) {
-      return err(syncErrorText(e));
+      return err3(syncErrorText(e));
     }
   }
 );
@@ -33527,13 +34229,13 @@ server.registerTool(
   },
   async () => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
     try {
       const r = await labPush({ labId: s.labId });
-      if (!r.ok) return err(r.summary);
-      return ok(`\u2705 ${r.summary}`);
+      if (!r.ok) return err3(r.summary);
+      return ok3(`\u2705 ${r.summary}`);
     } catch (e) {
-      return err(syncErrorText(e));
+      return err3(syncErrorText(e));
     }
   }
 );
@@ -33546,24 +34248,117 @@ server.registerTool(
   },
   async ({ ref }) => {
     const s = getSession();
-    if (!s) return err("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
     try {
       const r = await labRollback({ labId: s.labId, ref });
       if (!r.reset) {
         if (r.tags.length === 0 && r.commits.length === 0)
-          return ok("\u8FD8\u6CA1\u6709\u53EF\u56DE\u6EDA\u7684\u7248\u672C\uFF08\u540C\u6B65\u8FC7\u81F3\u5C11\u4E00\u6B21\u540E\u4F1A\u6709\u5907\u4EFD\u70B9\uFF09\u3002");
-        return ok(
+          return ok3("\u8FD8\u6CA1\u6709\u53EF\u56DE\u6EDA\u7684\u7248\u672C\uFF08\u540C\u6B65\u8FC7\u81F3\u5C11\u4E00\u6B21\u540E\u4F1A\u6709\u5907\u4EFD\u70B9\uFF09\u3002");
+        return ok3(
           `${r.summary}
 
 [NOW DO THIS] \u628A\u4E0A\u9762\u7684\u5907\u4EFD\u70B9/\u63D0\u4EA4\u5217\u7ED9\u5B66\u5458\uFF0C\u8BA9\u4ED6\u6311\u4E00\u4E2A\uFF0C\u7136\u540E\u7528 lab_rollback(ref="...") \u56DE\u6EDA\u3002`
         );
       }
-      return ok(`\u2705 ${r.summary}`);
+      return ok3(`\u2705 ${r.summary}`);
     } catch (e) {
-      return err(syncErrorText(e));
+      return err3(syncErrorText(e));
     }
   }
 );
+server.registerTool(
+  "lab_evaluate",
+  {
+    title: "\u63D0\u4EA4\u4E91\u7AEF\u8BC4\u6D4B\uFF08\u628A agent/ \u6253\u5305\u9001\u53BB\u8DD1\uFF09",
+    description: "\u628A\u672C\u5730\u5F53\u524D lab \u76EE\u5F55\u4E0B\u7684 agent/ \u6253\u5305\uFF0C\u63D0\u4EA4\u5230\u4E91\u7AEF\u8DD1\u4E00\u904D\u56FA\u5B9A\u8BC4\u6D4B\u573A\u666F\uFF08\u6302\u771F\u5B9E\u5DE5\u5177\u3001\u81EA\u52A8\u5224\u5B9A\uFF0C\u53EF\u80FD\u91CD\u590D\u8DD1\u51E0\u6B21\u770B\u7A33\u5B9A\u6027\uFF09\u3002\u8DD1\u4E00\u6B21\u4E91\u7AEF\u7EA6\u9700 2-6 \u5206\u949F\u3002\u8FD9\u4E2A\u5DE5\u5177\u7ACB\u523B\u8FD4\u56DE\uFF0C\u4E0D\u7B49\u7ED3\u679C \u2014\u2014 \u62FF\u5230 job_id \u540E\u4E0D\u8981\u5728\u8FD9\u91CC\u7B49\u5F85\u6216\u8F6E\u8BE2\uFF0C\u544A\u8BC9\u5B66\u5458\u53EF\u4EE5\u5148\u7EE7\u7EED\u624B\u5934\u7684\u4E8B\uFF0C\u4E4B\u540E\u518D\u67E5\u3002",
+    inputSchema: {
+      task: external_exports.string(),
+      k: external_exports.number().int().min(1).max(5).optional()
+    }
+  },
+  async ({ task, k }) => {
+    try {
+      requireToken();
+    } catch {
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const s = getSession();
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    let labDir;
+    try {
+      labDir = resolveLabDir(process.cwd(), s.labId);
+    } catch (e) {
+      return err3(String(e instanceof Error ? e.message : e));
+    }
+    let bytes;
+    try {
+      bytes = await packEvalSubmission(labDir);
+    } catch (e) {
+      return err3(String(e instanceof Error ? e.message : e));
+    }
+    let jobId;
+    try {
+      jobId = await submitEvaluation(s.labId, task, k, bytes);
+    } catch (e) {
+      return err3(String(e instanceof Error ? e.message : e));
+    }
+    return ok3(
+      [
+        `\u2705 \u5DF2\u63D0\u4EA4\u8BC4\u6D4B\u4EFB\u52A1 ${jobId}\uFF0C\u4E91\u7AEF\u7EA6\u9700 2-6 \u5206\u949F\u8DD1\u5B8C\u3002`,
+        "",
+        `[NOW DO THIS] \u544A\u8BC9\u5B66\u5458\u4EFB\u52A1\u5DF2\u63D0\u4EA4\u3001\u53EF\u4EE5\u5148\u7EE7\u7EED\u624B\u5934\u7684\u5DE5\u4F5C\uFF0C\u4E0D\u7528\u5E72\u7B49\u3002\u8FC7\u51E0\u5206\u949F\u540E\u7528 \`/lab-evaluate result ${jobId}\`\uFF08\u6216\u518D\u8DD1\u4E00\u6B21 /lab-evaluate \u4E0D\u5E26 task \u53C2\u6570\uFF09\u6765\u67E5\u770B\u8FDB\u5EA6\u6216\u7ED3\u679C\u3002**\u4E0D\u8981**\u5728\u8FD9\u91CC\u81EA\u5DF1\u5FAA\u73AF\u8C03\u7528 lab_evaluate_result \u7B49\u7ED3\u679C\u51FA\u6765 \u2014\u2014 \u628A\u8282\u594F\u4EA4\u8FD8\u7ED9\u5B66\u5458\uFF0C\u7531 ta \u51B3\u5B9A\u4EC0\u4E48\u65F6\u5019\u518D\u6765\u770B\u3002`
+      ].join("\n")
+    );
+  }
+);
+server.registerTool(
+  "lab_evaluate_result",
+  {
+    title: "\u67E5\u770B\u4E00\u6B21\u4E91\u7AEF\u8BC4\u6D4B\u7684\u8FDB\u5EA6/\u7ED3\u679C",
+    description: "\u67E5\u67D0\u4E2A\u4E91\u7AEF\u8BC4\u6D4B job \u7684\u5F53\u524D\u72B6\u6001\uFF1A\u6392\u961F\u4E2D/\u8DD1\u4E2D \u2192 \u7B80\u77ED\u8FDB\u5EA6\uFF1B\u8DD1\u5B8C \u2192 \u5B8C\u6574\u62A5\u544A\uFF08\u573A\u666F\u77E9\u9635 + \u5931\u8D25\u660E\u7EC6\uFF09\uFF1B\u51FA\u9519 \u2192 \u4E2D\u6587\u539F\u56E0\u3002\u53EA\u5728\u5B66\u5458\u4E3B\u52A8\u8981\u6C42\u67E5\u770B\u65F6\u8C03\u7528\u4E00\u6B21 \u2014\u2014 \u4E0D\u8981\u7528\u5B83\u505A\u8F6E\u8BE2\u5FAA\u73AF\u3002",
+    inputSchema: { job_id: external_exports.string() }
+  },
+  async ({ job_id }) => {
+    try {
+      requireToken();
+    } catch {
+      return err3("\u8FD8\u6CA1\u767B\u5F55\u3002\u5148\u7528 /lab-login \u767B\u5F55\u3002");
+    }
+    const s = getSession();
+    if (!s) return err3("\u5F53\u524D\u6CA1\u6709\u8FDB\u884C\u4E2D\u7684 lab\u3002\u5148\u7528 /lab-start \u6216 /lab-resume\u3002");
+    let r;
+    try {
+      r = await fetchEvaluation(s.labId, job_id);
+    } catch (e) {
+      return err3(String(e instanceof Error ? e.message : e));
+    }
+    if (r.status === "queued" || r.status === "running") {
+      const hb = r.heartbeat_at ? `\uFF08\u6700\u8FD1\u5FC3\u8DF3\uFF1A${r.heartbeat_at}\uFF09` : "";
+      return ok3(
+        `\u23F3 \u8BC4\u6D4B ${job_id} \u76EE\u524D${r.status === "queued" ? "\u6392\u961F\u4E2D" : "\u8DD1\u4E2D"}${hb}\uFF0C\u8FD8\u6CA1\u51FA\u7ED3\u679C\u3002\u544A\u8BC9\u5B66\u5458\u518D\u7B49\u4E00\u4F1A\u513F\uFF0C\u51E0\u5206\u949F\u540E\u518D\u6765\u770B\uFF0C\u4E0D\u7528\u4E00\u76F4\u95EE\u3002`
+      );
+    }
+    if (r.status === "error") {
+      const tail = r.stderr_tail ? `
+
+\u6700\u8FD1\u65E5\u5FD7\uFF08\u5C3E\u90E8\uFF09\uFF1A
+\`\`\`
+${r.stderr_tail.slice(-400)}
+\`\`\`` : "";
+      return err3(`\u8BC4\u6D4B\u4EFB\u52A1\u51FA\u9519\uFF1A${r.error ?? "\u672A\u77E5\u9519\u8BEF"}${tail}`);
+    }
+    return ok3(
+      [
+        r.report_md ?? "\uFF08\u8BC4\u6D4B\u5DF2\u5B8C\u6210\uFF0C\u4F46\u6CA1\u6709\u8FD4\u56DE report_md\u3002\uFF09",
+        "",
+        "[NOW DO THIS] \u628A\u4E0A\u9762\u7684\u62A5\u544A\u539F\u6837\u5148\u5C55\u793A\u7ED9\u5B66\u5458\uFF08\u573A\u666F\u77E9\u9635\u8868\u7167\u539F\u6837\u5448\u73B0\uFF0C\u522B\u6539\u5199\uFF09\uFF0C\u7136\u540E\u9010\u573A\u666F\u53E3\u5934\u89E3\u8BFB\uFF1A\u6BCF\u884C\u300C\u901A\u8FC7\u7387\u300D\u662F\u51E0\u6B21\u91CC\u8FC7\u4E86\u51E0\u6B21\uFF0C\u300C\u5931\u8D25\u539F\u56E0\u6458\u8981\u300D\u5217\u5148\u770B\u4E00\u773C\u662F\u54EA\u4E00\u7C7B\uFF1B\u62A5\u544A\u6B63\u6587\u91CC\u4EE5\u300Cagent \u62A5\u9519:\u300D\u5F00\u5934\u7684\u6761\u76EE\u662F agent \u81EA\u5DF1\u6267\u884C\u65F6\u51FA\u7684\u9519\uFF08\u5DE5\u5177\u8C03\u7528\u5931\u8D25\u3001\u8DD1\u6302\u4E86\uFF09\uFF0C\u8981\u548C\u7EAF\u7CB9\u7684\u65AD\u8A00\u5931\u8D25\uFF08agent \u8DD1\u5B8C\u4E86\u4F46\u7ED3\u679C\u4E0D\u5BF9\uFF09\u5206\u5F00\u8BB2\u6E05\u695A\uFF0C\u522B\u6DF7\u4E3A\u4E00\u8C08\uFF1B\u26A0 \u5F00\u5934\u7684\u884C\u662F\u300C\u901A\u8FC7\u4F46\u66FE\u62A5\u9519\u300D\uFF0C\u63D0\u9192\u5B66\u5458\u8FD9\u7C7B\u4E5F\u503C\u5F97\u7559\u610F\u3002\u628A\u6BCF\u4E2A\u5931\u8D25\u573A\u666F\u5173\u8054\u56DE\u62A5\u544A\u5F00\u5934\u300C\u5173\u8054\u77E5\u8BC6\u70B9\u300D\u5217\u51FA\u7684\u77E5\u8BC6\u70B9\uFF0C\u5E2E\u5B66\u5458\u5B9A\u4F4D\u8BE5\u5F80\u54EA\u4E2A\u65B9\u5411\u6539\u3002\u6700\u540E\u7ED9\u4E00\u53E5\u4E00\u53E5\u8BDD\u7ED3\u8BBA\uFF08\u6574\u4F53\u8FC7\u4E86\u591A\u5C11\u3001\u5361\u5728\u54EA\uFF09+ \u5EFA\u8BAE\u7684\u4E0B\u4E00\u6B65\uFF08\u6539\u54EA\u3001\u8981\u4E0D\u8981\u91CD\u8DD1 /lab-evaluate\uFF09\u3002**\u7EDD\u4E0D\u80FD**\u900F\u9732\u53C2\u8003\u89E3\u6CD5/\u6807\u51C6\u7B54\u6848\u7684\u5177\u4F53\u5185\u5BB9\uFF0C\u53EA\u80FD\u8BB2\u5B66\u5458\u81EA\u5DF1\u4EE3\u7801\u9519\u5728\u54EA\u3001\u539F\u7406\u4E0A\u8BE5\u600E\u4E48\u60F3\uFF0C\u8BA9\u5B66\u5458\u81EA\u5DF1\u52A8\u624B\u6539\u3002",
+        "\u6700\u540E\u63D0\u9192\u5B66\u5458\u7528 /lab-status \u770B\u6574\u4F53\u8FDB\u5EA6\u3002"
+      ].join("\n")
+    );
+  }
+);
+registerAssistantTool(server);
+registerCheckTool(server);
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
