@@ -2980,7 +2980,7 @@ var require_compile = __commonJS({
       const schOrFunc = root.refs[ref];
       if (schOrFunc)
         return schOrFunc;
-      let _sch = resolve3.call(this, root, ref);
+      let _sch = resolve2.call(this, root, ref);
       if (_sch === void 0) {
         const schema = (_a3 = root.localRefs) === null || _a3 === void 0 ? void 0 : _a3[ref];
         const { schemaId } = this.opts;
@@ -3007,7 +3007,7 @@ var require_compile = __commonJS({
     function sameSchemaEnv(s1, s2) {
       return s1.schema === s2.schema && s1.root === s2.root && s1.baseId === s2.baseId;
     }
-    function resolve3(root, ref) {
+    function resolve2(root, ref) {
       let sch;
       while (typeof (sch = this.refs[ref]) == "string")
         ref = sch;
@@ -3638,7 +3638,7 @@ var require_fast_uri = __commonJS({
       }
       return uri;
     }
-    function resolve3(baseURI, relativeURI, options) {
+    function resolve2(baseURI, relativeURI, options) {
       const schemelessOptions = options ? Object.assign({ scheme: "null" }, options) : { scheme: "null" };
       const resolved = resolveComponent(parse3(baseURI, schemelessOptions), parse3(relativeURI, schemelessOptions), schemelessOptions, true);
       schemelessOptions.skipEscape = true;
@@ -3896,7 +3896,7 @@ var require_fast_uri = __commonJS({
     var fastUri = {
       SCHEMES,
       normalize,
-      resolve: resolve3,
+      resolve: resolve2,
       resolveComponent,
       equal,
       serialize,
@@ -6888,7 +6888,7 @@ var require_dist = __commonJS({
 // src/index.ts
 import { mkdirSync as mkdirSync5, writeFileSync as writeFileSync5, readFileSync as readFileSync9, existsSync as existsSync10, chmodSync as chmodSync2 } from "node:fs";
 import { homedir as homedir5 } from "node:os";
-import { join as join9, dirname as dirname3 } from "node:path";
+import { join as join9, dirname as dirname2 } from "node:path";
 
 // node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js
 var util;
@@ -28832,7 +28832,7 @@ var Protocol = class {
           return;
         }
         const pollInterval = task2.pollInterval ?? this._options?.defaultTaskPollInterval ?? 1e3;
-        await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
+        await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
         options?.signal?.throwIfAborted();
       }
     } catch (error51) {
@@ -28849,7 +28849,7 @@ var Protocol = class {
    */
   request(request, resultSchema, options) {
     const { relatedRequestId, resumptionToken, onresumptiontoken, task, relatedTask } = options ?? {};
-    return new Promise((resolve3, reject) => {
+    return new Promise((resolve2, reject) => {
       const earlyReject = (error51) => {
         reject(error51);
       };
@@ -28927,7 +28927,7 @@ var Protocol = class {
           if (!parseResult.success) {
             reject(parseResult.error);
           } else {
-            resolve3(parseResult.data);
+            resolve2(parseResult.data);
           }
         } catch (error51) {
           reject(error51);
@@ -29188,12 +29188,12 @@ var Protocol = class {
       }
     } catch {
     }
-    return new Promise((resolve3, reject) => {
+    return new Promise((resolve2, reject) => {
       if (signal.aborted) {
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
         return;
       }
-      const timeoutId = setTimeout(resolve3, interval);
+      const timeoutId = setTimeout(resolve2, interval);
       signal.addEventListener("abort", () => {
         clearTimeout(timeoutId);
         reject(new McpError(ErrorCode.InvalidRequest, "Request cancelled"));
@@ -30293,7 +30293,7 @@ var McpServer = class {
     let task = createTaskResult.task;
     const pollInterval = task.pollInterval ?? 5e3;
     while (task.status !== "completed" && task.status !== "failed" && task.status !== "cancelled") {
-      await new Promise((resolve3) => setTimeout(resolve3, pollInterval));
+      await new Promise((resolve2) => setTimeout(resolve2, pollInterval));
       const updatedTask = await extra.taskStore.getTask(taskId);
       if (!updatedTask) {
         throw new McpError(ErrorCode.InternalError, `Task ${taskId} not found during polling`);
@@ -30942,12 +30942,12 @@ var StdioServerTransport = class {
     this.onclose?.();
   }
   send(message) {
-    return new Promise((resolve3) => {
+    return new Promise((resolve2) => {
       const json2 = serializeMessage(message);
       if (this._stdout.write(json2)) {
-        resolve3();
+        resolve2();
       } else {
-        this._stdout.once("drain", resolve3);
+        this._stdout.once("drain", resolve2);
       }
     });
   }
@@ -32619,7 +32619,7 @@ import { existsSync as existsSync8 } from "node:fs";
 
 // src/enterprise-assistant.ts
 import { existsSync as existsSync6, readFileSync as readFileSync7, statSync as statSync2 } from "node:fs";
-import { join as join7, dirname as dirname2, resolve as resolve2 } from "node:path";
+import { join as join7 } from "node:path";
 var endpoint = "https://agentist.org/lab/api/enterprise-ai";
 function jsonFile(path) {
   if (statSync2(path).size > 65536) throw Error("\u914D\u7F6E\u6587\u4EF6\u8FC7\u5927\u3002");
@@ -32647,21 +32647,15 @@ async function askEnterpriseAssistant(input, cwd = process.cwd()) {
   }
   if (project === "enterprise-ai" && !["retail_plus", "airline_plus"].includes(domain2 || ""))
     throw Error("\u8BF7\u6307\u5B9A\u4E1A\u52A1\u573A\u666F domain\uFF0C\u6216\u68C0\u67E5 agent/agent.json\u3002");
-  const env = process.env;
-  const configPath = env.HYPER_LAB_CONFIG;
-  const config2 = configPath ? jsonFile(configPath) : {};
-  const base = new URL(config2.platformUrl || env.HYPER_LAB_URL || endpoint);
-  if (base.username || base.password || base.search || base.hash || base.pathname.replace(/\/$/, "") !== "/lab/api/enterprise-ai" || !(base.protocol === "https:" || base.protocol === "http:" && ["localhost", "127.0.0.1"].includes(base.hostname)))
-    throw Error(
-      "\u8BF7\u4F7F\u7528\u6743\u9650\u4E2D\u5FC3\u63D0\u4F9B\u7684 platformUrl\uFF1B\u4EC5\u652F\u6301 Enterprise AI HTTPS \u63A5\u53E3\u6216 localhost \u8054\u8C03\u3002"
-    );
-  if (configPath && !config2.platformUrl)
-    throw Error("\u65E7\u8FDE\u63A5\u914D\u7F6E\u6CA1\u6709 platformUrl\uFF0C\u8BF7\u5230\u6743\u9650\u4E2D\u5FC3\u4E0B\u8F7D\u7EDF\u4E00 Enterprise-AI.json\u3002");
-  const tokenFile = config2.tokenFile || env.HYPER_LAB_TOKEN_FILE;
-  const token = config2.token || env.HYPER_LAB_TOKEN || (tokenFile ? readFileSync7(resolve2(configPath ? dirname2(configPath) : cwd, tokenFile), "utf8").trim() : base.href.replace(/\/$/, "") === endpoint ? requireToken() : "");
+  let token;
+  try {
+    token = requireToken();
+  } catch {
+    throw Error("\u8BF7\u5148\u901A\u8FC7\u63D2\u4EF6\u7684 lab-login \u767B\u5F55\uFF0C\u7136\u540E\u91CD\u65B0\u63D0\u95EE\uFF1B\u65E0\u9700\u914D\u7F6E JSON \u6587\u4EF6\u3002");
+  }
   if (!token || typeof token !== "string" || /[\r\n]/.test(token))
-    throw Error("\u8BF7\u5728 MCP \u542F\u52A8\u73AF\u5883\u8BBE\u7F6E HYPER_LAB_CONFIG\uFF0C\u51ED\u8BC1\u4E0D\u8981\u653E\u5165\u4ED3\u5E93\u6216\u804A\u5929\u3002");
-  const response = await fetch(base.href.replace(/\/$/, "") + "/v1/assistant/context", {
+    throw Error("\u63D2\u4EF6\u767B\u5F55\u51ED\u8BC1\u65E0\u6548\uFF0C\u8BF7\u91CD\u65B0\u901A\u8FC7 lab-login \u767B\u5F55\u3002");
+  const response = await fetch(endpoint + "/v1/assistant/context", {
     method: "POST",
     headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
     body: JSON.stringify({ ...input, project, ...domain2 ? { domain: domain2 } : {} }),
@@ -32670,7 +32664,7 @@ async function askEnterpriseAssistant(input, cwd = process.cwd()) {
   });
   if (!response.ok)
     throw Error(
-      `\u9879\u76EE\u52A9\u6559 HTTP ${response.status}\uFF1A401 \u8BF7\u91CD\u65B0\u767B\u5F55\uFF0F\u751F\u6210\u914D\u7F6E\uFF1B403 \u68C0\u67E5\u8BFE\u7A0B\u6743\u9650\uFF1B404 \u68C0\u67E5\u672C\u4EBA\u9879\u76EE\u548C\u8BC4\u6D4B\u7F16\u53F7\uFF1B503 \u8BF7\u7A0D\u540E\u518D\u8BD5\u3002`
+      `\u9879\u76EE\u52A9\u6559 HTTP ${response.status}\uFF1A401 \u8BF7\u901A\u8FC7 lab-login \u91CD\u65B0\u767B\u5F55\uFF1B403 \u68C0\u67E5\u8BFE\u7A0B\u6743\u9650\uFF1B404 \u68C0\u67E5\u672C\u4EBA\u9879\u76EE\u548C\u8BC4\u6D4B\u7F16\u53F7\uFF1B503 \u8BF7\u7A0D\u540E\u518D\u8BD5\u3002`
     );
   const text = await response.text();
   if (text.length > 15e4) throw Error("\u52A9\u6559\u8D44\u6599\u8D85\u8FC7\u5927\u5C0F\u9650\u5236\u3002");
@@ -32938,7 +32932,7 @@ var TIMEOUT_MS = 6e4;
 var TAIL = 2e3;
 var TASK_RE2 = /^t\d{1,2}$/;
 function runShell(cmd, cwd, timeoutMs) {
-  return new Promise((resolve3) => {
+  return new Promise((resolve2) => {
     const child = spawn2("sh", ["-c", cmd], { cwd, env: process.env });
     let out = "";
     let timedOut = false;
@@ -32953,11 +32947,11 @@ function runShell(cmd, cwd, timeoutMs) {
     }, timeoutMs);
     child.on("close", (code) => {
       clearTimeout(timer);
-      resolve3({ code, output: out, timedOut });
+      resolve2({ code, output: out, timedOut });
     });
     child.on("error", (e) => {
       clearTimeout(timer);
-      resolve3({ code: null, output: String(e), timedOut: false });
+      resolve2({ code: null, output: String(e), timedOut: false });
     });
   });
 }
@@ -33375,12 +33369,12 @@ server.registerTool(
       const labDir = join9(process.cwd(), lab_id);
       for (const f of starter.files) {
         const dest = join9(labDir, f.path);
-        mkdirSync5(dirname3(dest), { recursive: true });
+        mkdirSync5(dirname2(dest), { recursive: true });
         writeFileSync5(dest, f.content);
       }
       for (const a of starter.assets ?? []) {
         const dest = join9(labDir, a.path);
-        mkdirSync5(dirname3(dest), { recursive: true });
+        mkdirSync5(dirname2(dest), { recursive: true });
         const res = await fetch(a.url);
         if (!res.ok) return err3(`\u4E0B\u8F7D\u8D44\u4EA7\u5931\u8D25 ${a.path}\uFF1AHTTP ${res.status}`);
         writeFileSync5(dest, Buffer.from(await res.arrayBuffer()));

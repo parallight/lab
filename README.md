@@ -1,64 +1,54 @@
-# Parallight Lab — Claude Code plugin
+# Parallight Lab - Claude Code plugin
 
-## 0.1.27-phase1：Enterprise AI / project-1-2 项目助教
+## 0.1.28-phase1：登录一次，直接使用课程助教
 
-现在可以查询公开业务资料、接口契约和本人最近三次评测摘要。查询不会启动评测或额外调用平台模型；答案解释使用当前 coding agent 的模型配额。不提供教师答案或隐藏测试。
+Enterprise AI / project-1-2 助教自动复用插件的 lab-login 登录态。无需下载 Enterprise-AI.json，无需设置 HYPER_LAB_CONFIG。服务端根据登录凭证核验账号、课程权限和本人评测记录归属；客户端不会自行决定权限。
 
-已有用户先更新插件，然后完全重启会话：
+## 已安装用户：在系统终端更新
 
 ```bash
 claude plugin marketplace update parallight-cc
 claude plugin update parallight-lab@parallight-cc
 ```
 
-1. 安装 Node.js 22+。
-2. 登录 Agentist，在「我的学习 → 实验管理 → 权限中心」下载个人 Enterprise-AI.json，保存在仓库外。不要把内容发给 AI 或提交 Git。
-3. 从设置了配置路径的终端启动 Claude Code；已经运行的应用不会自动继承新变量。
+完全退出并重新启动应用或 CLI 会话。确认插件发行版本为 0.1.28-phase1。运行环境需 Node.js 22+。macOS / Linux / Windows PowerShell 的更新命令相同。
 
-macOS / Linux：
-
-```bash
-export HYPER_LAB_CONFIG="/绝对路径/Enterprise-AI.json"
-claude
-```
-
-Windows PowerShell：
-
-```powershell
-$env:HYPER_LAB_CONFIG = "C:\Users\YourName\Enterprise-AI.json"
-claude
-```
-
-桌面版请在 MCP 启动环境中设置同名变量（只填文件路径，不填密钥），保存后重启应用。
-
-在项目目录中提问：
+## 首次安装
 
 ```text
-/lab-assistant 这是 enterprise-ai / retail_plus 项目。user_id 和 customer_id 有什么区别？请引用当前接口契约。
-/lab-assistant 这是 project-1-2。请解释我最近一次评测的未通过项；没有公开证据时不要猜隐藏测试的期望 JSON。
-```
-
-若自动识别失败，请让 agent 调用 lab_assistant，并明确传入 project=enterprise-ai（加 domain=retail_plus 或 airline_plus），或 project=project-1-2。可传入本人的 job_id 定位一轮评测。
-
-401：重新生成权限配置；403：核对课程权限；404：核对本人评测编号与项目；503：服务暂不可用，稍后重试。资料版本不一定与历史评测版本相同，请以返回来源和版本为准。旧格式只有 url 的配置需重新下载。
-
-本版本由源码 ba4d0c78017c99b7882ec197952fd2095e5e441e 组装，插件发行版本为 0.1.27-phase1；核心协议版本仍为 0.1.26-phase1。学生包默认使用正式服务，不包含教师凭证或本机 preview 启动器。
-
-Learn to build AI agents by **directing** them, guided by a resident master
-craftsman (Marvin) — inside Claude Code. Zero API keys (the LLM runs through
-Parallight's backend).
-
-## Install (Claude Code)
-
-```
 /plugin marketplace add parallight/lab
 /plugin install parallight-lab@parallight-cc
 ```
 
-Then fully restart Claude Code and run `/lab-login`. More: <https://parallight.ai>
+以上首次安装命令在 Claude Code 聊天框输入。安装后重启。
 
----
+## 登录与提问
 
-This repo is the public Claude Code marketplace. The MCP server
-(`plugins/parallight-lab/bundle/`) talks to the Parallight backend; it holds no
-secrets.
+已经通过插件登录的同学无需重复登录。未登录或收到 401 时，在聊天框输入：
+
+```text
+/lab-login
+```
+
+这是课程插件登录，不是仅登录 Claude/OpenAI 账号，也不是仅在浏览器登录 Agentist。按插件提示完成验证；不要把本地凭证文件内容发给 AI。
+
+在项目目录里提问：
+
+```text
+/lab-assistant 这是 project-1-2 项目。请解释 Case 06 的权限检查依据，并引用公开资料。
+/lab-assistant 这是 enterprise-ai / retail_plus 项目。user_id 和 customer_id 有什么区别？请引用当前契约。
+```
+
+若未自动识别，请让 agent 调用 lab_assistant，明确 project=project-1-2，或 project=enterprise-ai 加 domain=retail_plus / airline_plus。可带本人 job_id 查询一轮评测。
+
+401：重新执行插件 lab-login；403：检查课程资格；404：检查本人评测编号与项目；503：稍后重试。不能通过另配 token 或 JSON 绕过权限。
+
+## 边界与兼容
+
+- 返回公开资料来源、内容版本和本人最近三次评测摘要，不提供隐藏用例、教师答案或其他人的记录。
+- 不自动提交评测、不唤醒评测主机。解释答案使用当前 coding agent 的模型配额，平台不额外调用模型。
+- MCP 助教忽略 HYPER_LAB_CONFIG / HYPER_LAB_TOKEN / HYPER_LAB_TOKEN_FILE / HYPER_LAB_URL，避免旧评测配置影响登录身份或请求目标。
+- **npm run evaluate 是独立入口，其配置方式未改变。不要删除仍用于独立评测的 JSON 或环境变量。**
+- 资料版本不一定等于历史评测版本；没有证据时应明确说明，不能猜隐藏预期 JSON。
+
+本发行版基于源提交 05b8cb3；插件发行版本 0.1.28-phase1，内部核心协议版本保持 0.1.26-phase1。无需为此重新部署网站。

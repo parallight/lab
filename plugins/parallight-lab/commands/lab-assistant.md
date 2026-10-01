@@ -5,7 +5,7 @@ description: 就当前 lab 的问题请 Lab 助手解答(它知道参考解与�
 
 <!-- AUTO-GENERATED from commands-src/lab-assistant.md — do not edit. Run `pnpm gen:commands`. -->
 
-**Enterprise AI／project-1-2 分支（优先判断）**：在企业项目或七题作业目录提问时，调用同一个 `lab_assistant`，带 `project: "enterprise-ai"` 或 `"project-1-2"`；完整项目再带 `domain`（读取 `agent/agent.json`，不猜测）。学生提供评测编号时带 `job_id`。不需要旧 Lab 的 start/resume session。MCP 启动环境可使用仓库外的 `HYPER_LAB_CONFIG`（权限中心下载、含 platformUrl 的统一配置），或已有登录。
+**Enterprise AI／project-1-2 分支（优先判断）**：在企业项目或七题作业目录提问时，调用同一个 `lab_assistant`，带 `project: "enterprise-ai"` 或 `"project-1-2"`；完整项目再带 `domain`（读取 `agent/agent.json`，不猜测）。学生提供评测编号时带 `job_id`。复用插件已有的 lab-login 登录态，服务端自动校验当前账号的课程权限和记录归属；不需要旧 Lab 的 start/resume session，也不需要下载 JSON 或设置 HYPER_LAB_CONFIG。不要读取独立评测配置来切换身份。未登录或 401 时引导 /lab-login，403 时说明课程权限不足，不改用其他凭证。
 
 此分支返回公开资料和本人评测摘要，平台不额外调用模型，由当前 coding agent 根据证据解释。回答必须给出资料 path/version；没有证据或历史环境版本不匹配时明确说明，不编造接口或预期 JSON。永远不传 reveal、不调用旧 Lab 参考解来绕过七题限制。上下文文件留在本地，按需读相关代码，禁止读取凭证或 .env。以下旧 Lab 的参考片段放行流程**不适用于这两个项目**。
 
