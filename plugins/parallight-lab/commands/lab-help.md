@@ -18,6 +18,7 @@ description: 列出所有 lab 命令
 - /super-loop — 提交一个超长自主任务(目标/指标/时间/资源),云端沙箱长跑
 - /more-model — 列出所有可用模型(Claude / GLM / Kimi / DeepSeek / Qwen / MiniMax)+ 价格,选一个切换
 - /lab-kb — 显示当前 lab 的知识点清单（只读）
+- /agentist — 向 Agentist 助教提问，查询当前项目资料与本人的评测记录（lab-assistant 的同功能别名）
 - /lab-assistant — 就当前 lab 的问题请 Lab 助手解答(它知道参考解与你的评测记录,但默认只给方向不给答案)
 - /lab-check — 在本机跑当前 lab 某个 task 的自检命令并上报看板(评测型 task 请用 /lab-evaluate)
 - /lab-review — 提交一次 lab review 给真人 Mentor 批改
