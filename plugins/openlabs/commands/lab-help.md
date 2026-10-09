@@ -7,6 +7,7 @@ description: 列出所有 lab 命令
 
 向学员展示下面这份 Parallight Lab 命令清单(原样、简洁):
 
+- /openlabs — OpenLabs 总入口 — 学课程 / 做实验 / 把想学的主题画成白板 / 连接白板账户;参数 connect、想学的主题,或留空选菜单
 - /lab-help — 列出所有 lab 命令
 - /lab — Parallight Lab 主入口 — 显示可用 lab 列表 + 当前进度 + 未读通知
 - /lab-login — 登录 Parallight Lab（邮箱 + 4 位个人 PIN）
@@ -21,6 +22,8 @@ description: 列出所有 lab 命令
 - /agentist — 向 Agentist 助教提问，查询当前项目资料与本人的评测记录（lab-assistant 的同功能别名）
 - /lab-assistant — 就当前 lab 的问题请 Lab 助手解答(它知道参考解与你的评测记录,但默认只给方向不给答案)
 - /lab-check — 在本机跑当前 lab 某个 task 的自检命令并上报看板(评测型 task 请用 /lab-evaluate)
+- /teachboard — 把你想学的主题画成一块 teachboard 白板(逐幕上板,代码块可在云端环境里跑);connect = 连接你的白板账户
+- /teachboard-install — 给白板的代码环境加装 Python 包(验证通过后绑到代码块或运行时传 recipe 才生效)
 - /lab-review — 提交一次 lab review 给真人 Mentor 批改
 - /lab-read — 查看 Mentor 的批改和私信回复
 - /lab-private-message — 给本课程 Mentor 发一条私信

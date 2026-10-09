@@ -5,7 +5,7 @@ description: Parallight Phase 0 validation — pipes input through the local MCP
 
 <!-- AUTO-GENERATED from commands-src/parallight-test.md — do not edit. Run `pnpm gen:commands`. -->
 
-Use the `test_echo` tool from the `parallight-lab` MCP server to echo back the user's message.
+Use the `test_echo` tool from the `openlabs` MCP server to echo back the user's message.
 
 The user said: $ARGUMENTS
 

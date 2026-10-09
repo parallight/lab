@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "openlabs": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bundle/server.js"
+      ],
+      "env": {
+        "PARALLIGHT_PLUGIN_NAME": "openlabs"
+      }
+    }
+  }
+}

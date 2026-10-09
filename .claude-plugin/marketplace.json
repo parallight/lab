@@ -1,17 +1,17 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "parallight-cc",
-  "description": "Parallight Lab plugin marketplace (Claude Code). Phase 0 hello-world.",
+  "description": "OpenLabs by Parallight — agent-oriented learning plugin marketplace (Claude Code).",
   "owner": {
     "name": "Marvin Gao",
     "email": "marvin.gao.cs@gmail.com"
   },
   "plugins": [
     {
-      "name": "parallight-lab",
-      "description": "Parallight Lab — agent-oriented learning plugin. Phase 0 hello-world. Provides /test slash command and a `test_echo` MCP tool used to verify cross-platform plumbing.",
+      "name": "openlabs",
+      "description": "OpenLabs — learn to build AI agents by directing them. /openlabs (menu: learn / lab / board / connect), /lab…, /teachboard…, and a resident mentor for each lab. Zero API keys (the LLM runs through Parallight's backend).",
       "category": "development",
-      "source": "./plugins/parallight-lab"
+      "source": "./plugins/openlabs"
     }
   ]
 }
