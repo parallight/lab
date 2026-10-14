@@ -22,7 +22,7 @@ description: 列出所有 lab 命令
 - /agentist — 向 Agentist 助教提问，查询当前项目资料与本人的评测记录（lab-assistant 的同功能别名）
 - /lab-assistant — 就当前 lab 的问题请 Lab 助手解答(它知道参考解与你的评测记录,但默认只给方向不给答案)
 - /lab-check — 在本机跑当前 lab 某个 task 的自检命令并上报看板(评测型 task 请用 /lab-evaluate)
-- /teachboard — 把你想学的主题画成一块 teachboard 白板(逐幕上板,代码块可在云端环境里跑);connect = 连接你的白板账户
+- /teachboard — 把你想学的主题画到 OpenLabs Canvas 上(逐幕上板,代码块可在云端环境里跑);connect = 连接你的 OpenLabs Canvas 账户
 - /teachboard-install — 建「我的环境」:在白板的代码环境上加系统包(apt)和 Python 包(验证通过后绑到代码块或运行时传 recipe 才生效)
 - /lab-review — 提交一次 lab review 给真人 Mentor 批改
 - /lab-read — 查看 Mentor 的批改和私信回复

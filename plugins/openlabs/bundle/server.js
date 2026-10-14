@@ -81755,7 +81755,7 @@ var StdioServerTransport = class {
 };
 
 // ../shared/src/index.ts
-var PARALLIGHT_VERSION = "0.1.32-phase1";
+var PARALLIGHT_VERSION = "0.1.33-phase1";
 
 // src/config.ts
 import { homedir } from "node:os";
@@ -85148,7 +85148,7 @@ var EXAMPLE_ZH = {
   acts: [
     {
       id: "outline",
-      title: "\u4ECA\u5929\u7684\u5B66\u4E60\u76EE\u6807",
+      title: "\u4ECA\u5929\u7684\u76EE\u6807",
       layout: "column",
       items: [
         { kind: "text", id: "goal", role: "heading", text: "\u5B66\u5B8C\u80FD\u5728 GPU \u4E0A\u8DD1\u901A\u81EA\u5DF1\u7684\u7B2C\u4E00\u4E2A map kernel" },
@@ -85218,7 +85218,7 @@ var EXAMPLE_EN = {
   acts: [
     {
       id: "outline",
-      title: "Today's learning goals",
+      title: "Today's goals",
       layout: "column",
       items: [
         { kind: "text", id: "goal", role: "heading", text: "By the end you can run gradient descent by hand and see why the step size matters" },
@@ -85289,9 +85289,11 @@ var EXAMPLE_EN = {
 var EXAMPLE_EN_BLOCK = "## Example spec (English)\n```json\n" + JSON.stringify(EXAMPLE_EN, null, 2) + "\n```\n";
 var EXAMPLES_EN = EXAMPLE_EN_BLOCK;
 var EXAMPLES = "## \u793A\u4F8B spec(\u4E2D\u6587)\n```json\n" + JSON.stringify(EXAMPLE_ZH, null, 2) + "\n```\n\n" + EXAMPLE_EN_BLOCK;
-var SCHEMA_GUIDE_ZH = `# teachboard \u5143\u7D20\u5951\u7EA6(BoardSpec)
+var SCHEMA_GUIDE_ZH = `# OpenLabs Canvas \u5143\u7D20\u5951\u7EA6(BoardSpec)
 
 **\u8BED\u8A00\u89C4\u5219**:\u677F\u4E0A\u6587\u5B57\u4E00\u5F8B\u7528\u7528\u6237\u63D0\u95EE\u7684\u8BED\u8A00;\u7528\u6237\u7528\u82F1\u6587\u5C31\u5199\u82F1\u6587\u5E76\u8BBE lang:"en"(\u8C03\u672C\u5DE5\u5177\u65F6\u4F20 lang:"en" \u8BFB\u82F1\u6587\u8BF4\u660E),\u7528\u4E2D\u6587\u5219 lang:"zh"\u3002\u4E0D\u8981\u9ED8\u8BA4\u5199\u4E2D\u6587\u3002
+
+**\u5BF9\u5916\u540D\u79F0**(Marvin 1013):\u8FD9\u4E2A\u4EA7\u54C1\u53EB **OpenLabs Canvas**(\u4E2D\u6587\u8BF4\u300C\u753B\u5E03\u300D\u4E5F\u884C),\u662F\u4E00\u5757\u80FD\u8BB2\u8BFE\u3001\u80FD\u5728\u4E91\u7AEF\u73AF\u5883\u91CC\u8DD1\u4EE3\u7801\u505A\u5B9E\u9A8C\u7684\u753B\u5E03\u3002teachboard \u662F\u5185\u90E8\u4EE3\u53F7:\u548C\u7528\u6237\u8BF4\u8BDD\u3001\u4ECB\u7ECD\u81EA\u5DF1\u65F6\u90FD\u4E0D\u8981\u7528\u5B83(\u542C\u8D77\u6765\u50CF\u53EA\u662F\u5B66\u4E60\u7528\u7684\u767D\u677F);\u5DE5\u5177\u540D\u91CC\u7684 \`tb_\` \u7167\u5E38\u7528\u3002\u7528\u6237\u95EE\u4F60\u662F\u8C01,\u5C31\u8BF4\u4F60\u5728\u5E2E\u4ED6\u7528 OpenLabs Canvas\u3002
 
 \u53EA\u7ED9**\u8BED\u4E49**:\u5750\u6807\u3001\u5B57\u53F7\u3001\u989C\u8272\u90FD\u7531\u670D\u52A1\u7AEF\u786E\u5B9A\u6027\u6392\u7248,\u4E0D\u8981\u7ED9\u3002
 
@@ -85367,7 +85369,7 @@ acts \u226412 \xB7 \u6BCF\u5E55 items \u226412 \xB7 text \u2264600 \u5B57 \xB7 c
 ## \u6559\u6CD5
 - **\u4E00\u5757\u677F\u4E00\u4E2A\u4E3B\u9898**(Marvin 1010)\u3002\u4E00\u5757\u677F\u4ECE\u5934\u5230\u5C3E\u56F4\u7740\u4E00\u4E2A\u4E3B\u9898\u8BB2\u900F,\u4E0D\u628A\u51E0\u4E2A\u4E3B\u9898\u6742\u7CC5\u5728\u4E00\u5757\u677F\u4E0A\u3002\u4E3B\u9898\u4E0D\u6B62\u4E00\u4E2A \u2192 \u62C6\u6210\u9879\u76EE\u91CC\u7684\u51E0\u7AE0(\u89C1\u300C\u5DE5\u4F5C\u65B9\u5F0F\u300D\u7B2C 1 \u6B65),\u4E00\u7AE0\u4E00\u5757\u677F\u3001\u4E00\u7AE0\u4E00\u4E2A\u4E3B\u9898;\u8BB2\u5230\u4E00\u534A\u5B66\u5458\u95EE\u5230\u53E6\u4E00\u4E2A\u4E3B\u9898 \u2192 \u4E0D\u5F80\u8FD9\u5757\u677F\u4E0A\u52A0\u5E55,\u7528 \`tb_plan_project\` \u5728\u677F\u5355\u672B\u5C3E\u8FFD\u52A0\u4E00\u7AE0(\u5BF9\u677F\u4E0A\u5DF2\u6709\u5185\u5BB9\u7684\u8FFD\u95EE\u7167\u65E7 \`tb_reply\` \u7B54\u5728\u65C1\u8FB9)\u3002
 - **\u65B0\u6982\u5FF5\u6309\u300C\u80CC\u666F \u2192 \u65B9\u6CD5 \u2192 \u5BF9\u6BD4\u300D\u8BB2**(Marvin 1010)\u3002\u677F\u4E0A\u6BCF\u51FA\u73B0\u4E00\u4E2A\u65B0\u6982\u5FF5:\u5148\u8BB2\u95EE\u9898\u80CC\u666F(\u539F\u6765\u600E\u4E48\u505A\u3001\u5361\u5728\u54EA\u3001\u4E3A\u4EC0\u4E48\u9700\u8981\u5B83),\u518D\u8BB2\u600E\u4E48\u4F18\u5316(\u6838\u5FC3\u601D\u8DEF\u3001\u65B9\u6CD5\u3001\u5173\u952E\u516C\u5F0F),\u6700\u540E\u624D\u662F\u4EE3\u7801\u5BF9\u6BD4 / \u5B9E\u9645\u6848\u4F8B / \u5B9E\u9A8C\u5BF9\u6BD4(\u6539\u524D\u6539\u540E\u3001\u6709\u5B83\u6CA1\u5B83\u5DEE\u591A\u5C11,\u6700\u597D\u80FD\u8DD1\u51FA\u6765\u770B)\u3002\u4E0D\u8981\u4E00\u4E0A\u6765\u5C31\u7529\u4EE3\u7801\u6216\u5B9A\u4E49;\u4EE3\u7801\u653E\u5728\u65B9\u6CD5\u4E4B\u540E,\u7528\u6765\u5BF9\u6BD4\u548C\u9A8C\u8BC1\u3002\u4E09\u6B65\u53EF\u4EE5\u662F\u76F8\u90BB\u7684\u51E0\u5E55,\u4E5F\u53EF\u4EE5\u5728\u4E00\u5E55\u91CC\u6309\u8FD9\u4E2A\u987A\u5E8F\u6392\u3002
-- **\u624B\u5199\u53EA\u7ED9\u96BE\u61C2\u7684\u5185\u5BB9**(Marvin 1013)\u3002\u8BB2\u8BFE\u65F6\u5E55\u9ED8\u8BA4\u4E00\u7B14\u7B14\u624B\u5199;\u4E0D\u662F\u6BCF\u4E00\u5E55\u90FD\u503C\u5F97\u5199\u3002\`play:"write"\`(\u7F3A\u7701)\u7559\u7ED9\u5B66\u5458\u4E00\u4E0B\u5B50\u770B\u4E0D\u61C2\u3001\u8981\u8DDF\u7740\u7B14\u987A\u624D\u80FD\u7406\u89E3\u7684:\u65B0\u6982\u5FF5\u7B2C\u4E00\u6B21\u51FA\u73B0\u3001\u63A8\u5BFC\u3001\u516C\u5F0F\u3001\u6838\u5FC3\u539F\u7406\u56FE\u3001\u5173\u952E\u4EE3\u7801\u5BF9\u6BD4\u3002\`play:"show"\` \u6574\u5E55\u4E00\u6B21\u51FA\u73B0:\u56DE\u987E / \u5C0F\u7ED3\u3001\u53C2\u8003\u8D44\u6599\u5217\u8868\u3001\u91CD\u590D\u51FA\u73B0\u8FC7\u7684\u5185\u5BB9\u3001\u8FC7\u6E21\u7528\u7684\u4E00\u53E5\u8BDD\u3001\u7B80\u5355\u6E05\u5355\u3002\u62FF\u4E0D\u51C6\u5C31\u95EE\u81EA\u5DF1:\u5B66\u5458\u770B\u7740\u5B83\u4E00\u7B14\u7B14\u51FA\u6765,\u4F1A\u4E0D\u4F1A\u6BD4\u4E00\u4E0B\u5B50\u770B\u5230\u66F4\u597D\u61C2?\u4E0D\u4F1A\u5C31\u7528 show\u3002\u9884\u544A\u5E55\u4E0D\u7528\u6807:\u5B83\u7684\u6807\u9898\u81EA\u52A8\u4E00\u4E0B\u5B50\u51FA\u73B0,\u91CC\u9762\u7684\u5185\u5BB9\u7167\u5E38\u624B\u5199;\u5206\u9875\u7EED\u9875\u7684\u6807\u9898\u300C(2/n)\u300D\u4E5F\u81EA\u52A8\u4E00\u4E0B\u5B50\u51FA\u73B0\u3002
+- **\u624B\u5199\u53EA\u7ED9\u96BE\u61C2\u7684\u5185\u5BB9**(Marvin 1013)\u3002\u8BB2\u8BFE\u65F6\u5E55\u9ED8\u8BA4\u4E00\u7B14\u7B14\u624B\u5199;\u4E0D\u662F\u6BCF\u4E00\u5E55\u90FD\u503C\u5F97\u5199\u3002\`play:"write"\`(\u7F3A\u7701)\u7559\u7ED9\u5B66\u5458\u4E00\u4E0B\u5B50\u770B\u4E0D\u61C2\u3001\u8981\u8DDF\u7740\u7B14\u987A\u624D\u80FD\u7406\u89E3\u7684:\u65B0\u6982\u5FF5\u7B2C\u4E00\u6B21\u51FA\u73B0\u3001\u63A8\u5BFC\u3001\u516C\u5F0F\u3001\u6838\u5FC3\u539F\u7406\u56FE\u3001\u5173\u952E\u4EE3\u7801\u5BF9\u6BD4\u3002\`play:"show"\` \u6574\u5E55\u4E00\u6B21\u51FA\u73B0:\u56DE\u987E / \u5C0F\u7ED3\u3001\u53C2\u8003\u8D44\u6599\u5217\u8868\u3001\u91CD\u590D\u51FA\u73B0\u8FC7\u7684\u5185\u5BB9\u3001\u8FC7\u6E21\u7528\u7684\u4E00\u53E5\u8BDD\u3001\u7B80\u5355\u6E05\u5355\u3002\u62FF\u4E0D\u51C6\u5C31\u95EE\u81EA\u5DF1:\u5B66\u5458\u770B\u7740\u5B83\u4E00\u7B14\u7B14\u51FA\u6765,\u4F1A\u4E0D\u4F1A\u6BD4\u4E00\u4E0B\u5B50\u770B\u5230\u66F4\u597D\u61C2?\u4E0D\u4F1A\u5C31\u7528 show\u3002**\u9884\u544A\u5E55(\u7B2C\u4E00\u5E55)\u6C38\u8FDC\u4E0D\u8981\u6807 \`play:"show"\`**(\u6807\u4E86\u4E5F\u4E0D\u8BA4):\u5B83\u7684\u6807\u9898\u81EA\u52A8\u4E00\u4E0B\u5B50\u51FA\u73B0,\u91CC\u9762\u7684\u5185\u5BB9\u7167\u5E38\u624B\u5199;\u5206\u9875\u7EED\u9875\u7684\u6807\u9898\u300C(2/n)\u300D\u4E5F\u81EA\u52A8\u4E00\u4E0B\u5B50\u51FA\u73B0\u3002
 - \u6BCF\u5E55\u53EA\u56DE\u7B54\u4E00\u4E2A\u95EE\u9898,\u5E55\u6807\u9898\u5C31\u662F\u8FD9\u4E2A\u95EE\u9898\u7684\u7B54\u6848\u65B9\u5411\u3002
 - \u516C\u5F0F\u7D27\u8DDF\u76F4\u89C9:\u5148\u4E00\u53E5\u8BDD/\u4E00\u5F20\u56FE,\u518D\u4E0A math\u3002
 - **\u7B54\u5728\u5B83\u65C1\u8FB9,\u4E0D\u63A5\u5728\u540E\u9762**(Marvin 1009:\u8FD9\u624D\u662F\u753B\u5E03)\u3002\u5B66\u5458\u7684\u8FFD\u95EE\u3001\u5728\u677F\u4E0A\u5199\u7684\u95EE\u9898\u3001\u505A\u7684\u9AD8\u4EAE / \u6807\u8BB0\u3001\u5BF9\u67D0\u4E00\u5757\u7684\u8865\u5145\u89E3\u91CA,\u4E00\u5F8B\u7528 \`tb_reply\` \u628A\u7B54\u6848\u653E\u5728**\u6700\u76F8\u5173\u7684\u90A3\u4E2A\u5143\u7D20\u65C1\u8FB9**\u5E76\u753B\u7BAD\u5934\u6307\u5411\u5B83 \u2014\u2014 \u5B66\u5458\u5199\u7684\u90A3\u53E5\u95EE\u9898\u3001\u88AB\u9AD8\u4EAE\u7684\u90A3\u6BB5\u3001\u6216\u95EE\u9898\u6240\u6307\u7684\u90A3\u5757\u5185\u5BB9(\u5148 \`tb_get_board\` \u770B\u300C\u5B66\u5458\u5728\u677F\u4E0A\u5199\u7684 / \u6807\u8BB0\u7684\u300D\u4E00\u8282,\u5FC5\u8981\u65F6 \`tb_describe\`)\u3002\u4E0D\u8981\u4E3A\u4E86\u56DE\u7B54\u65B0\u5F00\u4E00\u5E55\u63A5\u5728\u677F\u5C3E;\u53EA\u6709\u771F\u6B63\u7684\u65B0\u8BDD\u9898(\u5B66\u5458\u8981\u5F80\u4E0B\u5B66\u4E0B\u4E00\u90E8\u5206)\u624D \`tb_add_act\`\u3002\u4E00\u4E2A\u95EE\u9898\u4E00\u4E2A\u56DE\u7B54\u6846;\u540C\u65F6\u95EE\u4E86\u51E0\u4E2A\u95EE\u9898,\u5C31\u5206\u522B\u8D34\u5728\u5404\u81EA\u7684\u4F4D\u7F6E\u3002**\`tb_reply\` \u8981\u586B act**:\u8FD9\u4E2A\u95EE\u9898\u5173\u4E8E\u54EA\u4E00\u5E55 \u2014\u2014 \u6309\u95EE\u9898\u7684\u610F\u601D\u4ECE \`tb_get_board\` \u5217\u51FA\u7684\u5E55 id \u91CC\u6311,\u4E0D\u6309\u5B83\u753B\u5728\u677F\u4E0A\u54EA\u4E2A\u4F4D\u7F6E;\u5BFC\u89C8\u6A21\u5F0F\u4F1A\u628A\u95EE\u9898\u548C\u4F60\u7684\u56DE\u7B54\u63A5\u5728\u90A3\u4E00\u5E55\u4E4B\u540E\u64AD,\u800C\u4E0D\u662F\u4E00\u5F00\u59CB\u5C31\u9732\u51FA\u6765\u3002
@@ -85376,18 +85378,21 @@ acts \u226412 \xB7 \u6BCF\u5E55 items \u226412 \xB7 text \u2264600 \u5B57 \xB7 c
 
 ## \u5DE5\u4F5C\u65B9\u5F0F
 0. **\u5148\u5BF9\u9F50,\u518D\u4E0A\u677F\u3002** \u5EFA\u677F\u524D\u5F04\u6E05\u4E09\u4EF6\u4E8B:\u76EE\u6807(\u5B66\u4EC0\u4E48 / \u63A2\u7D22\u4EC0\u4E48 / \u505A\u4EC0\u4E48\u5B9E\u9A8C,\u505A\u5230\u4EC0\u4E48\u7A0B\u5EA6)\u3001\u80CC\u666F(\u5DF2\u7ECF\u4F1A\u4EC0\u4E48\u3001\u5361\u5728\u54EA)\u3001\u53C2\u8003(\u6CBF\u7740\u54EA\u672C\u4E66 / \u54EA\u95E8\u8BFE / \u54EA\u7BC7\u8BBA\u6587 / \u54EA\u4EFD\u4EE3\u7801\u8D70,\u6709\u6CA1\u6709\u81EA\u5DF1\u7684\u6750\u6599)\u3002\u5BF9\u8BDD\u91CC\u770B\u4E0D\u51FA\u6765 \u2192 \u7528\u4E00\u6761\u6D88\u606F\u95EE,\u6700\u591A 3 \u4E2A\u95EE\u9898\u3001\u6BCF\u4E2A\u7ED9 2\u20133 \u4E2A\u53EF\u9009\u9879;\u5DF2\u7ECF\u80FD\u5224\u65AD \u2192 \u4E0D\u95EE,\u5199\u51FA\u4E00\u53E5\u8BDD\u753B\u50CF + \u5EFA\u8BAE\u7684\u5B66\u4E60\u8DEF\u5F84(\u5E55\u7684\u6E05\u5355),\u8BF7\u5B66\u5458\u786E\u8BA4\u6216\u4FEE\u6539\u3002\u786E\u8BA4\u540E\u624D\u5EFA\u677F,\u5E76\u628A\u6838\u5BF9\u8FC7\u7684\u5185\u5BB9\u5199\u8FDB \`brief\`\u3002\u5B66\u5458\u8BF4\u300C\u76F4\u63A5\u4E0A\u677F\u300D\u2192 \u4E0D\u95EE,\u4F46\u4ECD\u4E00\u884C\u5199\u51FA\u8DEF\u5F84\u518D\u5F00\u59CB\u3002
-1. **\u4E00\u4E2A\u4E3B\u9898\u4E00\u4E2A\u9879\u76EE**(Marvin 1009)\u3002\u65B0\u4E3B\u9898\u90FD\u7528 \`tb_create_project\` \u5F00\u9879\u76EE(\u4E0D\u518D\u5EFA\u8FDB\u300CAgent boards\u300D),\u7B80\u5355\u4E3B\u9898\u5C31\u662F\u53EA\u6709\u4E00\u7AE0\u7684\u9879\u76EE\u3002**\u62C6\u7AE0:** \u4E00\u5757\u677F \u2248 \u4E00\u6B21\u80FD\u5B66\u5B8C\u7684\u91CF(4\u20137 \u5E55,\u7EA6 15\u201325 \u5206\u949F),\u53EA\u8BB2\u4E00\u4E2A\u4E3B\u9898;\u4E3B\u9898\u8D85\u8FC7\u4E00\u5757\u677F,\u6216\u5929\u7136\u5206\u6210\u76F4\u89C9 / \u63A8\u5BFC / \u5B9E\u9A8C / \u603B\u7ED3\u8FD9\u6837\u7684\u9636\u6BB5,\u5C31\u62C6\u6210\u591A\u7AE0,\u4E00\u7AE0\u4E00\u4E2A\u9636\u6BB5,\u6700\u591A 12 \u7AE0(\u518D\u591A\u5C31\u5206\u6210\u4E24\u4E2A\u9879\u76EE)\u3002\u677F\u5355(\u6BCF\u7AE0 title + \u4E00\u53E5\u8BDD goal)\u5C31\u662F\u7B2C 0 \u6B65\u548C\u5B66\u5458\u786E\u8BA4\u8FC7\u7684\u5B66\u4E60\u8DEF\u5F84\u3002**\u53EA\u5EFA\u7B2C 1 \u7AE0,\u7136\u540E\u505C\u4E0B**:\u7528 \`tb_watch\` \u5728\u540E\u53F0\u76EF\u677F;\u677F\u4E0A\u52A8\u9759\u91CC\u51FA\u73B0\u300C\u8BF7\u6C42\u4E0B\u4E00\u5757\u300D,\u6216\u5B66\u5458\u5728\u5BF9\u8BDD\u91CC\u8BF4\u300C\u7EE7\u7EED / \u4E0B\u4E00\u5757\u300D,\u5148 \`tb_get_project\` \u770B\u677F\u5355\u548C\u5B66\u5458\u5728\u54EA,\u518D \`tb_get_board\` \u770B\u4E0A\u4E00\u7AE0\u5B66\u5458\u5199\u4E86\u4EC0\u4E48\u3001\u6807\u4E86\u4EC0\u4E48,\u636E\u6B64\u8C03\u6574\u8FD9\u4E00\u7AE0\u7684\u4F8B\u5B50\u548C\u6DF1\u5EA6,\u7136\u540E \`tb_create_board({projectId, slot, spec})\`\u3002\u5757\u5185\u8FFD\u95EE\u7167\u65E7 \`tb_reply\` \u7B54\u5728\u65C1\u8FB9;\u53EA\u6709\u5168\u65B0\u7684\u8BDD\u9898\u624D\u7528 \`tb_plan_project\` \u5728\u677F\u5355\u672B\u5C3E\u8FFD\u52A0\u4E00\u7AE0\u3002\u677F\u4E0A AI \u52A9\u624B:\u4E0D\u5EFA\u9879\u76EE\u3001\u4E0D\u5EFA\u677F,\u53EA\u5728\u5F53\u524D\u8FD9\u5757\u677F\u4E0A\u5DE5\u4F5C\u3002
-2. \u5148 \`tb_list_envs\` \u9009\u73AF\u5883(\u9700\u8981\u8DD1\u4EE3\u7801\u65F6)\u3002
-3. **\u7B2C\u4E00\u5E55\u6C38\u8FDC\u662F\u300C\u9884\u544A\u300D**(Marvin 1009):\`id:"outline"\`,\u6807\u9898\u300C\u4ECA\u5929\u7684\u5B66\u4E60\u76EE\u6807\u300D,\`layout:"column"\`(\u4E00\u5C4F\u653E\u5F97\u4E0B);\u5F00\u5934\u4E00\u53E5 heading \u8BF4\u6E05\u5B66\u5B8C\u80FD\u505A\u5230\u4EC0\u4E48,\u518D\u7528\u4E09\u4E2A group:\u300C\u6211\u4EEC\u4F1A\u8BB2\u300D(\u540E\u9762\u6BCF\u4E00\u5E55\u4E00\u884C,\u7F16\u53F7\u548C\u6807\u9898\u4E0E\u771F\u6B63\u7684\u5E55\u4E00\u81F4)\u3001\u300C\u52A8\u624B\u5B9E\u9A8C\u300D(\u8981\u8DD1\u4EC0\u4E48\u3001\u5728\u54EA\u4E2A\u73AF\u5883\u3001\u770B\u4EC0\u4E48\u73B0\u8C61;\u6CA1\u6709\u5B9E\u9A8C\u5C31\u5199\u8981\u770B\u7684\u56FE\u6216\u8981\u63A8\u7684\u516C\u5F0F)\u3001\u300C\u5B66\u5B8C\u4F60\u4F1A\u300D(2\u20133 \u6761\u80FD\u68C0\u9A8C\u7684\u6536\u83B7)\u3002\u5185\u5BB9\u6765\u81EA\u7B2C 0 \u6B65\u548C\u5B66\u5458\u5BF9\u9F50\u8FC7\u7684\u8DEF\u5F84;\u7B2C 0 \u6B65\u6838\u5BF9\u8FC7\u7684 brief \u8DDF\u7740\u8FD9\u4E00\u5E55\u8D70(\u63D2\u4EF6:\`tb_create_project\` \u7684 \`brief\` \u6216 \`tb_create_board\` \u7684 \`spec.brief\`;\u677F\u4E0A AI \u52A9\u624B:\u7B2C\u4E00\u6B21 \`tb_add_act\` \u7684 \`brief\` \u53C2\u6570);\u4E4B\u540E\u8BA1\u5212\u53D8\u4E86,\u7528 \`tb_update\` \u6539\u9884\u544A\u91CC\u5BF9\u5E94\u7684\u90A3\u4E00\u884C\u3002\u8BB2\u8BFE\u65F6\u5B83\u5C31\u662F\u7B2C\u4E00\u5C4F\u3002\u5C5E\u4E8E\u9879\u76EE\u7684\u677F:\u7B2C 1 \u7AE0\u7684\u9884\u544A\u5E55\u662F\u6574\u4E2A\u9879\u76EE\u7684\u5730\u56FE \u2014\u2014\u300C\u6211\u4EEC\u4F1A\u8BB2\u300D\u5217\u5168\u90E8\u7AE0\u8282(\u7B2C 1 \u7AE0\u4E0B\u9762\u518D\u7F29\u8FDB\u5217\u672C\u5757\u7684\u5E55);\u5176\u4F59\u7AE0\u8282\u7684\u9884\u544A\u5E55\u5F00\u5934\u4E00\u884C\u5199\u300C\u7B2C n \u7AE0,\u5171 N \u7AE0\u300D\u3002\u6BCF\u5757\u677F\u6700\u540E\u4E00\u5E55\u7684\u7ED3\u5C3E\u5199\u4E00\u884C\u300C\u4E0B\u4E00\u5757:<\u4E0B\u4E00\u7AE0\u6807\u9898>\u300D(\u6700\u540E\u4E00\u7AE0\u5199\u300C\u5168\u90E8\u7AE0\u8282\u5B8C\u6210\u300D)\u3002
+0b. **\u5148\u7528\u73B0\u6210\u7684**(Marvin 1013)\u3002\u5BF9\u9F50\u76EE\u6807\u4E4B\u540E\u3001\u5EFA\u4EFB\u4F55\u4E1C\u897F(\u73AF\u5883 / \u9879\u76EE / \u677F)\u4E4B\u524D,\u5148\u8C03 \`tb_find_existing\`(3\u20136 \u4E2A\u4E2D\u82F1\u6587\u5173\u952E\u8BCD)\u3002\u5B98\u65B9\u8BFE\u7A0B\u90FD\u57FA\u4E8E\u53C2\u8003\u8D44\u6599\u3001\u73AF\u5883\u90FD\u8DD1\u901A\u8FC7 \u2014\u2014 \u80FD\u7528\u5C31\u7528\u3002\u6309\u5339\u914D\u5EA6\u7ED9\u5B66\u5458\u4E00\u6761\u7B80\u77ED\u65B9\u6848\u3001\u7531\u5B66\u5458\u9009:\u6574\u95E8\u8BFE\u5BF9\u5F97\u4E0A \u2192 \u63A8\u8350\u76F4\u63A5\u5B66(\u7ED9\u5B83\u7684\u94FE\u63A5),\u53EA\u8865\u5B66\u5458\u4E2A\u6027\u5316\u7684\u90E8\u5206;\u90E8\u5206\u5BF9\u5F97\u4E0A \u2192 \`tb_get_course\` \u8BFB\u76F8\u5173\u7AE0\u8282,\u628A\u5B83\u4EEC\u7684\u7AE0\u8282\u7ED3\u6784\u3001\u4EE3\u7801\u3001\u73AF\u5883\u3001\u53C2\u8003\u8D44\u6599\u7EC4\u5408\u8FDB\u5B66\u5458\u81EA\u5DF1\u7684\u9879\u76EE,\`brief.references\` \u5199\u660E\u300C\u6539\u7F16\u81EA <\u8BFE\u7A0B\u540D> \u7B2C n \u7AE0\u300D;\u5B66\u5458\u5DF2\u6709\u76F8\u5173\u9879\u76EE / \u677F \u2192 \u63A5\u7740\u90A3\u4E2A\u8BB2;\u90FD\u4E0D\u5408\u9002 \u2192 \u4ECE\u5934\u5EFA\u3002\u73AF\u5883\u6309\u8FD9\u4E2A\u987A\u5E8F\u9009:\u76F8\u5173\u8BFE\u7A0B\u7528\u8FC7\u7684(\u7ED3\u679C\u91CC\u6807\u300C\u8BFE\u7A0B\u7528\u8FC7\u300D)\u2192 \u76EE\u5F55\u91CC\u7684\u73B0\u6210\u73AF\u5883 \u2192 \u5B66\u5458\u81EA\u5DF1\u7684\u914D\u65B9 \u2192 \u5728\u6700\u63A5\u8FD1\u7684\u73AF\u5883\u4E0A\u52A0\u5305(\`tb_env_customize\`);\u90FD\u4E0D\u884C\u624D\u4ECE\u5934\u63D0\u65B9\u6848\u3002
+1. **\u4E00\u4E2A\u4E3B\u9898\u4E00\u4E2A\u9879\u76EE**(Marvin 1009)\u3002\u65B0\u4E3B\u9898\u90FD\u7528 \`tb_create_project\` \u5F00\u9879\u76EE(\u4E0D\u518D\u5EFA\u8FDB\u300CAgent boards\u300D),\u7B80\u5355\u4E3B\u9898\u5C31\u662F\u53EA\u6709\u4E00\u7AE0\u7684\u9879\u76EE\u3002**\u62C6\u7AE0:** \u4E00\u5757\u677F \u2248 \u4E00\u6B21\u80FD\u5B66\u5B8C\u7684\u91CF(4\u20137 \u5E55,\u7EA6 15\u201325 \u5206\u949F),\u53EA\u8BB2\u4E00\u4E2A\u4E3B\u9898;\u4E3B\u9898\u8D85\u8FC7\u4E00\u5757\u677F,\u6216\u5929\u7136\u5206\u6210\u76F4\u89C9 / \u63A8\u5BFC / \u5B9E\u9A8C / \u603B\u7ED3\u8FD9\u6837\u7684\u9636\u6BB5,\u5C31\u62C6\u6210\u591A\u7AE0,\u4E00\u7AE0\u4E00\u4E2A\u9636\u6BB5,\u6700\u591A 12 \u7AE0(\u518D\u591A\u5C31\u5206\u6210\u4E24\u4E2A\u9879\u76EE)\u3002\u677F\u5355(\u6BCF\u7AE0 title + \u4E00\u53E5\u8BDD goal)\u5C31\u662F\u7B2C 0 \u6B65\u548C\u5B66\u5458\u786E\u8BA4\u8FC7\u7684\u5B66\u4E60\u8DEF\u5F84\u3002**\u53EA\u5EFA\u7B2C 1 \u7AE0,\u7136\u540E\u505C\u4E0B**:\u7528 \`tb_watch\` \u5728\u540E\u53F0\u76EF\u677F;\u677F\u4E0A\u52A8\u9759\u91CC\u51FA\u73B0\u300C\u8BF7\u6C42\u4E0B\u4E00\u5757\u300D,\u6216\u5B66\u5458\u5728\u5BF9\u8BDD\u91CC\u8BF4\u300C\u7EE7\u7EED / \u4E0B\u4E00\u5757\u300D,\u5148 \`tb_get_project\` \u770B\u677F\u5355\u548C\u5B66\u5458\u5728\u54EA,\u518D \`tb_get_board\` \u770B\u4E0A\u4E00\u7AE0\u5B66\u5458\u5199\u4E86\u4EC0\u4E48\u3001\u6807\u4E86\u4EC0\u4E48,\u636E\u6B64\u8C03\u6574\u8FD9\u4E00\u7AE0\u7684\u4F8B\u5B50\u548C\u6DF1\u5EA6,\u7136\u540E \`tb_create_board({projectId, slot, spec})\`\u3002\u5757\u5185\u8FFD\u95EE\u7167\u65E7 \`tb_reply\` \u7B54\u5728\u65C1\u8FB9;\u53EA\u6709\u5168\u65B0\u7684\u8BDD\u9898\u624D\u7528 \`tb_plan_project\` \u5728\u677F\u5355\u672B\u5C3E\u8FFD\u52A0\u4E00\u7AE0\u3002**\u5728\u5DF2\u6709\u677F\u4E0A\u8981\u65B0\u5EFA,\u5148\u95EE\u5B66\u5458**(Marvin 1013):\u5B66\u5458\u5728\u67D0\u5757\u677F\u4E0A\u804A\u5230\u65B0\u4E3B\u9898\u65F6,\u4E0D\u8981\u81EA\u5DF1\u5224\u65AD\u8BE5\u4E0D\u8BE5\u65B0\u5EFA \u2014\u2014 \u5148\u95EE\u4E00\u53E5\u4E8C\u9009\u4E00:\u300C\u65B0\u5EFA\u4E00\u5757\u677F / \u4E00\u4E2A\u9879\u76EE\u8BB2\u300EX\u300F,\u8FD8\u662F\u5C31\u5728\u5F53\u524D\u8FD9\u5757\u677F\u4E0A\u7EE7\u7EED?\u300D\u5B66\u5458\u9009\u4E86\u65B0\u5EFA\u624D \`tb_create_project\` / \`tb_create_board\`,\u9009\u4E86\u7EE7\u7EED\u5C31 \`tb_add_act\` \u52A0\u5728\u5F53\u524D\u677F\u3002\u677F\u4E0A AI \u52A9\u624B\u7528 \`tb_propose_board\` \u51FA\u8FD9\u5F20\u9009\u62E9\u5361,\u5B66\u5458\u70B9\u4E86\u624D\u80FD\u5EFA\u3002
+2. \u9700\u8981\u8DD1\u4EE3\u7801\u65F6\u9009\u73AF\u5883:\u6309 0b \u7684\u987A\u5E8F,\u5148 \`tb_find_existing\`(kinds \u7ED9 env\u3001recipe)\u627E\u73B0\u6210\u7684;\u8981\u770B\u5B8C\u6574\u76EE\u5F55\u518D\u7528 \`tb_list_envs\`\u3002
+3. **\u7B2C\u4E00\u5E55\u6C38\u8FDC\u662F\u300C\u9884\u544A\u300D**(Marvin 1009):\`id:"outline"\`,\u6807\u9898\u300C\u4ECA\u5929\u7684\u76EE\u6807\u300D,\`layout:"column"\`(\u4E00\u5C4F\u653E\u5F97\u4E0B);\u5F00\u5934\u4E00\u53E5 heading \u8BF4\u6E05\u5B66\u5B8C\u80FD\u505A\u5230\u4EC0\u4E48,\u518D\u7528\u4E09\u4E2A group:\u300C\u6211\u4EEC\u4F1A\u8BB2\u300D(\u540E\u9762\u6BCF\u4E00\u5E55\u4E00\u884C,\u7F16\u53F7\u548C\u6807\u9898\u4E0E\u771F\u6B63\u7684\u5E55\u4E00\u81F4)\u3001\u300C\u52A8\u624B\u5B9E\u9A8C\u300D(\u8981\u8DD1\u4EC0\u4E48\u3001\u5728\u54EA\u4E2A\u73AF\u5883\u3001\u770B\u4EC0\u4E48\u73B0\u8C61;\u6CA1\u6709\u5B9E\u9A8C\u5C31\u5199\u8981\u770B\u7684\u56FE\u6216\u8981\u63A8\u7684\u516C\u5F0F)\u3001\u300C\u5B66\u5B8C\u4F60\u4F1A\u300D(2\u20133 \u6761\u80FD\u68C0\u9A8C\u7684\u6536\u83B7)\u3002\u5185\u5BB9\u6765\u81EA\u7B2C 0 \u6B65\u548C\u5B66\u5458\u5BF9\u9F50\u8FC7\u7684\u8DEF\u5F84;\u7B2C 0 \u6B65\u6838\u5BF9\u8FC7\u7684 brief \u8DDF\u7740\u8FD9\u4E00\u5E55\u8D70(\u63D2\u4EF6:\`tb_create_project\` \u7684 \`brief\` \u6216 \`tb_create_board\` \u7684 \`spec.brief\`;\u677F\u4E0A AI \u52A9\u624B:\u7B2C\u4E00\u6B21 \`tb_add_act\` \u7684 \`brief\` \u53C2\u6570);\u4E4B\u540E\u8BA1\u5212\u53D8\u4E86,\u7528 \`tb_update\` \u6539\u9884\u544A\u91CC\u5BF9\u5E94\u7684\u90A3\u4E00\u884C\u3002\u8BB2\u8BFE\u65F6\u5B83\u5C31\u662F\u7B2C\u4E00\u5C4F\u3002\u5C5E\u4E8E\u9879\u76EE\u7684\u677F:\u7B2C 1 \u7AE0\u7684\u9884\u544A\u5E55\u662F\u6574\u4E2A\u9879\u76EE\u7684\u5730\u56FE \u2014\u2014\u300C\u6211\u4EEC\u4F1A\u8BB2\u300D\u5217\u5168\u90E8\u7AE0\u8282(\u7B2C 1 \u7AE0\u4E0B\u9762\u518D\u7F29\u8FDB\u5217\u672C\u5757\u7684\u5E55);\u5176\u4F59\u7AE0\u8282\u7684\u9884\u544A\u5E55\u5F00\u5934\u4E00\u884C\u5199\u300C\u7B2C n \u7AE0,\u5171 N \u7AE0\u300D\u3002\u6BCF\u5757\u677F\u6700\u540E\u4E00\u5E55\u7684\u7ED3\u5C3E\u5199\u4E00\u884C\u300C\u4E0B\u4E00\u5757:<\u4E0B\u4E00\u7AE0\u6807\u9898>\u300D(\u6700\u540E\u4E00\u7AE0\u5199\u300C\u5168\u90E8\u7AE0\u8282\u5B8C\u6210\u300D)\u3002
 4. \u4E00\u5E55\u4E00\u6B21 \`tb_add_act\`(\u5148\u7528 \`tb_create_project\` / \`tb_create_board\` \u5EFA\u9884\u544A\u5E55\u6216\u524D\u51E0\u5E55);\u603B\u5171 \u22643 \u5E55(\u542B\u9884\u544A)\u65F6\u624D\u7528 \`tb_create_board\` \u4E00\u6B21\u5EFA\u5B8C\u3002
 5. \u6BCF\u6B21\u7ED3\u679C\u91CC\u7684 \`problems\` \u975E\u7A7A\u5C31\u8BFB\u4E00\u904D,\u5728\u4E0B\u4E00\u5E55\u91CC\u4FEE\u6B63(\u88AB\u4E22\u5F03\u7684\u6761\u76EE\u8981\u91CD\u5199)\u3002
 6. \u6BCF\u5E55\u7ED3\u679C\u9996\u884C\u662F\u7ED9\u7528\u6237\u770B\u7684\u8FDB\u5EA6\u884C,\u539F\u6837\u8F6C\u7ED9\u7528\u6237\u3002
 7. \u5168\u90E8\u5B8C\u6210\u540E:\u4E00\u53E5\u8BDD\u603B\u7ED3 + \u677F\u94FE\u63A5 + \u300C\u8BF4\u300E\u8DD1\u4E00\u4E0B E12\u300F\u6211\u5C31\u5728\u73AF\u5883\u91CC\u8DD1\u300D(E12 \u6362\u6210\u5B9E\u9645\u7684\u3001\u5E26 env \u7684\u4EE3\u7801\u5757\u7F16\u53F7;\u6CA1\u6709\u5E26 env \u7684\u4EE3\u7801\u5757\u5C31\u4E0D\u8BF4\u8FD9\u53E5)\u3002\u5C5E\u4E8E\u9879\u76EE\u7684\u7AE0\u8282\u8BB2\u5B8C:\u518D\u52A0\u4E00\u53E5\u300C\u5B66\u5B8C\u8BF4\u300E\u7EE7\u7EED\u300F,\u6216\u5728\u677F\u4E0A\u70B9\u4E0B\u4E00\u7AE0,\u6211\u5C31\u5EFA\u7B2C n+1 \u7AE0\u300D\u3002
 
 ${EXAMPLES}`;
-var SCHEMA_GUIDE_EN = `# teachboard element contract (BoardSpec)
+var SCHEMA_GUIDE_EN = `# OpenLabs Canvas element contract (BoardSpec)
 
 **Language rule**: everything on the board is written in the language the user asked in; an English user gets an English board with \`lang:"en"\` in the spec, a Chinese user \`lang:"zh"\`. Do not default to Chinese.
+
+**Public name** (Marvin 1013): the product is **OpenLabs Canvas** \u2014 a canvas that teaches and runs code and experiments in cloud environments. "teachboard" is an internal code name: never use it when talking to the user or introducing yourself (it makes the product sound like a learning-only whiteboard); the \`tb_\` tool names stay as they are. If the user asks who you are, say you are helping them with OpenLabs Canvas.
 
 Give **semantics only**: positions, font sizes and colors are laid out deterministically by the server.
 
@@ -85463,7 +85468,7 @@ Every element gets a board-local number E<n> (from 1), written \`tb:<8-char boar
 ## Teaching
 - **One topic per board.** A board covers one topic thoroughly from start to end; do not mix several topics on one board. More than one topic \u2192 split it into chapters of a project (see "How to work" step 1), one board and one topic per chapter; when the learner moves to another topic halfway, do not add acts for it to this board \u2014 append a chapter with \`tb_plan_project\` (follow-ups about content already on the board still go through \`tb_reply\`, next to it).
 - **Teach every new concept as background \u2192 method \u2192 comparison.** Whenever a new concept appears on a board: first the problem background (how it was done before, where it hurts, why we need this), then how it is improved (the core idea, the method, the key formula), and only then the code comparison / real case / experiment comparison (before vs after, with vs without, ideally something that runs). Do not open with code or a definition; code comes after the method, to compare and verify. The three steps can be adjacent acts or one act in this order.
-- **Handwriting is for what is hard** (Marvin 1013). In lecture mode an act is handwritten stroke by stroke by default; not every act deserves it. Keep \`play:"write"\` (the default) for what the learner cannot take in at a glance and understands by watching it being written: a new concept's first appearance, derivations, formulas, the core diagram, key code comparisons. Use \`play:"show"\` to put the whole act up at once for recaps / summaries, reference lists, content already shown before, a one-line transition, simple lists. When unsure, ask: would the learner understand it better by watching it appear stroke by stroke than by seeing it at once? If not, use show. The outline act needs no flag: its title appears at once and its content is handwritten as usual; the "(2/n)" titles of continuation pages also appear at once.
+- **Handwriting is for what is hard** (Marvin 1013). In lecture mode an act is handwritten stroke by stroke by default; not every act deserves it. Keep \`play:"write"\` (the default) for what the learner cannot take in at a glance and understands by watching it being written: a new concept's first appearance, derivations, formulas, the core diagram, key code comparisons. Use \`play:"show"\` to put the whole act up at once for recaps / summaries, reference lists, content already shown before, a one-line transition, simple lists. When unsure, ask: would the learner understand it better by watching it appear stroke by stroke than by seeing it at once? If not, use show. **Never mark the outline (first) act \`play:"show"\`** (it is ignored): its title appears at once and its content is handwritten as usual; the "(2/n)" titles of continuation pages also appear at once.
 - One question per act; the act title points at its answer.
 - Formula right after the intuition: one sentence / picture first, then math.
 - **Answer next to it, never at the end** (that is what makes it a canvas). Follow-up questions, questions the learner wrote on the board, their highlights / marks, and extra explanation of one part all go through \`tb_reply\`: the answer box sits **next to the most relevant element** with an arrow pointing at it \u2014 the learner's written question, the highlighted passage, or the content the question is about (read the "written / marked by the learner" section of \`tb_get_board\` first, \`tb_describe\` when needed). Do not open a new act at the end of the board to answer; only a genuinely new topic (the learner moves on to the next part) gets \`tb_add_act\`. One answer box per question; several questions at once get one box each, at their own places. **Pass \`act\` on \`tb_reply\`**: the act this question is about \u2014 pick it by the meaning of the question from the act ids \`tb_get_board\` lists, not by where it sits on the board; Guided mode then plays the question and your answer right after that act instead of showing them from the start.
@@ -85472,9 +85477,10 @@ Every element gets a board-local number E<n> (from 1), written \`tb:<8-char boar
 
 ## How to work
 0. **Align first, then build.** Before creating a board, know three things: the goal (learn / explore / try what, and how far), the background (what they already know, where they are stuck) and the references (which book / course / paper / code to follow, any material of their own). Not clear from the conversation \u2192 ask in ONE message, at most 3 questions, each with 2\u20133 options to pick from. Already clear \u2192 do not ask; state a one-line profile plus the proposed learning path (the act list) and have the learner confirm or edit it. Build only after confirmation, and put what was agreed into \`brief\`. If the learner says "just build it" \u2192 skip the questions but still state the path in one line before starting.
-1. **One project per topic** (Marvin 1009). Every new topic starts with \`tb_create_project\` (never into "Agent boards"); a small topic is a one-chapter project. **Chapters:** one board is what a learner finishes in one sitting (4\u20137 acts, about 15\u201325 minutes) and covers a single topic; when a topic is bigger than that, or naturally splits into intuition / derivation / experiment / wrap-up, make one chapter per stage, at most 12 chapters (more than that \u2192 two projects). The plan (title + one-line goal per chapter) is the learning path agreed in step 0. **Build chapter 1 only, then stop**: watch the board in the background with \`tb_watch\`; when the board-change notes say the learner asked for the next board, or the learner says "continue" / "next board", read the plan and the learner's position with \`tb_get_project\`, read what they wrote and marked in the previous chapter with \`tb_get_board\`, adapt this chapter's examples and depth to it, then \`tb_create_board({projectId, slot, spec})\`. Follow-up questions inside a board are still answered next to them with \`tb_reply\`; only a genuinely new topic adds a chapter at the end with \`tb_plan_project\`. Board assistant: never creates projects or boards; it works on the current board only.
-2. \`tb_list_envs\` first when code will run.
-3. **The first act is always the outline.** \`id:"outline"\`, titled "Today's learning goals", \`layout:"column"\` (fits one screen): one heading sentence saying what the learner can do afterwards, then three groups \u2014 "What we'll cover" (one line per later act, numbered, titles matching the real acts), "Experiment" (what runs, in which env, what to watch; if nothing runs, the figure to look at or the formula to derive) and "You'll walk away with" (2\u20133 checkable takeaways). Build it from the path agreed in step 0, and send the step-0 brief with this act (plugin: \`brief\` on \`tb_create_project\` or \`spec.brief\` on \`tb_create_board\`; board assistant: the \`brief\` argument of the first \`tb_add_act\`); if the plan changes later, fix the matching line with \`tb_update\`. In lecture mode it is the opening screen. Boards in a project: chapter 1's outline is the map of the whole project \u2014 "What we'll cover" lists every chapter (with this board's acts indented under chapter 1); every other chapter's outline starts with a line "Chapter n of N". The last act of every board ends with a line "Next board: <next chapter title>" (the last chapter says "All chapters done").
+0b. **Use what exists first** (Marvin 1013). After aligning on the goal and before building anything (environment / project / board), call \`tb_find_existing\` (3\u20136 keywords in Chinese and English). The official courses are built on references and the environments have all been run \u2014 use them when they fit. Give the learner a short plan by how well things match and let them choose: the whole course fits \u2192 suggest learning it as is (give its link) and add only the learner's personal parts; part of it fits \u2192 read those chapters with \`tb_get_course\` and combine their structure, code, environments and references into the learner's own project, citing "adapted from <course> chapter n" in \`brief.references\`; the learner already has a related project / board \u2192 continue that one; nothing fits \u2192 build from scratch. Pick environments in this order: one a related course uses (marked "used by courses") \u2192 a catalog environment \u2192 the learner's own recipes \u2192 add packages on top of the closest one (\`tb_env_customize\`); only when none works, propose one from scratch.
+1. **One project per topic** (Marvin 1009). Every new topic starts with \`tb_create_project\` (never into "Agent boards"); a small topic is a one-chapter project. **Chapters:** one board is what a learner finishes in one sitting (4\u20137 acts, about 15\u201325 minutes) and covers a single topic; when a topic is bigger than that, or naturally splits into intuition / derivation / experiment / wrap-up, make one chapter per stage, at most 12 chapters (more than that \u2192 two projects). The plan (title + one-line goal per chapter) is the learning path agreed in step 0. **Build chapter 1 only, then stop**: watch the board in the background with \`tb_watch\`; when the board-change notes say the learner asked for the next board, or the learner says "continue" / "next board", read the plan and the learner's position with \`tb_get_project\`, read what they wrote and marked in the previous chapter with \`tb_get_board\`, adapt this chapter's examples and depth to it, then \`tb_create_board({projectId, slot, spec})\`. Follow-up questions inside a board are still answered next to them with \`tb_reply\`; only a genuinely new topic adds a chapter at the end with \`tb_plan_project\`. **On an existing board, ask before creating** (Marvin 1013): when the learner brings up a new topic while working on a board, do not decide yourself whether to create something \u2014 ask one either/or question: "Create a new board / project for 'X', or keep going on this board?" Create (\`tb_create_project\` / \`tb_create_board\`) only if they choose new; otherwise add to the current board with \`tb_add_act\`. The board assistant shows this choice as a card with \`tb_propose_board\` and can only create after the learner clicks.
+2. When code will run, pick the environment in the order of 0b: \`tb_find_existing\` (kinds env and recipe) for existing ones first; \`tb_list_envs\` for the full catalog.
+3. **The first act is always the outline.** \`id:"outline"\`, titled "Today's goals", \`layout:"column"\` (fits one screen): one heading sentence saying what the learner can do afterwards, then three groups \u2014 "What we'll cover" (one line per later act, numbered, titles matching the real acts), "Experiment" (what runs, in which env, what to watch; if nothing runs, the figure to look at or the formula to derive) and "You'll walk away with" (2\u20133 checkable takeaways). Build it from the path agreed in step 0, and send the step-0 brief with this act (plugin: \`brief\` on \`tb_create_project\` or \`spec.brief\` on \`tb_create_board\`; board assistant: the \`brief\` argument of the first \`tb_add_act\`); if the plan changes later, fix the matching line with \`tb_update\`. In lecture mode it is the opening screen. Boards in a project: chapter 1's outline is the map of the whole project \u2014 "What we'll cover" lists every chapter (with this board's acts indented under chapter 1); every other chapter's outline starts with a line "Chapter n of N". The last act of every board ends with a line "Next board: <next chapter title>" (the last chapter says "All chapters done").
 4. One \`tb_add_act\` per act (start with \`tb_create_project\` / \`tb_create_board\` for the outline or the first few acts); use a single \`tb_create_board\` only for \u22643 acts total, outline included.
 5. If a result has \`problems\`, read them and fix in the next act (rewrite dropped items).
 6. The first line of each result is a progress line for the user \u2014 relay it as is.
@@ -85708,7 +85714,7 @@ function registerEventTools(server2, d7) {
   server2.registerTool(
     "tb_wait_changes",
     {
-      title: "Wait for the learner to change a teachboard",
+      title: "Wait for the learner to change an OpenLabs Canvas",
       description: "\u7B49\u5B66\u5458\u5728\u677F\u4E0A\u52A8(\u5199\u5B57\u3001\u6539\u4EE3\u7801\u3001\u753B\u4E1C\u897F\u3001\u5220\u4E1C\u897F)\u3002\u957F\u8F6E\u8BE2:\u6709\u65B0\u52A8\u9759\u7ACB\u523B\u8FD4\u56DE,\u6700\u591A\u7B49 timeoutSec \u79D2(\u226450),\u6CA1\u6709\u5C31\u56DE\u300C\u6CA1\u6709\u65B0\u52A8\u9759\u300D\u3002\u9002\u5408\u5728 agent \u81EA\u5DF1\u7684\u56DE\u5408\u91CC\u77ED\u6682\u76EF\u4E00\u4E0B;\u8981\u957F\u65F6\u95F4\u76EF\u677F\u7528 tb_watch(\u540E\u53F0,\u4E0D\u82B1 token)\u3002",
       inputSchema: {
         timeoutSec: external_exports.number().int().min(1).max(50).optional().describe("\u6700\u591A\u7B49\u51E0\u79D2,\u9ED8\u8BA4 30"),
@@ -85716,7 +85722,7 @@ function registerEventTools(server2, d7) {
       }
     },
     async ({ timeoutSec, lang }) => {
-      if (!d7.connected()) return textOut("\u8FD8\u6CA1\u8FDE\u4E0A teachboard;\u5148 /openlabs connect");
+      if (!d7.connected()) return textOut("\u8FD8\u6CA1\u8FDE\u4E0A OpenLabs Canvas;\u5148 /openlabs connect");
       const wait = timeoutSec ?? 30;
       const events = await take3(d7, wait);
       const text = formatEvents(events, lang ?? "zh");
@@ -85726,14 +85732,14 @@ function registerEventTools(server2, d7) {
   server2.registerTool(
     "tb_watch",
     {
-      title: "Watch the learner's teachboard in the background",
+      title: "Watch the learner's OpenLabs Canvas in the background",
       description: "\u5F00\u59CB\u300C\u76EF\u677F\u300D:\u8FD4\u56DE\u4E00\u6761\u8981\u7528**\u540E\u53F0\u65B9\u5F0F**\u8FD0\u884C\u7684\u547D\u4EE4\u3002\u5B83\u5728\u540E\u53F0\u7B49\u5B66\u5458\u5728\u677F\u4E0A\u52A8,\u4E00\u6709\u65B0\u52A8\u9759\u5C31\u6253\u5370\u5E76\u7ED3\u675F \u2014\u2014 \u7ED3\u675F\u65F6\u4F60\u4F1A\u88AB\u81EA\u52A8\u5524\u9192,\u8BFB\u5B83\u7684\u8F93\u51FA\u3001\u7167\u5E38\u56DE\u5E94(\u5148 tb_get_board / tb_describe,\u5B66\u5458\u7684\u95EE\u9898\u7528 tb_reply \u7B54\u5728\u65C1\u8FB9),\u7136\u540E\u518D\u7528\u540E\u53F0\u65B9\u5F0F\u542F\u52A8\u540C\u4E00\u6761\u547D\u4EE4\u7EE7\u7EED\u76EF\u3002\u7B49\u5F85\u671F\u95F4\u4E0D\u82B1 token\u3002\u5B66\u5458\u8BF4\u300C\u522B\u76EF\u4E86\u300D\u5C31\u4E0D\u518D\u91CD\u542F\u3002\u4EC5 Claude Code(\u9700\u8981\u540E\u53F0\u4EFB\u52A1\u7ED3\u675F\u81EA\u52A8\u5524\u9192)\u3002",
       inputSchema: {
         maxMinutes: external_exports.number().int().min(1).max(240).optional().describe("\u6700\u591A\u76EF\u591A\u5C11\u5206\u949F,\u9ED8\u8BA4 30;\u5230\u65F6\u6CA1\u52A8\u9759\u547D\u4EE4\u81EA\u5DF1\u7ED3\u675F")
       }
     },
     async ({ maxMinutes }) => {
-      if (!d7.connected()) return textOut("\u8FD8\u6CA1\u8FDE\u4E0A teachboard;\u5148 /openlabs connect");
+      if (!d7.connected()) return textOut("\u8FD8\u6CA1\u8FDE\u4E0A OpenLabs Canvas;\u5148 /openlabs connect");
       const script = watchScriptPath(d7.serverFile);
       const cmd = `node ${shQuote(script)} --max-min ${maxMinutes ?? 30}`;
       return textOut(
@@ -85742,7 +85748,7 @@ function registerEventTools(server2, d7) {
           "",
           cmd,
           "",
-          "\u547D\u4EE4\u7ED3\u675F\u65F6\u4F60\u4F1A\u88AB\u5524\u9192:\u9000\u51FA\u7801 0 = \u5B66\u5458\u52A8\u4E86(stdout \u662F\u65B0\u52A8\u9759),\u7167\u5E38\u56DE\u5E94\u540E\u518D\u540E\u53F0\u542F\u52A8\u540C\u4E00\u6761\u547D\u4EE4;2 = \u5230\u65F6\u6CA1\u52A8\u9759,\u4E0D\u7528\u91CD\u542F,\u5B66\u5458\u56DE\u6765\u81EA\u7136\u4F1A\u8BF4;3 = \u6CA1\u8FDE\u4E0A teachboard\u3002\u4E0D\u8981\u7528\u524D\u53F0\u65B9\u5F0F\u8DD1\u5B83(\u4F1A\u5361\u4F4F\u5BF9\u8BDD)\u3002"
+          "\u547D\u4EE4\u7ED3\u675F\u65F6\u4F60\u4F1A\u88AB\u5524\u9192:\u9000\u51FA\u7801 0 = \u5B66\u5458\u52A8\u4E86(stdout \u662F\u65B0\u52A8\u9759),\u7167\u5E38\u56DE\u5E94\u540E\u518D\u540E\u53F0\u542F\u52A8\u540C\u4E00\u6761\u547D\u4EE4;2 = \u5230\u65F6\u6CA1\u52A8\u9759,\u4E0D\u7528\u91CD\u542F,\u5B66\u5458\u56DE\u6765\u81EA\u7136\u4F1A\u8BF4;3 = \u6CA1\u8FDE\u4E0A OpenLabs Canvas\u3002\u4E0D\u8981\u7528\u524D\u53F0\u65B9\u5F0F\u8DD1\u5B83(\u4F1A\u5361\u4F4F\u5BF9\u8BDD)\u3002"
         ].join("\n")
       );
     }
@@ -85755,6 +85761,19 @@ function noteSeenMany(r7) {
   const m5 = r7 && typeof r7 === "object" ? r7.eventsCursors : null;
   if (!m5 || typeof m5 !== "object") return;
   for (const [b6, c6] of Object.entries(m5)) if (/^[0-9a-f]{8}$/.test(b6)) seenStore.remember(b6, c6);
+}
+
+// src/teachboard/pages.ts
+var ROOT_PAGE_HOSTS = /* @__PURE__ */ new Set(["openlabs.live", "www.openlabs.live", "test.openlabs.live"]);
+function canvasUrl(base, query) {
+  const b6 = base.replace(/\/+$/, "");
+  let host = "";
+  try {
+    host = new URL(b6).hostname;
+  } catch {
+    host = "";
+  }
+  return `${b6}${ROOT_PAGE_HOSTS.has(host) ? "" : "/lab"}/canvas?${query}`;
 }
 
 // src/tools/teachboardEntity.ts
@@ -85791,7 +85810,7 @@ function changeField(c6) {
   return ks.length === 1 ? ks[0] : null;
 }
 function registerEntityTools(server2, d7) {
-  const boardUrl = (id) => `${d7.base}/lab/teachboard?board=${id}`;
+  const boardUrl = (id) => canvasUrl(d7.base, `board=${id}`);
   const call = (method, path6, body) => d7.client.call(method, path6, body, { agent: true });
   const pendingMsg = (e6) => {
     if (!(e6 instanceof TbError)) return null;
@@ -85830,7 +85849,7 @@ ${probs.map((x) => `- ${x}`).join("\n")}` : "";
   server2.registerTool(
     "tb_describe",
     {
-      title: "Describe teachboard entities",
+      title: "Describe OpenLabs Canvas entities",
       description: "\u8BFB\u4E00\u4E2A(\u6216\u51E0\u4E2A)\u5143\u7D20\u7684\u5B8C\u6574\u5185\u5BB9:\u6587\u5B57 / \u516C\u5F0F(ascii \u539F\u6587 + \u6E32\u67D3\u7528\u7684 latex)/ \u4EE3\u7801\u5168\u6587\u3001\u6240\u5728\u5E55\u3001\u8FDB\u51FA\u7684\u7BAD\u5934\u3001\u51E0\u4F55\u90BB\u5C45\u3001\u7528\u6237\u6700\u8FD1\u5BF9\u5B83\u7684\u6539\u52A8\u3002\u7528\u6237\u7C98\u4E86 tb:\u2026/E12 \u8FFD\u95EE\u3001\u6216\u6539\u4EE3\u7801\u524D,\u5148\u7528\u5B83\u770B\u6E05;tb_get_board \u53EA\u7ED9\u6458\u8981\u3002",
       inputSchema: {
         entities: external_exports.array(external_exports.string()).min(1).max(20).describe('\u5143\u7D20\u7F16\u53F7\u5217\u8868,\u5982 ["tb:1a2b3c4d/E12"]')
@@ -85870,7 +85889,7 @@ ${String(x[k7])}`);
   server2.registerTool(
     "tb_reply",
     {
-      title: "Reply next to a teachboard entity",
+      title: "Reply next to an OpenLabs Canvas entity",
       description: "\u5728\u67D0\u4E2A\u5143\u7D20\u65C1\u653E\u4E00\u4E2A\u56DE\u7B54\u65B9\u6846\u5E76\u753B\u7BAD\u5934\u6307\u5411\u5B83(items \u540C BoardSpec \u7684\u6761\u76EE:text / math / code / shape\u2026,\u89C1 tb_describe_schema)\u3002\u7528\u6237\u7C98\u5143\u7D20\u7F16\u53F7\u8FFD\u95EE\u3001\u6216\u5728\u677F\u4E0A\u5199\u4E86\u95EE\u9898 / \u505A\u4E86\u6807\u8BB0\u65F6\u7528;\u56DE\u7B54\u539F\u6587\u4E5F\u8981\u5728\u5BF9\u8BDD\u91CC\u7ED9\u4E00\u904D(\u4E24\u5904\u90FD\u7ED9)\u3002\u586B act = \u8FD9\u4E2A\u95EE\u9898\u5173\u4E8E\u54EA\u4E00\u5E55(\u6309\u95EE\u9898\u7684\u610F\u601D\u4ECE tb_get_board \u5217\u7684\u5E55 id \u91CC\u6311,\u4E0D\u6309\u4F4D\u7F6E):\u5BFC\u89C8\u6A21\u5F0F\u4F1A\u628A\u95EE\u9898\u548C\u56DE\u7B54\u63A5\u5728\u90A3\u4E00\u5E55\u4E4B\u540E\u64AD\u3002\u7ED3\u679C\u9996\u884C\u7ED9\u7528\u6237\u3002",
       inputSchema: {
         entity: external_exports.string().describe("\u88AB\u56DE\u7B54\u7684\u5143\u7D20\u7F16\u53F7 tb:<board>/E<n>"),
@@ -85899,7 +85918,7 @@ ${String(x[k7])}`);
   server2.registerTool(
     "tb_update",
     {
-      title: "Update teachboard entities",
+      title: "Update OpenLabs Canvas entities",
       description: "\u6539\u677F\u4E0A\u5DF2\u6709\u7684\u5143\u7D20,\u4E00\u6B21\u4E00\u6279:\u6BCF\u6761\u6539\u52A8\u53EA\u586B\u4E00\u4E2A\u5B57\u6BB5 \u2014\u2014 text(\u6587\u5B57)/ ascii(\u516C\u5F0F,AsciiMath,\u4F18\u5148\u7528\u5B83)/ latex(\u516C\u5F0F,AsciiMath \u5199\u4E0D\u51FA\u6765\u65F6\u624D\u7528)/ code(\u4EE3\u7801\u5757)/ label(\u5F62\u72B6\u6216\u7BAD\u5934\u7684\u6807\u7B7E)/ tone(\u5F62\u72B6\u914D\u8272 neutral|accent|warn|ok)\u3002\u6539\u4EE3\u7801\u540E\u53EF\u63A5 tb_run\u3002\u7528\u6237\u81EA\u5DF1\u6539\u8FC7\u7684\u5143\u7D20\u4F1A\u56DE conflicts,\u5148 tb_describe \u770B\u8FC7\u518D\u51B3\u5B9A\u3002\u7ED3\u679C\u9996\u884C\u7ED9\u7528\u6237\u3002",
       inputSchema: {
         boardId: external_exports.string().describe("\u677F id(8 \u4F4D hex)"),
@@ -85960,7 +85979,7 @@ ${conflicts.map((c6) => `- ${String(c6.entity ?? "")}:${why(c6.reason)}${typeof 
   server2.registerTool(
     "tb_delete",
     {
-      title: "Delete teachboard entities",
+      title: "Delete OpenLabs Canvas entities",
       description: "\u5220\u677F\u4E0A\u7684\u5143\u7D20(\u8FDE\u540C\u5B83\u7684\u6807\u7B7E\u548C\u6302\u5728\u5B83\u8EAB\u4E0A\u7684\u7BAD\u5934)\u3002reconnect:true \u65F6\u628A\u88AB\u5220\u8282\u70B9\u8FDB\u51FA\u7684\u7BAD\u5934\u63A5\u6210\u4E00\u6761\u3002\u5220\u4E4B\u524D\u786E\u8BA4\u7528\u6237\u771F\u7684\u8981\u5220\u3002\u7ED3\u679C\u9996\u884C\u7ED9\u7528\u6237\u3002",
       inputSchema: {
         boardId: external_exports.string().describe("\u677F id(8 \u4F4D hex)"),
@@ -85988,7 +86007,7 @@ ${gone.join(" ") || entities.join(" ")}(seq ${String(r7?.seq ?? "?")})`);
   server2.registerTool(
     "tb_set_acts",
     {
-      title: "Reorder teachboard acts",
+      title: "Reorder OpenLabs Canvas acts",
       description: "\u91CD\u6392\u5E55\u5E8F(order \u7ED9\u5168\u90E8\u5E55 id \u7684\u65B0\u987A\u5E8F;\u6F0F\u6389\u7684\u5E55\u6392\u5728\u6700\u540E)\u3002\u57FA\u4E8E\u5DF2\u5B58\u76D8\u7684\u5E55\u5E8F:\u7528\u6237\u5728\u6D4F\u89C8\u5668\u91CC\u8FD8\u6CA1\u4FDD\u5B58\u7684\u7FFB\u9875\u70B9\u6539\u52A8\u4F1A\u88AB\u8986\u76D6\u3002\u7ED3\u679C\u9996\u884C\u7ED9\u7528\u6237\u3002",
       inputSchema: {
         boardId: external_exports.string().describe("\u677F id(8 \u4F4D hex)"),
@@ -86099,7 +86118,7 @@ function registerProjectTools(server2, d7) {
   server2.registerTool(
     "tb_get_project",
     {
-      title: "Read a teachboard project (its chapters)",
+      title: "Read an OpenLabs Canvas project (its chapters)",
       description: "\u8BFB\u4E00\u4E2A\u9879\u76EE:\u677F\u5355\u9010\u7AE0\u72B6\u6001(\u5DF2\u5EFA / \u672A\u5EFA\u3001\u677F id\u3001\u5B66\u5458\u5199\u4E86\u591A\u5C11)\u3001\u5B66\u5458\u73B0\u5728\u5728\u7B2C\u51E0\u7AE0\u3001\u4E0B\u4E00\u7AE0\u8BE5\u5EFA\u54EA\u4E00\u7AE0\u3002\u5EFA\u4E0B\u4E00\u7AE0\u4E4B\u524D\u5148\u8C03\u5B83\u3002",
       inputSchema: { projectId: external_exports.string().describe("\u9879\u76EE id(8 \u4F4D\u5341\u516D\u8FDB\u5236,tb_create_project / tb_list_boards \u7ED9\u7684)") }
     },
@@ -86126,7 +86145,7 @@ ${renderPlan(r7)}${tail}`);
   server2.registerTool(
     "tb_plan_project",
     {
-      title: "Change a teachboard project's chapter plan",
+      title: "Change an OpenLabs Canvas project's chapter plan",
       description: "\u6539\u9879\u76EE\u7684\u677F\u5355:append \u5728\u672B\u5C3E\u52A0\u65B0\u7AE0\u8282(\u5B66\u5458\u8FFD\u95EE\u51FA\u5168\u65B0\u8BDD\u9898\u65F6)\u3001order \u7ED9\u5168\u90E8 slot \u7684\u65B0\u987A\u5E8F\u3001retitle \u6539\u672A\u5EFA\u7AE0\u8282\u7684\u6807\u9898 / \u76EE\u6807\u3001remove \u5220\u672A\u5EFA\u7684\u7AE0\u8282(\u5DF2\u5EFA\u7684\u4E0D\u80FD\u5220)\u3002\u5757\u5185\u8FFD\u95EE\u4E0D\u8981\u52A0\u7AE0\u8282,\u7528 tb_reply \u7B54\u5728\u65C1\u8FB9\u3002",
       inputSchema: {
         projectId: external_exports.string().describe("\u9879\u76EE id"),
@@ -86346,8 +86365,8 @@ function registerTeachboardTools(rawServer, deps = {}) {
   server2.registerTool(
     "tb_connect",
     {
-      title: "Connect teachboard",
-      description: "\u8FDE\u63A5\u7528\u6237\u7684 teachboard \u8D26\u6237:\u6253\u5F00\u6D4F\u89C8\u5668\u8BA9\u7528\u6237\u70B9\u300C\u8FDE\u63A5\u300D\u6388\u6743(\u50CF\u8FDE Stripe),\u65E0\u9700\u590D\u5236\u4EFB\u4F55 token\u3002\u5DF2\u8FDE\u63A5\u5219\u76F4\u63A5\u8FD4\u56DE\u3002\u7B2C\u4E00\u6B21\u8C03\u7528\u7ACB\u523B\u8FD4\u56DE\u77ED\u7801\u548C\u94FE\u63A5:\u5148\u628A\u77ED\u7801\u539F\u6837\u544A\u8BC9\u7528\u6237(\u6388\u6743\u9875\u4F1A\u8BF7\u7528\u6237\u6838\u5BF9\u5B83),\u7136\u540E\u9A6C\u4E0A\u518D\u8C03\u4E00\u6B21,\u7B2C\u4E8C\u6B21\u4F1A\u7B49\u7528\u6237\u70B9\u5B8C(\u6700\u591A 50 \u79D2)\u3002",
+      title: "Connect OpenLabs Canvas",
+      description: "\u8FDE\u63A5\u7528\u6237\u7684 OpenLabs Canvas \u8D26\u6237:\u6253\u5F00\u6D4F\u89C8\u5668\u8BA9\u7528\u6237\u70B9\u300C\u8FDE\u63A5\u300D\u6388\u6743(\u50CF\u8FDE Stripe),\u65E0\u9700\u590D\u5236\u4EFB\u4F55 token\u3002\u5DF2\u8FDE\u63A5\u5219\u76F4\u63A5\u8FD4\u56DE\u3002\u7B2C\u4E00\u6B21\u8C03\u7528\u7ACB\u523B\u8FD4\u56DE\u77ED\u7801\u548C\u94FE\u63A5:\u5148\u628A\u77ED\u7801\u539F\u6837\u544A\u8BC9\u7528\u6237(\u6388\u6743\u9875\u4F1A\u8BF7\u7528\u6237\u6838\u5BF9\u5B83),\u7136\u540E\u9A6C\u4E0A\u518D\u8C03\u4E00\u6B21,\u7B2C\u4E8C\u6B21\u4F1A\u7B49\u7528\u6237\u70B9\u5B8C(\u6700\u591A 50 \u79D2)\u3002",
       inputSchema: {}
     },
     async () => {
@@ -86433,7 +86452,7 @@ function ago(iso, now) {
 }
 var RUN_HINT = "\u5168\u90E8\u5E55\u5B8C\u6210\u540E:\u4E00\u53E5\u8BDD\u603B\u7ED3 + \u677F\u94FE\u63A5 + \u300C\u8BF4\u300E\u8DD1\u4E00\u4E0B E12\u300F\u6211\u5C31\u5728\u73AF\u5883\u91CC\u8DD1\u300D(E12 \u6362\u6210\u5B9E\u9645\u7684\u3001\u5199\u4E86 env \u7684\u4EE3\u7801\u5757\u7F16\u53F7;\u53EA\u6709\u5E26 env \u7684\u5757 agent \u624D\u80FD\u8DD1,\u6CA1\u6709\u5C31\u4E0D\u8BF4\u8FD9\u53E5)\u3002";
 function registerBoardTools(server2, d7) {
-  const boardUrl = (id) => `${d7.base}/lab/teachboard?board=${id}`;
+  const boardUrl = (id) => canvasUrl(d7.base, `board=${id}`);
   const call = (method, path6, body) => d7.client.call(method, path6, body, { agent: true });
   const boardLang = /* @__PURE__ */ new Map();
   const boardActs = /* @__PURE__ */ new Map();
@@ -86479,8 +86498,8 @@ ${refLines.join("\n")}` + problemsBlock2(r7.problems);
   server2.registerTool(
     "tb_describe_schema",
     {
-      title: "teachboard board spec",
-      description: "\u8FD4\u56DE teachboard \u677F\u7684\u5143\u7D20\u5951\u7EA6(BoardSpec:item \u79CD\u7C7B\u4E0E\u5B57\u6BB5\u3001edges\u3001layout\u3001group\u3001defaultEnv\u3001code \u7684 env / run:{path,region,cmd}\u3001\u4E0A\u9650)+ \u4E2D\u82F1\u793A\u4F8B + \u6559\u6CD5\u4E0E\u5DE5\u4F5C\u65B9\u5F0F\u3002\u5EFA\u677F\u524D\u5148\u8BFB\u4E00\u6B21\u3002 " + BOARD_LANG_RULE,
+      title: "OpenLabs Canvas board spec",
+      description: "\u8FD4\u56DE OpenLabs Canvas \u677F\u7684\u5143\u7D20\u5951\u7EA6(BoardSpec:item \u79CD\u7C7B\u4E0E\u5B57\u6BB5\u3001edges\u3001layout\u3001group\u3001defaultEnv\u3001code \u7684 env / run:{path,region,cmd}\u3001\u4E0A\u9650)+ \u4E2D\u82F1\u793A\u4F8B + \u6559\u6CD5\u4E0E\u5DE5\u4F5C\u65B9\u5F0F\u3002\u5EFA\u677F\u524D\u5148\u8BFB\u4E00\u6B21\u3002 " + BOARD_LANG_RULE,
       inputSchema: { lang: external_exports.enum(["zh", "en"]).optional().describe("Guide language / \u8BF4\u660E\u6587\u5B57\u7684\u8BED\u8A00;pass the user's language / \u4F20\u7528\u6237\u7684\u8BED\u8A00;omitted \u2192 English guide + note") }
     },
     async ({ lang }) => textOut4(
@@ -86490,8 +86509,8 @@ ${refLines.join("\n")}` + problemsBlock2(r7.problems);
   server2.registerTool(
     "tb_list_boards",
     {
-      title: "List teachboard boards",
-      description: "\u5217\u51FA\u7528\u6237\u7684 teachboard \u677F:id\u3001\u6807\u9898\u3001\u5143\u7D20\u6570\u3001\u5F85\u5728\u6D4F\u89C8\u5668\u843D\u5730\u7684\u6B65\u6570\u3001\u6700\u8FD1\u66F4\u65B0\u3002",
+      title: "List OpenLabs Canvas boards",
+      description: "\u5217\u51FA\u7528\u6237\u7684 OpenLabs Canvas \u677F:id\u3001\u6807\u9898\u3001\u5143\u7D20\u6570\u3001\u5F85\u5728\u6D4F\u89C8\u5668\u843D\u5730\u7684\u6B65\u6570\u3001\u6700\u8FD1\u66F4\u65B0\u3002",
       inputSchema: {}
     },
     async () => {
@@ -86531,7 +86550,7 @@ ${refLines.join("\n")}` + problemsBlock2(r7.problems);
   server2.registerTool(
     "tb_create_board",
     {
-      title: "Create a teachboard board",
+      title: "Create an OpenLabs Canvas board",
       description: '\u6309 BoardSpec \u5EFA\u4E00\u5757\u65B0\u677F(\u5951\u7EA6\u89C1 tb_describe_schema)\u3002**\u53EA\u5728\u548C\u5B66\u5458\u6838\u5BF9\u8FC7\u5B66\u4E60\u8DEF\u5F84\u4E4B\u540E\u624D\u8C03**(\u76EE\u6807 / \u80CC\u666F / \u53C2\u8003\u5148\u5BF9\u9F50,\u5B66\u5458\u786E\u8BA4\u540E\u518D\u5EFA;\u6838\u5BF9\u8FC7\u7684\u5185\u5BB9\u653E spec.brief)\u3002\u603B\u5171 \u22643 \u5E55\u624D\u4E00\u6B21\u5EFA\u5B8C;\u66F4\u591A\u5E55\u65F6\u53EA\u653E\u7B2C\u4E00\u5E55,\u4E4B\u540E\u4E00\u5E55\u4E00\u6B21 tb_add_act\u3002\u4F5C\u4E1A\u4EE3\u7801\u5757\u53EA\u653E\u533A\u6BB5(run:{path,region},\u4E00\u4E2A kernel \u4E00\u5757,\u22644000 \u5B57\u7B26,\u8D85\u957F\u6574\u5757\u53D8\u63D0\u793A);env / defaultEnv \u5FC5\u987B\u6765\u81EA tb_list_envs\u3002\u5EFA\u677F\u65F6\u8BBE\u7684 defaultEnv \u4F1A\u5E26\u5230\u4E4B\u540E\u7684 tb_add_act;\u53EA\u6709\u7ED1\u4E86 env \u7684\u4EE3\u7801\u5757 agent \u624D\u80FD\u8FDC\u7A0B\u8DD1\u3002\u4EE3\u7801\u5757\u53EF\u5E26 recipe:"<\u914D\u65B9id>"(\u9700\u8981 env,\u914D\u65B9\u57FA\u7840\u73AF\u5883\u987B\u4E0E\u5757 env \u76F8\u540C)\u3002\u7ED3\u679C\u9996\u884C\u8D77\u662F\u6BCF\u5E55\u8FDB\u5EA6\u884C(\u539F\u6837\u8F6C\u7ED9\u7528\u6237);problems \u975E\u7A7A\u8981\u8BFB\u5E76\u5728\u4E0B\u4E00\u5E55\u4FEE\u6B63\u3002 ' + BOARD_LANG_RULE,
       inputSchema: {
         spec: external_exports.record(external_exports.string(), external_exports.unknown()).describe("BoardSpec:{title, lang?, defaultEnv?, brief?:{goal,background?,references?,path?}, acts:[{id,title,items,edges?,layout?,play?}]}"),
@@ -86568,7 +86587,7 @@ ${RUN_HINT}`);
   server2.registerTool(
     "tb_create_project",
     {
-      title: "Create a teachboard project (ordered boards) with its first board",
+      title: "Create an OpenLabs Canvas project (ordered boards) with its first board",
       description: "\u65B0\u4E3B\u9898\u90FD\u4ECE\u8FD9\u91CC\u5F00\u59CB:\u5EFA\u4E00\u4E2A\u9879\u76EE(\u4E00\u4E2A\u4E3B\u9898\u4E00\u4E2A\u9879\u76EE),\u7ED9\u51FA\u677F\u5355(\u6309\u5B66\u4E60\u987A\u5E8F,1\u201312 \u7AE0,\u6BCF\u7AE0 title + \u4E00\u53E5\u8BDD goal),\u540C\u65F6\u5EFA\u597D\u7B2C 1 \u7AE0\u7684\u677F(spec \u540C tb_create_board \u7684 BoardSpec,\u7B2C\u4E00\u5E55\u662F\u6574\u4E2A\u9879\u76EE\u7684\u5730\u56FE)\u3002\u53EA\u5728\u548C\u5B66\u5458\u6838\u5BF9\u8FC7\u5B66\u4E60\u8DEF\u5F84\u4E4B\u540E\u624D\u8C03\u3002\u53EA\u5EFA\u7B2C 1 \u7AE0,\u4E4B\u540E\u505C\u4E0B:\u5B66\u5458\u8BF7\u6C42\u4E0B\u4E00\u7AE0(\u677F\u4E0A\u52A8\u9759\u91CC\u7684\u300C\u8BF7\u6C42\u5EFA\u7B2C n \u7AE0\u300D)\u6216\u8BF4\u300C\u7EE7\u7EED\u300D\u65F6,\u518D tb_create_board({projectId, slot, spec})\u3002\u7ED3\u679C\u9996\u884C\u8D77\u662F\u7B2C 1 \u7AE0\u6BCF\u5E55\u7684\u8FDB\u5EA6\u884C(\u539F\u6837\u8F6C\u7ED9\u7528\u6237)\u3002 " + BOARD_LANG_RULE,
       inputSchema: {
         title: external_exports.string().min(1).max(60).describe("\u9879\u76EE\u6807\u9898(\u8FD9\u4E2A\u4E3B\u9898)"),
@@ -86605,7 +86624,7 @@ ${RUN_HINT}`
   server2.registerTool(
     "tb_add_act",
     {
-      title: "Add one act to a teachboard board",
+      title: "Add one act to an OpenLabs Canvas board",
       description: '\u7ED9\u5DF2\u6709\u7684\u677F\u8FFD\u52A0\u4E00\u5E55(\u4E00\u5E55\u4E00\u6B21\u8C03\u7528)\u3002act \u7ED3\u6784\u540C BoardSpec \u91CC\u7684 Act(\u89C1 tb_describe_schema)\u3002\u4F5C\u4E1A\u4EE3\u7801\u5757\u53EA\u653E\u533A\u6BB5(run:{path,region},\u4E00\u4E2A kernel \u4E00\u5757,\u22644000 \u5B57\u7B26,\u8D85\u957F\u6574\u5757\u53D8\u63D0\u793A);env \u5FC5\u987B\u6765\u81EA tb_list_envs\u3002\u5EFA\u677F\u65F6\u7684 defaultEnv \u4F1A\u5E26\u5230\u672C\u5E55\u7684 code \u5757;\u53EA\u6709\u7ED1\u4E86 env \u7684\u4EE3\u7801\u5757 agent \u624D\u80FD\u8FDC\u7A0B\u8DD1;code \u5757\u53EF\u5E26 recipe:"<\u914D\u65B9id>"(\u9700\u8981 env,\u914D\u65B9\u57FA\u7840\u73AF\u5883\u987B\u4E0E\u5757 env \u76F8\u540C)\u3002edges \u53EF\u4EE5\u5F15\u7528\u66F4\u65E9\u5E55\u91CC\u7684\u6761\u76EE id(\u8DE8\u5E55\u7BAD\u5934;\u627E\u4E0D\u5230\u7684 id \u88AB\u4E22\u5F03\u5E76\u5199\u8FDB problems,\u672C\u5E55\u540C\u540D\u6761\u76EE\u4F18\u5148)\u3002act.id \u6574\u5757\u677F\u5185\u552F\u4E00\u3002\u4F20 index/total \u8BA9\u8FDB\u5EA6\u884C\u663E\u793A\u300C\u7B2C 3/7 \u5E55\u300D\u3002\u7ED3\u679C\u9996\u884C\u662F\u8FDB\u5EA6\u884C(\u539F\u6837\u8F6C\u7ED9\u7528\u6237);problems \u975E\u7A7A\u8981\u8BFB\u5E76\u4FEE\u6B63\u540E\u518D\u52A0\u4E0B\u4E00\u5E55\u3002 ' + BOARD_LANG_RULE,
       inputSchema: {
         boardId: external_exports.string().describe("\u677F id(8 \u4F4D hex,tb_create_board / tb_list_boards \u7ED9\u7684)"),
@@ -86663,7 +86682,7 @@ ${RUN_HINT}`
   server2.registerTool(
     "tb_get_board",
     {
-      title: "Read a teachboard board",
+      title: "Read an OpenLabs Canvas board",
       description: "\u8BFB\u4E00\u5757\u677F\u7684\u6458\u8981:\u6BCF\u5E55\u7684\u6761\u76EE(\u7F16\u53F7\u3001\u79CD\u7C7B\u3001\u524D 80 \u5B57)\u3001\u5F85\u843D\u5730\u6B65\u6570\u3002full=true \u65F6\u9644\u6BCF\u5E55\u7684\u5143\u7D20 id\u3002",
       inputSchema: {
         boardId: external_exports.string().describe("\u677F id(8 \u4F4D hex)"),
@@ -86780,7 +86799,7 @@ function registerEnvTools(server2, d7) {
   server2.registerTool(
     "tb_list_envs",
     {
-      title: "List teachboard environments",
+      title: "List OpenLabs Canvas environments",
       description: "\u5217\u51FA\u53EF\u7528\u7684\u4E91\u7AEF\u8FD0\u884C\u73AF\u5883(id\u3001GPU\u3001\u514D\u8D39/\u4ED8\u8D39\u3001\u72B6\u6001\u3001\u7ED9\u5B66\u4E60\u8005\u7684\u5EFA\u8BAE\u3001\u8BC4\u5206\u4EFB\u52A1\u4E0E\u8981\u5EFA\u7684\u533A\u6BB5\u5757),\u4EE5\u53CA\u4F60\u81EA\u5DF1\u5EFA\u7684\u300C\u6211\u7684\u73AF\u5883\u300D\u3002\u5199\u4EE3\u7801\u524D\u5148\u9009 env;\u73B0\u6210\u7684\u4E0D\u591F\u7528\u518D\u7528 tb_env_customize \u5EFA\u3002",
       inputSchema: {}
     },
@@ -86838,10 +86857,62 @@ function registerEnvTools(server2, d7) {
       }
     }
   );
+  const COURSE_ID_RE = /^[a-z0-9][a-z0-9-]{1,62}$/;
+  server2.registerTool(
+    "tb_find_existing",
+    {
+      title: "Find existing courses, environments and boards",
+      description: '\u5EFA\u73AF\u5883 / \u8BFE\u7A0B(\u9879\u76EE)/ \u677F\u4E4B\u524D\u5148\u8C03\u5B83(Marvin 1013\u300C\u5148\u7528\u73B0\u6210\u7684\u300D):\u6309\u5173\u952E\u8BCD\u5728\u5B98\u65B9\u8BFE\u7A0B\u3001\u73AF\u5883\u76EE\u5F55\u3001\u5B66\u5458\u81EA\u5DF1\u7684\u914D\u65B9\u548C\u9879\u76EE / \u677F\u91CC\u627E\u73B0\u6210\u7684,\u7ED3\u679C\u5E26\u300C\u4E3A\u4EC0\u4E48\u76F8\u5173\u300D\u548C\u300C\u600E\u4E48\u7528\u300D(\u76F4\u63A5\u5B66\u7684\u94FE\u63A5\u3001\u73AF\u5883 id\u3001\u914D\u65B9 id\u3001\u9879\u76EE\u94FE\u63A5)\u3002\u7ED9 3\u20136 \u4E2A\u5173\u952E\u8BCD,\u4E2D\u82F1\u6587\u90FD\u7ED9(\u5982 ["\u6CE8\u610F\u529B","attention","transformer"])\u3002\u62FF\u5230\u7ED3\u679C\u6309\u5DE5\u5177\u8FD4\u56DE\u672B\u5C3E\u7684\u63D0\u793A\u7ED9\u5B66\u5458\u65B9\u6848\u3001\u7531\u5B66\u5458\u9009\u3002',
+      inputSchema: {
+        query: external_exports.array(external_exports.string().min(1).max(40)).min(1).max(8).describe("\u5173\u952E\u8BCD,\u4E2D\u82F1\u6587\u90FD\u7ED9,3\u20136 \u4E2A\u6700\u597D"),
+        kinds: external_exports.array(external_exports.enum(["course", "env", "recipe", "project"])).max(4).optional().describe("\u53EA\u67E5\u8FD9\u51E0\u7C7B;\u7F3A\u7701\u5168\u67E5"),
+        limit: external_exports.number().int().min(1).max(10).optional().describe("\u6BCF\u7C7B\u6700\u591A\u51E0\u6761,\u7F3A\u7701 5"),
+        lang: external_exports.enum(["zh", "en"]).optional().describe("\u8FD4\u56DE\u6587\u5B57\u7684\u8BED\u8A00,\u7F3A\u7701 zh")
+      }
+    },
+    async ({ query, kinds, limit: limit2, lang }) => {
+      const sp = new URLSearchParams();
+      for (const q2 of query) sp.append("q", q2);
+      if (kinds?.length) sp.set("kinds", kinds.join(","));
+      if (limit2) sp.set("limit", String(limit2));
+      sp.set("lang", lang ?? "zh");
+      try {
+        const r7 = await call("GET", `agent/find?${sp.toString()}`);
+        return textOut4(typeof r7.text === "string" ? r7.text : "\u6CA1\u6709\u62FF\u5230\u7ED3\u679C,\u7A0D\u540E\u518D\u8BD5");
+      } catch (e6) {
+        return textOut4(envHuman(e6));
+      }
+    }
+  );
+  server2.registerTool(
+    "tb_get_course",
+    {
+      title: "Read an existing course (outline or one chapter)",
+      description: "\u8BFB\u4E00\u95E8\u73B0\u6210\u8BFE\u7A0B(tb_find_existing \u627E\u5230\u7684\u8BFE\u7A0B id):\u4E0D\u5E26 chapter = \u5927\u7EB2(\u6BCF\u7AE0\u76EE\u6807\u3001\u662F\u5426\u4E0A\u7EBF\u3001\u8BFE\u7A0B\u7528\u7684\u73AF\u5883\u3001\u53C2\u8003\u8D44\u6599\u3001\u76F4\u63A5\u5B66\u7684\u94FE\u63A5);\u5E26 chapter = \u90A3\u4E00\u7AE0\u7684\u5185\u5BB9\u6458\u8981\u548C\u5B8C\u6574\u4EE3\u7801\u5757,\u4F9B\u6539\u7F16\u7EC4\u5408\u65F6\u53D6\u6750\u3002\u6539\u7F16\u65F6\u5728 brief.references \u5199\u660E\u300C\u6539\u7F16\u81EA <\u8BFE\u7A0B\u540D> \u7B2C n \u7AE0\u300D\u3002",
+      inputSchema: {
+        id: external_exports.string().describe("\u8BFE\u7A0B id(tb_find_existing \u7ED9\u7684)"),
+        chapter: external_exports.number().int().min(1).max(99).optional().describe("\u7AE0\u53F7(slot);\u7F3A\u7701\u53EA\u8BFB\u5927\u7EB2"),
+        lang: external_exports.enum(["zh", "en"]).optional().describe("\u8FD4\u56DE\u6587\u5B57\u7684\u8BED\u8A00,\u7F3A\u7701 zh")
+      }
+    },
+    async ({ id, chapter, lang }) => {
+      if (!COURSE_ID_RE.test(id)) return textOut4("\u8BFE\u7A0B id \u4E0D\u5408\u6CD5(\u7528 tb_find_existing \u67E5)");
+      const sp = new URLSearchParams();
+      if (chapter) sp.set("chapter", String(chapter));
+      sp.set("lang", lang ?? "zh");
+      try {
+        const r7 = await call("GET", `agent/courses/${id}?${sp.toString()}`);
+        return textOut4(typeof r7.text === "string" ? r7.text : "\u6CA1\u6709\u62FF\u5230\u8BFE\u7A0B\u5185\u5BB9,\u7A0D\u540E\u518D\u8BD5");
+      } catch (e6) {
+        if (e6 instanceof TbError && e6.status === 404) return textOut4(e6.data?.error === "no_chapter" ? "\u8FD9\u95E8\u8BFE\u6CA1\u6709\u8FD9\u4E00\u7AE0(\u5148\u4E0D\u5E26 chapter \u8BFB\u5927\u7EB2)" : "\u6CA1\u6709\u8FD9\u95E8\u8BFE(\u6216\u8FD8\u6CA1\u4E0A\u7EBF);\u7528 tb_find_existing \u67E5");
+        return textOut4(envHuman(e6));
+      }
+    }
+  );
   server2.registerTool(
     "tb_env_session",
     {
-      title: "teachboard environment session",
+      title: "OpenLabs Canvas environment session",
       description: "\u67E5\u770B / \u9884\u70ED / \u505C\u6B62\u4E00\u4E2A\u73AF\u5883\u7684\u4F1A\u8BDD\u3002status=\u67E5\u72B6\u6001;warm=\u5F00\u673A\u5E76\u7B49\u5230 ready(\u6700\u591A\u7EA6 50 \u79D2,\u4ECD\u5728\u51C6\u5907\u4F1A\u544A\u77E5);stop=\u5173\u673A\u505C\u6B62\u8BA1\u8D39\u3002\u7ED3\u679C\u5E26\u5DF2\u82B1\u8D39\u4E0E\u5269\u4F59\u989D\u5EA6\u3002GPU \u540C\u65F6\u53EA\u80FD\u5F00\u4E00\u53F0\u3002",
       inputSchema: {
         env: external_exports.string().describe("\u73AF\u5883 id(\u89C1 tb_list_envs)"),
@@ -86851,7 +86922,12 @@ function registerEnvTools(server2, d7) {
     async ({ env: env3, action }, extra) => {
       if (!/^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$/.test(env3)) return textOut4("\u73AF\u5883 id \u4E0D\u5408\u6CD5(\u7528 tb_list_envs \u67E5)");
       const path6 = `envs/${encodeURIComponent(env3)}/session`;
-      const money = (s) => `\u5DF2\u82B1 ${usd(s.spentUsd)} \xB7 \u5269\u4F59 ${usd(s.remainingUsd)}`;
+      const money = (s) => typeof s.windowDays === "number" ? `${typeof s.sessionUsd === "number" ? `\u672C\u6B21 ${usd(s.sessionUsd)} \xB7 ` : ""}\u8FD1 ${s.windowDays} \u5929\u5DF2\u82B1 ${usd(s.spentUsd)} \xB7 \u5269\u4F59 ${usd(s.remainingUsd)}` : `\u5DF2\u82B1 ${usd(s.spentUsd)} \xB7 \u5269\u4F59 ${usd(s.remainingUsd)}`;
+      const installing = (s) => s.setup?.state === "running" ? (s.setup.message ?? "").replace(/\s+/g, " ").trim() || "\u5B89\u88C5\u4E2D" : null;
+      const readyLine = (s) => {
+        const msg = installing(s);
+        return msg ? `${env3} \u673A\u5668\u5DF2\u5F00,\u6B63\u5728\u81EA\u52A8\u5B89\u88C5:${msg};\u73B0\u5728\u8DD1\u4EE3\u7801\u4F1A\u81EA\u52A8\u7B49\u5B89\u88C5\u5B8C \xB7 ${money(s)}` : `${env3} \u5DF2\u5C31\u7EEA \xB7 ${money(s)}`;
+      };
       const token = extra?._meta?.progressToken;
       let n2 = 0;
       const progress = async (msg) => {
@@ -86872,15 +86948,16 @@ function registerEnvTools(server2, d7) {
         if (action === "status") {
           const s2 = await call("GET", path6);
           await progress(`${env3}: ${String(s2.state)}`);
-          return textOut4(`${env3} \u72B6\u6001 ${String(s2.state)}${s2.secondsLive ? ` \xB7 \u5DF2\u8FD0\u884C ${s2.secondsLive} \u79D2` : ""} \xB7 ${money(s2)}`);
+          const msg = s2.state === "ready" ? installing(s2) : null;
+          return textOut4(`${env3} \u72B6\u6001 ${String(s2.state)}${s2.secondsLive ? ` \xB7 \u5DF2\u8FD0\u884C ${s2.secondsLive} \u79D2` : ""}${msg ? ` \xB7 \u6B63\u5728\u81EA\u52A8\u5B89\u88C5:${msg}` : ""} \xB7 ${money(s2)}`);
         }
         let s = await call("POST", path6);
-        if (s.state === "ready") return textOut4(`${env3} \u5DF2\u5C31\u7EEA \xB7 ${money(s)}`);
+        if (s.state === "ready") return textOut4(readyLine(s));
         for (let waited = 0; waited < WARM_MAX_MS; waited += WARM_POLL_MS) {
           await d7.sleep(WARM_POLL_MS);
           s = await call("GET", path6);
           await progress(`${env3}: ${String(s.state)}${s.etaSec != null ? `,\u7EA6 ${s.etaSec} \u79D2` : ""}`);
-          if (s.state === "ready") return textOut4(`${env3} \u5DF2\u5C31\u7EEA \xB7 ${money(s)}`);
+          if (s.state === "ready") return textOut4(readyLine(s));
           if (s.state === "cold" || s.state === "stopping") {
             return textOut4(`\u73AF\u5883\u88AB\u505C\u6389\u4E86(state=${s.state}),\u9700\u8981\u7684\u8BDD\u518D warm \u4E00\u6B21 \xB7 ${money(s)}`);
           }
@@ -86900,9 +86977,9 @@ var ENTITY_REF_RE2 = /^tb:([0-9a-f]{8})\/(E\d+)$/;
 var BIND_PENDING_RETRIES = 3;
 var APT_RE = /^[a-z0-9][a-z0-9+.-]{0,99}$/;
 function envProposalUrl(base, id, board) {
-  return `${base.replace(/\/+$/, "")}/lab/teachboard?${board ? `board=${board}&` : ""}envProposal=${encodeURIComponent(id)}`;
+  return canvasUrl(base, `${board ? `board=${board}&` : ""}envProposal=${encodeURIComponent(id)}`);
 }
-var CUSTOMIZE_DESC = "\u5728\u4E00\u4E2A\u5E95\u5EA7\u73AF\u5883\u4E0A\u5EFA\u300C\u6211\u7684\u73AF\u5883\u300D(\u73AF\u5883\u914D\u65B9):\u52A0 Debian \u7CFB\u7EDF\u5305(apt)\u548C / \u6216 Python \u5305(add),\u53EF\u9644\u547D\u4EE4\u3002\u24EA \u89C4\u77E9(\u8BBE\u8BA1 \xA72):\u7528\u6237\u8BF4\u300C\u6211\u60F3\u5EFA\u4E2A X \u73AF\u5883\u300D\u300C\u6211\u60F3\u505A Y \u5B9E\u9A8C\u300D\u4E5F\u8D70\u8FD9\u91CC \u2014\u2014 \u5148\u4ECE\u76EE\u6807\u63A8\u65AD\u8981\u8DD1\u4EC0\u4E48\u3001\u8981\u54EA\u4E9B\u5E93 / \u7CFB\u7EDF\u5DE5\u5177 / \u663E\u5361;\u5148\u7528 tb_list_envs \u627E\u73B0\u6210\u7684(runtime.libs\u3001GPU\u3001tags \u80FD\u6EE1\u8DB3\u5C31\u63A8\u8350\u5B83,\u4E0D\u5EFA);\u5DEE\u4E00\u70B9\u624D\u5217\u65B9\u6848:\u5E95\u5EA7\u3001apt \u5305\u3001pip \u5305\u3001\u547D\u4EE4\u3001\u9A8C\u8BC1\u9884\u8BA1\u65F6\u957F(\u7CFB\u7EDF\u5305\u901A\u5E38\u5341\u51E0\u79D2\u5230\u51E0\u5206\u949F)\u548C\u8D39\u7528(\u6309\u5E95\u5EA7\u6BCF\u5C0F\u65F6\u4EF7),\u5B9A\u597D\u65B9\u6848\u540E\u8C03\u672C\u5DE5\u5177:\u5B83**\u4E0D\u4F1A\u81EA\u5DF1\u5EFA**,\u53EA\u8FD4\u56DE\u4E00\u6761\u786E\u8BA4\u94FE\u63A5 \u2014\u2014 \u628A\u94FE\u63A5\u7ED9\u7528\u6237,\u7528\u6237\u5728\u6D4F\u89C8\u5668\u91CC\u70B9\u300C\u5EFA\u8FD9\u4E2A\u73AF\u5883\u300D\u624D\u771F\u6B63\u63D0\u4EA4(\u82B1\u7684\u662F\u7528\u6237\u7684\u73AF\u5883\u989D\u5EA6,\u540C\u610F\u5FC5\u987B\u662F\u7528\u6237\u4EB2\u624B\u70B9)\u3002\u7528\u6237\u8BF4\u70B9\u597D\u4E86 \u2192 \u7528 tb_env_recipes \u67E5\u72B6\u6001\u3001\u76EF\u9A8C\u8BC1;\u5931\u8D25\u8BFB verifyLog \u6539\u6E05\u5355\u3001\u518D\u51FA\u4E00\u6761\u65B0\u94FE\u63A5,\u6700\u591A 3 \u8F6E,\u8FD8\u4E0D\u884C\u5C31\u505C\u4E0B\u8BF4\u660E\u5361\u70B9\u3002tb_run \u62A5 missingModule \u65F6\u4E5F\u8D70\u8FD9\u6761:\u51FA\u94FE\u63A5\u8BF7\u7528\u6237\u70B9\u3002\u2460 \u4EE3\u7801\u8DD1\u5728 teachboard \u4E91\u7AEF\u73AF\u5883\u91CC,\u4E0D\u5728\u7528\u6237\u7684\u7535\u8111\u4E0A:\u7F3A Python \u5305\u5FC5\u987B\u7528\u672C\u5DE5\u5177\u52A0,\u7EDD\u4E0D\u8981\u5728\u672C\u673A pip / uv / conda install\u3002\u2461 \u4F55\u65F6\u7528:\u7528\u6237\u8BF4\u300C\u5728 X \u73AF\u5883\u91CC\u88C5 / \u52A0 Y\u300D,\u6216 tb_run \u7684\u7ED3\u679C\u91CC\u6709 missingModule / ModuleNotFoundError\u2014\u2014\u540E\u8005\u76F4\u63A5\u88C5,\u4E0D\u7528\u5148\u95EE\u7528\u6237\u3002\u2462 \u53C2\u6570:env = \u5E95\u5EA7\u73AF\u5883 id(\u4EE3\u7801\u5757\u7ED1\u5B9A\u7684\u90A3\u4E2A);apt = Debian \u5305\u540D(\u4E0D\u5E26\u7248\u672C\u548C\u6E90,\u226430,\u5982 cmake\u3001libopenmpi-dev);add = PyPI \u5305\u540D(\u53EF\u5E26\u7248\u672C\u7EA6\u675F,\u226430);apt \u548C add \u81F3\u5C11\u7ED9\u4E00\u4E2A\u3002import \u540D\u548C\u5305\u540D\u4E0D\u4E00\u6837\u65F6\u7528\u5305\u540D(cv2\u2192opencv-python\u3001sklearn\u2192scikit-learn\u3001PIL\u2192Pillow),\u4F18\u5148\u7528 missingModule.package;\u4F20 entity(tb:<\u677F id>/E<n>)\u65F6\u94FE\u63A5\u4F1A\u6253\u5F00\u90A3\u5757\u677F;\u9A8C\u8BC1\u901A\u8FC7\u540E\u7528 tb_bind_recipe \u628A\u914D\u65B9\u7ED1\u5230\u90A3\u4E2A\u4EE3\u7801\u5757\u3002\u2463 \u7528\u6237\u70B9\u4E86\u4E4B\u540E:\u9A8C\u8BC1\u8981 10 \u79D2\u5230\u51E0\u5206\u949F,\u7528 tb_env_recipes \u67E5;ready \u540E\u7528\u8BE5 recipe \u91CD\u65B0 tb_run(\u6216 tb_bind_recipe);failed \u770B verifyLog \u6539\u65B9\u6848\u518D\u51FA\u94FE\u63A5;\u88AB\u62D2\u7684\u7CFB\u7EDF\u5305(\u786E\u8BA4\u6846\u91CC\u4F1A\u663E\u793A\u539F\u56E0)\u539F\u6837\u8F6C\u544A\u7528\u6237\u3002\u2464 \u4E0D\u80FD:\u5185\u6838 / \u663E\u5361\u9A71\u52A8 / CUDA / systemd / docker \u8FD9\u7C7B\u7CFB\u7EDF\u7EC4\u4EF6(\u8981\u7684\u8BDD\u8BF7\u7528\u6237\u53D1\u90AE\u4EF6\u8054\u7CFB\u6211\u4EEC);\u4E5F\u4E0D\u80FD\u6539\u5E95\u5EA7\u91CC\u5DF2\u6709 Python \u5305\u7684\u7248\u672C(\u53EA\u52A0\u4E0D\u6539)\u3002";
+var CUSTOMIZE_DESC = "\u5728\u4E00\u4E2A\u5E95\u5EA7\u73AF\u5883\u4E0A\u5EFA\u300C\u6211\u7684\u73AF\u5883\u300D(\u73AF\u5883\u914D\u65B9):\u52A0 Debian \u7CFB\u7EDF\u5305(apt)\u548C / \u6216 Python \u5305(add),\u53EF\u9644\u547D\u4EE4\u3002\u24EA \u89C4\u77E9(\u8BBE\u8BA1 \xA72):\u7528\u6237\u8BF4\u300C\u6211\u60F3\u5EFA\u4E2A X \u73AF\u5883\u300D\u300C\u6211\u60F3\u505A Y \u5B9E\u9A8C\u300D\u4E5F\u8D70\u8FD9\u91CC \u2014\u2014 \u5148\u4ECE\u76EE\u6807\u63A8\u65AD\u8981\u8DD1\u4EC0\u4E48\u3001\u8981\u54EA\u4E9B\u5E93 / \u7CFB\u7EDF\u5DE5\u5177 / \u663E\u5361;\u5148\u7528 tb_list_envs \u627E\u73B0\u6210\u7684(runtime.libs\u3001GPU\u3001tags \u80FD\u6EE1\u8DB3\u5C31\u63A8\u8350\u5B83,\u4E0D\u5EFA);\u5DEE\u4E00\u70B9\u624D\u5217\u65B9\u6848:\u5E95\u5EA7\u3001apt \u5305\u3001pip \u5305\u3001\u547D\u4EE4\u3001\u9A8C\u8BC1\u9884\u8BA1\u65F6\u957F(\u7CFB\u7EDF\u5305\u901A\u5E38\u5341\u51E0\u79D2\u5230\u51E0\u5206\u949F)\u548C\u8D39\u7528(\u6309\u5E95\u5EA7\u6BCF\u5C0F\u65F6\u4EF7),\u5B9A\u597D\u65B9\u6848\u540E\u8C03\u672C\u5DE5\u5177:\u5B83**\u4E0D\u4F1A\u81EA\u5DF1\u5EFA**,\u53EA\u8FD4\u56DE\u4E00\u6761\u786E\u8BA4\u94FE\u63A5 \u2014\u2014 \u628A\u94FE\u63A5\u7ED9\u7528\u6237,\u7528\u6237\u5728\u6D4F\u89C8\u5668\u91CC\u70B9\u300C\u5EFA\u8FD9\u4E2A\u73AF\u5883\u300D\u624D\u771F\u6B63\u63D0\u4EA4(\u82B1\u7684\u662F\u7528\u6237\u7684\u73AF\u5883\u989D\u5EA6,\u540C\u610F\u5FC5\u987B\u662F\u7528\u6237\u4EB2\u624B\u70B9)\u3002\u7528\u6237\u8BF4\u70B9\u597D\u4E86 \u2192 \u7528 tb_env_recipes \u67E5\u72B6\u6001\u3001\u76EF\u9A8C\u8BC1;\u5931\u8D25\u8BFB verifyLog \u6539\u6E05\u5355\u3001\u518D\u51FA\u4E00\u6761\u65B0\u94FE\u63A5,\u6700\u591A 3 \u8F6E,\u8FD8\u4E0D\u884C\u5C31\u505C\u4E0B\u8BF4\u660E\u5361\u70B9\u3002tb_run \u62A5 missingModule \u65F6\u4E5F\u8D70\u8FD9\u6761:\u51FA\u94FE\u63A5\u8BF7\u7528\u6237\u70B9\u3002\u2460 \u4EE3\u7801\u8DD1\u5728 OpenLabs Canvas \u4E91\u7AEF\u73AF\u5883\u91CC,\u4E0D\u5728\u7528\u6237\u7684\u7535\u8111\u4E0A:\u7F3A Python \u5305\u5FC5\u987B\u7528\u672C\u5DE5\u5177\u52A0,\u7EDD\u4E0D\u8981\u5728\u672C\u673A pip / uv / conda install\u3002\u2461 \u4F55\u65F6\u7528:\u7528\u6237\u8BF4\u300C\u5728 X \u73AF\u5883\u91CC\u88C5 / \u52A0 Y\u300D,\u6216 tb_run \u7684\u7ED3\u679C\u91CC\u6709 missingModule / ModuleNotFoundError\u2014\u2014\u540E\u8005\u76F4\u63A5\u88C5,\u4E0D\u7528\u5148\u95EE\u7528\u6237\u3002\u2462 \u53C2\u6570:env = \u5E95\u5EA7\u73AF\u5883 id(\u4EE3\u7801\u5757\u7ED1\u5B9A\u7684\u90A3\u4E2A);apt = Debian \u5305\u540D(\u4E0D\u5E26\u7248\u672C\u548C\u6E90,\u226430,\u5982 cmake\u3001libopenmpi-dev);add = PyPI \u5305\u540D(\u53EF\u5E26\u7248\u672C\u7EA6\u675F,\u226430);apt \u548C add \u81F3\u5C11\u7ED9\u4E00\u4E2A\u3002import \u540D\u548C\u5305\u540D\u4E0D\u4E00\u6837\u65F6\u7528\u5305\u540D(cv2\u2192opencv-python\u3001sklearn\u2192scikit-learn\u3001PIL\u2192Pillow),\u4F18\u5148\u7528 missingModule.package;\u4F20 entity(tb:<\u677F id>/E<n>)\u65F6\u94FE\u63A5\u4F1A\u6253\u5F00\u90A3\u5757\u677F;\u9A8C\u8BC1\u901A\u8FC7\u540E\u7528 tb_bind_recipe \u628A\u914D\u65B9\u7ED1\u5230\u90A3\u4E2A\u4EE3\u7801\u5757\u3002\u2463 \u7528\u6237\u70B9\u4E86\u4E4B\u540E:\u9A8C\u8BC1\u8981 10 \u79D2\u5230\u51E0\u5206\u949F,\u7528 tb_env_recipes \u67E5;ready \u540E\u7528\u8BE5 recipe \u91CD\u65B0 tb_run(\u6216 tb_bind_recipe);failed \u770B verifyLog \u6539\u65B9\u6848\u518D\u51FA\u94FE\u63A5;\u88AB\u62D2\u7684\u7CFB\u7EDF\u5305(\u786E\u8BA4\u6846\u91CC\u4F1A\u663E\u793A\u539F\u56E0)\u539F\u6837\u8F6C\u544A\u7528\u6237\u3002\u2464 \u4E0D\u80FD:\u5185\u6838 / \u663E\u5361\u9A71\u52A8 / CUDA / systemd / docker \u8FD9\u7C7B\u7CFB\u7EDF\u7EC4\u4EF6(\u8981\u7684\u8BDD\u8BF7\u7528\u6237\u53D1\u90AE\u4EF6\u8054\u7CFB\u6211\u4EEC);\u4E5F\u4E0D\u80FD\u6539\u5E95\u5EA7\u91CC\u5DF2\u6709 Python \u5305\u7684\u7248\u672C(\u53EA\u52A0\u4E0D\u6539)\u3002";
 function registerRecipeTools(server2, d7) {
   const call = (method, path6, body) => d7.client.call(method, path6, body, { agent: true });
   const humanErr = (e6) => {
@@ -86981,7 +87058,7 @@ function registerRecipeTools(server2, d7) {
   server2.registerTool(
     "tb_env_customize",
     {
-      title: "Add Python packages to a teachboard environment",
+      title: "Add Python packages to an OpenLabs Canvas environment",
       description: CUSTOMIZE_DESC,
       inputSchema: {
         env: external_exports.string().describe("\u4EE3\u7801\u5757\u7ED1\u5B9A\u7684\u73AF\u5883 id(\u89C1 tb_list_envs)"),
@@ -87015,12 +87092,27 @@ function registerRecipeTools(server2, d7) {
       }
       if (!id) return textOut4("\u670D\u52A1\u6CA1\u6709\u8FD4\u56DE\u65B9\u6848 id,\u7A0D\u540E\u518D\u8BD5");
       const validity = expiresAt ? `${expiresAt} \u524D\u6709\u6548` : "30 \u5206\u949F\u5185\u6709\u6548";
+      let existing = "";
+      try {
+        const pk = new URLSearchParams();
+        for (const p3 of [...add ?? [], ...apt ?? []]) pk.append("pkgs", p3);
+        pk.set("kinds", "env,recipe");
+        pk.set("base", env3);
+        pk.set("limit", "3");
+        pk.set("lang", "zh");
+        const f7 = await call("GET", `agent/find?${pk.toString()}`);
+        const n2 = (f7.results?.envs?.length ?? 0) + (f7.results?.recipes?.length ?? 0);
+        if (n2 > 0 && typeof f7.text === "string") existing = f7.text;
+      } catch {
+        existing = "";
+      }
       return textOut4([
         `\u65B9\u6848\u5DF2\u5907\u597D,\u8FD8\u6CA1\u6709\u5EFA \u2014\u2014 \u8BF7\u7528\u6237\u6253\u5F00\u4E0B\u9762\u7684\u94FE\u63A5,\u6838\u5BF9\u540E\u70B9\u300C\u5EFA\u8FD9\u4E2A\u73AF\u5883\u300D(\u9A8C\u8BC1\u4F1A\u7528\u7528\u6237\u7684\u73AF\u5883\u989D\u5EA6;\u94FE\u63A5\u53EA\u5BF9\u8FD9\u4E2A\u7528\u6237\u6709\u6548,${validity}):`,
         envProposalUrl(d7.base, id, board),
         "",
         `\u5E95\u5EA7 ${env3}${apt?.length ? ` \xB7 \u7CFB\u7EDF\u5305 ${apt.join(", ")}` : ""}${add?.length ? ` \xB7 Python \u5305 ${add.join(", ")}` : ""}${commands6?.length ? ` \xB7 \u547D\u4EE4 ${commands6.length} \u6761` : ""}`,
-        `\u7528\u6237\u8BF4\u70B9\u597D\u4E86 \u2192 tb_env_recipes env=${env3} \u67E5\u72B6\u6001\u3001\u76EF\u9A8C\u8BC1${entity ? `;ready \u540E tb_bind_recipe \u7ED1\u5230 ${entity}` : ""}\u3002`
+        `\u7528\u6237\u8BF4\u70B9\u597D\u4E86 \u2192 tb_env_recipes env=${env3} \u67E5\u72B6\u6001\u3001\u76EF\u9A8C\u8BC1${entity ? `;ready \u540E tb_bind_recipe \u7ED1\u5230 ${entity}` : ""}\u3002`,
+        ...existing ? ["", "\u26A0 \u8FD9\u4E9B\u73B0\u6210\u7684\u53EF\u80FD\u5DF2\u7ECF\u591F\u7528 \u2014\u2014 \u5148\u544A\u8BC9\u5B66\u5458;\u591F\u7528\u5C31\u76F4\u63A5\u7528,\u4E0D\u5FC5\u70B9\u786E\u8BA4\u5EFA\u65B0\u7684:", existing] : []
       ].join("\n"));
     }
   );
@@ -87257,7 +87349,7 @@ function registerRunTools(server2, d7) {
   server2.registerTool(
     "tb_run",
     {
-      title: "Run a teachboard code block in its cloud environment",
+      title: "Run an OpenLabs Canvas code block in its cloud environment",
       description: RUN_DESC,
       inputSchema: {
         entity: external_exports.string().describe("\u4EE3\u7801\u5757\u7F16\u53F7 tb:<8 \u4F4D\u677F id>/E<n>"),
@@ -87375,7 +87467,7 @@ ${piece}
   server2.registerTool(
     "tb_grade",
     {
-      title: "Grade a teachboard assignment code block",
+      title: "Grade an OpenLabs Canvas assignment code block",
       description: GRADE_DESC,
       inputSchema: {
         entity: external_exports.string().describe("\u4EE3\u7801\u5757\u7F16\u53F7 tb:<8 \u4F4D\u677F id>/E<n>"),

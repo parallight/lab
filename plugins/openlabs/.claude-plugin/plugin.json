@@ -1,7 +1,7 @@
 {
   "name": "openlabs",
   "description": "OpenLabs (Parallight Lab) — agent-oriented learning plugin for Claude Code. /openlabs = menu (learn / lab / board / connect); /lab-login, /lab, /lab-start, /teachboard …; a resident mentor for each lab who guides you to direct agents (not hand-write code).",
-  "version": "0.1.32-phase1",
+  "version": "0.1.33-phase1",
   "author": {
     "name": "Marvin Gao",
     "email": "marvin.gao.cs@gmail.com"
