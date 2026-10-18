@@ -30,7 +30,7 @@ description: 列出所有 lab 命令
 - /lab-pull — 从云端在线 lab 同步到本地(cloud → local)
 - /lab-push — 把本地改动同步到云端在线 lab(local → cloud)
 - /lab-rollback — 回滚 lab 到之前某个同步前的状态
-- /lab-evaluate — 提交当前 lab 的 agent 到云端评测 / 查看评测结果
+- /lab-evaluate — OpenLabs统一项目评测：enterprise-ai、project-1-2、LLM-server / 查看结果
 - /lab-reply — 回复Mentor对某次 review 的批改
 - /lab-logout — 退出 Parallight Lab 登录，清除本地凭证
 - /lab-exit — 退出当前 lab，清除注入的Mentor人格
