@@ -95,7 +95,7 @@ function parseEventsPage(raw) {
   const cursor = Number.isInteger(raw.cursor) ? raw.cursor : events2.length ? Math.max(...events2.map((e) => e.seq)) : null;
   return { events: events2, cursor };
 }
-var KIND_ZH = { text: "\u6587\u5B57", code: "\u4EE3\u7801\u5757", math: "\u516C\u5F0F", shape: "\u5F62\u72B6", arrow: "\u7BAD\u5934", line: "\u8FDE\u7EBF", image: "\u56FE\u7247", freedraw: "\u624B\u5199", frame: "\u6846", figure: "\u56FE" };
+var KIND_ZH = { text: "\u6587\u5B57", code: "\u4EE3\u7801\u5757", math: "\u516C\u5F0F", shape: "\u5F62\u72B6", arrow: "\u7BAD\u5934", line: "\u8FDE\u7EBF", image: "\u56FE\u7247", freedraw: "\u624B\u5199", frame: "\u6846", figure: "\u56FE", choice: "\u9009\u62E9\u9898" };
 var CHANGE_ZH = { added: "\u65B0\u589E", edited: "\u6539\u4E86", deleted: "\u5220\u4E86" };
 var CHAPTER_REQ_RE = /^chapter:([0-9a-f]{8}):([1-9]\d*)$/;
 function itemLine(it, lang) {
